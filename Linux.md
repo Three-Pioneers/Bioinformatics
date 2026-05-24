@@ -179,5 +179,26 @@ sudo sysctl -p
 ~~~bash
 # 安装 git
 sudo apt install git-all
+
+# 拉取最新代码
+git pull origin main
+
+# 查看哪些文件修改
+git status
+
+# 添加所有修改过的文件（最常用）
+git add .
+
+# 或只添加特定文件
+git add 文件名1 文件名2
+
+# 或添加整个目录
+git add 目录名/
+
+# 提交修改到本地仓库
+git commit -m "清晰描述本次修改的内容"
+
+# 推送到远程仓库
+git push
 ~~~
 
