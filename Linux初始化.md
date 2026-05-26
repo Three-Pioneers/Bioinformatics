@@ -64,10 +64,7 @@ Pin-Priority: -10
 ## 安装浏览器
 
 ~~~bash
-# 安装 Chrome，不推荐，没意思
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
-# 安装 Firefox，推荐，自己折腾
+# 安装 Firefox
 ## 创建一个目录以存储 APT 仓库密钥,如果不存在:
 sudo install -d -m 0755 /etc/apt/keyrings
 ## 导入 Mozilla APT 仓库签名密钥:
@@ -149,7 +146,7 @@ fcitx5-frontend-gtk4 fcitx5-frontend-gtk3 fcitx5-frontend-gtk2 \
 fcitx5-frontend-qt5 fcitx5-configtool
 ~~~
 
-## 配置 ZoogVPN（UDP快）
+## ZoogVPN（UDP快）
 
 ~~~bash
 # 下载压缩包，找张雪杰要
