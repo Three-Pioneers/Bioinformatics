@@ -549,14 +549,30 @@ conda config --set fetch_threads 8
 
 ## Snakemake
 
-1. 由输出[文件 / 规则]反向推导，而非从可用输入
-2. 输出文件不含通配符的 rules 被执行时，若输入含通配符，必须指定通配符的值
-3. 中间规则改变，被影响的 rules 都会重新运行
-4. Snakefile 扩展使用
+**通配符**
+
+> 由出反向推导输入获得
+>
+> 自由选择，统一规则下相同就行
+
+**运行**
+
+> 输出文件不含通配符的 rules 被执行时，若输入含通配符，必须指定通配符的值？
+>
+> 中间规则改变，被影响的所有 rules 都会重新运行
+
+**参数**
 
 ~~~bash
-# 扩展：Python；Snakemake 下载人数最多的就行
+--forceall	# 全部强制执行
+--forcerun	# 好像没啥用
+--cores all	# 设置几都跑慢
+# threads 不是越多越好，最好多任务，小线程，找到每个软件最佳线程数
+~~~
 
+**Snakefile**
+
+~~~bash
 # Ctrl + shift + p，搜索配置代码片段，新建，名字添 Snakemake。粘贴下列代码
 {
 	// Place your snippets for snakemake here. Each snippet is defined under a snippet name and has a prefix, body and 
@@ -586,25 +602,12 @@ conda config --set fetch_threads 8
 		],
 		"description": "Snakemake 标准模板"
 	},
-}
+
 ~~~
 
-5. 参数
+**难点**
 
-~~~bash
-# 全部强制执行
---forceall
-# 好像没啥用
---forcerun
-
-# 设置几都跑慢
---cores 1/8
-
-# threads 不是越多越好，最好多任务，小线程，找到每个软件最佳线程数
-~~~
-
-6. 写个规则给双端测序数据建立软链接
-7. 
+> 双端测序数据建立软链接
 
 ## Pandas
 
