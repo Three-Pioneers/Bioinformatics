@@ -161,56 +161,31 @@ which trimmomatic #/home/zhangxuejie/miniconda3/envs/Metagene/bin/trimmomatic
 
 ~~~bash
 # ls(list directory contents)
-## 权限	硬链接	创建人	创建人所在组	大小	最后修改时间	相对路径
+## 权限	硬链接	创建人		创建人所在组	大小	最后修改时间	相对路径
 drwxrwxrwx 1 zhangxuejie zhangxuejie 4096 Mar 10 22:40 Training/
-~~~
 
-~~~bash
 # pwd(print working directory)
-~~~
 
-~~~bash
 # cd(change directory)
-## 家目录
-cd ~
-## 刚才目录
+# 刚才目录
 cd -
-~~~
-
-~~~bash
-# alias
-ll == ls -alF
-~~~
-
-~~~bash
-# help
-## 进入帮助文档
-man ls
-## 打印到当前面板
-ls --help
 ~~~
 
 ### 文件操作
 
-~~~bash
-# mkdir
-mkdir A.txt B.txt
-~~~
+**ESC 模式**
 
 ~~~bash
-# less 
-less -SN A.txt
-## 查找
-/content
-
-# more 显示百分比
-~~~
-
-~~~bash
-# vi
-vi 1.txt
-## 全局替换
+# 全局替换
 %s/2/5/g
+# 撤销
+u
+# 撤销重做
+Ctrl + r
+# 复制
+yy
+# 删除到文件尾巴
+dG
 ~~~
 
 ---
@@ -526,25 +501,10 @@ print(dict.keys())
 
 ## Conda
 
-1. 在 conda 环境下，重新加载 bashrc 文件后，命令行不显示已加载的环境
-
-~~~bash
-if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
-    conda activate "$CONDA_DEFAULT_ENV"
-fi
-~~~
-
-2. 查看当前环境下自己下载的包，不包括依赖
+1. 查看当前环境下自己下载的包，不包括依赖
 
 ~~~bash
 conda env export --from-history
-~~~
-
-3. mamba 变慢
-
-~~~bash
-conda config --set repodata_threads 8
-conda config --set fetch_threads 8
 ~~~
 
 ## Snakemake
@@ -615,37 +575,3 @@ conda config --set fetch_threads 8
 2. DataFrame：字典转列；增加列；增加行
 
 alias ps_simple='ps -u $USER -f'
-
-~~~bash
-# ZoogVPN Linux 配置指南
-
-> 本指南适用于 Ubuntu、Debian、Fedora、CentOS 等主流 Linux 发行版  
-> 提供 OpenVPN 和 WireGuard 两种方式配置 ZoogVPN
-
----
-
-## 1. 前提条件
-
-- 有效的 ZoogVPN 账户（用户名和密码）
-- Linux 系统已安装 `curl`、`wget` 或 `openvpn`、`wireguard-tools`
-- root 权限或 sudo 权限
-
-```bash
-# 更新系统
-sudo apt update && sudo apt upgrade -y   # Ubuntu/Debian
-sudo dnf update -y                       # Fedora
-sudo yum update -y                       # CentOS
-~~~
-
-sudo ubuntu-drivers devices
-sudo apt install nvidia-driver-535
-sudo reboot
-
-
-
-
-
-sudo apt install nvidia-prime
-prime-select query      # 查询当前显卡
-sudo prime-select intel  # 切换集显
-sudo prime-select nvidia # 切换独显
