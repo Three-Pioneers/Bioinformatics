@@ -84,9 +84,11 @@ custom_channels:
   conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
   bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
 auto_activate: false
-use_sharded_repodata: false	# 后续大版本更新后可删除
+use_sharded_repodata: false
 repodata_threads: 8
 download_threads: 8
+
+# 安装 mamba：C++ package 解释器, 替代绝大多数 conda 功能
 ~~~
 
 ## 配置 ~/.bashrc
