@@ -72,6 +72,23 @@ sudo sed -i 's|http://security.ubuntu.com|https://mirrors.tuna.tsinghua.edu.cn|g
 sudo apt update
 ~~~
 
+## 安装 Conda
+
+~~~bash
+vi ~/.condarc
+# 换清华源，多线程下载和分片（分片下载）
+channels:
+  - conda-forge
+  - bioconda
+custom_channels:
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+auto_activate: false
+use_sharded_repodata: false	# 后续大版本更新后可删除
+repodata_threads: 8
+download_threads: 8
+~~~
+
 ## 配置 ~/.bashrc
 
 ~~~bash
@@ -88,28 +105,25 @@ alias rh="realpath"
 
 # 找到 ls 添加 --group-directories-first
 
-# sources ~/.bashrc 后，PS1 重新加载会替换掉命令行前（base）
-if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
-    conda activate "$CONDA_DEFAULT_ENV"
+
+# ===== fast conda init: lazy load conda, keep active env prompt =====
+__conda_sh="/home/zhangxuejie/miniconda3/etc/profile.d/conda.sh"
+
+if [[ -n "${CONDA_PREFIX:-}" && -f "$__conda_sh" ]]; then
+    __conda_current_prefix="$CONDA_PREFIX"
+    source "$__conda_sh"
+    conda activate "$__conda_current_prefix" >/dev/null 2>&1
+    unset __conda_current_prefix
+else
+    conda() {
+        unset -f conda
+        source "/home/zhangxuejie/miniconda3/etc/profile.d/conda.sh"
+        conda "$@"
+    }
 fi
-## 每次conda初始化太重，需要改成公司个人电脑版本
-~~~
 
-## 安装 conda
-
-~~~bash
-vi ~/.condarc
-# 换清华源，多线程下载和分片（分片下载）
-channels:
-  - conda-forge
-  - bioconda
-custom_channels:
-  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-auto_activate: false
-use_sharded_repodata: false	# 后续大版本更新后可删除
-repodata_threads: 8
-download_threads: 8
+unset __conda_sh
+# 注释掉conda 初始化内容，下面的加到后面去
 ~~~
 
 ## 安装Firefox

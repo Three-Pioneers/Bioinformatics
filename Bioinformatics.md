@@ -1,3 +1,572 @@
+## ==第一要素: 使用绝对路径==
+
+测序时多个样本在凑在一条 lane 上跑，通过原始测序数据中的 Index_i5 Index_i7 不同的组合能识别不同样本，用于下机时拆分样本
+
+adapter 用于质控时的接头？
+
+## 流程
+
+### 转录组质控
+
+**步骤**
+
+1. 重命名
+2. 质控；创建md5sum值；multiqc 联合所有样本的 json 输出报告；Python 整理所有样本关键信息
+3. 生成结果：将所需软链接到结果文件夹
+
+~~~bash
+# ln(link files) -s 创建软链接, 链接指向源文件
+~~~
+
+~~~bash
+# fastp SE(Single-End Sequencing); PE(Paired-End Sequencing)
+~~~
+
+~~~bash
+# md5sum 生成文件在网络传输前后的md5值(只与文件内容有关), 根据前后值判断文件内容传输过程是否变化
+~~~
+
+~~~bash
+# multiqc 识别 json 生成总文件
+~~~
+
+**修改报告**
+
+- 从头开始, 修改配置文件, vi QC.conf, 重新执行所有命令
+- 只修改报告文件, 原报告直接被覆盖
+
+~~~bash
+vi /data0_2/2026_03/ChenLei_3_renshen_QC/analysis/report/src/table/project_info.txt
+cat /data0_2/2026_03/ChenLei_3_renshen_QC/analysis/work_sh/Step_2_Report.sh
+/Data_all/Software/miniconda3/bin/Rscript /data0_2/2026_03/ChenLei_3_renshen_QC/bin/rmarkdown.R --infile /data0_2/2026_03/ChenLei_3_renshen_QC/analysis/report/report.Rmd --outfile /data0_2/2026_03/ChenLei_3_renshen_QC/analysis/report/report.html --format html_document
+~~~
+
+- edge 开发者修改, 查找定位, 但会产生一个跟随文件，不推荐使用
+- VSCode 修改, 不产生跟随文件
+
+---
+
+### 宏基因组
+
+0. 改名：测序名称→样本名称
+1. 质控：**fastq** 过滤低质量 reads 和测序接头；**kneaddata** 过滤重复序列
+2. 组装：**megahit** 组装经过滤及去重后的测序文件，输出 **fasta** 文件；**quast** 评估组装结果
+3. 预测：**prodigal** 通过起始密码子和终止密码子预测**开放阅读框**，进而反向从 fasta 文件中寻找可能 DNA 和蛋白质
+4. 聚类：**mmseqs** 对上述预测的 **DNA** 进行聚类，输出有不同类中有代表的基因，再关联4中预测的 DNA 和蛋白以备后续分析输入
+5. 丰度：**metaphlan** 将**质控过滤去重后的序列**比对到数据库，输出所有样本界门纲目科属种的丰度表
+6. 功能：**diamond** 将蛋白质或基因 **blast** 到不同数据库，输出 outfmt 6，注释含有什么不同的功能
+7. 量化：**salmon** 对**质控去重的测序数据**进行量化输出基因表达表；再进行 α-多样性和 β-多样性（PCA分析）以及后续的 GO、KEGG富集分析
+
+---
+
+**2.Megahit**
+
+~~~bash
+# megahit
+## k-mer 从一条 DNA 片段中连续截取的, 长度为 k 的核苷酸子序列
+## 该参数设置后, --k-list, --k-step 都被固定, 即使后面再加参数也不能修改
+## --no-mercy <do not add mercy kmers> 舍弃因低丰度而被过滤 k-mer, 严格执行固定的频率, 同时丢失部分错误过滤的基因组
+~~~
+
+**quast(quality assessment tool for genome assemblies)**
+
+**3.ORF_Prediction**
+
+~~~bash
+# 预测的核苷酸和蛋白质序列终止位置不一定时终止密码子, 其允许预测未组装完整的基因序列
+~~~
+
+**MMseqs2: ultra fast and sensitive sequence search and clustering suite**
+
+**metaphlan: metagenomic phylogenetic analysis for metagenomic taxonomic profiling**
+
+**6.Functional_Annotation**
+
+**Card**
+
+输出表要不同的ARO号, 相同的舍弃
+
+~~~bash
+## -t --tabs <specifies that the input CSV file is delimited with tabs. Overrides "-d">
+## -f, --fields string <select only these fields>
+
+python /Data_all/script/Metagene/bin/Card_function.py /Data_all/Databases/Card_data/aro_index.tsv /data2/2026_03/New_test/6.Functional_annotation/Card/Card_tmp_1.txt /data2/2026_03/New_test/6.Functional_annotation/Card/Card_function.txt
+~~~
+
+**eggnog-mapper: Fast genome-wide functional annotation through orthology assignment**
+
+### 7.Gene_Quantify
+
+[salmon](https://salmon.readthedocs.io/en/latest/salmon.html)
+
+~~~bash
+# quant: quantifies expression using raw reads
+## -l --libType <Format string describing the library type> 与文库有关, 链特异性和非特异性等, A Auto 自动检测
+
+# alpha_diversity: 对样品丰度和多样性分析
+## shannon	simpson	Richness	chao1	ace	observed_features	pielou_e	goods_coverage
+## shannon <综合考虑物种丰富度和均匀度，对稀有物种敏感>
+## simpson <更关注优势物种，赋予常见物种更高权重>
+## Richness <群落中物种（或特征）的总数，常指观测到的丰富度>
+## chao1 <基于稀有种（单例、双例）估算群落总丰富度的非参数方法>
+## ace: Abundance-based Coverage Estimator <另一类基于丰度分布的非参数丰富度估计量>
+## observed_features <在样本中实际观测到的特征（OTU/ASV）数量，即实测丰富度>
+## pielou_e <衡量群落中物种个体数分布的均匀程度，是 Shannon 指数与最大可能 Shannon 值的比值>
+## goods_coverage <测序深度覆盖度，表示群落中已被测序到的物种占总物种的比例估计>
+~~~
+
+~~~bash
+# beta_diversity: 样本多维数据降维
+# PCA: Principle Component Analysis
+# PCoA: Principle Co-ordinates Analysis
+# NMDS: Non-metric Multidimensional Scaling
+~~~
+
+### 小RNA
+
+从 miRNA 入手分析 sRNA 原因：占比大；易建库；公共数据库维护好；生信分析快且容易
+
+1. 原始 fastq 数据
+2. 去接头、质控
+3. 筛选 18–30 nt 小 RNA
+4. 去除 rRNA/tRNA/snRNA/snoRNA/repeat
+5. 比对参考基因组
+6. 已知 miRNA 鉴定
+7. novel miRNA 预测
+8. miRNA 表达量统计
+9. 差异表达分析
+10. 靶基因预测
+11. GO/KEGG 富集
+12. miRNA-target 调控网络
+
+==/data3/Data_All== 用单独的数据库
+
+#### 准备数据
+
+1. 参考基因组 https://ftp.ensembl.org/pub
+2. 注释 gtf https://ftp.ensembl.org/pub
+3. Functional_annotation/
+4. 测序数据
+
+**概念**
+
+|         |                        |                                                              |
+| ------- | ---------------------- | ------------------------------------------------------------ |
+| 小RNA   | small RNA              | 长度18-40 nt，起转录后调控作用的非编码 RNA                   |
+| 3’UTR   | 3’ UnTranslated Region | 成熟 mRNA 分子中终止密码子后，PolyA 前非翻译区，调控基因的表达 |
+| HairPin | 发夹结构               | DNA、RNA中的单链核酸碱基配对部分形成 “茎”，没有配对部分形成 “环”；调控转录终止和 tRNA 的形成 |
+|         |                        |                                                              |
+| mRNA    | messenger RNA          | 信使 RNA，                                                   |
+| rRNA    | ribosomal RNA          | 核糖体 RNA，                                                 |
+| tRNA    | transfer RNA           | 转运 RNA，                                                   |
+| snRNA   | small nuclear RNA      | 核小 RNA，负责 mRNA 前体的加工                               |
+| snoRNA  | small nucleolar RNA    | 核仁小 RNA，指导 rRNA、tRNA、snRNA 的化学修饰                |
+| piRNA   |                        | 特异性 piwi 蛋白结合发挥作用                                 |
+
+**数据库**
+
+|                   |                                  |                                                              |
+| ----------------- | -------------------------------- | ------------------------------------------------------------ |
+| ENCORI / starBase | Encyclopedia of RNA Interactomes | an extensive atlas that integrates precise RNA interactions identified by our innovative rbsSeeker and rriScan algorithms, showcasing the functional and mechanistic insights into the RNA interactomes |
+|                   |                                  |                                                              |
+
+5.Known_miRNA_identification
+
+~~~bash
+cd      /data3/2026_04/LiPeng_6_human_miRNA/analysis//5.Known_miRNA_identification/1.quantifier/D1 && \
+mapper.pl /data3/2026_04/LiPeng_6_human_miRNA/analysis//4.RepeatMasker/D1/Repeat_unmapped.fa \
+        -c  -m  -l 15  -r 10 -s /data3/2026_04/LiPeng_6_human_miRNA/analysis//5.Known_miRNA_identification/1.quantifier/D1/mapped.fa && \
+quantifier.pl -p /data3/Data_all/Databases/miRBase/hsa_hairpin.fa \
+        -m /data3/Data_all/Databases/miRBase/hsa_mature.fa \
+        -r /data3/2026_04/LiPeng_6_human_miRNA/analysis//5.Known_miRNA_identification/1.quantifier/D1/mapped.fa  \
+        -g 3 -t hsa -y test
+
+python  /data3/Data_all/script/miRNA/bin//unmapped_miRNA_split.py \
+        /data3/2026_04/LiPeng_6_human_miRNA/analysis//5.Known_miRNA_identification/1.quantifier/D1/mapped.fa \
+        /data3/2026_04/LiPeng_6_human_miRNA/analysis//5.Known_miRNA_identification/1.quantifier/D1/expression_analyses/expression_analyses_test/mapped.fa_mapped.arf \
+        /data3/2026_04/LiPeng_6_human_miRNA/analysis//5.Known_miRNA_identification/1.quantifier/D1
+
+python  /data3/Data_all/script/miRNA/bin//miRNAs_expressed_stats_one_sample.py \
+        /data3/2026_04/LiPeng_6_human_miRNA/analysis//5.Known_miRNA_identification/1.quantifier/D1/miRNAs_expressed_all_samples_test.csv \
+        /data3/Data_all/Databases/miRBase/hsa_hairpin.fa \
+        /data3/Data_all/Databases/miRBase/hsa_mature.fa \
+        /data3/2026_04/LiPeng_6_human_miRNA/analysis//5.Known_miRNA_identification/1.quantifier/D1
+~~~
+
+**miRDeep2**
+
+成熟 miRNA 是 22nt，没有二级结构，要根据二级结构预测miRNA，就要找到有发夹结构的 miRNA 前体
+
+---
+
+## Linux
+
+### Conda
+
+~~~bash
+# ===== fast conda init: lazy load conda, keep active env prompt =====
+__conda_sh="/home/zhangxuejie/miniconda3/etc/profile.d/conda.sh"
+
+if [[ -n "${CONDA_PREFIX:-}" && -f "$__conda_sh" ]]; then
+    __conda_current_prefix="$CONDA_PREFIX"
+    source "$__conda_sh"
+    conda activate "$__conda_current_prefix" >/dev/null 2>&1
+    unset __conda_current_prefix
+else
+    conda() {
+        unset -f conda
+        source "/home/zhangxuejie/miniconda3/etc/profile.d/conda.sh"
+        conda "$@"
+    }
+fi
+
+unset __conda_sh
+~~~
+
+注释掉
+
+~~~bash
+## >>> conda initialize >>>
+## !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/home/zhangxuejie/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/home/zhangxuejie/miniconda3/etc/profile.d/conda.sh" ]; then
+#        . "/home/zhangxuejie/miniconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/home/zhangxuejie/miniconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+## <<< conda initialize <<<
+
+## === 保留已激活环境的提示符（与 auto_activate=false 兼容） ===
+#if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
+#    conda activate "$CONDA_DEFAULT_ENV"
+#fi
+~~~
+
+**mamba**
+
+~~~bash
+# C++ package 解释器, 替代绝大多数 conda 功能
+conda install mamba
+~~~
+
+~~~bash
+# 修改 .condarc
+conda config --shouw-sources
+channels:
+  - conda-forge
+  - bioconda
+
+# 不进入环境查看 python 版本号
+conda run -n 环境名称 python --version
+~~~
+
+数据块: 存储文件内容
+元数据(文件附加属性): 文件大小、创建时间、创建人等以及 incode(系统识别文件的唯一标识符), 名字方便人记不属于 incode, mv 但 incode 不变
+
+链接: 硬链接(Hard link)和软链接(Soft link)
+硬链接: 文件副本, 无独立 incode, 必须在同一系统文件下创建, 源文件必须存在且不能为目录
+软链接: 包含独立 incode, 指向源文件
+
+### 文件操作
+
+**创建**
+
+~~~bash
+# 文件重命名
+rename 's/new/old/' old_load.txt
+~~~
+
+~~~bash
+# sed(Stream Editor) ^啥意思
+sed 's/^.*addr://g'
+sed "1i1231414"
+# -i --in-place <edit files in place (makes backup if SUFFIX supplied)>
+# d <delete>
+~~~
+
+~~~bash
+# 树状图查看后台(父子进程形式)
+ps fx
+# 存储使用
+df -h
+~~~
+
+~~~bash
+# 文件内容合并重定向输出
+cat Step_1.1_qc.sh Step_2_megahit.sh > ../connect.sh
+~~~
+
+~~~bash
+# 查找正在运行的 programme 的 ID; 终止运行
+ps aux | grep programme
+kill ID
+~~~
+
+~~~bash
+# 列向展示所有 gz 文件
+ls *gz|awk -F '.part' '{print$1}'
+~~~
+
+~~~bash
+# 添加新用户, 赋予文件权限
+su root
+adduser zhangfugui
+chmod 765(读写执-读写-读执) filename
+~~~
+
+~~~bash
+# grep(global regular expression print)
+## -E 启用扩展正则表达式
+grep 'Au_60' Step_2_megahit.sh
+~~~
+
+~~~bash
+# wc 行数, 单词数(空格, 制表符, 换行符分割), 字符数
+wc file.txt
+# 打印第四行
+wc file.txt | head -n 4 | tail -n 1
+~~~
+
+~~~bash
+# sort 按照ASCII码排列, 数字则按相同顺序的ASCII往后排
+## -g 按数值排列
+## -k 指定列排列
+## -u 去重
+## -s 当 -k 1, 1 仍然不起作用, 默认第一列相同就按后续列排, -s 取消默认
+sort -k 1, 1 -s text.txt # 只按照第一列进行排序
+~~~
+
+~~~bash
+seqkit split2 -p 10 -1 WR260064S_R1.fq.gz -2 WR260064S_R2.fq.gz
+~~~
+
+~~~bash
+# awk
+## -F '/' 指定 / 为分割符, 默认分隔符空格
+## '{print $1}' 输出第一列
+## '{print $NF}' 输出最后一列
+awk 'NR==1 || NR==2 || NR==4 || NR==6 || NR==8 || NR==10'
+~~~
+
+~~~bash
+# csvtk cut: select and arrange fields
+~~~
+
+~~~bash
+# 输出从第四行开始到结尾
+tail -n +4 file
+~~~
+
+~~~bash
+-s file：检查文件是否存在且非空
+-d file：检查是否为目录
+~~~
+
+**删除**
+
+~~~bash
+# 删除当前行及之后所有行
+dG
+~~~
+
+**删除非常规染色体**
+
+~~~python
+# 1.以非常规染色体第一行为分隔符，要前面的
+with open("genome_conventional.fa", "r") as FR:
+    fr = FR.readlines
+A = fr.split(">MT")[0]
+with open("test.fa", "w") as FW:
+    fw = FW.write(A)
+    
+# 2.到非常规染色体所在首行，即 >MT
+dG
+~~~
+
+---
+
+## Python
+
+### sys
+
+~~~python
+import sys
+print(sys.argv[0])
+print(sys.argv[1:])
+print(sys.argv)
+print(type(sys.argv))
+~~~
+
+~~~python
+python sys.py haha ouha hehe
+~~~
+
+---
+
+## R
+
+最小的数据结构是向量, ==注: 不是标量==
+
+索引从 1 开始, Vector[-2] 打印除第二个外的向量
+
+R 计算的时候是从最右边往左边算的`a <- 10/5%%1`
+
+~~~R
+data.frame()
+subset()
+dim()
+apply()
+abs(): absolute value function
+~~~
+
+
+
+~~~R
+df <- data.frame(S1 = c(1, 2, 3, 4, 5), 
+                 S2 = c(5, 4, 3, 2, 1), 
+                 S3 = runif(5, -10, 10), 
+                 S4 = runif(5, -10, 10))
+# 有惊喜
+df + c(1, 2)
+~~~
+
+---
+
+## Biology
+
+**[Ensembl 数据库](https://ftp.ebi.ac.uk/pub/ensemblorganisms/)**
+
+基因组 FASTA
+
+|      top_level.fa      |               primary_assembly.fa                |   *_rm.fa    |   *_sm.fa    |
+| :--------------------: | :----------------------------------------------: | :----------: | :----------: |
+| 所有染色体和未定位序列 | 剔除冗余和易混淆可变区域（haplotypes / patches） | 重复序列→“N” | 重复序列小写 |
+
+---
+
+### Concept
+
+|                                                              |                                                              |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| circRNA：Circular RNA                                        | mRNA前体反向剪接形成，由共价键连接，没有5'帽子和3'尾巴的闭合环状不编码RNA，稳定不易降解 |
+| RNA_denovo                                                   | 全转录组                                                     |
+| Metagene                                                     | 宏基因组，指以特定生物环境整体微生物群落作研究对象，通过高通量测序，获得的微生物基因信息的总和 |
+| Contig                                                       | 基因组测序中由重叠 DNA 片段拼接形成的连续序列，是基因组组装的最小单元 |
+| Sequence Identity                                            | 两条序列之间的相似程度                                       |
+| PPI：Protein-Protein Interaction Networks                    | 通过蛋白之间的彼此的相互作用构成，来参与生物信号传递、基因表达调控、能量与物质代谢和细胞周期调控等生命过程 |
+| ORF：Open Reading Frame                                      | DNA 或 RNA 序列中，从起始密码子开始，到下一个终止密码子结束的一段连续的核苷酸序列 |
+|                                                              | 从起始密码子（AUG）对应的序列（ATG）开始，三个碱基一组向后延伸，找到第一个终止密码子（UAG、UGA、UAA）对应的序列终止的连续序列，是理论上的蛋白编码区 |
+| GSEA：Gene Set Enrichment Analysis                           | 预估一个预定基因集的基因在与表型相关性排序的基因表中的分布趋势，以此来判断其对表型变化的贡献 |
+| 可变剪切：Differential Splicing / 选择性剪切：Alternative Splicing | 剪切未成熟 mRNA 的内含子，生成保留外显子的成熟 mRNA 的过程   |
+|                                                              |                                                              |
+
+---
+
+### Database
+
+|          |                                                  |                                                              |
+| -------- | ------------------------------------------------ | ------------------------------------------------------------ |
+| Card     | The Comprehensive Antibiotic Resistance Database | A bioinformatic database of resistance genes, their products and associated phenotypes |
+| CAZy     | The Carbohydrate-Active enZYmes Database         | The CAZy database describes the families of structurally-related catalytic and carbohydrate-binding modules (or functional domains) of enzymes that degrade, modify, or create glycosidic bonds |
+| COG      | Database of Clusters of Orthologous Genes        |                                                              |
+| EggNOG   | Orthology predictions and functional annnotaion  | A database of orthology relationships, functional annotation, and gene evolutionary histories |
+| GO       | Gene Ontology Resource                           | The Gene Ontology (GO) knowledgebase is the world’s largest source of information on the functions of genes |
+| KEGG     | Kyoto Encyclopedia of Genes and Genomes          | KEGG is a database resource for understanding high-level functions and utilities of biological systems |
+| NR       | Non-redundant protein sequences                  |                                                              |
+| Pfam     | Protein Families Database                        | The Pfam database is a large collection of protein families, each represented by multiple sequence alignments and hidden Markov models (HMMs) |
+| PHI-base | Pathogen Host Interactions                       | From mutant genes to phenotypes! The mission of PHI-base is to provide expertly curated molecular and biological information on genes proven to affect the outcome of pathogen-host interactions. Information is also given on the target sites of some anti-infective chemistries |
+| VFDB     | Virulence Factors of Bacterial Pathogens         | The virulence factor database (VFDB) is an integrated and comprehensive online resource for curating information about virulence factors of bacterial pathogens |
+| UniProt  | Universal Protein Resource                       | UniProt is the world’s leading high-quality, comprehensive and freely accessible resource of protein sequence and functional information |
+
+---
+
+## Quertion
+
+**质控**
+
+1. 不同格式文件要将文件内容复制到另一种格式中, 不能直接改名字, 否则会出现不可控错误
+   批量修改文件名, 尤其如何批量输出 "'"
+
+~~~bash
+-rwxrwxr-x 1 zhangxuejie bioinfo 425861587 Mar 12 12:05 'P9_40d_R2.fq.gz'$'\r'*
+-rwxrwxr-x 1 zhangxuejie bioinfo 402502035 Mar 12 12:05 'P9_55d_R1.fq.gz'$'\r'*
+-rwxrwxr-x 1 zhangxuejie bioinfo 425828469 Mar 12 12:05 'P9_55d_R2.fq.gz'$'\r'*
+~~~
+
+2. ~~小RNA质控的数据名称只能是WR2243M01.fq.gz样式, 若是WR2243M01_R1.fq.gz的会出错~~
+3. ~~conda 安装包报错 "fastp1.1.*.*", 由于 conda 解析包名出错导致, 下载 mamba 代替 conda~~
+
+### 宏基因组
+
+1. awk 挑选在排序相比于 csvtk cut + awk 分别负责挑选和排序慢很多
+
+~~~bash
+awk -F "\t" '{print$2"\t"$1"\t"$3"\t"$4}' 1.txt > 2.txt
+csvtk cut -t -f 1.2.3.4 1.txt | awk -F "\t" '{print$2"\t"$1"\t"$3"\t"$4}' > 2.txt
+~~~
+
+2. megahit 对同意测序文件组装的同一个基因起始不同
+
+~~~bash
+# --presets meta-large 定制了一系列参数，会使自定义 --k-skip 等参数失效
+megahit --presets meta-large 
+~~~
+
+3. kneaddata 新版本将重复序列也去除了, 而且它再一次去除了接头和低质量 reads
+4. sort 的排序问题需要加 -s，不然 -k 1 后还会默认按后续列继续排序
+5. alpha_diversity 没有 Richness 的图
+
+### 转录组分析
+
+1. 质控 md5sum 这一步无效，可以删除
+
+~~~bash
+md5sum /data0_2/2026_03/SunNan_15_ren_QC/analysis/1.QC/raw/*gz|awk -F'/' '{print$1, $NF}'|awk -F' ' '{print$1, $NF}' > /data0_2/2026_03/SunNan_15_ren_QC/analysis/1.QC/raw/rawdata_md5.txt
+~~~
+
+2. ~~有参转录组第七步蛋白互作，有问题~~
+3. hisat2 比对率低，试试 star
+
+~~~bash
+STAR --runThreadN 12 --runMode genomeGenerate --genomeDir /data/users/minmingw/Alignment/index --genomeFastaFiles /data/users/minmingw/Alignment/hg38/Homo_sapiens.GRCh38.dna.primary_assembly.fa --sjdbGTFfile /data/users/minmingw/Alignment/hg38/Homo_sapiens.GRCh38.103.gtf
+~~~
+
+4. GO 和 KEGG 富集分析选择差异基因的参数是 pvalue 但好像通用的是 padj
+5. ~~下载 KEGG 通路图必须开 VPN，服务器可以，是默认开 VPN？~~
+6. 富集分析 clusterProfiler 服务器版本 4.6.2，本地 4.18.4；导致输出的富集分析的文件结果列数，新版多了3列
+7. R 脚本排版混乱，命名混乱，注释不足；后期要统一；同时最好使用 python-pandas 处理数据，R-ggplot2 只负责作图
+8. ~~rmats --readLength 服务器是 149，应该为 150~~
+   149 会将 reads 数小于 149 的过滤掉；测试发现会过滤掉绝大部分
+9. Step9 总文件根本没有 2.mapping/hisat2_sorter.bam 这个文件，本地要报错，服务器不报错；echo，rmatsplot 的参数都要改
+10. ~~rmatsplot 服务器和本地版本一致，但是本地 python3 缺少了某个模块；服务器是 python2~~
+11. Step 10 rush 改为 parallel，后者用的人很多
+
+### miRNA
+
+1. ~~conf 文件 DB_version Soybean 有好多个~~
+   ~~gene_descript 这个是啥，没查到~~
+   ~~物种缩写之类的有官网查吗；物种的数字编号是啥，用脚本说模块没有，环境不对~~
+   ~~ncRNA_TargetGene_analysis = false 这步是默认非吗~~
+2. Step_4_RepeatMasker.sh 运行过慢
+   该软件分两步，第一步比对，第二部整理结果；慢的是第二步，可拆分数据，分成多个小份，先串行跑比对，然后并行跑整理，最后合并结果
+   拆分会造成重复序列出现在不同的小份数据中，整理后会出现同一序列出现多次在 repeat 的地方 
+   搞不懂不去重跑一个样本，和分成小份有啥区别
+
+### 参考数据
+
+1. 基因组和注释文件选择问题，以及不同软件的匹配度相关性
+
+## 想法
+
+1. 统计数据用 wc 数个数，然后汇总
+
+
+
 ## 转录组分析
 
 **步骤**
@@ -539,30 +1108,61 @@ conda env export --from-history
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
 	// same ids are connected.
-	"Snakemake 标准模板": {
-		"prefix": "rule",
+"Snakemake Single": {
+    	"prefix": "rule-single",
+    	"body": [
+        	"rule ${1:rule_name}:",
+        	"    input:",
+        	"        \"${2:path/to/input}\"",
+        	"    output:",
+        	"        \"${3:path/to/output}\"",
+        	"    log:",
+        	"        \"${4:log/to/log}\"",
+        	"    threads: ${5:1}",
+        	"    shell:",
+        	"        \"${6:command} {input} {output} 2> {log}\"",
+        	"$0"
+    	],
+    	"description": "Snakemake Single Shell"
+	},	
+"Snakemake Multiple": {
+		"prefix": "rule-multiple",
 		"body": [
 			"rule ${1:rule_name}:",
 			"    input:",
 			"        \"${2:path/to/input}\"",
 			"    output:",
 			"        \"${3:path/to/output}\"",
-			"    params:",
-			"        extra=\"\"",
 			"    log:",
-			"        \"${4:path/to/log}\"",
+			"        \"${4:log/to/log}\"",
 			"    threads: 1",
-			"    resources:",
-			"        mem_mb=1000",
 			"    shell:",
 			"        \"\"\"",
-			"        ${5:command} {input} {output} {params.extra} 2> {log}",
+			"        ${5:command} {input} {output} 2> {log}",
 			"        \"\"\"",
 			"$0"
 		],
-		"description": "Snakemake 标准模板"
+		"description": "Snakemake Multiple Shell"
 	},
-
+	"Snakemake R/Py_脚本": {
+		"prefix": "rule-script",
+		"body": [
+			"rule ${1:rule_name}:",
+			"    input:",
+			"        \"${2:path/to/input}\"",
+			"    output:",
+			"        \"${3:path/to/output}\"",
+			"    log:",
+			"        \"${4:log/to/log}\"",
+			"    script:",
+			"        \"\"\"",
+			"        scrpts/your_script.py/R 2> {log}",
+			"        \"\"\"",
+			"$0"
+		],
+		"description": "Snakemake R/Py_脚本"
+	},
+}
 ~~~
 
 **难点**
