@@ -1,6 +1,6 @@
 ## ==第一要素: 使用绝对路径==
 
-测序时多个样本在凑在一条 lane 上跑，通过原始测序数据中的 Index_i5 Index_i7 不同的组合能识别不同样本，用于下机时拆分样本
+测序多个样本凑一条 lane 跑，通过接头 Index_i5 Index_i7 不同的组合区分不同样本，用于下机拆分样本
 
 adapter 用于质控时的接头？
 
@@ -147,8 +147,6 @@ conda env export --from-history
 硬链接: 文件副本, 无独立 incode, 必须在同一系统文件下创建, 源文件必须存在且不能为目录
 软链接: 包含独立 incode, 指向源文件
 
-
-
 ---
 
 ## Python
@@ -168,8 +166,6 @@ python sys.py haha ouha hehe
 ~~~
 
 文件 读取F1, F2, F3; 写入out; 读取后直接file1=F1.read(), anno=file.split()
-
-![image-20260411234738824](../Users/15303/Desktop/image-20260411234738824.png)
 
 ### 字典
 
