@@ -1,5 +1,3 @@
-## 流程
-
 ~~~bash
 # ln(link files) -s 创建软链接, 链接指向源文件
 ~~~
@@ -18,7 +16,7 @@
 
 ---
 
-### 宏基因组
+## 宏基因组
 
 0. 改名：测序名称→样本名称
 1. 质控：**fastq** 过滤低质量 reads 和测序接头；**kneaddata** 过滤重复序列
@@ -94,7 +92,7 @@ python /Data_all/script/Metagene/bin/Card_function.py /Data_all/Databases/Card_d
 # NMDS: Non-metric Multidimensional Scaling
 ~~~
 
-### 小RNA
+## miRNA
 
 从 miRNA 入手分析 sRNA 原因：占比大；易建库；公共数据库维护好；生信分析快且容易
 
@@ -110,15 +108,6 @@ python /Data_all/script/Metagene/bin/Card_function.py /Data_all/Databases/Card_d
 10. 靶基因预测
 11. GO/KEGG 富集
 12. miRNA-target 调控网络
-
-==/data3/Data_All== 用单独的数据库
-
-#### 准备数据
-
-1. 参考基因组 https://ftp.ensembl.org/pub
-2. 注释 gtf https://ftp.ensembl.org/pub
-3. Functional_annotation/
-4. 测序数据
 
 **概念**
 
@@ -146,7 +135,105 @@ python /Data_all/script/Metagene/bin/Card_function.py /Data_all/Databases/Card_d
 
 成熟 miRNA 是 22nt，没有二级结构，要根据二级结构预测miRNA，就要找到有发夹结构的 miRNA 前体
 
-## 转录组分析
+**gfold**：广义 Fold Change 对 RNA-Seq 中的差异表达基因排序，无重复时尤其适合
+
+### Question
+
+- [ ] 当前版本 miRNA 前提序列和成熟序列都太老旧，已知 miRNA 定量时 miRDeep2.pl 参数要加 -P，预测可以不用
+  但是，第六步，加了 -P 后，将加 -P 前后的两个表合起来，总共470行，排序去重后，还有370行，说明有问题
+- [x] gfold 运行报错：error while loading shared libraries: libgsl.so.0: cannot open shared object file: No such file or directory
+  在环境目录下 lib 文件夹：ln libgsl.so.25.1.0* libgsl.so.0 即可成功，后续出问题需注意！
+
+## Metagene
+
+**kneaddata**
+
+~~~bash
+# --trimmomatic [PATH]
+which trimmomatic #/home/zhangxuejie/miniconda3/envs/Metagene/bin/trimmomatic
+## 参数为 /home/zhangxuejie/miniconda3/envs/Metagene/share/trimmomatic-0.40-0/
+~~~
+
+**kneaddata_read_count_table**
+
+~~~bash
+# 生成的报告 stat，第一列按制表符分割，不知是否会影响报告
+#Sample	raw	pair1	raw	pair2	trimmed	pair1	trimmed	pair2	trimmed	orphan1	trimmed	orphan2
+~~~
+
+**megahit**
+
+~~~bash
+# --presets meta-large 会覆盖其他 k-list k-skep 等参数
+~~~
+
+==失败，本地电脑不好搞宏基因组组装==
+
+**为什么要组装**
+
+|            | 不组装                | 组装                                       |
+| ---------- | --------------------- | ------------------------------------------ |
+| 数据库比对 | 150bp，不能精确到物种 | 长片段，可精确比对                         |
+| 聚类分析   | 各自为阵，没法看联系  | 联合分析同一类细菌的某个共同基因作用       |
+| 完整性     | 基因片段              | 包含起始和终止密码子的完整基因，可分析功能 |
+
+## 有参转录组分析（小鼠为例）
+
+0. 改名：测序名称→样本名称
+1. 质控：**fastq** 过滤低质量 reads 和测序接头
+2. 比对：**hisat2-build** 把基因组 fasta 建库输出 **ht2** 结尾的文件；**hisat2** 将质控后的基因比对到建库后的文件，输出 **sam** 文件；**samtools** 对 sam 排序转换输出 **bam** 文件，然后对 bam 建索引输出 **bai** 文件 
+3. 量化：**subread** 软件下 **featureCounts** 对排序后 bam 量化，生成
+
+---
+
+### 数据准备
+
+~~~bash
+# 配置文件，脚本
+cp -r /Data_all/script/Reference_transcriptome/V1/{bin/,cmd,Transcriptome.conf}
+
+# 修改配置文件
+数据库路径 /Data_all/GenomicDatabases/Mouse/
+数据库版本 Mus_musculus.GRCm39.113
+基因组 /Data_all/GenomicDatabases/Mouse/Ensembl/genome.fa
+注释 /Data_all/GenomicDatabases/Mouse/Ensembl/genome.gtf
+功能注释 /Data_all/GenomicDatabases/Mouse/Ensembl/Functional_annotation/ #包含各种蛋白数据库
+id_name /Data_all/GenomicDatabases/Mouse/Ensembl/gene_name.txt #名字与id对应表
+taxonomy 10090 #NCBI 分类号
+gene_type SYMBOL
+Species mmu
+~~~
+
+- [ ] Functional_annotation.conf 是干嘛的，分类号在 miRNA 第四步 RepeatMasker 使用替代了 species，好像更快
+- [ ] NCBI 分类号，怎么查，用在流程哪个地方
+- [ ] gene_type SYMBOL；Species mmu 这俩干嘛用的
+
+**小鼠 GTF 注释文件**
+
+一个基因可含有多个转录本
+
+| seqname | source | feature    | start    | end      | score | strand | frame | attributes                                                   |
+| ------- | ------ | ---------- | -------- | -------- | ----- | ------ | ----- | ------------------------------------------------------------ |
+| 1       | havana | gene       | 43781121 | 43783055 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; |
+| 1       | havana | transcript | 43781121 | 43783055 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
+| 1       | havana | exon       | 43782986 | 43783055 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; exon_number "1"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001334242"; exon_version "2"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
+| 1       | havana | exon       | 43781121 | 43781266 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; exon_number "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001327336"; exon_version "2"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
+| 1       | havana | transcript | 43782744 | 43783012 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
+| 1       | havana | exon       | 43782744 | 43783012 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; exon_number "1"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001328607"; exon_version "2"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
+
+featureCounts -t 选第三列中某个特征进行定量 -g 选第九列某个特征进行定量(张老师？)
+
+**可变剪切**
+
+|      |                           |                |
+| ---- | ------------------------- | -------------- |
+| SE   | Skippedexon               | 外显子跳跃     |
+| A5SS | Alternative5' splice site | 5’端可变剪切   |
+| A3SS | Alternative3' splice site | 3’端可变剪切   |
+| MXE  | Mutually exclusive exons  | 互斥可变外显子 |
+| RT   | Retainedintron            | 内含子保留     |
+
+### 转录组分析副
 
 **步骤**
 
@@ -262,92 +349,3 @@ tpm = exp(log(fpkm) - log(sum(fpkm)) + log(1e6))
 
 write.table(fCountsList$stat, outStatsFilePath, sep="\t", col.names=FALSE, row.names=FALSE, quote=FALSE)
 ~~~
-
-## Metagene
-
-**kneaddata**
-
-~~~bash
-# --trimmomatic [PATH]
-which trimmomatic #/home/zhangxuejie/miniconda3/envs/Metagene/bin/trimmomatic
-## 参数为 /home/zhangxuejie/miniconda3/envs/Metagene/share/trimmomatic-0.40-0/
-~~~
-
-**kneaddata_read_count_table**
-
-~~~bash
-# 生成的报告 stat，第一列按制表符分割，不知是否会影响报告
-#Sample	raw	pair1	raw	pair2	trimmed	pair1	trimmed	pair2	trimmed	orphan1	trimmed	orphan2
-~~~
-
-**megahit**
-
-~~~bash
-# --presets meta-large 会覆盖其他 k-list k-skep 等参数
-~~~
-
-==失败，本地电脑不好搞宏基因组组装==
-
-**为什么要组装**
-
-|            | 不组装                | 组装                                       |
-| ---------- | --------------------- | ------------------------------------------ |
-| 数据库比对 | 150bp，不能精确到物种 | 长片段，可精确比对                         |
-| 聚类分析   | 各自为阵，没法看联系  | 联合分析同一类细菌的某个共同基因作用       |
-| 完整性     | 基因片段              | 包含起始和终止密码子的完整基因，可分析功能 |
-
-## 有参转录组分析（小鼠为例）
-
-0. 改名：测序名称→样本名称
-1. 质控：**fastq** 过滤低质量 reads 和测序接头
-2. 比对：**hisat2-build** 把基因组 fasta 建库输出 **ht2** 结尾的文件；**hisat2** 将质控后的基因比对到建库后的文件，输出 **sam** 文件；**samtools** 对 sam 排序转换输出 **bam** 文件，然后对 bam 建索引输出 **bai** 文件 
-3. 量化：**subread** 软件下 **featureCounts** 对排序后 bam 量化，生成
-
----
-
-### 数据准备
-
-~~~bash
-# 配置文件，脚本
-cp -r /Data_all/script/Reference_transcriptome/V1/{bin/,cmd,Transcriptome.conf}
-
-# 修改配置文件
-数据库路径 /Data_all/GenomicDatabases/Mouse/
-数据库版本 Mus_musculus.GRCm39.113
-基因组 /Data_all/GenomicDatabases/Mouse/Ensembl/genome.fa
-注释 /Data_all/GenomicDatabases/Mouse/Ensembl/genome.gtf
-功能注释 /Data_all/GenomicDatabases/Mouse/Ensembl/Functional_annotation/ #包含各种蛋白数据库
-id_name /Data_all/GenomicDatabases/Mouse/Ensembl/gene_name.txt #名字与id对应表
-taxonomy 10090 #NCBI 分类号
-gene_type SYMBOL
-Species mmu
-~~~
-
-- [ ] Functional_annotation.conf 是干嘛的，分类号在 miRNA 第四步 RepeatMasker 使用替代了 species，好像更快
-- [ ] NCBI 分类号，怎么查，用在流程哪个地方
-- [ ] gene_type SYMBOL；Species mmu 这俩干嘛用的
-
-**小鼠 GTF 注释文件**
-
-一个基因可含有多个转录本
-
-| seqname | source | feature    | start    | end      | score | strand | frame | attributes                                                   |
-| ------- | ------ | ---------- | -------- | -------- | ----- | ------ | ----- | ------------------------------------------------------------ |
-| 1       | havana | gene       | 43781121 | 43783055 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; |
-| 1       | havana | transcript | 43781121 | 43783055 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
-| 1       | havana | exon       | 43782986 | 43783055 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; exon_number "1"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001334242"; exon_version "2"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
-| 1       | havana | exon       | 43781121 | 43781266 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; exon_number "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001327336"; exon_version "2"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
-| 1       | havana | transcript | 43782744 | 43783012 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
-| 1       | havana | exon       | 43782744 | 43783012 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; exon_number "1"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001328607"; exon_version "2"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
-
-featureCounts -t 选第三列中某个特征进行定量 -g 选第九列某个特征进行定量(张老师？)
-
-**可变剪切**
-
-|      |                           |                |
-| ---- | ------------------------- | -------------- |
-| SE   | Skippedexon               | 外显子跳跃     |
-| A5SS | Alternative5' splice site | 5’端可变剪切   |
-| A3SS | Alternative3' splice site | 3’端可变剪切   |
-| MXE  | Mutually exclusive exons  | 互斥可变外显子 |
-| RT   | Retainedintron            | 内含子保留     |
