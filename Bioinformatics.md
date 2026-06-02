@@ -68,6 +68,17 @@ kill ID
 ls *gz|awk -F '.part' '{print$1}'
 ~~~
 
+~~~bash
+# 创建文件和目录默认权限
+umask
+
+# 把其他人加到权限里来
+
+# 
+~~~
+
+
+
 ### 文件操作
 
 ~~~bash
