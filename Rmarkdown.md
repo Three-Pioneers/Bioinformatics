@@ -1,4 +1,4 @@
-# R Markdown 自动生成 HTML 报告学习文档：初学者注释版
+# R Markdown 自动生成 HTML 报告学习文档
 
 ## 学习目标
 
@@ -76,6 +76,22 @@ install.packages("knitr")
 install.packages("kableExtra")
 install.packages("DT")
 ```
+
+安装失败：R 版本太新，需要从源码安装包
+**Linux**
+
+~~~bash
+sudo apt install build-essential libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libfreetype6-dev
+
+# 选择清华镜像源
+options(repos = c(CRAN = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/"))
+
+# 验证是否生效
+getOption("repos")
+# 为啥我从 Tools 换不行？
+~~~
+
+
 
 ## 2. 命令解释
 
