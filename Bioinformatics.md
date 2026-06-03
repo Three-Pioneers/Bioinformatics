@@ -1,11 +1,5 @@
 ## ==第一要素: 使用绝对路径==
 
-测序多个样本凑一条 lane 跑，通过接头 Index_i5 Index_i7 不同的组合区分不同样本，用于下机拆分样本
-
-adapter 用于质控时的接头？
-
----
-
 # 文件格式
 
 ## BAM
@@ -36,20 +30,112 @@ adapter 用于质控时的接头？
 
 **第十列**：read 的序列
 
+# Snakemake
+
+**通配符**
+
+> 由出反向推导输入获得
+>
+> 自由选择，统一规则下相同就行
+
+**运行**
+
+> 输出文件不含通配符的 rules 被执行时，若输入含通配符，必须指定通配符的值？
+>
+> 中间规则改变，被影响的所有 rules 都会重新运行
+
+**参数**
+
+~~~bash
+--forceall	# 全部强制执行
+--forcerun	# 好像没啥用
+--cores all	# 设置几都跑慢
+# threads 不是越多越好，最好多任务，小线程，找到每个软件最佳线程数
+~~~
+
+**Snakefile**
+
+~~~bash
+# Ctrl + shift + p，搜索配置代码片段，新建，名字添 Snakemake。粘贴下列代码
+{
+	// Place your snippets for snakemake here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+"Snakemake Single": {
+    	"prefix": "rule-single",
+    	"body": [
+        	"rule ${1:rule_name}:",
+        	"    input:",
+        	"        \"${2:path/to/input}\"",
+        	"    output:",
+        	"        \"${3:path/to/output}\"",
+        	"    log:",
+        	"        \"${4:log/to/log}\"",
+        	"    threads: ${5:1}",
+        	"    shell:",
+        	"        \"${6:command} {input} {output} 2> {log}\"",
+        	"$0"
+    	],
+    	"description": "Snakemake Single Shell"
+	},	
+"Snakemake Multiple": {
+		"prefix": "rule-multiple",
+		"body": [
+			"rule ${1:rule_name}:",
+			"    input:",
+			"        \"${2:path/to/input}\"",
+			"    output:",
+			"        \"${3:path/to/output}\"",
+			"    log:",
+			"        \"${4:log/to/log}\"",
+			"    threads: 1",
+			"    shell:",
+			"        \"\"\"",
+			"        ${5:command} {input} {output} 2> {log}",
+			"        \"\"\"",
+			"$0"
+		],
+		"description": "Snakemake Multiple Shell"
+	},
+	"Snakemake R/Py_脚本": {
+		"prefix": "rule-script",
+		"body": [
+			"rule ${1:rule_name}:",
+			"    input:",
+			"        \"${2:path/to/input}\"",
+			"    output:",
+			"        \"${3:path/to/output}\"",
+			"    log:",
+			"        \"${4:log/to/log}\"",
+			"    script:",
+			"        \"\"\"",
+			"        scrpts/your_script.py/R 2> {log}",
+			"        \"\"\"",
+			"$0"
+		],
+		"description": "Snakemake R/Py_脚本"
+	},
+}
+~~~
+
+**难点**
+
+> 双端测序数据建立软链接，以及单端测序建立软链接以及后续质控和比对的参数设置问题
+
 # Linux
 
 ### 基础命令
 
 ~~~bash
-# ls(list directory contents)
-## 权限	硬链接	创建人		创建人所在组	大小	最后修改时间	相对路径
+# 权限	硬链接	创建人		创建人所在组	大小	最后修改时间	相对路径
 drwxrwxrwx 1 zhangxuejie zhangxuejie 4096 Mar 10 22:40 Training/
 
+# ls(list directory contents)
 # pwd(print working directory)
-
 # cd(change directory)
-# 刚才目录
-cd -
+
+cd -	# 刚才目录
 ~~~
 
 ### 文件操作
@@ -99,15 +185,9 @@ ls *gz|awk -F '.part' '{print$1}'
 ~~~
 
 ~~~bash
-# 创建文件和目录默认权限
-umask
-
-# 把其他人加到权限里来
-
-# 
+# 创建文件和目录默认权限，所有人都在所属组，所以就可以随意使用
+umask 0002
 ~~~
-
-
 
 ### 文件操作
 
@@ -658,95 +738,3 @@ pheatmap(log2(top_de + 1))
 ### 输入类型严格：ENTREZ
 ~~~
 
-# Snakemake
-
-**通配符**
-
-> 由出反向推导输入获得
->
-> 自由选择，统一规则下相同就行
-
-**运行**
-
-> 输出文件不含通配符的 rules 被执行时，若输入含通配符，必须指定通配符的值？
->
-> 中间规则改变，被影响的所有 rules 都会重新运行
-
-**参数**
-
-~~~bash
---forceall	# 全部强制执行
---forcerun	# 好像没啥用
---cores all	# 设置几都跑慢
-# threads 不是越多越好，最好多任务，小线程，找到每个软件最佳线程数
-~~~
-
-**Snakefile**
-
-~~~bash
-# Ctrl + shift + p，搜索配置代码片段，新建，名字添 Snakemake。粘贴下列代码
-{
-	// Place your snippets for snakemake here. Each snippet is defined under a snippet name and has a prefix, body and 
-	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
-	// same ids are connected.
-"Snakemake Single": {
-    	"prefix": "rule-single",
-    	"body": [
-        	"rule ${1:rule_name}:",
-        	"    input:",
-        	"        \"${2:path/to/input}\"",
-        	"    output:",
-        	"        \"${3:path/to/output}\"",
-        	"    log:",
-        	"        \"${4:log/to/log}\"",
-        	"    threads: ${5:1}",
-        	"    shell:",
-        	"        \"${6:command} {input} {output} 2> {log}\"",
-        	"$0"
-    	],
-    	"description": "Snakemake Single Shell"
-	},	
-"Snakemake Multiple": {
-		"prefix": "rule-multiple",
-		"body": [
-			"rule ${1:rule_name}:",
-			"    input:",
-			"        \"${2:path/to/input}\"",
-			"    output:",
-			"        \"${3:path/to/output}\"",
-			"    log:",
-			"        \"${4:log/to/log}\"",
-			"    threads: 1",
-			"    shell:",
-			"        \"\"\"",
-			"        ${5:command} {input} {output} 2> {log}",
-			"        \"\"\"",
-			"$0"
-		],
-		"description": "Snakemake Multiple Shell"
-	},
-	"Snakemake R/Py_脚本": {
-		"prefix": "rule-script",
-		"body": [
-			"rule ${1:rule_name}:",
-			"    input:",
-			"        \"${2:path/to/input}\"",
-			"    output:",
-			"        \"${3:path/to/output}\"",
-			"    log:",
-			"        \"${4:log/to/log}\"",
-			"    script:",
-			"        \"\"\"",
-			"        scrpts/your_script.py/R 2> {log}",
-			"        \"\"\"",
-			"$0"
-		],
-		"description": "Snakemake R/Py_脚本"
-	},
-}
-~~~
-
-**难点**
-
-> 双端测序数据建立软链接

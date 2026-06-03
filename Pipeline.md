@@ -1,3 +1,7 @@
+测序多个样本凑一条 lane 跑，通过接头 Index_i5 Index_i7 不同的组合区分不同样本，用于下机拆分样本
+
+adapter 用于质控时的接头？
+
 ~~~bash
 # ln(link files) -s 创建软链接, 链接指向源文件
 ~~~
