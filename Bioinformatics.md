@@ -6,7 +6,37 @@ adapter 用于质控时的接头？
 
 ---
 
-## Linux
+# 文件格式
+
+## BAM
+
+==miRNA 为啥还分正负链==
+
+**第一列**：Fastq ID
+
+**第二列**：FLAG
+
+> 0：该 read 是一条比对到参考基因组正链的单端测序 read
+>
+> 16：该 read 的反向互补序列能比对到参考基因组上
+
+**第三列**：染色体
+
+**第四列**：比对到染色体上的位置，以第三列染色体第1位往后计算
+
+**第五列**：MAPQ比对质量值。0 表示比对到参考基因组多个位置，60 表示在参考基因组只有一个匹配
+
+**第六列**：M-匹配。22M 表示 22 个碱基全部匹配；128M2I11M 128个碱基匹配，2 个插入，11 个碱基匹配上
+
+**第七列**：第二次匹配的位置，* 表示没有完全一模一样的参考序列，= 表示参考基因组与 read 一模一样
+
+**第八列**：mate 的比对位置，没有 mate 则为 0
+
+**第九列**：序列模板长度，==正负号==
+
+**第十列**：read 的序列
+
+# Linux
 
 ### 基础命令
 
@@ -160,7 +190,7 @@ conda env export --from-history
 
 ---
 
-## Python
+# Python
 
 ### sys
 
@@ -191,7 +221,7 @@ print(dict.keys())
 
 ---
 
-## Biology
+# Biology
 
 **[Ensembl 数据库](https://ftp.ebi.ac.uk/pub/ensemblorganisms/)**
 
@@ -239,7 +269,7 @@ print(dict.keys())
 
 ---
 
-## Quertion
+# Quertion
 
 **质控**
 
@@ -317,7 +347,7 @@ STAR --runThreadN 12 --runMode genomeGenerate --genomeDir /data/users/minmingw/A
 
 ---
 
-## R
+# R
 
 **Rstudio**：zoom=75%；Editor font size=20
 
@@ -628,7 +658,7 @@ pheatmap(log2(top_de + 1))
 ### 输入类型严格：ENTREZ
 ~~~
 
-## Snakemake
+# Snakemake
 
 **通配符**
 
