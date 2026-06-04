@@ -10,10 +10,8 @@ with open("test.fa", "w") as FW:
 ~~~
 
 ~~~bash
-vi genome.fa
-# /> 查找染色体，到达 >MT 行后，推出编辑模式
-dG
-# 此法慢
+vi genome.fa	# /> 查找染色体，到达 >MT 行后，推出编辑模式
+dG	# 此法慢
 ~~~
 
 ### 提取BED（AI 给的，有待学习）
@@ -133,18 +131,6 @@ with open("genome.gff3", "r") as FR:
                 FW.write(B[1]+"\t"+C[1]+"\n")
 ~~~
 
-### 功能注释
-
-**输入文件**
-
-1. 全基因组 fa
-2. 全基因组 gff3
-
-**步骤**
-
-1. 转化 gff3 文件为 gtf，根据提取脚本，将全基因组 fa 中的基因序列提出来 gene.fa
-2. 提取 gff3 第八列中的 gene name 和 gene id 对应表
-
 ### 修改 PeakAnno.txt gene_id 列
 
 ~~~python
@@ -159,5 +145,33 @@ for line in fr[1:] :
         FW.write(A[0]+"\t"+B+"\t"+A[2]+"\t"+A[3])
     else:
         FW.write(line)
+~~~
+
+### 统计测序数据的测序深度
+
+~~~python
+import sys
+
+Fastq = sys.argv[1]
+out = Fastq.split(".")[0]+"_SequencingDepth.txt"
+
+with open(Fastq, "r") as FR:
+    fr = FR.read()
+    A = fr.split("@")
+    SUM = {}
+    for i in A[1:]:
+        B = i.split("\n")[1]
+        if len(B) not in SUM.keys():
+            SUM[len(B)] = 1
+        else:
+            SUM[len(B)] = SUM[len(B)] + 1
+
+with open(out, "w") as FW:
+    a = 0
+    for i in SUM.keys():
+        a = SUM[i] + a
+        FW.write("len:"+str(i)+"\tnum:"+str(SUM[i])+"\n")
+    print(a)
+    print(SUM.keys())
 ~~~
 

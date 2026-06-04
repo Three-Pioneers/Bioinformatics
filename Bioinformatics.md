@@ -1,35 +1,3 @@
-## ==第一要素: 使用绝对路径==
-
-# 文件格式
-
-## BAM
-
-==miRNA 为啥还分正负链==
-
-**第一列**：Fastq ID
-
-**第二列**：FLAG
-
-> 0：该 read 是一条比对到参考基因组正链的单端测序 read
->
-> 16：该 read 的反向互补序列能比对到参考基因组上
-
-**第三列**：染色体
-
-**第四列**：比对到染色体上的位置，以第三列染色体第1位往后计算
-
-**第五列**：MAPQ比对质量值。0 表示比对到参考基因组多个位置，60 表示在参考基因组只有一个匹配
-
-**第六列**：M-匹配。22M 表示 22 个碱基全部匹配；128M2I11M 128个碱基匹配，2 个插入，11 个碱基匹配上
-
-**第七列**：第二次匹配的位置，* 表示没有完全一模一样的参考序列，= 表示参考基因组与 read 一模一样
-
-**第八列**：mate 的比对位置，没有 mate 则为 0
-
-**第九列**：序列模板长度，==正负号==
-
-**第十列**：read 的序列
-
 # Snakemake
 
 **通配符**
@@ -301,55 +269,9 @@ print(dict.keys())
 
 ---
 
-# Biology
-
-**[Ensembl 数据库](https://ftp.ebi.ac.uk/pub/ensemblorganisms/)**
-
-基因组 FASTA
-
-|      top_level.fa      |               primary_assembly.fa                |   *_rm.fa    |   *_sm.fa    |
-| :--------------------: | :----------------------------------------------: | :----------: | :----------: |
-| 所有染色体和未定位序列 | 剔除冗余和易混淆可变区域（haplotypes / patches） | 重复序列→“N” | 重复序列小写 |
-
----
-
-### Concept
-
-|                                                              |                                                              |
-| :----------------------------------------------------------- | :----------------------------------------------------------- |
-| circRNA：Circular RNA                                        | mRNA前体反向剪接形成，由共价键连接，没有5'帽子和3'尾巴的闭合环状不编码RNA，稳定不易降解 |
-| RNA_denovo                                                   | 全转录组                                                     |
-| Metagene                                                     | 宏基因组，指以特定生物环境整体微生物群落作研究对象，通过高通量测序，获得的微生物基因信息的总和 |
-| Contig                                                       | 基因组测序中由重叠 DNA 片段拼接形成的连续序列，是基因组组装的最小单元 |
-| Sequence Identity                                            | 两条序列之间的相似程度                                       |
-| PPI：Protein-Protein Interaction Networks                    | 通过蛋白之间的彼此的相互作用构成，来参与生物信号传递、基因表达调控、能量与物质代谢和细胞周期调控等生命过程 |
-| ORF：Open Reading Frame                                      | DNA 或 RNA 序列中，从起始密码子开始，到下一个终止密码子结束的一段连续的核苷酸序列 |
-|                                                              | 从起始密码子（AUG）对应的序列（ATG）开始，三个碱基一组向后延伸，找到第一个终止密码子（UAG、UGA、UAA）对应的序列终止的连续序列，是理论上的蛋白编码区 |
-| GSEA：Gene Set Enrichment Analysis                           | 预估一个预定基因集的基因在与表型相关性排序的基因表中的分布趋势，以此来判断其对表型变化的贡献 |
-| 可变剪切：Differential Splicing / 选择性剪切：Alternative Splicing | 剪切未成熟 mRNA 的内含子，生成保留外显子的成熟 mRNA 的过程   |
-|                                                              |                                                              |
-
----
-
-### Database
-
-|          |                                                  |                                                              |
-| -------- | ------------------------------------------------ | ------------------------------------------------------------ |
-| Card     | The Comprehensive Antibiotic Resistance Database | A bioinformatic database of resistance genes, their products and associated phenotypes |
-| CAZy     | The Carbohydrate-Active enZYmes Database         | The CAZy database describes the families of structurally-related catalytic and carbohydrate-binding modules (or functional domains) of enzymes that degrade, modify, or create glycosidic bonds |
-| COG      | Database of Clusters of Orthologous Genes        |                                                              |
-| EggNOG   | Orthology predictions and functional annnotaion  | A database of orthology relationships, functional annotation, and gene evolutionary histories |
-| GO       | Gene Ontology Resource                           | The Gene Ontology (GO) knowledgebase is the world’s largest source of information on the functions of genes |
-| KEGG     | Kyoto Encyclopedia of Genes and Genomes          | KEGG is a database resource for understanding high-level functions and utilities of biological systems |
-| NR       | Non-redundant protein sequences                  |                                                              |
-| Pfam     | Protein Families Database                        | The Pfam database is a large collection of protein families, each represented by multiple sequence alignments and hidden Markov models (HMMs) |
-| PHI-base | Pathogen Host Interactions                       | From mutant genes to phenotypes! The mission of PHI-base is to provide expertly curated molecular and biological information on genes proven to affect the outcome of pathogen-host interactions. Information is also given on the target sites of some anti-infective chemistries |
-| VFDB     | Virulence Factors of Bacterial Pathogens         | The virulence factor database (VFDB) is an integrated and comprehensive online resource for curating information about virulence factors of bacterial pathogens |
-| UniProt  | Universal Protein Resource                       | UniProt is the world’s leading high-quality, comprehensive and freely accessible resource of protein sequence and functional information |
-
----
-
 # Quertion
+
+## Pipeling
 
 **质控**
 
@@ -424,6 +346,22 @@ STAR --runThreadN 12 --runMode genomeGenerate --genomeDir /data/users/minmingw/A
 ### 参考数据
 
 1. 基因组和注释文件选择问题，以及不同软件的匹配度相关性
+
+## Software
+
+**samtools index**
+
+~~~bash
+# 王道文 RIP 测序_20260604，由于索引长度过长，无法建立 bai 索引
+[E::hts_idx_check_range] Region 536877267..536877401 cannot be stored in a bai index. Try using a csi index
+[E::sam_index] Read 'E250146742L1C018R03903964548' with ref_name='Chr1A', ref_length=598660471, flags=99, pos=536877268 cannot be indexed
+samtools index: failed to create index for "TaGW2IP1G_IP_sorted.bam": Numerical result out of range
+
+# 建立 cai 索引
+samtools index -c <sample_sorted.sam>
+~~~
+
+
 
 ---
 

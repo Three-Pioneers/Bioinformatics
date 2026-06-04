@@ -1,3 +1,5 @@
+## ==第一要素: 使用绝对路径==
+
 测序多个样本凑一条 lane 跑，通过接头 Index_i5 Index_i7 不同的组合区分不同样本，用于下机拆分样本
 
 adapter 用于质控时的接头？
@@ -353,3 +355,49 @@ tpm = exp(log(fpkm) - log(sum(fpkm)) + log(1e6))
 
 write.table(fCountsList$stat, outStatsFilePath, sep="\t", col.names=FALSE, row.names=FALSE, quote=FALSE)
 ~~~
+
+# 生物基础
+
+**[Ensembl 数据库](https://ftp.ebi.ac.uk/pub/ensemblorganisms/)**
+
+基因组 FASTA
+
+|      top_level.fa      |               primary_assembly.fa                |   *_rm.fa    |   *_sm.fa    |
+| :--------------------: | :----------------------------------------------: | :----------: | :----------: |
+| 所有染色体和未定位序列 | 剔除冗余和易混淆可变区域（haplotypes / patches） | 重复序列→“N” | 重复序列小写 |
+
+---
+
+### Concept
+
+|                                                              |                                                              |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| circRNA：Circular RNA                                        | mRNA前体反向剪接形成，由共价键连接，没有5'帽子和3'尾巴的闭合环状不编码RNA，稳定不易降解 |
+| RNA_denovo                                                   | 全转录组                                                     |
+| Metagene                                                     | 宏基因组，指以特定生物环境整体微生物群落作研究对象，通过高通量测序，获得的微生物基因信息的总和 |
+| Contig                                                       | 基因组测序中由重叠 DNA 片段拼接形成的连续序列，是基因组组装的最小单元 |
+| Sequence Identity                                            | 两条序列之间的相似程度                                       |
+| PPI：Protein-Protein Interaction Networks                    | 通过蛋白之间的彼此的相互作用构成，来参与生物信号传递、基因表达调控、能量与物质代谢和细胞周期调控等生命过程 |
+| ORF：Open Reading Frame                                      | DNA 或 RNA 序列中，从起始密码子开始，到下一个终止密码子结束的一段连续的核苷酸序列 |
+|                                                              | 从起始密码子（AUG）对应的序列（ATG）开始，三个碱基一组向后延伸，找到第一个终止密码子（UAG、UGA、UAA）对应的序列终止的连续序列，是理论上的蛋白编码区 |
+| GSEA：Gene Set Enrichment Analysis                           | 预估一个预定基因集的基因在与表型相关性排序的基因表中的分布趋势，以此来判断其对表型变化的贡献 |
+| 可变剪切：Differential Splicing / 选择性剪切：Alternative Splicing | 剪切未成熟 mRNA 的内含子，生成保留外显子的成熟 mRNA 的过程   |
+|                                                              |                                                              |
+
+---
+
+### Database
+
+|          |                                                  |                                                              |
+| -------- | ------------------------------------------------ | ------------------------------------------------------------ |
+| Card     | The Comprehensive Antibiotic Resistance Database | A bioinformatic database of resistance genes, their products and associated phenotypes |
+| CAZy     | The Carbohydrate-Active enZYmes Database         | The CAZy database describes the families of structurally-related catalytic and carbohydrate-binding modules (or functional domains) of enzymes that degrade, modify, or create glycosidic bonds |
+| COG      | Database of Clusters of Orthologous Genes        |                                                              |
+| EggNOG   | Orthology predictions and functional annnotaion  | A database of orthology relationships, functional annotation, and gene evolutionary histories |
+| GO       | Gene Ontology Resource                           | The Gene Ontology (GO) knowledgebase is the world’s largest source of information on the functions of genes |
+| KEGG     | Kyoto Encyclopedia of Genes and Genomes          | KEGG is a database resource for understanding high-level functions and utilities of biological systems |
+| NR       | Non-redundant protein sequences                  |                                                              |
+| Pfam     | Protein Families Database                        | The Pfam database is a large collection of protein families, each represented by multiple sequence alignments and hidden Markov models (HMMs) |
+| PHI-base | Pathogen Host Interactions                       | From mutant genes to phenotypes! The mission of PHI-base is to provide expertly curated molecular and biological information on genes proven to affect the outcome of pathogen-host interactions. Information is also given on the target sites of some anti-infective chemistries |
+| VFDB     | Virulence Factors of Bacterial Pathogens         | The virulence factor database (VFDB) is an integrated and comprehensive online resource for curating information about virulence factors of bacterial pathogens |
+| UniProt  | Universal Protein Resource                       | UniProt is the world’s leading high-quality, comprehensive and freely accessible resource of protein sequence and functional information |
