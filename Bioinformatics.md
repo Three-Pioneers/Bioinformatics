@@ -690,3 +690,12 @@ pheatmap(log2(top_de + 1))
 ### 输入类型严格：ENTREZ
 ~~~
 
+**VSCode**
+
+~~~bash
+# 不要 Ctrl + / -，容易触发 BUG
+# 要修改配置文件
+"terminal.integrated.fontSize": 18,
+"editor.fontSize": 18
+~~~
+
