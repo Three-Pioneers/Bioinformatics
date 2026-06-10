@@ -4,6 +4,7 @@
 
 1. 先制定输出，反向推导输入以确定通配符的值
 2. 自由选择字符，同一规则下有关联的输入输出通配符相同即可
+3. 输出为目录时，加函数 directory()，输入和 params 不可用
 
 **运行**
 
@@ -43,6 +44,11 @@ rule multiqc_fastp:
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
 	// same ids are connected.
+{
+	// Place your snippets for snakemake here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
 "Snakemake Single": {
     	"prefix": "rule-single",
     	"body": [
@@ -55,7 +61,7 @@ rule multiqc_fastp:
         	"        \"${4:log/to/log}\"",
         	"    threads: ${5:1}",
         	"    shell:",
-        	"        \"${6:command} {input} {output} 2> {log}\"",
+        	"        \"${6:command} {input} {output} > {log} 2>&1\"",
         	"$0"
     	],
     	"description": "Snakemake Single Shell"
@@ -73,13 +79,13 @@ rule multiqc_fastp:
 			"    threads: 1",
 			"    shell:",
 			"        \"\"\"",
-			"        ${5:command} {input} {output} 2> {log}",
+			"        ${5:command} {input} {output} > {log} 2>&1",
 			"        \"\"\"",
 			"$0"
 		],
 		"description": "Snakemake Multiple Shell"
 	},
-	"Snakemake R/Py_脚本": {
+"Snakemake R/Py_脚本": {
 		"prefix": "rule-script",
 		"body": [
 			"rule ${1:rule_name}:",
@@ -91,7 +97,7 @@ rule multiqc_fastp:
 			"        \"${4:log/to/log}\"",
 			"    script:",
 			"        \"\"\"",
-			"        scrpts/your_script.py/R 2> {log}",
+			"        scrpts/your_script.py/R > {log} 2>&1",
 			"        \"\"\"",
 			"$0"
 		],
@@ -690,7 +696,9 @@ pheatmap(log2(top_de + 1))
 ### 输入类型严格：ENTREZ
 ~~~
 
-**VSCode**
+# 工具
+
+## VSCode
 
 ~~~bash
 # 不要 Ctrl + / -，容易触发 BUG
@@ -698,4 +706,10 @@ pheatmap(log2(top_de + 1))
 "terminal.integrated.fontSize": 18,
 "editor.fontSize": 18
 ~~~
+
+## IDM
+
+下载很快但需激活，Github 有脚本可跳激活 https://github.com/WindowsAddict/IDM-Activation-Script
+
+## IGV
 
