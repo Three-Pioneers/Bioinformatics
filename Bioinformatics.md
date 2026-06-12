@@ -44,12 +44,7 @@ rule multiqc_fastp:
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
 	// same ids are connected.
-{
-	// Place your snippets for snakemake here. Each snippet is defined under a snippet name and has a prefix, body and 
-	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
-	// same ids are connected.
-"Snakemake Single": {
+"Snakemake Script/Single": {
     	"prefix": "rule-single",
     	"body": [
         	"rule ${1:rule_name}:",
@@ -84,24 +79,6 @@ rule multiqc_fastp:
 			"$0"
 		],
 		"description": "Snakemake Multiple Shell"
-	},
-"Snakemake R/Py_脚本": {
-		"prefix": "rule-script",
-		"body": [
-			"rule ${1:rule_name}:",
-			"    input:",
-			"        \"${2:path/to/input}\"",
-			"    output:",
-			"        \"${3:path/to/output}\"",
-			"    log:",
-			"        \"${4:log/to/log}\"",
-			"    script:",
-			"        \"\"\"",
-			"        scrpts/your_script.py/R > {log} 2>&1",
-			"        \"\"\"",
-			"$0"
-		],
-		"description": "Snakemake R/Py_脚本"
 	},
 }
 ~~~
@@ -634,6 +611,15 @@ left_join(result, gene_function, by = c("gene_id" = "gene_name")) %>%
 **差异基因的火山图、热图**
 
 ~~~R
+# 绘图保存图片会出现中文字体不在字体库的问题
+# 记事本编辑 R/etc/Rprofile.site，添加下列信息
+
+# 中文显示设置
+Sys.setlocale(category = "LC_ALL", locale = "Chinese")
+windowsFonts(微软雅黑=windowsFont("微软雅黑"))
+options(ggplot2.continuous.colour="viridis")
+theme_set(theme_bw(base_family = "微软雅黑"))
+
 # 准备数据
 library(tidyverse)
 

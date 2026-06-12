@@ -98,6 +98,8 @@ python /Data_all/script/Metagene/bin/Card_function.py /Data_all/Databases/Card_d
 # NMDS: Non-metric Multidimensional Scaling
 ~~~
 
+---
+
 ## miRNA
 
 从 miRNA 入手分析 sRNA 原因：占比大；易建库；公共数据库维护好；生信分析快且容易
@@ -150,6 +152,8 @@ python /Data_all/script/Metagene/bin/Card_function.py /Data_all/Databases/Card_d
 - [x] gfold 运行报错：error while loading shared libraries: libgsl.so.0: cannot open shared object file: No such file or directory
   在环境目录下 lib 文件夹：ln libgsl.so.25.1.0* libgsl.so.0 即可成功，后续出问题需注意！
 
+---
+
 ## Metagene
 
 **kneaddata**
@@ -182,6 +186,8 @@ which trimmomatic #/home/zhangxuejie/miniconda3/envs/Metagene/bin/trimmomatic
 | 数据库比对 | 150bp，不能精确到物种 | 长片段，可精确比对                         |
 | 聚类分析   | 各自为阵，没法看联系  | 联合分析同一类细菌的某个共同基因作用       |
 | 完整性     | 基因片段              | 包含起始和终止密码子的完整基因，可分析功能 |
+
+---
 
 ## 有参转录组分析（小鼠为例）
 
@@ -356,37 +362,70 @@ tpm = exp(log(fpkm) - log(sum(fpkm)) + log(1e6))
 write.table(fCountsList$stat, outStatsFilePath, sep="\t", col.names=FALSE, row.names=FALSE, quote=FALSE)
 ~~~
 
-# 生物基础
+---
+
+## 无参转录组分析（芍药为例）
+
+`/data0_2/2026_06/LiuJiaWei_9_shaoyao_Denovo_transcriptome`
+
+对于没有高质量参考基因组的物种，无参转录组组装通过对 RNA-Seq reads 进行图结构重建、直接恢复转录本，获得完整的转录本集合，芍药（凤丹 Paeonia ostii）的同属不同种 2025 年发布了参考基因组
+
+### 转录本组装
+
+**Trinity** 中三个独立的模块：**Inchworm**、**Chrysalis**、**Butterfly** 分别负责初始 contig 构建、图结构划分和最终转录本解析
+
+**Trinity.fasta**
+
+~~~bash
+>TRINITY_DN31_c0_g1_i1 len=525 path=[1:0-201 2:202-230 3:231-524]
+>TRINITY_DN31_c0_g1_i2 len=892 path=[1:0-201 2:202-230 4:231-891]
+
+TRINITY_DN31_c0	# 对应基因
+g1_i1	# 不同转录本
+len=525	# 转录本长度
+path=[1:0-201 2:202-230 3:231-524]	# 组装路径
+~~~
+
+---
+
+## Concept
+
+**模式物种**：科学家为研究生命现象普遍规律而选定的生物，具有易于实验操作，遗传背景清晰等优点
+
+**转录本**：由一条基因转录形成成熟 RNA 分子，包括编码蛋白质的 mRNA 和非编码 RNA（ncRNA）
+
+**CircRNA（Circular RNA）**：mRNA前体反向剪接形成，由共价键连接，没有5'帽子和3'尾巴的闭合环状不编码 RNA，稳定不易降解
+
+**RNA_denovo**：全转录组
+
+**Metagene**：宏基因组，指以特定生物环境整体微生物群落作研究对象，通过高通量测序，获得的微生物基因信息的总和
+
+**Contig**：基因组测序中由重叠 DNA 片段拼接形成的连续序列，是基因组组装的最小单元
+
+**Scaffold**：测序获得的若干 reads，若能完全拼接，中间没有 gap，则拼接后的序列称 **contig**（连续）；若中间由 gap，但是知道 gap 的长度，则称 **Scaffold**（脚手架）；将 contig 和 scaffold 从长到短进行排列相加，相加长度到总长度一半时的 contig 或 scaffold 的长度即称为 **N50**，N50 越长代表组装质量越好
+
+**Sequence Identity**：两条序列之间的相似程度
+
+**PPI（Protein-Protein Interaction Networks）**：通过蛋白之间的彼此的相互作用构成，来参与生物信号传递、基因表达调控、能量与物质代谢和细胞周期调控等生命过程
+
+==**ORF（Open Reading Frame）**==：DNA 或 RNA 序列中，从起始密码子开始，到下一个终止密码子结束的一段连续的核苷酸序列
+从起始密码子（AUG）对应的序列（ATG）开始，三个碱基一组向后延伸，找到第一个终止密码子（UAG、UGA、UAA）对应的序列终止的连续序列，是理论上的蛋白编码区
+
+==**CDS（Coding Sequence）**==：实际编码蛋白质的序列
+
+**GSEA（Gene Set Enrichment Analysis）**：预估一个预定基因集的基因在与表型相关性排序的基因表中的分布趋势，以此来判断其对表型变化的贡献
+
+**可变剪切（Differential Splicing）**：剪切未成熟 mRNA 的内含子，生成保留外显子的成熟 mRNA 的过程
+
+**nt（ntcleotide，核苷酸）**：描述**单链核酸**中核苷酸的数量
+
+**bp（base pair，碱基对）**：描述**双链核酸**中互补配对的碱基数量，每一对包含两个互补碱基（如 A-T）
+
+---
+
+## Database
 
 **[Ensembl 数据库](https://ftp.ebi.ac.uk/pub/ensemblorganisms/)**
-
-基因组 FASTA
-
-|      top_level.fa      |               primary_assembly.fa                |   *_rm.fa    |   *_sm.fa    |
-| :--------------------: | :----------------------------------------------: | :----------: | :----------: |
-| 所有染色体和未定位序列 | 剔除冗余和易混淆可变区域（haplotypes / patches） | 重复序列→“N” | 重复序列小写 |
-
----
-
-### Concept
-
-|                                                              |                                                              |
-| :----------------------------------------------------------- | :----------------------------------------------------------- |
-| circRNA：Circular RNA                                        | mRNA前体反向剪接形成，由共价键连接，没有5'帽子和3'尾巴的闭合环状不编码RNA，稳定不易降解 |
-| RNA_denovo                                                   | 全转录组                                                     |
-| Metagene                                                     | 宏基因组，指以特定生物环境整体微生物群落作研究对象，通过高通量测序，获得的微生物基因信息的总和 |
-| Contig                                                       | 基因组测序中由重叠 DNA 片段拼接形成的连续序列，是基因组组装的最小单元 |
-| Sequence Identity                                            | 两条序列之间的相似程度                                       |
-| PPI：Protein-Protein Interaction Networks                    | 通过蛋白之间的彼此的相互作用构成，来参与生物信号传递、基因表达调控、能量与物质代谢和细胞周期调控等生命过程 |
-| ORF：Open Reading Frame                                      | DNA 或 RNA 序列中，从起始密码子开始，到下一个终止密码子结束的一段连续的核苷酸序列 |
-|                                                              | 从起始密码子（AUG）对应的序列（ATG）开始，三个碱基一组向后延伸，找到第一个终止密码子（UAG、UGA、UAA）对应的序列终止的连续序列，是理论上的蛋白编码区 |
-| GSEA：Gene Set Enrichment Analysis                           | 预估一个预定基因集的基因在与表型相关性排序的基因表中的分布趋势，以此来判断其对表型变化的贡献 |
-| 可变剪切：Differential Splicing / 选择性剪切：Alternative Splicing | 剪切未成熟 mRNA 的内含子，生成保留外显子的成熟 mRNA 的过程   |
-|                                                              |                                                              |
-
----
-
-### Database
 
 |          |                                                  |                                                              |
 | -------- | ------------------------------------------------ | ------------------------------------------------------------ |
@@ -401,3 +440,13 @@ write.table(fCountsList$stat, outStatsFilePath, sep="\t", col.names=FALSE, row.n
 | PHI-base | Pathogen Host Interactions                       | From mutant genes to phenotypes! The mission of PHI-base is to provide expertly curated molecular and biological information on genes proven to affect the outcome of pathogen-host interactions. Information is also given on the target sites of some anti-infective chemistries |
 | VFDB     | Virulence Factors of Bacterial Pathogens         | The virulence factor database (VFDB) is an integrated and comprehensive online resource for curating information about virulence factors of bacterial pathogens |
 | UniProt  | Universal Protein Resource                       | UniProt is the world’s leading high-quality, comprehensive and freely accessible resource of protein sequence and functional information |
+
+---
+
+## Biology Basics
+
+基因组 FASTA
+
+|      top_level.fa      |               primary_assembly.fa                |   *_rm.fa    |   *_sm.fa    |
+| :--------------------: | :----------------------------------------------: | :----------: | :----------: |
+| 所有染色体和未定位序列 | 剔除冗余和易混淆可变区域（haplotypes / patches） | 重复序列→“N” | 重复序列小写 |
