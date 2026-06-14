@@ -364,7 +364,66 @@ samtools index -c <sample_sorted.sam>
 
 # R
 
-**Rstudio**：zoom=75%；Editor font size=20
+## Rstudio
+
+**设置**：zoom 75%；Editor font size 20
+
+**初始下载或加载包**
+
+~~~R
+# require() 若存在包则加载，不存在则返回逻辑值 FALSE，可作为判断
+for (pkg in c("tidyverse", "palmerpenguins", "ggthemes")) {
+  if (!require(pkg, character.only = TRUE, quietly = TRUE)) {
+    install.packages(pkg)
+    require(pkg, character.only = TRUE)
+  }
+}
+~~~
+
+**ggplot2 模板**
+
+~~~R
+for (pkg in c("tidyverse", "palmerpenguins", "ggthemes")) {
+  if (!require(pkg, character.only = TRUE, quietly = TRUE)) {
+    install.packages(pkg)
+    require(pkg, character.only = TRUE)
+  }
+}
+
+view(penguins)
+penguins <- penguins
+
+p <- ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)
+) +
+  geom_point(aes(color = species, shape = species)) +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Penguins",
+    x = "Flipper length (mm)",
+    y = "Body mass (g)"
+  ) +
+  scale_color_colorblind() +  # 挑选模板颜色
+  theme_classic() +
+  theme(
+    axis.text = element_text(size = 12),
+    axis.title = element_text(size = 18),
+    plot.title = element_text(size = 20)
+  )
+
+ggsave(
+  filename = "plot.pdf",
+  plot = p,
+  device = cairo_pdf
+)
+
+ggsave(
+  filename = "plot.png",
+  plot = p,
+  dpi = 600
+)
+~~~
 
 最小的数据结构是向量, ==注: 不是标量==
 
@@ -379,8 +438,6 @@ dim()
 apply()
 abs(): absolute value function
 ~~~
-
-
 
 ~~~R
 df <- data.frame(S1 = c(1, 2, 3, 4, 5), 
