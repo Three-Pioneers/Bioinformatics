@@ -1,5 +1,20 @@
 ## ==第一要素: 使用绝对路径==
 
+**小鼠 GTF**
+
+基因可含有多个转录本
+
+| seqname | source | feature    | start    | end      | score | strand | frame[^1] | attributes                                                   |
+| ------- | ------ | ---------- | -------- | -------- | ----- | ------ | --------- | ------------------------------------------------------------ |
+| 1       | havana | gene       | 43781121 | 43783055 | .     | -      | .         | gene_id "ENSMUSG00000100764"; gene_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; |
+| 1       | havana | transcript | 43781121 | 43783055 | .     | -      | .         | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
+| 1       | havana | exon       | 43782986 | 43783055 | .     | -      | .         | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; exon_number "1"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001334242"; exon_version "2"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
+| 1       | havana | exon       | 43781121 | 43781266 | .     | -      | .         | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; exon_number "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001327336"; exon_version "2"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
+| 1       | havana | transcript | 43782744 | 43783012 | .     | -      | .         | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
+| 1       | havana | exon       | 43782744 | 43783012 | .     | -      | .         | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; exon_number "1"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001328607"; exon_version "2"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
+
+featureCounts -t 选第三列中某个特征进行定量 -g 选第九列某个特征进行定量(张老师？)
+
 测序多个样本凑一条 lane 跑，通过接头 Index_i5 Index_i7 不同的组合区分不同样本，用于下机拆分样本
 
 adapter 用于质控时的接头？
@@ -220,21 +235,6 @@ Species mmu
 - [ ] NCBI 分类号，怎么查，用在流程哪个地方
 - [ ] gene_type SYMBOL；Species mmu 这俩干嘛用的
 
-**小鼠 GTF 注释文件**
-
-一个基因可含有多个转录本
-
-| seqname | source | feature    | start    | end      | score | strand | frame | attributes                                                   |
-| ------- | ------ | ---------- | -------- | -------- | ----- | ------ | ----- | ------------------------------------------------------------ |
-| 1       | havana | gene       | 43781121 | 43783055 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; |
-| 1       | havana | transcript | 43781121 | 43783055 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
-| 1       | havana | exon       | 43782986 | 43783055 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; exon_number "1"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001334242"; exon_version "2"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
-| 1       | havana | exon       | 43781121 | 43781266 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; exon_number "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001327336"; exon_version "2"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
-| 1       | havana | transcript | 43782744 | 43783012 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
-| 1       | havana | exon       | 43782744 | 43783012 | .     | -      | .     | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; exon_number "1"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001328607"; exon_version "2"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
-
-featureCounts -t 选第三列中某个特征进行定量 -g 选第九列某个特征进行定量(张老师？)
-
 **可变剪切**
 
 |      |                           |                |
@@ -386,6 +386,15 @@ len=525	# 转录本长度
 path=[1:0-201 2:202-230 3:231-524]	# 组装路径
 ~~~
 
+==脚本：/data3/Data_all/script/Denovo_transcriptome/bin//gene_result_stas.py pandas 以及简短循环判断写的太好了，要认真学习==
+
+---
+
+### Question
+
+- [ ] Step4.Mapping.sh：bowtie2 log 报错：[WARNING] Failed to launch x86-64-v3 version, staying with default
+  修改总结脚本，其他流程若有要类似修改
+
 ---
 
 ## Concept
@@ -421,6 +430,8 @@ path=[1:0-201 2:202-230 3:231-524]	# 组装路径
 
 **bp（base pair，碱基对）**：描述**双链核酸**中互补配对的碱基数量，每一对包含两个互补碱基（如 A-T）
 
+**密码子**：mRNA 或 DNA 上三个连续的碱基，用于编码特定和氨基酸
+
 ---
 
 ## Database
@@ -450,3 +461,5 @@ path=[1:0-201 2:202-230 3:231-524]	# 组装路径
 |      top_level.fa      |               primary_assembly.fa                |   *_rm.fa    |   *_sm.fa    |
 | :--------------------: | :----------------------------------------------: | :----------: | :----------: |
 | 所有染色体和未定位序列 | 剔除冗余和易混淆可变区域（haplotypes / patches） | 重复序列→“N” | 重复序列小写 |
+
+[^1]:

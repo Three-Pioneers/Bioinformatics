@@ -88,6 +88,14 @@ rule multiqc_fastp:
 1. 双端测序数据建立软链接，以及单端测序建立软链接以及后续质控和比对的参数设置问题
    AI 说能在规则中用 if_else，判断语句
 
+---
+
+# Pandas
+
+将脚本中繁琐的循环等尽量用简短命令，即改成 Pandas（Python） 或者 Tidyverse（R）
+
+---
+
 # Linux
 
 ### 基础命令
@@ -177,12 +185,20 @@ wc file.txt | head -n 4 | tail -n 1
 ~~~
 
 ~~~bash
-# sort 按照ASCII码排列, 数字则按相同顺序的ASCII往后排
+# sort 按照 ASCII 码排列, 数字则按相同顺序的 ASCII 往后排
 ## -g 按数值排列
-## -k 指定列排列
+## -k 指定 key 排列
 ## -u 去重
-## -s 当 -k 1, 1 仍然不起作用, 默认第一列相同就按后续列排, -s 取消默认
-sort -k 1, 1 -s text.txt # 只按照第一列进行排序
+## -k 1,1 第一个字段排序后，仍然按照后续字段排序，因为默认不稳定排序（排序的字段相同时，原文相对顺序不保留），-s 取消默认
+# 将以下内容写入文件
+apple 5 red
+banana 3 yellow
+apple 2 green
+cherry 1 red
+
+sort -k 1 text.txt
+sort -k 1,1 text.txt
+sort -k 1,1 -s text.txt
 ~~~
 
 ~~~bash
@@ -191,7 +207,7 @@ seqkit split2 -p 10 -1 WR260064S_R1.fq.gz -2 WR260064S_R2.fq.gz
 
 ~~~bash
 # awk
-## -F '/' 指定 / 为分割符, 默认分隔符空格
+## -F '/' 指定 / 为分割符，默认分隔符空格
 ## '{print $1}' 输出第一列
 ## '{print $NF}' 输出最后一列
 awk 'NR==1 || NR==2 || NR==4 || NR==6 || NR==8 || NR==10'
@@ -227,11 +243,11 @@ conda env export --from-history
 ~~~
 
 数据块: 存储文件内容
-元数据(文件附加属性): 文件大小、创建时间、创建人等以及 incode(系统识别文件的唯一标识符), 名字方便人记不属于 incode, mv 但 incode 不变
+元数据(文件附加属性): 文件大小、创建时间、创建人等以及 incode(系统识别文件的唯一标识符)，名字方便人记不属于 incode，mv 但 incode 不变
 
 链接: 硬链接(Hard link)和软链接(Soft link)
-硬链接: 文件副本, 无独立 incode, 必须在同一系统文件下创建, 源文件必须存在且不能为目录
-软链接: 包含独立 incode, 指向源文件
+硬链接: 文件副本，无独立 incode，必须在同一系统文件下创建，源文件必须存在且不能为目录
+软链接: 包含独立 incode，指向源文件
 
 ---
 
@@ -251,18 +267,18 @@ print(type(sys.argv))
 python sys.py haha ouha hehe
 ~~~
 
-文件 读取F1, F2, F3; 写入out; 读取后直接file1=F1.read(), anno=file.split()
+文件 读取F1，F2，F3; 写入out; 读取后直接file1=F1.read()，anno=file.split()
 
 ### 字典
 
 ~~~python
 print(dict)
-# 二者相等? 值, 类型
+# 二者相等? 值，类型
 print(list(dict))
 print(dict.keys())
 ~~~
 
-读取一个文件内容, 如何去除空行
+读取一个文件内容，如何去除空行
 
 ---
 
@@ -272,8 +288,8 @@ print(dict.keys())
 
 **质控**
 
-1. 不同格式文件要将文件内容复制到另一种格式中, 不能直接改名字, 否则会出现不可控错误
-   批量修改文件名, 尤其如何批量输出 "'"
+1. 不同格式文件要将文件内容复制到另一种格式中，不能直接改名字，否则会出现不可控错误
+   批量修改文件名，尤其如何批量输出 "'"
 
 ~~~bash
 -rwxrwxr-x 1 zhangxuejie bioinfo 425861587 Mar 12 12:05 'P9_40d_R2.fq.gz'$'\r'*
@@ -281,8 +297,8 @@ print(dict.keys())
 -rwxrwxr-x 1 zhangxuejie bioinfo 425828469 Mar 12 12:05 'P9_55d_R2.fq.gz'$'\r'*
 ~~~
 
-2. ~~小RNA质控的数据名称只能是WR2243M01.fq.gz样式, 若是WR2243M01_R1.fq.gz的会出错~~
-3. ~~conda 安装包报错 "fastp1.1.*.*", 由于 conda 解析包名出错导致, 下载 mamba 代替 conda~~
+2. ~~小RNA质控的数据名称只能是WR2243M01.fq.gz样式，若是WR2243M01_R1.fq.gz的会出错~~
+3. ~~conda 安装包报错 "fastp1.1.*.*"，由于 conda 解析包名出错导致，下载 mamba 代替 conda~~
 
 ### 宏基因组
 
@@ -300,7 +316,7 @@ csvtk cut -t -f 1.2.3.4 1.txt | awk -F "\t" '{print$2"\t"$1"\t"$3"\t"$4}' > 2.tx
 megahit --presets meta-large 
 ~~~
 
-3. kneaddata 新版本将重复序列也去除了, 而且它再一次去除了接头和低质量 reads
+3. kneaddata 新版本将重复序列也去除了，而且它再一次去除了接头和低质量 reads
 4. sort 的排序问题需要加 -s，不然 -k 1 后还会默认按后续列继续排序
 5. alpha_diversity 没有 Richness 的图
 
@@ -425,9 +441,9 @@ ggsave(
 )
 ~~~
 
-最小的数据结构是向量, ==注: 不是标量==
+最小的数据结构是向量，==注: 不是标量==
 
-索引从 1 开始, Vector[-2] 打印除第二个外的向量
+索引从 1 开始，Vector[-2] 打印除第二个外的向量
 
 R 计算的时候是从最右边往左边算的`a <- 10/5%%1`
 
