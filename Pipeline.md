@@ -1,5 +1,28 @@
 ## ==第一要素: 使用绝对路径==
 
+## Universal
+
+### 质控
+
+### 比对
+
+### 定量
+
+### 标准化
+
+### 功能注释
+
+#### KEGG
+
+~~~bash
+# 物种 ko，则去除所有 kegg 编号，加上 ko；物种为 kegg 缩写，则选取所有 kegg 编号前缀相等的
+/data3/Data_all/script/Denovo_transcriptome/bin//Enrichment_KEGG_id.py
+~~~
+
+### KEGG_GO_Enrichment
+
+---
+
 **小鼠 GTF**
 
 基因可含有多个转录本
@@ -431,6 +454,8 @@ path=[1:0-201 2:202-230 3:231-524]	# 组装路径
 **bp（base pair，碱基对）**：描述**双链核酸**中互补配对的碱基数量，每一对包含两个互补碱基（如 A-T）
 
 **密码子**：mRNA 或 DNA 上三个连续的碱基，用于编码特定和氨基酸
+
+**SSR**（Simple Sequence Repeat，简单重复序列）：由 1~6 个核苷酸组成的短串联重复序列
 
 ---
 
