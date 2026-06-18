@@ -1,26 +1,5 @@
 ## ==第一要素: 使用绝对路径==
 
-## Universal
-
-### 质控
-
-### 比对
-
-### 定量
-
-### 标准化
-
-### 功能注释
-
-#### KEGG
-
-~~~bash
-# 物种 ko，则去除所有 kegg 编号，加上 ko；物种为 kegg 缩写，则选取所有 kegg 编号前缀相等的
-/data3/Data_all/script/Denovo_transcriptome/bin//Enrichment_KEGG_id.py
-~~~
-
-### KEGG_GO_Enrichment
-
 ---
 
 **小鼠 GTF**
@@ -410,6 +389,15 @@ path=[1:0-201 2:202-230 3:231-524]	# 组装路径
 ~~~
 
 ==脚本：/data3/Data_all/script/Denovo_transcriptome/bin//gene_result_stas.py pandas 以及简短循环判断写的太好了，要认真学习==
+
+~~~bash
+# 物种 ko，则去除所有 kegg 编号，加上 ko；物种为 kegg 缩写，则选取所有 kegg 编号前缀相等的
+/data3/Data_all/script/Denovo_transcriptome/bin//Enrichment_KEGG_id.py
+~~~
+
+### Variance Calling（变异检测）
+
+SNP-Indel
 
 ---
 
