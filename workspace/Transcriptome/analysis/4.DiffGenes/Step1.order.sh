@@ -1,1 +1,0 @@
-python gene_order.py /mnt/e/data/training/Transcriptome/analysis//3.GenesExpress/3.Gene_name_all/COUNT.txt  /mnt/e/data/training/Transcriptome/analysis/sample_info.txt PRPP_vs_Hypoxia /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia

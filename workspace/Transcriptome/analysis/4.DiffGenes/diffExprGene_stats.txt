@@ -1,2 +1,0 @@
-group	Up	Down	No	Total
-PRPP_vs_Hypoxia	406	429	9937	10772

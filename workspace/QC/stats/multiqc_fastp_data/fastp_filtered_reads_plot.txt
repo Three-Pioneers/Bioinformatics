@@ -1,3 +1,0 @@
-Sample	Passed Filter	Low Quality	Too Many N	Low Complexity	Too Short	Too Long
-WR241371D	159680.0	2554.0	30.0	nan	1004.0	0.0
-WR241372D	169334.0	1652.0	18.0	nan	614.0	0.0

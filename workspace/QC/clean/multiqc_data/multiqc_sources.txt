@@ -1,3 +1,0 @@
-Module	Section	Sample Name	Source
-fastp	all_sections	WR241371D	/mnt/e/data/training_qc/json/WR241371D_fastp.json
-fastp	all_sections	WR241372D	/mnt/e/data/training_qc/json/WR241372D_fastp.json

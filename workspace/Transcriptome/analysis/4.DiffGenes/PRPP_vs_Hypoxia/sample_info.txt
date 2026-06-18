@@ -1,5 +1,0 @@
-sample_id	group
-WR260145T	PRPP
-WR260146T	PRPP
-WR260141T	Hypoxia
-WR260142T	Hypoxia

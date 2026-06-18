@@ -1,9 +1,0 @@
-
-/// MultiQC 🔍 v1.34
-
-       file_search | Search path: /home/zhangxuejie/workspace/QC/analysis/json/WR241371D.json
-       file_search | Search path: /home/zhangxuejie/workspace/QC/analysis/json/WR241372D.json
-             fastp | Found 2 reports
-     write_results | Data        : stats/multiqc_fastp_data
-     write_results | Report      : stats/multiqc_fastp.html
-           multiqc | MultiQC complete

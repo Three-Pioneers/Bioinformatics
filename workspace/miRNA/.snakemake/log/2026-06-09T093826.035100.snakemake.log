@@ -1,3 +1,0 @@
-TypeError in file "/home/zhangxuejie/workspace/miRNA/work_smk/2.Mapping.smk", line 71:
-directory() got an unexpected keyword argument 'sample'
-  File "/home/zhangxuejie/workspace/miRNA/work_smk/2.Mapping.smk", line 71, in <module>

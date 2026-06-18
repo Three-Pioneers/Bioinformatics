@@ -1,6 +1,0 @@
-workdir:
-  - "/home/zhangxuejie/workspace/miRNA"
-
-Samples:
-  - D1
-  - D12

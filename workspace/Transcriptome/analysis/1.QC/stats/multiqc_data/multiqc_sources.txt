@@ -1,5 +1,0 @@
-Module	Section	Sample Name	Source
-fastp	all_sections	WR260141T	/mnt/e/data/training/Transcriptome/analysis/1.QC/fastp/WR260141T.json
-fastp	all_sections	WR260142T	/mnt/e/data/training/Transcriptome/analysis/1.QC/fastp/WR260142T.json
-fastp	all_sections	WR260145T	/mnt/e/data/training/Transcriptome/analysis/1.QC/fastp/WR260145T.json
-fastp	all_sections	WR260146T	/mnt/e/data/training/Transcriptome/analysis/1.QC/fastp/WR260146T.json
