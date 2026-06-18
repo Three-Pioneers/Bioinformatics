@@ -1,0 +1,26 @@
+Assuming unrestricted shared filesystem usage.
+host: DESKTOP-NF3504B
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+multiqc_fastp        1
+total                1
+
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May 12 17:00:11 2026]
+localrule multiqc_fastp:
+    input: analysis/json/WR241371D.json, analysis/json/WR241372D.json
+    output: stats/multiqc_fastp.html
+    log: log/to/log
+    jobid: 0
+    reason: Missing output files: stats/multiqc_fastp.html
+    resources: tmpdir=/tmp
+[Tue May 12 17:00:16 2026]
+Finished jobid: 0 (Rule: multiqc_fastp)
+1 of 1 steps (100%) done
+Complete log(s): /home/zhangxuejie/workspace/QC/.snakemake/log/2026-05-12T170011.405754.snakemake.log

@@ -1,0 +1,1 @@
+python gene_name_result_stats_all.py* gene_name.txt /mnt/e/data/training/Transcriptome/analysis/3.GenesExpress/1.Gene_id/ /mnt/e/data/training/Transcriptome/analysis/3.GenesExpress/3.Gene_name_all/

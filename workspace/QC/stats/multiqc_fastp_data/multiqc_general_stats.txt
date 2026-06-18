@@ -1,0 +1,3 @@
+Sample	fastp-pct_duplication	fastp-after_filtering_q30_rate	fastp-after_filtering_q30_bases	fastp-filtering_result_passed_filter_reads	fastp-after_filtering_gc_content	fastp-pct_surviving	fastp-pct_adapter	fastp-before_filtering_read1_mean_length	fastp-before_filtering_read2_mean_length
+WR241371D	45.176	94.0846	37.557514999999995	0.15968	53.2792	97.80238626062669	0.004899919151334003	250.0	250.0
+WR241372D	54.6015	94.69239999999999	40.085848	0.16933399999999998	52.806200000000004	98.66913726998334	0.0011653789229567994	250.0	250.0

@@ -1,0 +1,147 @@
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-06-10 11:04:57
+  Workflow ID: 7ef9b62b-8fc3-43c4-a9d8-fe3a12fbb057
+  Platform: Linux-6.18.20.1-microsoft-standard-WSL2-x86_64-with-glibc2.43
+  Host: DESKTOP-NF3504B
+  User: zhangxuejie
+  Snakemake version: 9.22.0
+  Python version: 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:50:00) [GCC 14.3.0]
+  Command: /home/zhangxuejie/miniconda3/envs/miRNA/bin/snakemake log/2.Mapping/multiqc_bam.log -p --cores all
+  Snakefile: /home/zhangxuejie/workspace/miRNA/Snakefile
+  Base directory: /home/zhangxuejie/workspace/miRNA
+  Run directory: /home/zhangxuejie/workspace/miRNA
+  Working directory: /home/zhangxuejie/workspace/miRNA
+  Config file(s): ['config.yaml']
+  Config MD5: 5a37d0415d03972ca8c3d0f8ddb2239a
+
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+bowtie_mapping_genome        2
+samtools                     2
+qualimap                     2
+multiqc_bam                  1
+total                        7
+
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Jun 10 11:04:57 2026]
+localrule bowtie_mapping_genome:
+    input: analysis/1.QC/clean/D12.fq.gz, ref/index_bowtie
+    output: analysis/2.Mapping/sort/D12.sam, analysis/2.Mapping/sort/D12_mapped.fq
+    log: log/2.Mapping/bowtie_D12.log
+    jobid: 7
+    reason: Missing output files: analysis/2.Mapping/sort/D12.sam
+    wildcards: sample=D12
+    threads: 12
+    resources: tmpdir=/tmp
+Shell command: bowtie -x ref/index_bowtie/index -q analysis/1.QC/clean/D12.fq.gz --al analysis/2.Mapping/sort/D12_mapped.fq -S analysis/2.Mapping/sort/D12.sam -p 12 > log/2.Mapping/bowtie_D12.log 2>&1
+Select jobs to execute...
+[Wed Jun 10 11:05:22 2026]
+Finished jobid: 7 (Rule: bowtie_mapping_genome)
+1 of 7 steps (14%) done
+Removing temporary output analysis/2.Mapping/sort/D12_mapped.fq.
+Execute 1 jobs...
+[Wed Jun 10 11:05:22 2026]
+localrule samtools:
+    input: analysis/2.Mapping/sort/D12.sam
+    output: analysis/2.Mapping/sort/D12_sorted.bam, analysis/2.Mapping/sort/D12_sorted.bam.bai
+    log: log/2.Mapping/samtools_D12.log
+    jobid: 6
+    reason: Input files updated by another job: analysis/2.Mapping/sort/D12.sam; Code has changed since last execution
+    wildcards: sample=D12
+    threads: 12
+    resources: tmpdir=/tmp
+Shell command: 
+		(samtools sort -@ 12 -O bam analysis/2.Mapping/sort/D12.sam -o analysis/2.Mapping/sort/D12_sorted.bam && 		samtools index -@ 12 analysis/2.Mapping/sort/D12_sorted.bam -o analysis/2.Mapping/sort/D12_sorted.bam.bai) > log/2.Mapping/samtools_D12.log 2>&1
+		
+Select jobs to execute...
+[Wed Jun 10 11:05:24 2026]
+Finished jobid: 6 (Rule: samtools)
+2 of 7 steps (29%) done
+Removing temporary output analysis/2.Mapping/sort/D12.sam.
+Execute 1 jobs...
+[Wed Jun 10 11:05:24 2026]
+localrule bowtie_mapping_genome:
+    input: analysis/1.QC/clean/D1.fq.gz, ref/index_bowtie
+    output: analysis/2.Mapping/sort/D1.sam, analysis/2.Mapping/sort/D1_mapped.fq
+    log: log/2.Mapping/bowtie_D1.log
+    jobid: 3
+    reason: Missing output files: analysis/2.Mapping/sort/D1.sam; Code has changed since last execution
+    wildcards: sample=D1
+    threads: 12
+    resources: tmpdir=/tmp
+Shell command: bowtie -x ref/index_bowtie/index -q analysis/1.QC/clean/D1.fq.gz --al analysis/2.Mapping/sort/D1_mapped.fq -S analysis/2.Mapping/sort/D1.sam -p 12 > log/2.Mapping/bowtie_D1.log 2>&1
+Select jobs to execute...
+[Wed Jun 10 11:05:30 2026]
+Finished jobid: 3 (Rule: bowtie_mapping_genome)
+3 of 7 steps (43%) done
+Removing temporary output analysis/2.Mapping/sort/D1_mapped.fq.
+Execute 1 jobs...
+[Wed Jun 10 11:05:30 2026]
+localrule samtools:
+    input: analysis/2.Mapping/sort/D1.sam
+    output: analysis/2.Mapping/sort/D1_sorted.bam, analysis/2.Mapping/sort/D1_sorted.bam.bai
+    log: log/2.Mapping/samtools_D1.log
+    jobid: 2
+    reason: Input files updated by another job: analysis/2.Mapping/sort/D1.sam
+    wildcards: sample=D1
+    threads: 12
+    resources: tmpdir=/tmp
+Shell command: 
+		(samtools sort -@ 12 -O bam analysis/2.Mapping/sort/D1.sam -o analysis/2.Mapping/sort/D1_sorted.bam && 		samtools index -@ 12 analysis/2.Mapping/sort/D1_sorted.bam -o analysis/2.Mapping/sort/D1_sorted.bam.bai) > log/2.Mapping/samtools_D1.log 2>&1
+		
+Select jobs to execute...
+[Wed Jun 10 11:05:31 2026]
+Finished jobid: 2 (Rule: samtools)
+4 of 7 steps (57%) done
+Removing temporary output analysis/2.Mapping/sort/D1.sam.
+Execute 2 jobs...
+[Wed Jun 10 11:05:31 2026]
+localrule qualimap:
+    input: analysis/2.Mapping/sort/D12_sorted.bam
+    output: analysis/2.Mapping/bamqc/D12_bamqc/genome_results.txt, analysis/2.Mapping/bamqc/D12_bamqc/qualimapReport.html
+    log: log/2.Mapping/qualimap_D12.log
+    jobid: 5
+    reason: Input files updated by another job: analysis/2.Mapping/sort/D12_sorted.bam
+    wildcards: sample=D12
+    resources: tmpdir=/tmp
+Shell command: qualimap --java-mem-size=8G bamqc -bam analysis/2.Mapping/sort/D12_sorted.bam -outdir analysis/2.Mapping/bamqc/D12_bamqc/ > log/2.Mapping/qualimap_D12.log 2>&1
+[Wed Jun 10 11:05:31 2026]
+localrule qualimap:
+    input: analysis/2.Mapping/sort/D1_sorted.bam
+    output: analysis/2.Mapping/bamqc/D1_bamqc/genome_results.txt, analysis/2.Mapping/bamqc/D1_bamqc/qualimapReport.html
+    log: log/2.Mapping/qualimap_D1.log
+    jobid: 1
+    reason: Input files updated by another job: analysis/2.Mapping/sort/D1_sorted.bam
+    wildcards: sample=D1
+    resources: tmpdir=/tmp
+Shell command: qualimap --java-mem-size=8G bamqc -bam analysis/2.Mapping/sort/D1_sorted.bam -outdir analysis/2.Mapping/bamqc/D1_bamqc/ > log/2.Mapping/qualimap_D1.log 2>&1
+[Wed Jun 10 11:05:57 2026]
+Finished jobid: 5 (Rule: qualimap)
+5 of 7 steps (71%) done
+[Wed Jun 10 11:05:57 2026]
+Finished jobid: 1 (Rule: qualimap)
+6 of 7 steps (86%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Jun 10 11:05:57 2026]
+localrule multiqc_bam:
+    input: analysis/2.Mapping/bamqc/D1_bamqc/genome_results.txt, analysis/2.Mapping/bamqc/D12_bamqc/genome_results.txt, analysis/2.Mapping/bamqc/D1_bamqc/raw_data_qualimapReport/coverage_histogram.txt, analysis/2.Mapping/bamqc/D12_bamqc/raw_data_qualimapReport/coverage_histogram.txt
+    output: analysis/2.Mapping/stats/multiqc_data, analysis/2.Mapping/stats/multiqc_report.html
+    log: log/2.Mapping/multiqc_bam.log
+    jobid: 0
+    reason: Input files updated by another job: analysis/2.Mapping/bamqc/D12_bamqc/genome_results.txt, analysis/2.Mapping/bamqc/D1_bamqc/genome_results.txt
+    resources: tmpdir=/tmp
+Shell command: multiqc analysis/2.Mapping/bamqc/D1_bamqc/ analysis/2.Mapping/bamqc/D12_bamqc/ --outdir analysis/2.Mapping/stats/ > log/2.Mapping/multiqc_bam.log 2>&1
+[Wed Jun 10 11:06:01 2026]
+Finished jobid: 0 (Rule: multiqc_bam)
+7 of 7 steps (100%) done
+Complete log(s): /home/zhangxuejie/workspace/miRNA/.snakemake/log/2026-06-10T110457.611808.snakemake.log

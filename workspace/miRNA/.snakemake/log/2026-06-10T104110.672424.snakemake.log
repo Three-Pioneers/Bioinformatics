@@ -1,0 +1,44 @@
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-06-10 10:41:10
+  Workflow ID: 53e9af49-a26b-4225-840c-c06300b4d807
+  Platform: Linux-6.18.20.1-microsoft-standard-WSL2-x86_64-with-glibc2.43
+  Host: DESKTOP-NF3504B
+  User: zhangxuejie
+  Snakemake version: 9.22.0
+  Python version: 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:50:00) [GCC 14.3.0]
+  Command: /home/zhangxuejie/miniconda3/envs/miRNA/bin/snakemake log/2.Mapping/qualimap_D1.log --cores all
+  Snakefile: /home/zhangxuejie/workspace/miRNA/Snakefile
+  Base directory: /home/zhangxuejie/workspace/miRNA
+  Run directory: /home/zhangxuejie/workspace/miRNA
+  Working directory: /home/zhangxuejie/workspace/miRNA
+  Config file(s): ['config.yaml']
+  Config MD5: 5a37d0415d03972ca8c3d0f8ddb2239a
+
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job         count
+--------  -------
+qualimap        1
+total           1
+
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Jun 10 10:41:11 2026]
+localrule qualimap:
+    input: analysis/2.Mapping/sort/D1_sorted.bam
+    output: analysis/2.Mapping/bamqc/D1_bamqc/genome_results.txt, analysis/2.Mapping/bamqc/D1_bamqc/qualimapReport.html
+    log: log/2.Mapping/qualimap_D1.log
+    jobid: 0
+    reason: Code has changed since last execution
+    wildcards: sample=D1
+    resources: tmpdir=/tmp
+[Wed Jun 10 10:41:35 2026]
+Finished jobid: 0 (Rule: qualimap)
+1 of 1 steps (100%) done
+Complete log(s): /home/zhangxuejie/workspace/miRNA/.snakemake/log/2026-06-10T104110.672424.snakemake.log

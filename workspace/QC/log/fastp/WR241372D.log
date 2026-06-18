@@ -1,0 +1,52 @@
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 85809
+total bases: 21452250
+Q20 bases: 21134112(98.517%)
+Q30 bases: 20400374(95.0967%)
+Q40 bases: 0(0%)
+
+Read2 before filtering:
+total reads: 85809
+total bases: 21452250
+Q20 bases: 20942811(97.6252%)
+Q30 bases: 20086411(93.6331%)
+Q40 bases: 0(0%)
+
+Read1 after filtering:
+total reads: 84667
+total bases: 21166446
+Q20 bases: 20857350(98.5397%)
+Q30 bases: 20134785(95.126%)
+Q40 bases: 0(0%)
+
+Read2 after filtering:
+total reads: 84667
+total bases: 21166260
+Q20 bases: 20773902(98.1463%)
+Q30 bases: 19951063(94.2588%)
+Q40 bases: 0(0%)
+
+Filtering result:
+reads passed filter: 169334
+reads failed due to low quality: 1652
+reads failed due to too many N: 18
+reads failed due to too short: 614
+reads failed due to adapter dimer: 0
+reads with adapter trimmed: 2
+bases trimmed due to adapters: 138
+
+Duplication rate: 54.6015%
+
+Insert size peak (evaluated by paired-end reads): 465
+
+JSON report: analysis/json/WR241372D.json
+HTML report: analysis/html/WR241372D.html
+
+fastp --in1 data/WR241372D_R1.fq.gz --in2 data/WR241372D_R2.fq.gz --out1 analysis/clean/WR241372D_R1.fq.gz --out2 analysis/clean/WR241372D_R2.fq.gz --detect_adapter_for_pe --thread 12 --json analysis/json/WR241372D.json --html analysis/html/WR241372D.html 
+fastp v1.3.3, time used: 104 seconds

@@ -1,0 +1,26 @@
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-06-10 10:51:41
+  Workflow ID: 21358973-f5de-48eb-b9ad-0c0d0a5884c0
+  Platform: Linux-6.18.20.1-microsoft-standard-WSL2-x86_64-with-glibc2.43
+  Host: DESKTOP-NF3504B
+  User: zhangxuejie
+  Snakemake version: 9.22.0
+  Python version: 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:50:00) [GCC 14.3.0]
+  Command: /home/zhangxuejie/miniconda3/envs/miRNA/bin/snakemake log/2.Mapping/qualimap_D17.log --cores all
+  Snakefile: /home/zhangxuejie/workspace/miRNA/Snakefile
+  Base directory: /home/zhangxuejie/workspace/miRNA
+  Run directory: /home/zhangxuejie/workspace/miRNA
+  Working directory: /home/zhangxuejie/workspace/miRNA
+  Config file(s): ['config.yaml']
+  Config MD5: 5a37d0415d03972ca8c3d0f8ddb2239a
+
+Building DAG of jobs...
+MissingInputException in rule fastp in file "/home/zhangxuejie/workspace/miRNA/work_smk/1.QC.smk", line 12:
+Missing input files for rule fastp:
+    output: analysis/1.QC/clean/D17.fq.gz, analysis/1.QC/fastp/D17.json, analysis/1.QC/fastp/D17.html
+    wildcards: sample=D17
+    affected files:
+        data/D17.fq.gz

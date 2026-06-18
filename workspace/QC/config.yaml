@@ -1,0 +1,7 @@
+samples:
+  WR241371D: 
+    data/WR241371D_R1.fq.gz
+    data/WR241371D_R2.fq.gz
+  WR241372D: 
+    data/WR241372D_R1.fq.gz
+    data/WR241372D_R2.fq.gz

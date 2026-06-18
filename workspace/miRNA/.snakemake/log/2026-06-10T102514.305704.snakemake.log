@@ -1,0 +1,45 @@
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-06-10 10:25:14
+  Workflow ID: 8a493c1f-9e25-4302-83e2-40bffb19391f
+  Platform: Linux-6.18.20.1-microsoft-standard-WSL2-x86_64-with-glibc2.43
+  Host: DESKTOP-NF3504B
+  User: zhangxuejie
+  Snakemake version: 9.22.0
+  Python version: 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:50:00) [GCC 14.3.0]
+  Command: /home/zhangxuejie/miniconda3/envs/miRNA/bin/snakemake log/2.Mapping/bowtie_D1.log --cores all
+  Snakefile: /home/zhangxuejie/workspace/miRNA/Snakefile
+  Base directory: /home/zhangxuejie/workspace/miRNA
+  Run directory: /home/zhangxuejie/workspace/miRNA
+  Working directory: /home/zhangxuejie/workspace/miRNA
+  Config file(s): ['config.yaml']
+  Config MD5: 5a37d0415d03972ca8c3d0f8ddb2239a
+
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+bowtie_mapping_genome        1
+total                        1
+
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Jun 10 10:25:14 2026]
+localrule bowtie_mapping_genome:
+    input: analysis/1.QC/clean/D1.fq.gz, ref/index_bowtie
+    output: analysis/2.Mapping/sort/D1.sam, analysis/2.Mapping/sort/D1_mapped.fq
+    log: log/2.Mapping/bowtie_D1.log
+    jobid: 0
+    reason: Missing output files: log/2.Mapping/bowtie_D1.log
+    wildcards: sample=D1
+    threads: 12
+    resources: tmpdir=/tmp
+[Wed Jun 10 10:25:23 2026]
+Finished jobid: 0 (Rule: bowtie_mapping_genome)
+1 of 1 steps (100%) done
+Complete log(s): /home/zhangxuejie/workspace/miRNA/.snakemake/log/2026-06-10T102514.305704.snakemake.log

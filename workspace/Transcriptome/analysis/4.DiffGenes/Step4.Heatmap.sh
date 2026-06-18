@@ -1,0 +1,6 @@
+sed '1d' /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia/Sig_genes_exprData.txt | sort -g -k 4  |cut -f 1 |head -n 50 |sort -k 1 > /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia/tmp_top50.id  
+sed '1d' /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia/COUNT.txt |sort -k 1 > /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia/tmp_COUNT.txt
+cat /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia/COUNT.txt|head -n 1 > /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia/heatmap_input.txt
+join --nocheck-order  -t $'\t' -1 1 -2 1  /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia/tmp_top50.id /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia/tmp_COUNT.txt  >> /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia/heatmap_input.txt
+
+Rscript heatmap.R /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia/heatmap_input.txt /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia/sample_info.txt /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia

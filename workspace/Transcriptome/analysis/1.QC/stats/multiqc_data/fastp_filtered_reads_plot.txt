@@ -1,0 +1,5 @@
+Sample	Passed Filter	Low Quality	Too Many N	Low Complexity	Too Short	Too Long
+WR260141T	5877290.0	1338.0	2.0	nan	86.0	0.0
+WR260142T	4671432.0	1080.0	0.0	nan	68.0	0.0
+WR260145T	5403246.0	1238.0	4.0	nan	98.0	0.0
+WR260146T	5138336.0	1050.0	4.0	nan	38.0	0.0

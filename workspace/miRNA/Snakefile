@@ -1,0 +1,5 @@
+configfile: "config.yaml"
+
+include: "work_smk/1.QC.smk"
+include: "work_smk/2.Mapping.smk"
+include: "work_smk/3_1.rRNA_classification.smk"

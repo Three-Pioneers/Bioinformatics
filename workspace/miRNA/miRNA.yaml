@@ -1,0 +1,26 @@
+name: miRNA
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - bowtie
+  - fastp
+  - gfold
+  - matplotlib
+  - mirdeep2
+  - multiqc
+  - python
+  - python-docx
+  - qualimap
+  - r-ggcorrplot
+  - r-ggplot2
+  - r-ggrepel
+  - r-scatterplot3d
+  - r-tidyverse
+  - r-vegan
+  - repeatmasker
+  - samtools
+  - seqkit
+  - snakemake
+
+prefix: "/home/zhangxuejie/miniconda3/envs/miRNA"

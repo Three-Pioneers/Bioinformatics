@@ -1,0 +1,1 @@
+Rscript diffExprGene.R /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia/COUNT.txt /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia/sample_info.txt /mnt/e/data/training/Transcriptome/analysis//4.DiffGenes/PRPP_vs_Hypoxia

@@ -1,0 +1,9 @@
+
+/// MultiQC 🔍 v1.35
+
+       file_search | Search path: /home/zhangxuejie/workspace/miRNA/analysis/2.Mapping/bamqc/D1_bamqc
+       file_search | Search path: /home/zhangxuejie/workspace/miRNA/analysis/2.Mapping/bamqc/D12_bamqc
+          qualimap | Found 2 BamQC reports
+     write_results | Data        : analysis/2.Mapping/stats/multiqc_data
+     write_results | Report      : analysis/2.Mapping/stats/multiqc_report.html
+           multiqc | MultiQC complete

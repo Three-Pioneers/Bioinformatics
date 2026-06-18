@@ -1,0 +1,1 @@
+python /mnt/e/data/training/Transcriptome/analysis/3.GenesExpress/gene_result_stas.py* /mnt/e/data/training/Transcriptome/analysis/3.GenesExpress/0.featureCounts/featureCounts.txt /mnt/e/data/training/Transcriptome/analysis/3.GenesExpress/1.Gene_id

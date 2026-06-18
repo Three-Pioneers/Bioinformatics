@@ -1,0 +1,78 @@
+nohup: ignoring input
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.1.1
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 4 BAM files                                      ||
+||                                                                            ||
+||                           WR260141T.bam                                    ||
+||                           WR260142T.bam                                    ||
+||                           WR260145T.bam                                    ||
+||                           WR260146T.bam                                    ||
+||                                                                            ||
+||             Output file : featureCounts.txt                                ||
+||                 Summary : featureCounts.txt.summary                        ||
+||              Paired-end : yes                                              ||
+||        Count read pairs : no                                               ||
+||              Annotation : Mus_musculus.GRCm39.115.chr.gtf (GTF)            ||
+||      Dir for temp files : /mnt/e/data/training/Transcriptome/analysis/ ... ||
+||                                                                            ||
+||                 Threads : 12                                               ||
+||                   Level : meta-feature level                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file Mus_musculus.GRCm39.115.chr.gtf ...                   ||
+||    Features : 1298972                                                      ||
+||    Meta-features : 78275                                                   ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file WR260141T.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 6059239                                              ||
+||    Successfully assigned alignments : 955253 (15.8%)                       ||
+||    Running time : 0.43 minutes                                             ||
+||                                                                            ||
+|| Process BAM file WR260142T.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 4821637                                              ||
+||    Successfully assigned alignments : 786557 (16.3%)                       ||
+||    Running time : 0.37 minutes                                             ||
+||                                                                            ||
+|| Process BAM file WR260145T.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 5545328                                              ||
+||    Successfully assigned alignments : 871867 (15.7%)                       ||
+||    Running time : 0.41 minutes                                             ||
+||                                                                            ||
+|| Process BAM file WR260146T.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 5282235                                              ||
+||    Successfully assigned alignments : 855724 (16.2%)                       ||
+||    Running time : 0.43 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/mnt/e/data/training/Tr  ||
+|| anscriptome/analysis/3.GenesExpress/0.featureCounts/featureCounts.txt.sum  ||
+|| mary"                                                                      ||
+||                                                                            ||
+\\============================================================================//
+

@@ -1,0 +1,45 @@
+Assuming unrestricted shared filesystem usage.
+host: DESKTOP-NF3504B
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+multiqc_fastp        1
+total                1
+
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May 12 16:54:39 2026]
+localrule multiqc_fastp:
+    input: analysis/json/WR241371D.json, analysis/json/WR241372D.json
+    output: stats
+    log: log/to/log
+    jobid: 0
+    reason: Missing output files: stats
+    resources: tmpdir=/tmp
+ImproperOutputException in rule multiqc_fastp in file "/home/zhangxuejie/workspace/QC/Snakefile", line 26:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule multiqc_fastp:
+    output: stats
+    affected files:
+        stats
+Removing output files of failed job multiqc_fastp since they might be corrupted:
+stats
+Skipped removing non-empty directory stats
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Tue May 12 16:54:47 2026]
+Error in rule multiqc_fastp:
+    message: None
+    jobid: 0
+    input: analysis/json/WR241371D.json, analysis/json/WR241372D.json
+    output: stats
+    log: log/to/log (check log file(s) for error details)
+    shell:
+        multiqc analysis/json/WR241371D.json analysis/json/WR241372D.json --filename multiqc_fastp --outdir stats 2> log/to/log
+        (command exited with non-zero exit code)
+Complete log(s): /home/zhangxuejie/workspace/QC/.snakemake/log/2026-05-12T165439.661243.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,4 @@
+Hypoxia	WR260141T	/mnt/e/data/training/Transcriptome/data/WR260141T
+Hypoxia	WR260142T	/mnt/e/data/training/Transcriptome/data/WR260142T
+PRPP	WR260145T	/mnt/e/data/training/Transcriptome/data/WR260145T
+PRPP	WR260146T	/mnt/e/data/training/Transcriptome/data/WR260146T

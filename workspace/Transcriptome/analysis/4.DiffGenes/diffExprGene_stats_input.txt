@@ -1,0 +1,4 @@
+group	direction	sum
+PRPP_vs_Hypoxia	Up	406
+PRPP_vs_Hypoxia	Down	429
+PRPP_vs_Hypoxia	No	9937

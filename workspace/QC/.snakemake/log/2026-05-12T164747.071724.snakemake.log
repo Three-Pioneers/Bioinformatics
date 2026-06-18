@@ -1,0 +1,61 @@
+Assuming unrestricted shared filesystem usage.
+host: DESKTOP-NF3504B
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+fastp                1
+multiqc_fastp        1
+total                2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May 12 16:47:47 2026]
+localrule fastp:
+    input: data/WR241372D_R1.fq.gz, data/WR241372D_R2.fq.gz
+    output: analysis/clean/WR241372D_R1.fq.gz, analysis/clean/WR241372D_R2.fq.gz, analysis/json/WR241372D.json, analysis/html/WR241372D.html
+    log: log/fastp/WR241372D.log
+    jobid: 2
+    reason: Missing output files: analysis/json/WR241372D.json
+    wildcards: sample=WR241372D
+    threads: 12
+    resources: tmpdir=/tmp
+[Tue May 12 16:49:31 2026]
+Finished jobid: 2 (Rule: fastp)
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May 12 16:49:31 2026]
+localrule multiqc_fastp:
+    input: analysis/json/WR241371D.json, analysis/json/WR241372D.json
+    output: multiqc.html
+    log: log/to/log
+    jobid: 0
+    reason: Missing output files: multiqc.html; Input files updated by another job: analysis/json/WR241372D.json
+    resources: tmpdir=/tmp
+ImproperOutputException in rule multiqc_fastp in file "/home/zhangxuejie/workspace/QC/Snakefile", line 26:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule multiqc_fastp:
+    output: multiqc.html
+    affected files:
+        multiqc.html
+Removing output files of failed job multiqc_fastp since they might be corrupted:
+multiqc.html
+Skipped removing non-empty directory multiqc.html
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Tue May 12 16:49:37 2026]
+Error in rule multiqc_fastp:
+    message: None
+    jobid: 0
+    input: analysis/json/WR241371D.json, analysis/json/WR241372D.json
+    output: multiqc.html
+    log: log/to/log (check log file(s) for error details)
+    shell:
+        multiqc analysis/json/WR241371D.json analysis/json/WR241372D.json --outdir multiqc.html 2> log/to/log
+        (command exited with non-zero exit code)
+Complete log(s): /home/zhangxuejie/workspace/QC/.snakemake/log/2026-05-12T164747.071724.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

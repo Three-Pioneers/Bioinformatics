@@ -1,0 +1,45 @@
+nohup: ignoring input
+gtf: 86.02263474464417
+There are 78275 distinct gene ID in the gtf file
+There are 278326 distinct transcript ID in the gtf file
+There are 43822 one-transcript genes in the gtf file
+There are 1298972 exons in the gtf file
+There are 31602 one-exon transcripts in the gtf file
+There are 24346 one-transcript genes with only one exon in the transcript
+Average number of transcripts per gene is 3.555746
+Average number of exons per transcript is 4.667088
+Average number of exons per transcript excluding one-exon tx is 5.136793
+Average number of gene per geneGroup is 9.416452
+statistic: 0.04691171646118164
+
+read outcome totals across all BAMs
+USED: 1783502
+NOT_PAIRED: 17335304
+NOT_NH_1: 366650
+NOT_EXPECTED_CIGAR: 66390
+NOT_EXPECTED_READ_LENGTH: 0
+NOT_EXPECTED_STRAND: 0
+EXON_NOT_MATCHED_TO_ANNOTATION: 24912
+JUNCTION_NOT_MATCHED_TO_ANNOTATION: 20317
+CLIPPED: 2111364
+total: 21708439
+outcomes by BAM written to: /mnt/e/data/training/Transcriptome/analysis/9.rMATS/PRPP_vs_Hypoxia/tmp/2026-04-17-14_11_11_958164_read_outcomes_by_bam.txt
+
+novel: 26.65456748008728
+The splicing graph and candidate read have been saved into /mnt/e/data/training/Transcriptome/analysis/9.rMATS/PRPP_vs_Hypoxia/tmp/2026-04-17-14_11_11_958164_*.rmats
+save: 0.9261808395385742
+loadsg: 0.0469210147857666
+
+==========
+Done processing each gene from dictionary to compile AS events
+Found 54089 exon skipping events
+Found 4013 exon MX events
+Found 20971 alt SS events
+There are 12238 alt 3 SS events and 8733 alt 5 SS events.
+Found 8014 RI events
+==========
+
+ase: 17.185662746429443
+count: 7.936621427536011
+Processing count files.
+Done processing count files.

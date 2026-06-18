@@ -1,0 +1,57 @@
+nohup: ignoring input
+
+clusterProfiler v4.18.4 Learn more at https://yulab-smu.top/contribution-knowledge-mining/
+
+Please cite:
+
+S Xu, E Hu, Y Cai, Z Xie, X Luo, L Zhan, W Tang, Q Wang, B Liu, R Wang,
+W Xie, T Wu, L Xie, G Yu. Using clusterProfiler to characterize
+multiomics data. Nature Protocols. 2024, 19(11):3292-3320
+
+Attaching package: ‘clusterProfiler’
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+enrichplot v1.30.4 Learn more at https://yulab-smu.top/contribution-knowledge-mining/
+
+Please cite:
+
+Guangchuang Yu. Gene Ontology Semantic Similarity Analysis Using
+GOSemSim. In: Kidder B. (eds) Stem Cell Transcriptional Networks.
+Methods in Molecular Biology. 2020, 2117:207-215. Humana, New York, NY.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+ ENSMUSG00000028175(Depdc1a)     ENSMUSG00000051910(Sox6) 
+                    5.947054                     5.525819 
+  ENSMUSG00000114152(Gm5374)   ENSMUSG00000050244(Heatr1) 
+                    5.393665                     5.261774 
+ENSMUSG00000033697(Arhgap39)     ENSMUSG00000027641(Rbl1) 
+                    5.202211                     5.157599 
+using 'fgsea' for GSEA analysis, please cite Korotkevich et al (2019).
+
+preparing geneSet collections...
+GSEA analysis...
+leading edge analysis...
+done...
+Warning messages:
+1: In preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
+  There are ties in the preranked stats (22.19% of the list).
+The order of those tied genes will be arbitrary, which may produce unexpected results.
+2: In fgseaMultilevel(pathways = pathways, stats = stats, minSize = minSize,  :
+  For some of the pathways the P-values were likely overestimated. For such pathways log2err is set to NA.
+3: In fgseaMultilevel(pathways = pathways, stats = stats, minSize = minSize,  :
+  For some pathways, in reality P-values are less than 1e-10. You can set the `eps` argument to zero for better estimation.
+Error in gseaplot2(gsea.go, go.top10, pvalue = TRUE) : 
+  argument 3 matches multiple formal arguments
+Execution halted

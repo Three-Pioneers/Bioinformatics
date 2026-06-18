@@ -1,0 +1,8 @@
+#Software	Version
+Cutadapt	3.2
+Fastp	0.20.1
+MultiQC	1.9
+Rush	0.4.2
+Csvtk	0.22.0
+Perl	5.30.0
+R	3.6.3

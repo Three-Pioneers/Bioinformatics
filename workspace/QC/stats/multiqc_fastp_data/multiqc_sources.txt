@@ -1,0 +1,3 @@
+Module	Section	Sample Name	Source
+fastp	all_sections	WR241371D	/home/zhangxuejie/workspace/QC/analysis/json/WR241371D.json
+fastp	all_sections	WR241372D	/home/zhangxuejie/workspace/QC/analysis/json/WR241372D.json
