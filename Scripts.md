@@ -175,3 +175,161 @@ with open(out, "w") as FW:
     print(SUM.keys())
 ~~~
 
+### 统计质控后碱基分布及平均碱基质量
+
+~~~bash
+for (pkg in c("jsonlite", "tidyverse")) {
+  if(!require(pkg, character.only = TRUE, quietly = TRUE)) {
+    install.packages(pkg)
+    require(pkg, character.only = TRUE)
+  }
+}
+
+json <- fromJSON("WCB2024001_fastp.json")
+
+# 每个位置碱基比例
+r1 <- json$read1_after_filtering$content_curves
+r2 <- json$read2_after_filtering$content_curves
+
+df_R1 <- data.frame(
+  Position = seq_along(r1$A),
+  A = r1$A * 100,
+  T = r1$T * 100,
+  G = r1$G * 100,
+  C = r1$C * 100,
+  N = r1$N * 100
+)
+
+df_R2 <- data.frame(
+  Position = seq_along(r2$A) + length(r1$A),
+  A = r2$A * 100,
+  T = r2$T * 100,
+  G = r2$G * 100,
+  C = r2$C * 100,
+  N = r2$N * 100
+)
+
+df_all <- rbind(df_R1, df_R2)
+
+dat_long <- pivot_longer(df_all,
+                         cols = -Position,
+                         names_to = "Base",
+                         values_to = "Content"
+                         )
+
+Base_Distribution <- ggplot(data = dat_long,
+       mapping = aes(x = Position, y = Content, color = Base)
+  ) +
+  geom_line(linewidth = 0.75) +
+  geom_point(size = 0.75, show.legend = FALSE) +
+  theme_classic() +
+  scale_color_manual(
+    name = NULL,
+    values = c(
+      A = "red",
+      T = "blue",
+      G = "purple",
+      C = "green",
+      N = "cyan"
+      ),
+    breaks = c("A", "T", "C", "G", "N"),
+    labels = c("A%", "T%", "C%", "G%", "N%"),
+    ) +
+  geom_vline(xintercept = length(r1$A), linetype = "twodash") +
+  labs(
+    title = "Base Distribution of WCB2024001",
+    x = "Position",
+    y = "Percent(%)"
+  ) +
+  scale_x_continuous(
+    limits = c(0, 300),
+    breaks = seq(0, 300, 25)
+  ) +
+  scale_y_continuous(
+    limits = c(0, 70),
+    breaks = seq(0, 70, 10)
+  ) +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 16),
+    legend.position = c(0.85, 0.75)
+    )
+
+ggsave(
+  filename = "Base Distribution of WCB2024001.pdf",
+  plot = Base_Distribution,
+  width = 8,
+  height = 5
+)
+
+ggsave(
+  filename = "Base Distribution of WCB2024001.png",
+  plot = Base_Distribution,
+  width = 8,
+  height = 5,
+  dpi = 600
+)
+
+
+# 每个位置碱基平均质量
+r1_mean_quality <- json$read1_after_filtering$quality_curves$mean
+r2_mean_quality <- json$read2_after_filtering$quality_curves$mean
+
+r1_quality <- data.frame(
+  Position = seq_along(r1_mean_quality),
+  Quality = r1_mean_quality,
+  Sample = "mean_quality"
+)
+
+r2_quality <- data.frame(
+  Position = seq_along(r2_mean_quality) + length(r1_mean_quality),
+  Quality = r2_mean_quality,
+  Sample = "mean_quality"
+)
+
+quality <- rbind(r1_quality, r2_quality)
+
+Mean_Quality <- ggplot(
+  data = quality,
+  mapping = aes(x = Position, y = Quality, color = Sample)
+) +
+  geom_vline(xintercept = length(r2_mean_quality), linetype = "twodash") +
+  scale_color_manual(
+    name = NULL,
+    values = c("mean_quality" = "red")
+    ) +
+  geom_line(linewidth = 0.75) +
+  theme_classic() +
+  labs(
+    x = "Position",
+    y = "Quality",
+    title = "Mean Quality Distribution of WCB2024001"
+  ) +
+  scale_x_continuous(
+    limits = c(0, 300),
+    breaks = seq(0, 300, 25)
+  ) +
+  scale_y_continuous(
+    limits = c(0, 40),
+    breaks = seq(0, 40, 10)
+  ) +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 16),
+    legend.position = c(0.85, 0.75)
+  )
+
+ggsave(
+  filename = "Mean Quality Distribution of WCB2024001.pdf",
+  plot = Mean_Quality,
+  width = 8,
+  height = 5
+)
+
+ggsave(
+  filename = "Mean Quality Distribution of WCB2024001.png",
+  plot = Mean_Quality,
+  width = 8,
+  height = 5,
+  dpi = 600
+)
+~~~
+
