@@ -97,31 +97,56 @@
 
 ### 物种特异性数据库
 
-## 文件格式
+# 文件格式
 
-### BAM
+## BAM
 
-| 比对序列名称                             | 比对信息 | 染色体 | 染色体起始（1起） | 比对质量值（MAPQ） | CIGAR | RNEXT[^1] |      |      |      |      |      |
-| ---------------------------------------- | -------- | ------ | ----------------- | ------------------ | ----- | --------- | ---- | ---- | ---- | ---- | ---- |
-| LH00391:737:23JNNMLT4:7:1154:30472:12336 | 99       | chr1   | 253               | 1                  | 150M  | =         |      |      |      |      |      |
-
-284	181	CCACATATGTTTCCTTGTCGTAGATCACATTCTTGGATTTCTGGTGGAGACCATTTCTTGGTCAGAAAACCGTAGGTGTTAGCCTTCGATATTATTGAAAATGGTCGTTCATGGCTATTTTCGACAAAAATGGGGGTTGTGTGGCCATTG	IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII	AS:i:-6	XS:i:-6	XN:i:0	XM:i:1	XO:i:0	XG:i:0	NM:i:1	MD:Z:68T81	YS:i:-12	YT:Z:CP
+| 比对序列名称                             | 比对信息 | 染色体 | 染色体起始（1起） | 比对质量值（MAPQ） | CIGAR | RNEXT[^1] | PNEXT[^2] | TLEN[^3] | Seq                                                          | BaseQ                                                        | 可选标签                                    |
+| ---------------------------------------- | -------- | ------ | ----------------- | ------------------ | ----- | --------- | --------- | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------- |
+| LH00391:737:23JNNMLT4:7:1154:30472:12336 | 99       | chr1   | 253               | 1                  | 150M  | =         | 284       | 181      | CCACATATGTTTCCTTGTCGTAGATCACATTCTTGGATTTCTGGTGGAGACCATTTCTTGGTCAGAAAACCGTAGGTGTTAGCCTTCGATATTATTGAAAATGGTCGTTCATGGCTATTTTCGACAAAAATGGGGGTTGTGTGGCCATTG | IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII | AS:i:-6 XS:i:-6 XN:i:0 XM:i:1 XO:i:0 XG:i:0 |
 
 [^1]: Read Next：双端测序中，pair reads 比对到的染色体位置。= 表示比对到同一条染色体；* 表示没有比对到参考基因组
+[^2]: Position of the NEXT read in the template：双端测序中，pair reads 的主要比对起始位置
+[^3]: Template Length：插入片段长度；如果 reads 在模板左端，即为 +；如果 reads 在模板右端，即为 -
 
 ---
 
-### GTF
+## GTF
 
-| seqname | source | feature    | start    | end      | score | strand | frame[^1] | attributes                                                   |
-| ------- | ------ | ---------- | -------- | -------- | ----- | ------ | --------- | ------------------------------------------------------------ |
-| 1       | havana | gene       | 43781121 | 43783055 | .     | -      | .         | gene_id "ENSMUSG00000100764"; gene_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; |
-| 1       | havana | transcript | 43781121 | 43783055 | .     | -      | .         | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
-| 1       | havana | exon       | 43782986 | 43783055 | .     | -      | .         | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; exon_number "1"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001334242"; exon_version "2"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
-| 1       | havana | exon       | 43781121 | 43781266 | .     | -      | .         | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; exon_number "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001327336"; exon_version "2"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
-| 1       | havana | transcript | 43782744 | 43783012 | .     | -      | .         | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
-| 1       | havana | exon       | 43782744 | 43783012 | .     | -      | .         | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; exon_number "1"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001328607"; exon_version "2"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
+| seqname | source | feature    | start    | end      | score | strand | frame[^11] | attributes                                                   |
+| ------- | ------ | ---------- | -------- | -------- | ----- | ------ | ---------- | ------------------------------------------------------------ |
+| 1       | havana | gene       | 43781121 | 43783055 | .     | -      | .          | gene_id "ENSMUSG00000100764"; gene_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; |
+| 1       | havana | transcript | 43781121 | 43783055 | .     | -      | .          | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
+| 1       | havana | exon       | 43782986 | 43783055 | .     | -      | .          | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; exon_number "1"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001334242"; exon_version "2"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
+| 1       | havana | exon       | 43781121 | 43781266 | .     | -      | .          | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000186289"; transcript_version "2"; exon_number "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-202"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001327336"; exon_version "2"; tag "gencode_basic"; tag "gencode_primary"; tag "Ensembl_canonical"; transcript_support_level "5 (assigned to previous version 1)"; |
+| 1       | havana | transcript | 43782744 | 43783012 | .     | -      | .          | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
+| 1       | havana | exon       | 43782744 | 43783012 | .     | -      | .          | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; exon_number "1"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001328607"; exon_version "2"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
 
 featureCounts -t 选第三列中某个特征进行定量 -g 选第九列某个特征进行定量(张老师？)
 
 一个基因可含有多个转录本
+
+---
+
+## outfmt 6
+
+| qseqid[^21]                                         | sseqid[^22]             | pident[^23] | length[^24] | mismatch | gapopen | qstart[^25] | qend [^26] | sstart [^27] | send[^28] | evalue [^29] | bitscore |
+| --------------------------------------------------- | ----------------------- | ----------- | ----------- | -------- | ------- | ----------- | ---------- | ------------ | --------- | ------------ | -------- |
+| TRINITY_DN31_c0_g1::TRINITY_DN31_c0_g1_i1::g.1::m.1 | sp\|Q94F47\|UBC28_ARATH | 98.496      | 133         | 2        | 0       | 1           | 133        | 1            | 133       | 1.18e-96     | 274      |
+| TRINITY_DN8_c0_g1::TRINITY_DN8_c0_g1_i1::g.6::m.6   | sp\|Q06396\|ARF1_ORYSJ  | 99.448      | 181         | 1        | 0       | 1           | 181        | 1            | 181       | 7.36e-135    | 374      |
+
+[^21]:qurey sequence id
+[^22]:subject sequence id
+[^23]:percentage of identical matches
+[^24]:alignment length (sequence overlap)
+[^25]:query sequence start
+[^26]:query sequence end
+[^27]:subject sequence start
+[^28]:subject sequence end
+[^29]:expect value
+
+# 图
+
+## Violin
+
+中位数；两个四分位数；最大值；最小值
