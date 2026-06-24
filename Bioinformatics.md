@@ -130,6 +130,11 @@ dG
 ~~~
 
 ~~~bash
+# less 严格匹配 12 的单词，不包含 1122 1312 等
+/\<12\>
+~~~
+
+~~~bash
 # 文件重命名
 rename 's/new/old/' old_load.txt
 ~~~
@@ -772,4 +777,26 @@ pheatmap(log2(top_de + 1))
 下载很快但需激活，Github 有脚本可跳激活 https://github.com/WindowsAddict/IDM-Activation-Script
 
 ## IGV
+
+## SRA
+
+**Sequence Read Archive** 是 NCBI 存储高通量测序数据的数据库，框架包含四种概念。其中 Study 代表研究研究课题；Experiment 代表实验，可含有一个或多个 Sample；Sample 代表样本信息；Run 代表下机的测序数据，是最小概念；accession number 开头第一个字母包含 S E D 分别代表 NCBI(SRA) EBI DDBJ、第二个字母固定为 R 代表 Read、第三个字母包含 P X S R 分别代表 Project / Study Experiment Sample Run，下载时使用 SRR 号；[知乎大佬](https://zhuanlan.zhihu.com/p/493358239?s_r=0)
+
+**下载方法**
+
+~~~bash
+# 1.1 sra-tools 直接下载 sra 后缀文件
+prefetch SRR3624173
+
+# 1.2 获取 sra 文件下载路径，wget 或 IDM（推荐，开小日本VPN加速） 下载
+srapath SRR3624173
+wget https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR3624173/SRR3624173
+
+# 2 下载结果为 SRR3624175.man（和 sra 只是后缀不一样，不用管），转化为 fastq；多个样本并行运行即可
+fastq-dump --gzip --split-3 SRR3624125.man
+~~~
+
+# 脱靶位点
+
+**脱靶效应**：核酸酶在非预期的位点切割或修饰
 

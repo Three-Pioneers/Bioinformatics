@@ -24,7 +24,7 @@ adapter 用于质控时的接头？
 
 ---
 
-## 宏基因组
+# 宏基因组
 
 0. 改名：测序名称→样本名称
 1. 质控：**fastq** 过滤低质量 reads 和测序接头；**kneaddata** 过滤重复序列
@@ -102,7 +102,7 @@ python /Data_all/script/Metagene/bin/Card_function.py /Data_all/Databases/Card_d
 
 ---
 
-## miRNA
+# miRNA
 
 从 miRNA 入手分析 sRNA 原因：占比大；易建库；公共数据库维护好；生信分析快且容易
 
@@ -156,7 +156,7 @@ python /Data_all/script/Metagene/bin/Card_function.py /Data_all/Databases/Card_d
 
 ---
 
-## Metagene
+# Metagene
 
 **kneaddata**
 
@@ -191,7 +191,7 @@ which trimmomatic #/home/zhangxuejie/miniconda3/envs/Metagene/bin/trimmomatic
 
 ---
 
-## 有参转录组分析（小鼠为例）
+# 有参转录组分析（小鼠为例）
 
 0. 改名：测序名称→样本名称
 1. 质控：**fastq** 过滤低质量 reads 和测序接头
@@ -351,7 +351,7 @@ write.table(fCountsList$stat, outStatsFilePath, sep="\t", col.names=FALSE, row.n
 
 ---
 
-## 无参转录组分析（芍药为例）
+# 无参转录组分析（芍药为例）
 
 `/data0_2/2026_06/LiuJiaWei_9_shaoyao_Denovo_transcriptome`
 
@@ -395,7 +395,17 @@ SNP-Indel
 
 ---
 
-## Concept
+# Phage_denovo
+
+## Question
+
+- [ ] 第二步：使用`mamba activate vs2`需要 mamba 初始化，改成 conda 最好
+  不对，只有这一步不要 vs2 环境，直接写 VirSorter2 的环境路径
+  不行，这个软件需要 snakemake 多软件运行，必须进环境，但是下一步又必须出环境
+
+---
+
+# Concept
 
 **模式物种**：科学家为研究生命现象普遍规律而选定的生物，具有易于实验操作，遗传背景清晰等优点
 
@@ -436,7 +446,7 @@ SNP-Indel
 
 ---
 
-## Database
+# Database
 
 **[Ensembl 数据库](https://ftp.ebi.ac.uk/pub/ensemblorganisms/)**
 
@@ -456,7 +466,7 @@ SNP-Indel
 
 ---
 
-## Biology Basics
+# Biology Basics
 
 基因组 FASTA
 
