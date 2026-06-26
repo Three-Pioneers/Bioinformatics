@@ -405,6 +405,14 @@ SNP-Indel
 
 ---
 
+# ChiP
+
+**ChiP（Chromatin Immunoprecipitation，染色质免疫共沉淀）**：ChiP-Seq 用于确定蛋白质和 DNA 的互作情况
+
+**染色质**：真核生物在间期细胞核内由：DNA、组蛋白、非组蛋白和少量 RNA 组成的核酸蛋白复合体
+
+---
+
 # Concept
 
 **模式物种**：科学家为研究生命现象普遍规律而选定的生物，具有易于实验操作，遗传背景清晰等优点
