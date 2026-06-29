@@ -405,11 +405,15 @@ SNP-Indel
 
 ---
 
-# ChiP
+# ChIP-Seq
 
-**ChiP（Chromatin Immunoprecipitation，染色质免疫共沉淀）**：ChiP-Seq 用于确定蛋白质和 DNA 的互作情况
+**ChiP（Chromatin Immunoprecipitation，染色质免疫共沉淀）**：ChIP-Seq 用于确定蛋白质和 DNA 的互作情况；包括 **TF ChIP** 和 **Histone ChIP**
 
-**染色质**：真核生物在间期细胞核内由：DNA、组蛋白、非组蛋白和少量 RNA 组成的核酸蛋白复合体
+**染色质**：真核生物在间期细胞核内由 DNA、组蛋白、非组蛋白和少量 RNA 组成的核酸蛋白复合体
+
+---
+
+# ATAC
 
 ---
 
@@ -451,6 +455,12 @@ SNP-Indel
 **密码子**：mRNA 或 DNA 上三个连续的碱基，用于编码特定氨基酸
 
 **SSR**（Simple Sequence Repeat，简单重复序列）：由 1~6 个核苷酸组成的短串联重复序列
+
+**启动子（Promoter）**：结合 RNA 聚合酶转录特定基因合成 RNA 的 DNA 序列
+
+**TSS（Transcription Start Sites，转录起始位点）**：DNA 链上与 RNA 链第一个核苷酸对应的碱基
+
+**UTR（Untranslated Region，非翻译区）**：mRNA 编码区（CDS）两端的非编码片段
 
 ---
 
