@@ -1,6 +1,10 @@
 ## ==第一要素: 使用绝对路径==
 
+---
+
 # 语言
+
+---
 
 ## Linux
 
@@ -554,7 +558,11 @@ pheatmap(log2(top_de + 1))
 ### 输入类型严格：ENTREZ
 ~~~
 
+---
+
 # 工具
+
+---
 
 ## Snakemake
 
@@ -726,6 +734,8 @@ adapter 用于质控时的接头？
 
 # Pipeline
 
+---
+
 ## 质控
 
 ### Question
@@ -744,7 +754,7 @@ adapter 用于质控时的接头？
 
 ---
 
-## 宏基因组
+## Metagene
 
 0. 改名：测序名称→样本名称
 1. 质控：**fastq** 过滤低质量 reads 和测序接头；**kneaddata** 过滤重复序列
@@ -755,9 +765,38 @@ adapter 用于质控时的接头？
 6. 功能：**diamond** 将蛋白质或基因 **blast** 到不同数据库，输出 outfmt 6，注释含有什么不同的功能
 7. 量化：**salmon** 对**质控去重的测序数据**进行量化输出基因表达表；再进行 α-多样性和 β-多样性（PCA分析）以及后续的 GO、KEGG富集分析
 
----
 
-**2.Megahit**
+
+**kneaddata**
+
+~~~bash
+# --trimmomatic [PATH]
+which trimmomatic #/home/zhangxuejie/miniconda3/envs/Metagene/bin/trimmomatic
+## 参数为 /home/zhangxuejie/miniconda3/envs/Metagene/share/trimmomatic-0.40-0/
+~~~
+
+**kneaddata_read_count_table**
+
+~~~bash
+# 生成的报告 stat，第一列按制表符分割，不知是否会影响报告
+#Sample	raw	pair1	raw	pair2	trimmed	pair1	trimmed	pair2	trimmed	orphan1	trimmed	orphan2
+~~~
+
+**megahit**
+
+~~~bash
+# --presets meta-large 会覆盖其他 k-list k-skep 等参数
+~~~
+
+**为什么要组装**
+
+|            | 不组装                | 组装                                       |
+| ---------- | --------------------- | ------------------------------------------ |
+| 数据库比对 | 150bp，不能精确到物种 | 长片段，可精确比对                         |
+| 聚类分析   | 各自为阵，没法看联系  | 联合分析同一类细菌的某个共同基因作用       |
+| 完整性     | 基因片段              | 包含起始和终止密码子的完整基因，可分析功能 |
+
+### 2.Megahit
 
 ~~~bash
 # megahit
@@ -768,7 +807,7 @@ adapter 用于质控时的接头？
 
 **quast(quality assessment tool for genome assemblies)**
 
-**3.ORF_Prediction**
+### 3.ORF_Prediction
 
 ~~~bash
 # 预测的核苷酸和蛋白质序列终止位置不一定时终止密码子, 其允许预测未组装完整的基因序列
@@ -778,7 +817,7 @@ adapter 用于质控时的接头？
 
 **metaphlan: metagenomic phylogenetic analysis for metagenomic taxonomic profiling**
 
-**6.Functional_Annotation**
+### 6.Functional_Annotation
 
 **Card**
 
@@ -793,7 +832,7 @@ python /Data_all/script/Metagene/bin/Card_function.py /Data_all/Databases/Card_d
 
 **eggnog-mapper: Fast genome-wide functional annotation through orthology assignment**
 
-**7.Gene_Quantify**
+### 7.Gene_Quantify
 
 [salmon](https://salmon.readthedocs.io/en/latest/salmon.html)
 
@@ -820,6 +859,8 @@ python /Data_all/script/Metagene/bin/Card_function.py /Data_all/Databases/Card_d
 # NMDS: Non-metric Multidimensional Scaling
 ~~~
 
+
+
 ### Question
 
 - [ ] awk 挑选在排序相比于 csvtk cut + awk 分别负责挑选和排序慢很多
@@ -842,13 +883,16 @@ megahit --presets meta-large
 
 - [ ] alpha_diversity 没有 Richness 的图
 
+- [ ] 失败，本地电脑不好搞宏基因组组装
+  服务器也是一天一个样本
+
 ---
 
 ## miRNA
 
-从 miRNA 入手分析 sRNA 原因：占比大；易建库；公共数据库维护好；生信分析快且容易
+miRNA 入手分析 small RNA：占比大；易建库；公共数据库维护好；生信分析快且容易
 
-1. 原始 fastq 数据
+1. 质控：原始 fastq 数据
 2. 去接头、质控
 3. 筛选 18–30 nt 小 RNA
 4. 去除 rRNA/tRNA/snRNA/snoRNA/repeat
@@ -861,33 +905,37 @@ megahit --presets meta-large
 11. GO/KEGG 富集
 12. miRNA-target 调控网络
 
-**概念**
 
-|         |                        |                                                              |
-| ------- | ---------------------- | ------------------------------------------------------------ |
-| 小RNA   | small RNA              | 长度18-40 nt，起转录后调控作用的非编码 RNA                   |
-| 3’UTR   | 3’ UnTranslated Region | 成熟 mRNA 分子中终止密码子后，PolyA 前非翻译区，调控基因的表达 |
-| HairPin | 发夹结构               | DNA、RNA中的单链核酸碱基配对部分形成 “茎”，没有配对部分形成 “环”；调控转录终止和 tRNA 的形成 |
-|         |                        |                                                              |
-| mRNA    | messenger RNA          | 信使 RNA，                                                   |
-| rRNA    | ribosomal RNA          | 核糖体 RNA，                                                 |
-| tRNA    | transfer RNA           | 转运 RNA，                                                   |
-| snRNA   | small nuclear RNA      | 核小 RNA，负责 mRNA 前体的加工                               |
-| snoRNA  | small nucleolar RNA    | 核仁小 RNA，指导 rRNA、tRNA、snRNA 的化学修饰                |
-| piRNA   |                        | 特异性 piwi 蛋白结合发挥作用                                 |
 
-**数据库**
+### Basic
 
-|                   |                                  |                                                              |
-| ----------------- | -------------------------------- | ------------------------------------------------------------ |
-| ENCORI / starBase | Encyclopedia of RNA Interactomes | an extensive atlas that integrates precise RNA interactions identified by our innovative rbsSeeker and rriScan algorithms, showcasing the functional and mechanistic insights into the RNA interactomes |
-|                   |                                  |                                                              |
+**small RNA（小 RNA）**：长度18-40 nt，起转录后调控作用的非编码 RNA
 
-**miRDeep2**
+**3’UTR（3’ UnTranslated Region）**：成熟 mRNA 分子中在终止密码子后，PolyA 前的非翻译区
+
+**HairPin（发夹结构）**：DNA、RNA中的单链核酸碱基配对部分形成 “茎”，没有配对部分形成 “环”
+
+**mRNA（messenger RNA，信使 RNA）**：
+
+**rRNA（ribosomal RNA，核糖体 RNA）**：
+
+**tRNA（transfer RNA，转运 RNA）**：
+
+**snRNA（small nuclear RNA，核小 RNA）**：负责 mRNA 前体的加工
+
+**snoRNA（small nucleolar RNA，核仁小 RNA）**：指导 rRNA、tRNA、snRNA 的化学修饰
+
+**piRNA（）**：特异性 piwi 蛋白结合发挥作用
+
+
+
+### miRDeep2
 
 成熟 miRNA 是 22nt，没有二级结构，要根据二级结构预测miRNA，就要找到有发夹结构的 miRNA 前体
 
 **gfold**：广义 Fold Change 对 RNA-Seq 中的差异表达基因排序，无重复时尤其适合
+
+
 
 ### Question
 
@@ -906,41 +954,6 @@ megahit --presets meta-large
 
 ---
 
-## Metagene
-
-**kneaddata**
-
-~~~bash
-# --trimmomatic [PATH]
-which trimmomatic #/home/zhangxuejie/miniconda3/envs/Metagene/bin/trimmomatic
-## 参数为 /home/zhangxuejie/miniconda3/envs/Metagene/share/trimmomatic-0.40-0/
-~~~
-
-**kneaddata_read_count_table**
-
-~~~bash
-# 生成的报告 stat，第一列按制表符分割，不知是否会影响报告
-#Sample	raw	pair1	raw	pair2	trimmed	pair1	trimmed	pair2	trimmed	orphan1	trimmed	orphan2
-~~~
-
-**megahit**
-
-~~~bash
-# --presets meta-large 会覆盖其他 k-list k-skep 等参数
-~~~
-
-==失败，本地电脑不好搞宏基因组组装==
-
-**为什么要组装**
-
-|            | 不组装                | 组装                                       |
-| ---------- | --------------------- | ------------------------------------------ |
-| 数据库比对 | 150bp，不能精确到物种 | 长片段，可精确比对                         |
-| 聚类分析   | 各自为阵，没法看联系  | 联合分析同一类细菌的某个共同基因作用       |
-| 完整性     | 基因片段              | 包含起始和终止密码子的完整基因，可分析功能 |
-
----
-
 ## 有参转录组分析（小鼠为例）
 
 0. 改名：测序名称→样本名称
@@ -948,7 +961,18 @@ which trimmomatic #/home/zhangxuejie/miniconda3/envs/Metagene/bin/trimmomatic
 2. 比对：**hisat2-build** 把基因组 fasta 建库输出 **ht2** 结尾的文件；**hisat2** 将质控后的基因比对到建库后的文件，输出 **sam** 文件；**samtools** 对 sam 排序转换输出 **bam** 文件，然后对 bam 建索引输出 **bai** 文件 
 3. 量化：**subread** 软件下 **featureCounts** 对排序后 bam 量化，生成
 
----
+
+
+1. 比对到参考基因组：数据准备
+2. 表达定量：对数据计数
+3. 归一化：统一标准
+4. 差异分析-火山图、热图：看基因是上调还是下调
+5. 富集分析-GO、KEGG：关注的基因参与了什么功能
+6. 聚类分析：探索样本间关系，锁定变化的关键样本
+7. 相关系数：又分为组间相关系数和组内相关系数
+8. 聚类分析和 WGCNA：模块构建-性状与模块相关分析-鉴定主要基因
+
+
 
 ### 数据准备
 
@@ -968,10 +992,6 @@ gene_type SYMBOL
 Species mmu
 ~~~
 
-- [ ] Functional_annotation.conf 是干嘛的，分类号在 miRNA 第四步 RepeatMasker 使用替代了 species，好像更快
-- [ ] NCBI 分类号，怎么查，用在流程哪个地方
-- [ ] gene_type SYMBOL；Species mmu 这俩干嘛用的
-
 **可变剪切**
 
 |      |                           |                |
@@ -982,18 +1002,7 @@ Species mmu
 | MXE  | Mutually exclusive exons  | 互斥可变外显子 |
 | RT   | Retainedintron            | 内含子保留     |
 
-### 转录组分析副
 
-**步骤**
-
-1. 比对到参考基因组：数据准备
-2. 表达定量：对数据计数
-3. 归一化：统一标准
-4. 差异分析-火山图、热图：看基因是上调还是下调
-5. 富集分析-GO、KEGG：关注的基因参与了什么功能
-6. 聚类分析：探索样本间关系，锁定变化的关键样本
-7. 相关系数：又分为组间相关系数和组内相关系数
-8. 聚类分析和 WGCNA：模块构建-性状与模块相关分析-鉴定主要基因
 
 **表型差异缘由**
 
@@ -1099,6 +1108,8 @@ tpm = exp(log(fpkm) - log(sum(fpkm)) + log(1e6))
 write.table(fCountsList$stat, outStatsFilePath, sep="\t", col.names=FALSE, row.names=FALSE, quote=FALSE)
 ~~~
 
+
+
 ### Question
 
 - [ ] 质控 md5sum 这一步无效，可以删除
@@ -1132,6 +1143,9 @@ STAR --runThreadN 12 --runMode genomeGenerate --genomeDir /data/users/minmingw/A
 
 - [ ] Step 10 rush 改为 parallel，后者用的人很多
 - [ ] 基因组和注释文件选择问题，以及不同软件的匹配度相关性
+- [ ] Functional_annotation.conf 是干嘛的，分类号在 miRNA 第四步 RepeatMasker 使用替代了 species，好像更快
+- [ ] NCBI 分类号，怎么查，用在流程哪个地方
+- [ ] gene_type SYMBOL；Species mmu 这俩干嘛用的
 
 ---
 
@@ -1304,11 +1318,13 @@ samtools index -c <sample_sorted.sam>
 | :--------------------: | :----------------------------------------------: | :----------: | :----------: |
 | 所有染色体和未定位序列 | 剔除冗余和易混淆可变区域（haplotypes / patches） | 重复序列→“N” | 重复序列小写 |
 
-[^1]: 
+[^1]:
 
 ---
 
 # Biology
+
+---
 
 ## 基因组学
 
