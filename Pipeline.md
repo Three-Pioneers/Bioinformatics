@@ -357,6 +357,12 @@ write.table(fCountsList$stat, outStatsFilePath, sep="\t", col.names=FALSE, row.n
 
 对于没有高质量参考基因组的物种，无参转录组组装通过对 RNA-Seq reads 进行图结构重建、直接恢复转录本，获得完整的转录本集合，芍药（凤丹 Paeonia ostii）的同属不同种 2025 年发布了参考基因组
 
+0. 改名：测序名称 → 样本名称
+1. 质控：**fastq** 过滤低质量 reads 和测序接头
+2. 组装：**Trinity** **分别合并**样本的单端数据，构建 contig、生成结构图、最终生成新的**转录本**及基因和转录本**映射表**
+3. 预测：**TransDecoder** 预测**最长开放阅读框**，将预测的蛋白 blastp Uniprot 数据库输出**比对信息表**，重新预测生成最终注释、蛋白和编码序列，根据最终注释文件过滤 Trinity 生成的转录本文件
+4. 比对
+
 ### 转录本组装
 
 **Trinity** 中三个独立的模块：**Inchworm**、**Chrysalis**、**Butterfly** 分别负责初始 contig 构建、图结构划分和最终转录本解析
@@ -411,6 +417,8 @@ SNP-Indel
 
 **染色质**：真核生物在间期细胞核内由 DNA、组蛋白、非组蛋白和少量 RNA 组成的核酸蛋白复合体
 
+https://zhuanlan.zhihu.com/p/512163334
+
 ---
 
 # ATAC
@@ -461,6 +469,8 @@ SNP-Indel
 **TSS（Transcription Start Sites，转录起始位点）**：DNA 链上与 RNA 链第一个核苷酸对应的碱基
 
 **UTR（Untranslated Region，非翻译区）**：mRNA 编码区（CDS）两端的非编码片段
+
+**组蛋白（Histone）**：是一种富含赖氨酸和精氨酸的高度碱性蛋白质，DNA 缠绕组蛋白形成螺旋状的结构称之为核小体，组蛋白能防止 DNA 缠结
 
 ---
 

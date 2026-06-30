@@ -179,8 +179,15 @@ chmod 765(读写执-读写-读执) filename
 
 ~~~bash
 # grep(global regular expression print)
-## -E 启用扩展正则表达式
 grep 'Au_60' Step_2_megahit.sh
+
+## -E 启用扩展正则表达式，找出包含任意字符的行；-i 无视大小写
+grep -i -E "word1|word2|word3|word4" Step_2_megahit.sh
+~~~
+
+~~~bash
+# 比较俩文件大小，相同则没输出
+diff file1 file2
 ~~~
 
 ~~~bash
