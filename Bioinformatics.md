@@ -728,6 +728,20 @@ fastq-dump --gzip --split-3 SRR3624125.man
 
 https://zhuanlan.zhihu.com/p/539819746
 
+https://zhuanlan.zhihu.com/p/645806380
+
+http://www.rgenome.net/cas-offinder/result?hash=3e082c86a072c93b80eecfa2504ba2cd
+
+https://zhuanlan.zhihu.com/p/668984590
+
+https://cctop.cos.uni-heidelberg.de/
+
+
+
+CAGCAACTCCAGGGGGCCGCNGG
+
+
+
 **CRISPR-Cas**：某些细菌在遭受病毒入侵时，会将病毒 DNA 的一小段存入到 CRISPR 的序列中，当再次遭受该病毒入侵时，会根据存储的 DNA 片段识别并切断病毒 DNA 使之失效；该系统包含 CRISPR 基因座和 Cas 基因（CRISPR 关联基因）两部分；**CRISPR（Clustered Regularly Interspersed Short Palindromic Repeats，成簇规律性间隔短回文重复序列）**由**前导序列（leader）**、**重复序列（repeat）**、**间隔序列（spacer）**构成。前导序列位于 CRISPR 基因上游，富含 AT 碱基，被认为**是 CRISPR 的启动子**；重复序列是 25-50 bp 包含 5-7 bp 回文序列的核苷酸序列，转录产物形成发卡结构，**可稳定 RNA 的二级结构**；间隔序列是被细菌**俘获的外源 DNA 序列**，当外源遗传物质再次入侵时，CRISPR-Cas 系统就会精准识别；**Cas 基因**分布于 CRISPR 基因附近或基因组的其他地方，Cas 基因产生的蛋白质都可以于 CRISPR 基因发生相互作用，因此命名 CRISPR 关联基因（CRISPR associated，Cas）
 
 Cas 基因编码的蛋白在防御过程中产生至关重要的作用，根据 Cas 蛋白的作用方式分为两大类
@@ -755,11 +769,23 @@ CRISPR 序列在前导序列的调控下，转录生成 precrRNA 和 tracrRNA，
 
 ### Basic
 
-**脱靶效应**：核酸酶在非预期的位点切割或修饰；其中 sgRNA 识别 PAM（） 序列
+**脱靶效应**：核酸酶在非预期的位点切割或修饰
 
 **DSB（DNA Double-Strand Breaks）**：是最有害的 DNA 损伤之一，可能导致细胞死亡或基因组不稳定，从而导致癌变
 
-**sgRNA（single guide RNA）**：向导 RNA
+**sgRNA（single guide RNA）**：向导 RNA；crRNA-tracrRNA 融合成 sgRNA，可以识别 PAM 序列，进而引导 Cas9 蛋白切割双链 DNA,形成双链断裂，损伤后修复可以造成碱基插入和敲除，从而达到修饰的目的
+
+**PAM（Protospacer Adjacent Motif，原间隔相邻序列）**
+
+
+
+### Question
+
+- [ ] http://www.rgenome.net/cas-offinder/result?hash=3e082c86a072c93b80eecfa2504ba2cd 这个网站好像是单纯的比对错配，没有实际数据支撑，仅仅是算法上预测
+- [ ] 而且设置两个隆起时，推测出的序列两个隆起必须在一起，不能分开两旁
+  如果分开两旁，意味着在同一条序列上的两个切割位点，好像不太可能哦
+- [ ] 给定一段 on-target sequence，设置 mismatch 后，如何在全基因组中搜索？http://www.rgenome.net/cas-offinder/result?hash=3e082c86a072c93b80eecfa2504ba2cd 下载离线版本，研究学习代码看如何用 C++ 等运行的
+- [ ] 哔哩哔哩脱靶效应视频中，有设计 sgRNA 每个位点进行三种突变以研究不同突变与脱靶比率之间的关系，我司可据此效仿研究
 
 ---
 
