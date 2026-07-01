@@ -333,3 +333,59 @@ ggsave(
 )
 ~~~
 
+### 两个表合并（分别 Python 循环和 R 表关联）
+
+**Python**
+
+~~~python
+with open("A34F_PeakAnno.txt", "r") as FR1:
+	fr1 = FR1.readlines()
+
+with open("A34F_peaks_clean.xls", "r") as FR2:
+	fr2 = FR2.readlines()
+
+with open("final_txt", "w") as FW:
+	header = fr1[0].split("\t")
+	header.insert(8, "-log10(qvalue)")
+	#print(header)
+	#print("\t".join(header))
+	FW.write("\t".join(header))
+	
+	dict1 = {}
+	for j in fr2[1:] :
+		B = j.rsplit("\t", 2)
+		dict1[B[-1].strip()] = B[-2]
+		#print(dict1.keys())
+		#print(name)
+
+	for i in fr1[1:] :
+		A = i.split("\t", 8)
+		peak_name = A[5]
+		#print(dict1[peak_name])
+		if dict1[peak_name] :
+			A.insert(8, dict1[peak_name])
+			#print(A)
+			FW.write("\t".join(A))
+			continue
+		#print(peak_name)
+~~~
+
+**R**
+
+~~~R
+library(tidyverse)
+
+# 注意 read.table() 函数要加 quote = ""，如果不加，碰到字段中含有单引号，会变成引用，从而大大减少行数
+PeakAnno <- read.table("A34F_PeakAnno.txt", sep = "\t", header = TRUE, check.names = FALSE, quote = "")
+nrow(PeakAnno)	# 108909
+#PeakAnno1 <- read.table("A34F_PeakAnno.txt", sep = "\t", header = TRUE, check.names = FALSE)
+#nrow(PeakAnno1)	# 53271
+
+peaks <- read.table("A34F_peaks_clean.xls", sep = "\t", header = TRUE, check.names = FALSE, quote = "")
+nrow(peaks)
+
+final <- left_join(PeakAnno, peaks, by = c("peak_name" = "name")) %>%
+  select(-c(18:25)) %>%
+  select(c(1:8, 18, 9:17))
+~~~
+

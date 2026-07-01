@@ -15,6 +15,8 @@
 硬链接: 文件副本，无独立 incode，必须在同一系统文件下创建，源文件必须存在且不能为目录
 软链接: 包含独立 incode，指向源文件
 
+
+
 ### 基础命令
 
 ~~~bash
@@ -32,9 +34,11 @@ cd -	# 返回刚才目录
 ~~~bash
 # awk
 ## -F '/' 指定 / 为分割符，默认分隔符空格
-## '{print $1}' 输出第一列
+## '{print $1}' 纵向输出第一列
 ## '{print $NF}' 输出最后一列
 awk 'NR==1 || NR==2 || NR==4 || NR==6 || NR==8 || NR==10'
+
+## '{printf $1}' 无空格横向输出第一列
 ~~~
 
 ~~~bash
@@ -59,6 +63,16 @@ su root
 adduser zhangfugui
 chmod 765(读写执-读写-读执) filename
 ~~~
+
+~~~bash
+# 不进入环境查看 python 版本号
+conda run -n 环境名称 python --version
+
+# 查看当前环境下自己下载的包，不包括依赖
+conda env export --from-history
+~~~
+
+
 
 ### 文件操作
 
@@ -124,6 +138,10 @@ sort -k 1,1 -s text.txt
 ~~~bash
 # 输出从第四行开始到结尾
 tail -n +4 file
+
+# 把文件按行分成两份
+head -n 56 file > file1	# 第一份
+tail -n +57 file > file2	# 第二份，注意行数要比 head 加一
 ~~~
 
 ~~~bash
@@ -144,14 +162,6 @@ yy
 dG
 ~~~
 
-~~~bash
-# 不进入环境查看 python 版本号
-conda run -n 环境名称 python --version
-
-# 查看当前环境下自己下载的包，不包括依赖
-conda env export --from-history
-~~~
-
 ---
 
 ## Python
@@ -168,6 +178,8 @@ python sys.py haha ouha hehe
 
 文件 读取F1，F2，F3; 写入out; 读取后直接file1=F1.read()，anno=file.split()
 
+
+
 ### 字典
 
 ~~~python
@@ -182,6 +194,14 @@ print(dict.keys())
 ---
 
 ## R
+
+最小的数据结构是向量，==注: 不是标量==
+
+索引从 1 开始，Vector[-2] 打印除第二个外的向量
+
+R 计算的时候是从最右边往左边算的`a <- 10/5%%1`
+
+
 
 ### Rstudio
 
@@ -244,11 +264,7 @@ ggsave(
 )
 ~~~
 
-最小的数据结构是向量，==注: 不是标量==
 
-索引从 1 开始，Vector[-2] 打印除第二个外的向量
-
-R 计算的时候是从最右边往左边算的`a <- 10/5%%1`
 
 ~~~R
 data.frame()
@@ -266,6 +282,8 @@ df <- data.frame(S1 = c(1, 2, 3, 4, 5),
 # 有惊喜
 df + c(1, 2)
 ~~~
+
+
 
 ### 数据结构
 
@@ -706,9 +724,50 @@ fastq-dump --gzip --split-3 SRR3624125.man
 
 ## 脱靶位点
 
-**脱靶效应**：核酸酶在非预期的位点切割或修饰
+[参考文章](https://zhuanlan.zhihu.com/p/137760447)
+
+https://zhuanlan.zhihu.com/p/539819746
+
+**CRISPR-Cas**：某些细菌在遭受病毒入侵时，会将病毒 DNA 的一小段存入到 CRISPR 的序列中，当再次遭受该病毒入侵时，会根据存储的 DNA 片段识别并切断病毒 DNA 使之失效；该系统包含 CRISPR 基因座和 Cas 基因（CRISPR 关联基因）两部分；**CRISPR（Clustered Regularly Interspersed Short Palindromic Repeats，成簇规律性间隔短回文重复序列）**由**前导序列（leader）**、**重复序列（repeat）**、**间隔序列（spacer）**构成。前导序列位于 CRISPR 基因上游，富含 AT 碱基，被认为**是 CRISPR 的启动子**；重复序列是 25-50 bp 包含 5-7 bp 回文序列的核苷酸序列，转录产物形成发卡结构，**可稳定 RNA 的二级结构**；间隔序列是被细菌**俘获的外源 DNA 序列**，当外源遗传物质再次入侵时，CRISPR-Cas 系统就会精准识别；**Cas 基因**分布于 CRISPR 基因附近或基因组的其他地方，Cas 基因产生的蛋白质都可以于 CRISPR 基因发生相互作用，因此命名 CRISPR 关联基因（CRISPR associated，Cas）
+
+Cas 基因编码的蛋白在防御过程中产生至关重要的作用，根据 Cas 蛋白的作用方式分为两大类
+Ⅰ：切割外源核酸的蛋白是多个 Cas 蛋白的复合物，有 Ⅰ型、Ⅲ型、Ⅳ型
+Ⅱ：切割外源核酸的蛋白是单个 Cas 蛋白，包括 Ⅱ型 Cas9 蛋白和 V型 Cpf 蛋白；被最广泛应用的就是Ⅱ型 CRISPR-Cas9 系统
+
+
+
+### CRISPR-Cas9 作用机理
+
+**1.CRISPR 间隔区的获得**：将外来噬菌体或质粒的 DNA 片段整合到宿主菌的基因组之中，整合到 CRISPR 区域的 5` 端的两个重复序列之间。新间隔序列的获得可能为三步：Cas1 / Cas2 蛋白扫描整体 DNA 序列，寻找 PAM 区域（三个碱基，NGG）并将其附近的 DNA 片段作为候选原型间隔序列；Cas1 / 2 复合物将外源 DNA 原型间隔序列剪切下来，并在其他酶的辅助下将切割下来的区域插入到前导序列的下游；DNA 修复使打开的双链缺口闭合得到一段包含间隔序列的 CRISPR 序列
+
+**2.CRISPR 基因座的表达**：CRISPR 序列在前导序列的调控下，转录生成 pre-crRNA（crRNA，CRISPR RNA）以及与之互补 tracrRNA（trans-activating crRNA），pre-crRNA 与 tracrRNA 通过碱基互补配对形成 RNA 双链并与 Cas9 基因编码的蛋白形成复合体，该复合体能根据外来 DNA，选择对应的间隔序列片段（crRNA），并在核酸内切酶Ⅲ的作用下剪切该片段形成一段包含单一种类间隔序列和部分重复序列的短小 crRNA 序列
+
+**3.CRISPR-Cas9 靶向干扰**：Cas9 蛋白、crRNA、tracrRNA 的复合体扫描外来 DNA，并识别与 crRNA 互补的原型间隔序列，然后复合体定位到 PAM / 原型间隔序列区域并打开 DNA 双链，形成 R-Loop 区域，crRNA 与互补链配对同时非互补链游离在外；Cas9 蛋白切割位点在 PAM 区域上游三个核苷酸的位置，切割产生平末端，Cas9 蛋白的 HNH 结构域负责切割与 crRNA 的互补链，Cas9 蛋白的 RuvC 结构域负责非互补链，最终在 Cas9 蛋白的作用下，外源 DNA 双链断裂（DSB），表达被沉默，外源入侵被消灭
+
+
+
+CRISPR-Cas9 作用机理：
+Cas1/2 蛋白扫描外源 DNA 片段，寻找 PAM 区域并将其附近的 DNA 序列作为候选原型间隔序列，Cas1/2 蛋白复合体切割原型间隔序列，并在其他酶的协助下将该片段插入到 CRISPR 前导序列的下游，然后 DNA 修复使双链闭合，形成包含外源间隔序列的 CRISPR 序列的基因组
+CRISPR 序列在前导序列的调控下，转录生成 precrRNA 和 tracrRNA，这两个互补配对并于 Cas9 蛋白形成复合体，复合体扫描外源 DNA，并能根据原型间隔序列找到 crRNA 对应的间隔序列，在核糖核酸酶Ⅲ的作用下，切割对应间隔序列形成一段包含单一种类间隔序列和部分重复序列的短小 crRNA
+复合体定位到外源 DNA 的 PAM / 原型间隔序列并打开 DNA 双链，形成 R-Loop，crRNA 与互补链配对，非互补链有利在外；Cas9 蛋白的切割位点位于 PAM 区域上方三个核苷酸位置，并形成平末端，Cas9 蛋白 HNH 结构域切割互补链，Cas9 蛋白的 RuvC 结构域切割非互补链，最终在 Cas9 蛋白的作用下 DNA 双链断裂（DSB），表达被沉默，入侵被消灭
+
+
+
+### Basic
+
+**脱靶效应**：核酸酶在非预期的位点切割或修饰；其中 sgRNA 识别 PAM（） 序列
+
+**DSB（DNA Double-Strand Breaks）**：是最有害的 DNA 损伤之一，可能导致细胞死亡或基因组不稳定，从而导致癌变
+
+**sgRNA（single guide RNA）**：向导 RNA
 
 ---
+
+# Pipeline
+
+---
+
+## 质控
 
 测序多个样本凑一条 lane 跑，通过接头 Index_i5 Index_i7 不同的组合区分不同样本，用于下机拆分样本
 
@@ -730,13 +789,7 @@ adapter 用于质控时的接头？
 # multiqc 识别 json 生成总文件
 ~~~
 
----
 
-# Pipeline
-
----
-
-## 质控
 
 ### Question
 
@@ -782,12 +835,6 @@ which trimmomatic #/home/zhangxuejie/miniconda3/envs/Metagene/bin/trimmomatic
 #Sample	raw	pair1	raw	pair2	trimmed	pair1	trimmed	pair2	trimmed	orphan1	trimmed	orphan2
 ~~~
 
-**megahit**
-
-~~~bash
-# --presets meta-large 会覆盖其他 k-list k-skep 等参数
-~~~
-
 **为什么要组装**
 
 |            | 不组装                | 组装                                       |
@@ -801,7 +848,7 @@ which trimmomatic #/home/zhangxuejie/miniconda3/envs/Metagene/bin/trimmomatic
 ~~~bash
 # megahit
 ## k-mer 从一条 DNA 片段中连续截取的, 长度为 k 的核苷酸子序列
-## 该参数设置后, --k-list, --k-step 都被固定, 即使后面再加参数也不能修改
+## --presets meta-large 参数设置后, --k-list, --k-step 都被固定, 即使后面再加参数也不能修改
 ## --no-mercy <do not add mercy kmers> 舍弃因低丰度而被过滤 k-mer, 严格执行固定的频率, 同时丢失部分错误过滤的基因组
 ~~~
 
@@ -924,6 +971,8 @@ miRNA 入手分析 small RNA：占比大；易建库；公共数据库维护好�
 **snRNA（small nuclear RNA，核小 RNA）**：负责 mRNA 前体的加工
 
 **snoRNA（small nucleolar RNA，核仁小 RNA）**：指导 rRNA、tRNA、snRNA 的化学修饰
+
+crRNA（）
 
 **piRNA（）**：特异性 piwi 蛋白结合发挥作用
 
@@ -1220,6 +1269,8 @@ https://zhuanlan.zhihu.com/p/512163334
 ---
 
 ## RIP
+
+
 
 ### Question
 
