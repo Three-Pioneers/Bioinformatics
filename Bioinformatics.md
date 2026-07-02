@@ -736,9 +736,9 @@ https://zhuanlan.zhihu.com/p/668984590
 
 https://cctop.cos.uni-heidelberg.de/
 
+http://skl.scau.edu.cn/targetdesign/
 
-
-CAGCAACTCCAGGGGGCCGCNGG
+**参考序列（随便写的）：CAGCAACTCCAGGGGGCCGCNGG**
 
 
 
@@ -767,6 +767,57 @@ CRISPR 序列在前导序列的调控下，转录生成 precrRNA 和 tracrRNA，
 
 
 
+**要求**
+
+1. 做一个通过 CDS 区域和确定的 PAM 就能找到可能的 sgRNA 序列及其在基因组中的脱靶位点的网站
+2. 修改基因组为我们大豆 Glycline max V2.1
+3. 自定义打分矩阵
+4. 输出结果自定义
+5. 做成网站形式
+
+
+
+http://skl.scau.edu.cn/targetdesign/result/ 这个网站看不懂，回去好好研究下
+
+
+
+**（Cas9 蛋白为例）以 Cas-offfinder 本地版本为基础，添加识别 PAM 和 sgRNA，引入打分矩阵等**
+
+1. 将 CDS 序列比对到基因组上确定详细染色体位置
+   目的？参考网站这么做的目的？AI 为啥同意？
+2. 给定 CDS 序列，规定 PAM 及端侧位置，规定 sgRNA 的长度，正负链都匹配，输出候选 sgRNA 序列
+3. 通过本地 cas-offinder，由序列和基因组文件以及 mismatch 数量，找出算法上所有可能的脱靶位点；同时由第一步比对信息得到真正的脱靶位点
+4. 联合脱靶位点和 sgRNA 碱基错配打分矩阵及规定的 PAM 的打分矩阵，对 sgRNA 的每个脱靶位点打分，并根据得分筛选合适序列
+
+~~~bash
+# 1.输出所有候选 sgRNA 序列
+python sgRNA_from_CDS.py \
+  -i cds.fa \
+  -o candidate_sgrna.tsv \
+  --pam NGG \
+  --pam-side 3prime \
+  --guide-len 20
+  
+# 2.运行本地 cas-offinder，找所有可能脱靶位点
+cas-offinder target_seq.txt C out.txt
+
+# 3.
+python score_cfd_casoffinder.py \
+  --candidates candidate_sgrna.tsv \
+  --casoffinder hehe.txt \
+  --mismatch-score mismatch_score.pkl \
+  --pam-score pam_scores.pkl \
+  --detail-out offtarget_detail_cfd.tsv \
+  --summary-out sgrna_cfd_summary.tsv \
+  --remove-one-perfect-match
+~~~
+
+
+
+比较了下我的结果和网站结果有门；但是网站还看不大懂，尤其是有的内含子区域还是插入位点区域
+
+
+
 ### Basic
 
 **脱靶效应**：核酸酶在非预期的位点切割或修饰
@@ -786,6 +837,7 @@ CRISPR 序列在前导序列的调控下，转录生成 precrRNA 和 tracrRNA，
   如果分开两旁，意味着在同一条序列上的两个切割位点，好像不太可能哦
 - [ ] 给定一段 on-target sequence，设置 mismatch 后，如何在全基因组中搜索？http://www.rgenome.net/cas-offinder/result?hash=3e082c86a072c93b80eecfa2504ba2cd 下载离线版本，研究学习代码看如何用 C++ 等运行的
 - [ ] 哔哩哔哩脱靶效应视频中，有设计 sgRNA 每个位点进行三种突变以研究不同突变与脱靶比率之间的关系，我司可据此效仿研究
+- [ ] 为啥人也会有脱靶位点，不是细菌和古细菌才有吗
 
 ---
 
