@@ -801,20 +801,28 @@ python sgRNA_from_CDS.py \
 # 2.运行本地 cas-offinder，找所有可能脱靶位点
 cas-offinder target_seq.txt C out.txt
 
+awk -F '\t' '$6==0{count[$1]++} END{for(i in count) print i,count[i]}' out.txt | sort -k2,2nr | head -n 29 >poor.txt	# mismatch 大于 1 个的所有序列和数量
+
+awk '{printf $1"|"}' poor.txt >wu.txt	# mismatch 大于 1 个的所有序列横向排列以被筛选
+
+grep -v -i -E "TTCATCAAAGGTAACATGAATGG|ATTCATGAACAAGATTCCAAAGG|TATAGCATTAGATTCATCAAAGG|CTTGAAGTTTTCCATTCTCTTGG|TTGAAGTTTTCCATTCTCTTGGG|GTTTCCTTTGTCATTTCCTTTGG|GATTCCAAAGGAAATGACAAAGG|AATGAAGATCCTCCAGAAGAAGG|TTGGATTTGCCTTCTTCTGGAGG|TCATTGGATTTGCCTTCTTCTGG|ATGATGTACTCCCAAGAGAATGG|TTCTCTTGGGAGTACATCATTGG|AATTGGTGATATCTCAAAAGGGG|ATAATTGGTGATATCTCAAAAGG|TAATTGGTGATATCTCAAAAGGG|ATCACCAATTATGTTGTCGAGGG|CATCCCCTCGACAACATAATTGG|TATCACCAATTATGTTGTCGAGG|TCACCAATTATGTTGTCGAGGGG|TCTTGGATAGCTACTTTAATTGG|ACATTCAAGAAAATCTAGGATGG|CATGGCAGTTAACCACAACATGG|CTAGGATGGAAAATTGGATTTGG|GAAAATCTAGGATGGAAAATTGG|GATATGAACATTAGCAAAGCAGG|GGATTAATTTCTATTGGAGCTGG|GTGTACATTCAAGAAAATCTAGG|TGCTTTGCTAATGTTCATATCGG|TTGATCTGCTCCAAAGGCTATGG" out.txt > hehe.txt	# 第二步查到的所有序列，去除 mismatch 大于1个之后剩下的序列
+
 # 3.
 python score_cfd_casoffinder.py \
-  --candidates candidate_sgrna.tsv \
-  --casoffinder hehe.txt \
+  --candidates /home/zhangxuejie/workspace/test/Step1.find_sgRNA/candidate_sgrna.tsv \
+  --casoffinder /home/zhangxuejie/workspace/test/Step2.Cas-offinder/out.txt \
   --mismatch-score mismatch_score.pkl \
   --pam-score pam_scores.pkl \
   --detail-out offtarget_detail_cfd.tsv \
   --summary-out sgrna_cfd_summary.tsv \
-  --remove-one-perfect-match
+  #--remove-one-perfect-match
 ~~~
 
 
 
-比较了下我的结果和网站结果有门；但是网站还看不大懂，尤其是有的内含子区域还是插入位点区域
+[参考网站](http://skl.scau.edu.cn/targetdesign/)
+
+1. 输入 CDS 序列后分别从 + - 两条链儿开始查找 PAM 及临近 DNA 序列
 
 
 
@@ -828,16 +836,27 @@ python score_cfd_casoffinder.py \
 
 **PAM（Protospacer Adjacent Motif，原间隔相邻序列）**
 
+**intron**：内含子
+
+**exon（expressed region）**：外显子
+
+intergenic：
+
 
 
 ### Question
 
-- [ ] http://www.rgenome.net/cas-offinder/result?hash=3e082c86a072c93b80eecfa2504ba2cd 这个网站好像是单纯的比对错配，没有实际数据支撑，仅仅是算法上预测
+- [x] http://www.rgenome.net/cas-offinder/result?hash=3e082c86a072c93b80eecfa2504ba2cd 这个网站好像是单纯的比对错配，没有实际数据支撑，仅仅是算法上预测
 - [ ] 而且设置两个隆起时，推测出的序列两个隆起必须在一起，不能分开两旁
   如果分开两旁，意味着在同一条序列上的两个切割位点，好像不太可能哦
-- [ ] 给定一段 on-target sequence，设置 mismatch 后，如何在全基因组中搜索？http://www.rgenome.net/cas-offinder/result?hash=3e082c86a072c93b80eecfa2504ba2cd 下载离线版本，研究学习代码看如何用 C++ 等运行的
-- [ ] 哔哩哔哩脱靶效应视频中，有设计 sgRNA 每个位点进行三种突变以研究不同突变与脱靶比率之间的关系，我司可据此效仿研究
+- [x] 给定一段 on-target sequence，设置 mismatch 后，如何在全基因组中搜索？http://www.rgenome.net/cas-offinder/result?hash=3e082c86a072c93b80eecfa2504ba2cd 下载离线版本，研究学习代码看如何用 C++ 等运行的
+  直接下载离线版本，运行即可
+- [x] 哔哩哔哩脱靶效应视频中，有设计 sgRNA 每个位点进行三种突变以研究不同突变与脱靶比率之间的关系，我司可据此效仿研究
+  其他方向，不做研究
 - [ ] 为啥人也会有脱靶位点，不是细菌和古细菌才有吗
+- [ ] 研究参考网站结果每一行代表什么
+- [ ] 参考网站将每一条序列可能的脱靶位点序列列出来，而且 PAM 序列也有可能脱靶，那样的话就太多了吧
+- [ ] 
 
 ---
 
