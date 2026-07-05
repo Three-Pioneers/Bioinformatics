@@ -355,6 +355,8 @@ ncol(df)
 dim(df)
 ~~~
 
+
+
 ### 数据类型
 
 **数值型（numeric）**
@@ -1307,6 +1309,8 @@ STAR --runThreadN 12 --runMode genomeGenerate --genomeDir /data/users/minmingw/A
 3. 预测：**TransDecoder** 预测**最长开放阅读框**，将预测的蛋白 blastp Uniprot 数据库输出**比对信息表**，重新预测生成最终注释、蛋白和编码序列，根据最终注释文件过滤 Trinity 生成的转录本文件
 4. 比对
 
+
+
 ### 转录本组装
 
 **Trinity** 中三个独立的模块：**Inchworm**、**Chrysalis**、**Butterfly** 分别负责初始 contig 构建、图结构划分和最终转录本解析
@@ -1334,7 +1338,7 @@ path=[1:0-201 2:202-230 3:231-524]	# 组装路径
 
 SNP-Indel
 
----
+
 
 ### Question
 
@@ -1347,7 +1351,9 @@ SNP-Indel
 
 ## Phage_denovo
 
-## Question
+
+
+### Question
 
 - [ ] 第二步：使用`mamba activate vs2`需要 mamba 初始化，改成 conda 最好
   不对，只有这一步不要 vs2 环境，直接写 VirSorter2 的环境路径
@@ -1357,11 +1363,15 @@ SNP-Indel
 
 ## ChIP-Seq
 
+https://zhuanlan.zhihu.com/p/512163334
+
+
+
+### Basic
+
 **ChiP（Chromatin Immunoprecipitation，染色质免疫共沉淀）**：ChIP-Seq 用于确定蛋白质和 DNA 的互作情况；包括 **TF ChIP** 和 **Histone ChIP**
 
 **染色质**：真核生物在间期细胞核内由 DNA、组蛋白、非组蛋白和少量 RNA 组成的核酸蛋白复合体
-
-https://zhuanlan.zhihu.com/p/512163334
 
 ---
 
