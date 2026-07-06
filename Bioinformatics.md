@@ -605,6 +605,8 @@ pheatmap(log2(top_de + 1))
 --forcerun	# 好像没啥用
 --cores all	# 设置几都跑慢
 # threads 不是越多越好，最好多任务，小线程，找到每个软件最佳线程数
+
+--dag | dot -Tsvg > dag.svg	# 画图
 ~~~
 
 **规则**
@@ -680,8 +682,7 @@ rule multiqc_fastp:
 ## VSCode
 
 ~~~bash
-# 不要 Ctrl + / -，容易触发 BUG
-# 要修改配置文件
+# 修改视窗大小不要 Ctrl + / -，容易触发 BUG，直接要修改配置文件
 "terminal.integrated.fontSize": 18,
 "editor.fontSize": 18
 ~~~
@@ -725,6 +726,12 @@ fastq-dump --gzip --split-3 SRR3624125.man
 ---
 
 ## 脱靶位点
+
+
+
+CRISPR-Cas9 系统原理：**1.切割外源 DNA 片段并插入自身基因组 CRISPR 区域**。Cas1 / Cas2 蛋白识别外源 DNA 片段中的 PAM 序列并选择其上游的 DNA 作为候选原型间隔序列，Cas1 / Cas2 蛋白复合体切割候选原型间隔序列，并在其他酶的协助下将这些序列插入到 CRISPR 序列的启动子的下游
+
+
 
 [参考文章](https://zhuanlan.zhihu.com/p/137760447)
 
@@ -1346,6 +1353,10 @@ SNP-Indel
 
 - [x] Step4.Mapping.sh：bowtie2 log 报错：[WARNING] Failed to launch x86-64-v3 version, staying with default
   修改总结脚本，其他流程若有要类似修改
+  
+- [ ] 第二步 Trinity 组装，如果要输入有改变，则需要删除 Trinity 已有结果的文件夹
+
+- [ ] 第三步 TransDecoder 模块，如果输入有改变，也需要删除 TransDecoder 已有结果文件夹
 
 ---
 
