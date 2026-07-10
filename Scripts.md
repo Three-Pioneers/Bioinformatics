@@ -149,30 +149,165 @@ for line in fr[1:] :
 
 ### 统计测序数据的测序深度
 
+统计 reads 长度时不要以 @ 为分割，因为碱基质量值中也可能出现 @；应先将 fq 转化为 fa，统计时也不要只统计 > 的下一行，因为有的序列会出现多行，需要将多行合并
+
+`seqkit fq2fa W82_1.fq.gz -o W82_1.fa`
+
 ~~~python
 import sys
 
-Fastq = sys.argv[1]
-out = Fastq.split(".")[0]+"_SequencingDepth.txt"
+Fasta = sys.argv[1]
+out = Fasta.split(".")[0]+"_SequencingDepth.txt"
 
-with open(Fastq, "r") as FR:
+with open(Fasta, "r") as FR:
     fr = FR.read()
-    A = fr.split("@")
+    A = fr.split(">")
     SUM = {}
     for i in A[1:]:
-        B = i.split("\n")[1]
-        if len(B) not in SUM.keys():
-            SUM[len(B)] = 1
+        B = i.split("\n")[1:]
+        C = "".join(B)
+        if len(C) not in SUM.keys():
+            SUM[len(C)] = 1
         else:
-            SUM[len(B)] = SUM[len(B)] + 1
+            SUM[len(C)] = SUM[len(C)] + 1
 
 with open(out, "w") as FW:
-    a = 0
     for i in SUM.keys():
-        a = SUM[i] + a
-        FW.write("len:"+str(i)+"\tnum:"+str(SUM[i])+"\n")
-    print(a)
-    print(SUM.keys())
+        FW.write(str(i)+"\t"+str(SUM[i])+"\n")
+~~~
+
+#### 绘制折线图
+
+~~~R
+library(tidyverse)
+library(ggplot2)
+library(sysfonts)
+library(showtext)
+
+font_add("yahei", "C:/Windows/Fonts/msyh.ttc")
+showtext_auto()
+showtext_opts(dpi = 300)
+
+a2_1 <- read.table("clean_a2_1_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "a2_1"))
+a2_2 <- read.table("clean_a2_2_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "a2_2"))
+a2_3 <- read.table("clean_a2_3_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "a2_3"))
+a7_1 <- read.table("clean_a7_1_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "a7_1"))
+a7_2 <- read.table("clean_a7_2_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "a7_2"))
+a7_3 <- read.table("clean_a7_3_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "a7_3"))
+W82_1 <- read.table("clean_W82_1_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "W82_1"))
+W82_2 <- read.table("clean_W82_2_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "W82_2"))
+W82_3 <- read.table("clean_W82_3_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "W82_3"))
+
+full <- full_join(a2_1, a2_2, by = "length") %>%
+  full_join(a2_3, by = "length") %>%
+  full_join(a7_1, by = "length") %>%
+  full_join(a7_2, by = "length") %>%
+  full_join(a7_3, by = "length") %>%
+  full_join(W82_1, by = "length") %>%
+  full_join(W82_2, by = "length") %>%
+  full_join(W82_3, by = "length") %>%
+  mutate(a2 = (a2_1 + a2_2 + a2_3) %/% 3) %>%
+  mutate(a7 = (a7_1 + a7_2 + a7_3) %/% 3) %>%
+  mutate(W82 = (W82_1 + W82_2 + W82_3) %/% 3) %>%
+  arrange(length)
+
+write.csv(full, "full.csv", row.names = FALSE)
+
+# a2_vs_W82 35bp reads 分布折线图
+a2_W82_average <- select(full, c(length, a2, W82))
+
+a2_W82_average_35bp <- filter(a2_W82_average, length <= 35 & length >= 18)
+
+dat_long <- pivot_longer(a2_W82_average_35bp,
+                         cols = -length,
+                         names_to = "Group",
+                         values_to = "Counts")
+
+p <- ggplot(dat_long, aes(x=length, y=Counts, color=Group)) +
+  geom_line(linewidth=0.5) +
+  geom_point(size=1) +
+  theme_bw() +
+  theme(text = element_text(family = "yahei")) +
+  scale_x_continuous(
+    breaks = c(18, 20, 22, 24, 26, 28, 30, 32, 34, 35),
+    labels = ~ paste0(.x, "nt")
+    ) +
+  labs(x="Length", y="Counts", title="小RNA reads 分布")
+
+ggsave("a2_vs_W82_reads_35bp.pdf", p, device = "pdf")
+ggsave("a2_vs_W82_reads_35bp.png", p, dpi = 300)
+
+
+
+# a2_vs_W82 28bp reads 分布折线图
+a2_W82_average_28bp <- filter(a2_W82_average, length <= 28 & length >= 18)
+
+dat_long <- pivot_longer(a2_W82_average_28bp,
+                         cols = -length,
+                         names_to = "Group",
+                         values_to = "Counts")
+
+p <- ggplot(dat_long, aes(x=length, y=Counts, color=Group)) +
+  geom_line(linewidth=0.5) +
+  geom_point(size=1) +
+  theme_bw() +
+  theme(text = element_text(family = "yahei")) +
+  scale_x_continuous(
+    breaks = c(18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28),
+    labels = ~ paste0(.x, "nt")
+  ) +
+  labs(x="Length", y="Counts", title="小RNA reads 分布")
+
+ggsave("a2_vs_W82_reads_28bp.pdf", p, device = "pdf")
+ggsave("a2_vs_W82_reads_28bp.png", p, dpi = 300)
+
+
+# a7_vs_W82 35bp reads 分布折线图
+a7_W82_average <- select(full, c(length, a7, W82))
+
+a7_W82_average_35bp <- filter(a7_W82_average, length <= 35 & length >= 18)
+
+dat_long <- pivot_longer(a7_W82_average_35bp,
+                         cols = -length,
+                         names_to = "Group",
+                         values_to = "Counts")
+
+p <- ggplot(dat_long, aes(x=length, y=Counts, color=Group)) +
+  geom_line(linewidth=0.5) +
+  geom_point(size=1) +
+  theme_bw() +
+  theme(text = element_text(family = "yahei")) +
+  scale_x_continuous(
+    breaks = c(18, 20, 22, 24, 26, 28, 30, 32, 34, 35),
+    labels = ~ paste0(.x, "nt")
+  ) +
+  labs(x="Length", y="Counts", title="小RNA reads 分布")
+
+ggsave("a7_vs_W82_reads_35bp.pdf", p, device = "pdf")
+ggsave("a7_vs_W82_reads_35bp.png", p, dpi = 300)
+
+
+# a7_vs_W82 28bp reads 分布折线图
+a7_W82_average_28bp <- filter(a7_W82_average, length <= 28 & length >= 18)
+
+dat_long <- pivot_longer(a7_W82_average_28bp,
+                         cols = -length,
+                         names_to = "Group",
+                         values_to = "Counts")
+
+p <- ggplot(dat_long, aes(x=length, y=Counts, color=Group)) +
+  geom_line(linewidth=0.5) +
+  geom_point(size=1) +
+  theme_bw() +
+  theme(text = element_text(family = "yahei")) +
+  scale_x_continuous(
+    breaks = c(18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28),
+    labels = ~ paste0(.x, "nt")
+  ) +
+  labs(x="Length", y="Counts", title="小RNA reads 分布")
+
+ggsave("a7_vs_W82_reads_28bp.pdf", p, device = "pdf")
+ggsave("a7_vs_W82_reads_28bp.png", p, dpi = 300)
 ~~~
 
 ### 统计质控后碱基分布及平均碱基质量

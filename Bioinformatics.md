@@ -32,24 +32,16 @@ cd -	# 返回刚才目录
 ~~~
 
 ~~~bash
-# awk
-## -F '/' 指定 / 为分割符，默认分隔符空格
-## '{print $1}' 纵向输出第一列
-## '{print $NF}' 输出最后一列
-awk 'NR==1 || NR==2 || NR==4 || NR==6 || NR==8 || NR==10'
-
-## '{printf $1}' 无空格横向输出第一列
-~~~
-
-~~~bash
 # 文件重命名
 rename 's/new/old/' old_load.txt
 ~~~
 
 ~~~bash
 # 查找正在运行的 programme 的 ID; 终止运行
-ps aux | grep programme
-kill ID
+ps aux | grep Trinity | grep -v grep | awk '{print $2}' | xargs kill -9
+
+# 一步到位
+pkill -9 firefox
 ~~~
 
 ~~~bash
@@ -70,6 +62,34 @@ conda run -n 环境名称 python --version
 
 # 查看当前环境下自己下载的包，不包括依赖
 conda env export --from-history
+~~~
+
+
+
+### awk
+
+名字是因为三个老外作者的姓第一个字母分别是 A W K
+
+~~~bash
+# NF（Number of Field）
+# NR（）
+awk '{print NR}' test.txt
+awk '{print NF}' test.txt	# 输出每行字段数
+awk '{print $NF}' test.txt	# 每行字段数就是最后一列的列数，$NF 代表最后一列的值；$1 代表第一列，$0 代表整行
+
+# -F '/' 指定 / 为分割符，默认分隔符空格
+
+# （正则）匹配
+awk '/^a.*r$/ {print $1}' test.txt	# 正则匹配行以 a 开头 r 结尾，中间任意字符串
+awk '$2 == "haha" {print $0}' test.txt	# 打印第二列为 haha 的所有行
+awk '$3~/^;/ {print $2"\t"$6}' test.txt	# 打印第三列开头为 ; 的第二列和第六列
+awk '$3!~/^;/ {print $2"\t"$6}' test.txt	# 打印第三列开头不是 ; 的第二列和第六列
+awk 'NR==1 || NR==2 || NR==4 || NR==6 || NR==8 || NR==10' test.txt
+
+# 数值判断
+awk '$3 > 20 || $3 <12 {print $0}' test.txt	# 判断：|| 或；&& 且
+
+# '{printf $1}' 无空格横向输出第一列；printf 格式化输出
 ~~~
 
 
@@ -98,8 +118,11 @@ cat Step_1.1_qc.sh Step_2_megahit.sh > ../connect.sh
 # grep（global regular expression print）
 grep 'Au_60' Step_2_megahit.sh
 
-## -E 启用扩展正则表达式，找出包含任意字符的行；-i 无视大小写
+# -E 启用扩展正则表达式，找出包含任意字符的行；-i 无视大小写
 grep -i -E "word1|word2|word3|word4" Step_2_megahit.sh
+
+# ^a 表示以 a 开头；r$ 表示以 r 结尾；.* 表示任意字符（包括空字符）
+grep "^a.*r$" filename.txt
 ~~~
 
 ~~~bash
@@ -584,7 +607,7 @@ pheatmap(log2(top_de + 1))
 
 ---
 
-## Snakemake
+## [Snakemake](https://snakemake.readthedocs.io/en/stable/tutorial/basics.html)
 
 **通配符**
 
@@ -597,6 +620,8 @@ pheatmap(log2(top_de + 1))
 1. 输出文件不含通配符的 rules 被执行时，若输入含通配符，必须指定通配符的值？
 2. ==中间规则改变，被影响的所有 rules 都会重新运行==
 3. 如果手动终止运行，会产生锁文件`snakemake --unlock`即可解除
+4. 不要用 script 代替 shell，尽量不改变原脚本运行方式
+5. 修改了参数，但是不影响结果或者不想重新运行，`snakemake --cleanup-metadata {outputfile}`
 
 **命令与参数**
 
@@ -865,7 +890,28 @@ intergenic：
 - [ ] 为啥人也会有脱靶位点，不是细菌和古细菌才有吗
 - [ ] 研究参考网站结果每一行代表什么
 - [ ] 参考网站将每一条序列可能的脱靶位点序列列出来，而且 PAM 序列也有可能脱靶，那样的话就太多了吧
-- [ ] 
+
+---
+
+## [Django](https://docs.djangoproject.com/zh-hans/5.2/intro/tutorial01/#top)
+
+
+
+### Basic
+
+**[API](https://zhuanlan.zhihu.com/p/347125981)（Application Programming Interface，应用程序之间的接口）**：提供输入后给出输出的复杂函数，用于程序间相互通信
+
+**[URL](https://zhuanlan.zhihu.com/p/352034056)（Uniform Resource Locator，统一资源定位）**：协议 + 主机名 / 目录名 / 文件地址
+
+**HTTP（Hyper Text Transfer Protocol，超文本传输协议）**
+
+**WWW（World Wide Web，万维网）**
+
+
+
+### Question
+
+- [ ] 第一个教程 polls 创建好后，打开的 URL 地址还是原来的 http://127.0.0.1:8000/，而不是 http://localhost:8000/polls/
 
 ---
 
@@ -910,6 +956,294 @@ adapter 用于质控时的接头？
 
 - [ ] 小RNA质控的数据名称只能是WR2243M01.fq.gz样式，若是WR2243M01_R1.fq.gz的会出错
 - [ ] conda 安装包报错 "fastp1.1.*.*"，由于 conda 解析包名出错导致，下载 mamba 代替 conda
+
+---
+
+## 有参转录组分析
+
+0. 改名：测序名称 → 样本名称
+1. 质控：**fastp** 过滤低质量 reads 和测序接头
+2. 比对：**hisat2-build** 对基因组 fasta 建索引输出 **8个ht2** 结尾的文件；**hisat2** 比对质控后的序列到基因组索引，输出的 **sam** 文件被**samtools** 排序后转换输出 **bam** 文件
+3. 量化：**subread** 软件下 **featureCounts** 对排序后 bam 量化，生成
+
+
+
+### 步骤
+
+**1.QC**
+
+**2.Mapping**
+
+~~~bash
+hisat2
+~~~
+
+**3.GenesExpress**
+
+
+
+### Basic
+
+Cufflinks：软件干啥的？
+
+
+
+### Question
+
+- [ ] 质控 md5sum 这一步无效，可以删除
+
+~~~bash
+md5sum /data0_2/2026_03/SunNan_15_ren_QC/analysis/1.QC/raw/*gz|awk -F'/' '{print$1, $NF}'|awk -F' ' '{print$1, $NF}' > /data0_2/2026_03/SunNan_15_ren_QC/analysis/1.QC/raw/rawdata_md5.txt
+~~~
+
+- [ ] hisat2 比对率低，试试 star；分析下区别还有 bowtie2
+
+~~~bash
+STAR --runThreadN 12 --runMode genomeGenerate --genomeDir /data/users/minmingw/Alignment/index --genomeFastaFiles /data/users/minmingw/Alignment/hg38/Homo_sapiens.GRCh38.dna.primary_assembly.fa --sjdbGTFfile /data/users/minmingw/Alignment/hg38/Homo_sapiens.GRCh38.103.gtf
+~~~
+
+- [ ] SAM 和 BAM 文件区别
+
+- [ ] featureCounts 以 GTF 和 GFF 分别做注释统计 exon 的到的 Counts 数相同；统计 gene 的 Counts 数不同，应是 GTF 文件将 GFF 特征为 ncrna 等的都转化为 gene，但是计数应该更高啊，因为基因多了，为啥比同条件下 GFF 更低呢？需了解计数原理，应该是按照坐标统计的
+
+- [ ] GO 和 KEGG 富集分析选择差异基因的参数是 pvalue 但好像通用的是 padj
+
+- [ ] 下载 KEGG 通路图必须开 VPN，服务器可以，是默认开 VPN？~~
+
+- [ ] 富集分析 clusterProfiler 服务器版本 4.6.2，本地 4.18.4；导致输出的富集分析的文件结果列数，新版多了3列
+
+- [ ] R 脚本排版混乱，命名混乱，注释不足；后期要统一；同时最好使用 python-pandas 处理数据，R-ggplot2 只负责作图
+
+- [ ] rmats --readLength 服务器是 149，应该为 150~~
+  149 会将 reads 数小于 149 的过滤掉；测试发现会过滤掉绝大部分
+
+- [ ] Step9 总文件根本没有 2.mapping/hisat2_sorter.bam 这个文件，本地要报错，服务器不报错；echo，rmatsplot 的参数都要改
+
+- [ ] rmatsplot 服务器和本地版本一致，但是本地 python3 缺少了某个模块；服务器是 python2
+
+- [ ] Step 10 rush 改为 parallel，后者用的人很多
+- [ ] 基因组和注释文件选择问题，以及不同软件的匹配度相关性
+- [ ] Functional_annotation.conf 是干嘛的，分类号在 miRNA 第四步 RepeatMasker 使用替代了 species，好像更快
+- [ ] NCBI 分类号，怎么查，用在流程哪个地方
+- [ ] gene_type SYMBOL；Species mmu 这俩干嘛用的
+- [ ] 有参转录组第七步蛋白互作，有问题
+
+
+
+### 基因课课程
+
+1. 比对到参考基因组：数据准备
+2. 表达定量：对数据计数
+3. 归一化：统一标准
+4. 差异分析-火山图、热图：看基因是上调还是下调
+5. 富集分析-GO、KEGG：关注的基因参与了什么功能
+6. 聚类分析：探索样本间关系，锁定变化的关键样本
+7. 相关系数：又分为组间相关系数和组内相关系数
+8. 聚类分析和 WGCNA：模块构建-性状与模块相关分析-鉴定主要基因
+
+
+
+#### 数据准备
+
+~~~bash
+# 配置文件，脚本
+cp -r /Data_all/script/Reference_transcriptome/V1/{bin/,cmd,Transcriptome.conf}
+
+# 修改配置文件
+数据库路径 /Data_all/GenomicDatabases/Mouse/
+数据库版本 Mus_musculus.GRCm39.113
+基因组 /Data_all/GenomicDatabases/Mouse/Ensembl/genome.fa
+注释 /Data_all/GenomicDatabases/Mouse/Ensembl/genome.gtf
+功能注释 /Data_all/GenomicDatabases/Mouse/Ensembl/Functional_annotation/ #包含各种蛋白数据库
+id_name /Data_all/GenomicDatabases/Mouse/Ensembl/gene_name.txt #名字与id对应表
+taxonomy 10090 #NCBI 分类号
+gene_type SYMBOL
+Species mmu
+~~~
+
+**可变剪切**
+
+|      |                           |                |
+| ---- | ------------------------- | -------------- |
+| SE   | Skippedexon               | 外显子跳跃     |
+| A5SS | Alternative5' splice site | 5’端可变剪切   |
+| A3SS | Alternative3' splice site | 3’端可变剪切   |
+| MXE  | Mutually exclusive exons  | 互斥可变外显子 |
+| RT   | Retainedintron            | 内含子保留     |
+
+
+
+**表型差异缘由**
+
+DNA：SNP、InDel（插入和缺失）、SV-Structural Variation（倒位）、甲基化
+
+RNA：可变剪切（外显子跳跃和内含子保留）、差异表达、修饰
+
+Protein：丰度差异、折叠方式差异
+
+**归一化**
+
+count 受 基因长度、测序深度的影响
+
+RPKM / FPKM：（count / length） / all_reads
+
+TPM：（count / length） / sum(count / length)
+
+TMM：假定大多数没有发生差异变化，避免单一基因过度影响整体基因
+
+**差异表达**
+
+FC-Fold Change（变化倍数）：实验组的平均表达量与对照组的平均表达量的比值
+FC = 2，即实验组表达超对照组一倍；FC = 0.5，即实验组表达是对照组一半
+
+logFC（log~2~FC）：方便比较将 FC 统一取2对数
+logFC > 0代表上调，logFC < 0代表下调；logFC = 1即实验组表达超对照组一倍，logFC = -1即实验组表达是对照组一半
+
+pvalue：一次检验矫正，即检验一个样本的错误率是0.05是可接受的；要组内差异小，组间差异大
+
+FDR：多重检验矫正，当样本过多时0.05错误率是不可接受的，所以需要更加小的值来检验
+
+**富集分析**
+
+富集：通过富集的基因在reads上的比例比较基因组中该基因的比例来比较
+
+~~~bash
+# 下载测序数据
+conda install bioconda::sra-tools = 3.4.1
+prefetch SRRxxxxx
+awk '{print "prefetch "$1" &"}' SRAxxxx.txt
+fastq-dump --split-3 SRRxxxxx.sra
+
+# 下载参考基因组
+cat gene.chr*.fasta > genome.fasta
+
+# 下载基因组注释 gff3 利好人; gtf 利好软件. 将 gff3 转换为 gtf
+gffread -T -o gene.gft gene.gff3
+~~~
+
+#### 1.Mapping
+
+~~~shell
+# step1.hisat2_build.sh
+hisat2-build ../ref/genome.fasta ../ref/genome 1>hisat2-build.log 2>&1
+
+# step2.run_hisat.sh
+hisat2 --new-summary -p 8 -x ../ref/genome -U ../data/BLO_S1_LD2.fq.gz -S BLO_S1_LD2.sam --rna-strandness R 1>BLO_S1_LD2.log 2>&1
+# 批量生成脚本
+awk '{print "hisat2 --new-summary -p 8 -x /home/zxj/genome -U "$3" -S "$2".sam --rna-strandness R 1>"$2".log 2>&1 &"}' ../data/samples.txt
+
+# step3.sam2bam.sh
+samtools sort -o BLO_S1_LD2.bam BLO_S1_LD2.sam
+
+# step4.bamindex.sh
+samtools index BLO_S1_LD2.bam
+rm *.sam
+~~~
+
+#### 2.Quantification
+
+~~~R
+#!/usr/bin/env Rscript
+# parse parameter ---------------------------------------------------------
+library(argparser, quietly=TRUE)
+# Create a parser
+p <- arg_parser("run featureCounts and calculate FPKM/TPM")
+
+# Add command line arguments
+p <- add_argument(p, "--bam", help="input: bam file", type="character")
+p <- add_argument(p, "--gtf", help="input: gtf file", type="character")
+p <- add_argument(p, "--output", help="output prefix", type="character")
+
+# Parse the command line arguments
+argv <- parse_args(p)
+
+library(Rsubread)
+library(limma)
+library(edgeR)
+
+bamFile <- argv$bam
+gtfFile <- argv$gtf
+nthreads <- 1
+outFilePref <- argv$output
+
+outStatsFilePath <- paste(outFilePref, '.log', sep = '');
+outCountsFilePath <- paste(outFilePref, '.count', sep = '');
+
+fCountsList = featureCounts(bamFile, annot.ext=gtfFile, isGTFAnnotationFile=TRUE, nthreads=nthreads, isPairedEnd=TRUE)
+dgeList = DGEList(counts=fCountsList$counts, genes=fCountsList$annotation)
+fpkm = rpkm(dgeList, dgeList$genes$Length)
+tpm = exp(log(fpkm) - log(sum(fpkm)) + log(1e6))
+
+write.table(fCountsList$stat, outStatsFilePath, sep="\t", col.names=FALSE, row.names=FALSE, quote=FALSE)
+~~~
+
+---
+
+## miRNA
+
+miRNA 入手分析 small RNA：占比大；易建库；公共数据库维护好；生信分析快且容易
+
+1. 质控：原始 fastq 数据
+2. 去接头、质控
+3. 筛选 18–30 nt 小 RNA
+4. 去除 rRNA/tRNA/snRNA/snoRNA/repeat
+5. 比对参考基因组
+6. 已知 miRNA 鉴定
+7. novel miRNA 预测
+8. miRNA 表达量统计
+9. 差异表达分析
+10. 靶基因预测
+11. GO/KEGG 富集
+12. miRNA-target 调控网络
+
+
+
+### Basic
+
+**small RNA（小 RNA）**：长度18-40 nt，起转录后调控作用的非编码 RNA
+
+**3’UTR（3’ UnTranslated Region）**：成熟 mRNA 分子中在终止密码子后，PolyA 前的非翻译区
+
+**HairPin（发夹结构）**：DNA、RNA中的单链核酸碱基配对部分形成 “茎”，没有配对部分形成 “环”
+
+**mRNA（messenger RNA，信使 RNA）**：
+
+**rRNA（ribosomal RNA，核糖体 RNA）**：
+
+**tRNA（transfer RNA，转运 RNA）**：
+
+**snRNA（small nuclear RNA，核小 RNA）**：负责 mRNA 前体的加工
+
+**snoRNA（small nucleolar RNA，核仁小 RNA）**：指导 rRNA、tRNA、snRNA 的化学修饰
+
+crRNA（）
+
+**piRNA（）**：特异性 piwi 蛋白结合发挥作用
+
+
+
+### miRDeep2
+
+成熟 miRNA 是 22nt，没有二级结构，要根据二级结构预测miRNA，就要找到有发夹结构的 miRNA 前体
+
+**gfold**：广义 Fold Change 对 RNA-Seq 中的差异表达基因排序，无重复时尤其适合
+
+
+
+### Question
+
+- [ ] 当前版本 miRNA 前提序列和成熟序列都太老旧，已知 miRNA 定量时 miRDeep2.pl 参数要加 -P，预测可以不用
+  但是，第六步，加了 -P 后，将加 -P 前后的两个表合起来，总共470行，排序去重后，还有370行，说明有问题
+- [x] gfold 运行报错：error while loading shared libraries: libgsl.so.0: cannot open shared object file: No such file or directory
+  在环境目录下 lib 文件夹：ln libgsl.so.25.1.0* libgsl.so.0 即可成功，后续出问题需注意！
+- [ ] conf 文件 DB_version Soybean 有好多个
+- [ ] gene_descript 这个是啥，没查到
+- [ ] 物种缩写之类的有官网查吗；物种的数字编号是啥，用脚本说模块没有，环境不对
+- [ ] ncRNA_TargetGene_analysis = false 这步是默认非吗
+- [ ] Step_4_RepeatMasker.sh 运行过慢
+  该软件分两步，第一步比对，第二部整理结果；慢的是第二步，可拆分数据，分成多个小份，先串行跑比对，然后并行跑整理，最后合并结果
+  拆分会造成重复序列出现在不同的小份数据中，整理后会出现同一序列出现多次在 repeat 的地方 
+  搞不懂不去重跑一个样本，和分成小份有啥区别
 
 ---
 
@@ -1041,266 +1375,7 @@ megahit --presets meta-large
 
 ---
 
-## miRNA
-
-miRNA 入手分析 small RNA：占比大；易建库；公共数据库维护好；生信分析快且容易
-
-1. 质控：原始 fastq 数据
-2. 去接头、质控
-3. 筛选 18–30 nt 小 RNA
-4. 去除 rRNA/tRNA/snRNA/snoRNA/repeat
-5. 比对参考基因组
-6. 已知 miRNA 鉴定
-7. novel miRNA 预测
-8. miRNA 表达量统计
-9. 差异表达分析
-10. 靶基因预测
-11. GO/KEGG 富集
-12. miRNA-target 调控网络
-
-
-
-### Basic
-
-**small RNA（小 RNA）**：长度18-40 nt，起转录后调控作用的非编码 RNA
-
-**3’UTR（3’ UnTranslated Region）**：成熟 mRNA 分子中在终止密码子后，PolyA 前的非翻译区
-
-**HairPin（发夹结构）**：DNA、RNA中的单链核酸碱基配对部分形成 “茎”，没有配对部分形成 “环”
-
-**mRNA（messenger RNA，信使 RNA）**：
-
-**rRNA（ribosomal RNA，核糖体 RNA）**：
-
-**tRNA（transfer RNA，转运 RNA）**：
-
-**snRNA（small nuclear RNA，核小 RNA）**：负责 mRNA 前体的加工
-
-**snoRNA（small nucleolar RNA，核仁小 RNA）**：指导 rRNA、tRNA、snRNA 的化学修饰
-
-crRNA（）
-
-**piRNA（）**：特异性 piwi 蛋白结合发挥作用
-
-
-
-### miRDeep2
-
-成熟 miRNA 是 22nt，没有二级结构，要根据二级结构预测miRNA，就要找到有发夹结构的 miRNA 前体
-
-**gfold**：广义 Fold Change 对 RNA-Seq 中的差异表达基因排序，无重复时尤其适合
-
-
-
-### Question
-
-- [ ] 当前版本 miRNA 前提序列和成熟序列都太老旧，已知 miRNA 定量时 miRDeep2.pl 参数要加 -P，预测可以不用
-  但是，第六步，加了 -P 后，将加 -P 前后的两个表合起来，总共470行，排序去重后，还有370行，说明有问题
-- [x] gfold 运行报错：error while loading shared libraries: libgsl.so.0: cannot open shared object file: No such file or directory
-  在环境目录下 lib 文件夹：ln libgsl.so.25.1.0* libgsl.so.0 即可成功，后续出问题需注意！
-- [ ] conf 文件 DB_version Soybean 有好多个
-- [ ] gene_descript 这个是啥，没查到
-- [ ] 物种缩写之类的有官网查吗；物种的数字编号是啥，用脚本说模块没有，环境不对
-- [ ] ncRNA_TargetGene_analysis = false 这步是默认非吗
-- [ ] Step_4_RepeatMasker.sh 运行过慢
-  该软件分两步，第一步比对，第二部整理结果；慢的是第二步，可拆分数据，分成多个小份，先串行跑比对，然后并行跑整理，最后合并结果
-  拆分会造成重复序列出现在不同的小份数据中，整理后会出现同一序列出现多次在 repeat 的地方 
-  搞不懂不去重跑一个样本，和分成小份有啥区别
-
----
-
-## 有参转录组分析（小鼠为例）
-
-0. 改名：测序名称→样本名称
-1. 质控：**fastq** 过滤低质量 reads 和测序接头
-2. 比对：**hisat2-build** 把基因组 fasta 建库输出 **ht2** 结尾的文件；**hisat2** 将质控后的基因比对到建库后的文件，输出 **sam** 文件；**samtools** 对 sam 排序转换输出 **bam** 文件，然后对 bam 建索引输出 **bai** 文件 
-3. 量化：**subread** 软件下 **featureCounts** 对排序后 bam 量化，生成
-
-
-
-1. 比对到参考基因组：数据准备
-2. 表达定量：对数据计数
-3. 归一化：统一标准
-4. 差异分析-火山图、热图：看基因是上调还是下调
-5. 富集分析-GO、KEGG：关注的基因参与了什么功能
-6. 聚类分析：探索样本间关系，锁定变化的关键样本
-7. 相关系数：又分为组间相关系数和组内相关系数
-8. 聚类分析和 WGCNA：模块构建-性状与模块相关分析-鉴定主要基因
-
-
-
-### 数据准备
-
-~~~bash
-# 配置文件，脚本
-cp -r /Data_all/script/Reference_transcriptome/V1/{bin/,cmd,Transcriptome.conf}
-
-# 修改配置文件
-数据库路径 /Data_all/GenomicDatabases/Mouse/
-数据库版本 Mus_musculus.GRCm39.113
-基因组 /Data_all/GenomicDatabases/Mouse/Ensembl/genome.fa
-注释 /Data_all/GenomicDatabases/Mouse/Ensembl/genome.gtf
-功能注释 /Data_all/GenomicDatabases/Mouse/Ensembl/Functional_annotation/ #包含各种蛋白数据库
-id_name /Data_all/GenomicDatabases/Mouse/Ensembl/gene_name.txt #名字与id对应表
-taxonomy 10090 #NCBI 分类号
-gene_type SYMBOL
-Species mmu
-~~~
-
-**可变剪切**
-
-|      |                           |                |
-| ---- | ------------------------- | -------------- |
-| SE   | Skippedexon               | 外显子跳跃     |
-| A5SS | Alternative5' splice site | 5’端可变剪切   |
-| A3SS | Alternative3' splice site | 3’端可变剪切   |
-| MXE  | Mutually exclusive exons  | 互斥可变外显子 |
-| RT   | Retainedintron            | 内含子保留     |
-
-
-
-**表型差异缘由**
-
-DNA：SNP、InDel（插入和缺失）、SV-Structural Variation（倒位）、甲基化
-
-RNA：可变剪切（外显子跳跃和内含子保留）、差异表达、修饰
-
-Protein：丰度差异、折叠方式差异
-
-**归一化**
-
-count 受 基因长度、测序深度的影响
-
-RPKM / FPKM：（count / length） / all_reads
-
-TPM：（count / length） / sum(count / length)
-
-TMM：假定大多数没有发生差异变化，避免单一基因过度影响整体基因
-
-**差异表达**
-
-FC-Fold Change（变化倍数）：实验组的平均表达量与对照组的平均表达量的比值
-FC = 2，即实验组表达超对照组一倍；FC = 0.5，即实验组表达是对照组一半
-
-logFC（log~2~FC）：方便比较将 FC 统一取2对数
-logFC > 0代表上调，logFC < 0代表下调；logFC = 1即实验组表达超对照组一倍，logFC = -1即实验组表达是对照组一半
-
-pvalue：一次检验矫正，即检验一个样本的错误率是0.05是可接受的；要组内差异小，组间差异大
-
-FDR：多重检验矫正，当样本过多时0.05错误率是不可接受的，所以需要更加小的值来检验
-
-**富集分析**
-
-富集：通过富集的基因在reads上的比例比较基因组中该基因的比例来比较
-
-~~~bash
-# 下载测序数据
-conda install bioconda::sra-tools = 3.4.1
-prefetch SRRxxxxx
-awk '{print "prefetch "$1" &"}' SRAxxxx.txt
-fastq-dump --split-3 SRRxxxxx.sra
-
-# 下载参考基因组
-cat gene.chr*.fasta > genome.fasta
-
-# 下载基因组注释 gff3 利好人; gtf 利好软件. 将 gff3 转换为 gtf
-gffread -T -o gene.gft gene.gff3
-~~~
-
-### 1.Mapping
-
-~~~shell
-# step1.hisat2_build.sh
-hisat2-build ../ref/genome.fasta ../ref/genome 1>hisat2-build.log 2>&1
-
-# step2.run_hisat.sh
-hisat2 --new-summary -p 8 -x ../ref/genome -U ../data/BLO_S1_LD2.fq.gz -S BLO_S1_LD2.sam --rna-strandness R 1>BLO_S1_LD2.log 2>&1
-# 批量生成脚本
-awk '{print "hisat2 --new-summary -p 8 -x /home/zxj/genome -U "$3" -S "$2".sam --rna-strandness R 1>"$2".log 2>&1 &"}' ../data/samples.txt
-
-# step3.sam2bam.sh
-samtools sort -o BLO_S1_LD2.bam BLO_S1_LD2.sam
-
-# step4.bamindex.sh
-samtools index BLO_S1_LD2.bam
-rm *.sam
-~~~
-
-### 2.Quantification
-
-~~~R
-#!/usr/bin/env Rscript
-# parse parameter ---------------------------------------------------------
-library(argparser, quietly=TRUE)
-# Create a parser
-p <- arg_parser("run featureCounts and calculate FPKM/TPM")
-
-# Add command line arguments
-p <- add_argument(p, "--bam", help="input: bam file", type="character")
-p <- add_argument(p, "--gtf", help="input: gtf file", type="character")
-p <- add_argument(p, "--output", help="output prefix", type="character")
-
-# Parse the command line arguments
-argv <- parse_args(p)
-
-library(Rsubread)
-library(limma)
-library(edgeR)
-
-bamFile <- argv$bam
-gtfFile <- argv$gtf
-nthreads <- 1
-outFilePref <- argv$output
-
-outStatsFilePath <- paste(outFilePref, '.log', sep = '');
-outCountsFilePath <- paste(outFilePref, '.count', sep = '');
-
-fCountsList = featureCounts(bamFile, annot.ext=gtfFile, isGTFAnnotationFile=TRUE, nthreads=nthreads, isPairedEnd=TRUE)
-dgeList = DGEList(counts=fCountsList$counts, genes=fCountsList$annotation)
-fpkm = rpkm(dgeList, dgeList$genes$Length)
-tpm = exp(log(fpkm) - log(sum(fpkm)) + log(1e6))
-
-write.table(fCountsList$stat, outStatsFilePath, sep="\t", col.names=FALSE, row.names=FALSE, quote=FALSE)
-~~~
-
-
-
-### Question
-
-- [ ] 质控 md5sum 这一步无效，可以删除
-
-~~~bash
-md5sum /data0_2/2026_03/SunNan_15_ren_QC/analysis/1.QC/raw/*gz|awk -F'/' '{print$1, $NF}'|awk -F' ' '{print$1, $NF}' > /data0_2/2026_03/SunNan_15_ren_QC/analysis/1.QC/raw/rawdata_md5.txt
-~~~
-
-- [ ] 有参转录组第七步蛋白互作，有问题
-
-- [ ] hisat2 比对率低，试试 star
-
-~~~bash
-STAR --runThreadN 12 --runMode genomeGenerate --genomeDir /data/users/minmingw/Alignment/index --genomeFastaFiles /data/users/minmingw/Alignment/hg38/Homo_sapiens.GRCh38.dna.primary_assembly.fa --sjdbGTFfile /data/users/minmingw/Alignment/hg38/Homo_sapiens.GRCh38.103.gtf
-~~~
-
-- [ ] GO 和 KEGG 富集分析选择差异基因的参数是 pvalue 但好像通用的是 padj
-
-- [ ] 下载 KEGG 通路图必须开 VPN，服务器可以，是默认开 VPN？~~
-
-- [ ] 富集分析 clusterProfiler 服务器版本 4.6.2，本地 4.18.4；导致输出的富集分析的文件结果列数，新版多了3列
-
-- [ ] R 脚本排版混乱，命名混乱，注释不足；后期要统一；同时最好使用 python-pandas 处理数据，R-ggplot2 只负责作图
-
-- [ ] rmats --readLength 服务器是 149，应该为 150~~
-  149 会将 reads 数小于 149 的过滤掉；测试发现会过滤掉绝大部分
-
-- [ ] Step9 总文件根本没有 2.mapping/hisat2_sorter.bam 这个文件，本地要报错，服务器不报错；echo，rmatsplot 的参数都要改
-
-- [ ] rmatsplot 服务器和本地版本一致，但是本地 python3 缺少了某个模块；服务器是 python2
-
-- [ ] Step 10 rush 改为 parallel，后者用的人很多
-- [ ] 基因组和注释文件选择问题，以及不同软件的匹配度相关性
-- [ ] Functional_annotation.conf 是干嘛的，分类号在 miRNA 第四步 RepeatMasker 使用替代了 species，好像更快
-- [ ] NCBI 分类号，怎么查，用在流程哪个地方
-- [ ] gene_type SYMBOL；Species mmu 这俩干嘛用的
+## ATAC
 
 ---
 
@@ -1406,7 +1481,21 @@ samtools index -c <sample_sorted.sam>
 
 ---
 
-## ATAC
+## 16S
+
+
+
+
+
+### Basic
+
+
+
+
+
+### Question
+
+- [ ] GTF 转化成 GFF3
 
 ---
 
@@ -1477,17 +1566,9 @@ samtools index -c <sample_sorted.sam>
 | VFDB     | Virulence Factors of Bacterial Pathogens         | The virulence factor database (VFDB) is an integrated and comprehensive online resource for curating information about virulence factors of bacterial pathogens |
 | UniProt  | Universal Protein Resource                       | UniProt is the world’s leading high-quality, comprehensive and freely accessible resource of protein sequence and functional information |
 
----
-
-## Biology Basics
-
-基因组 FASTA
-
-|      top_level.fa      |               primary_assembly.fa                |   *_rm.fa    |   *_sm.fa    |
-| :--------------------: | :----------------------------------------------: | :----------: | :----------: |
-| 所有染色体和未定位序列 | 剔除冗余和易混淆可变区域（haplotypes / patches） | 重复序列→“N” | 重复序列小写 |
-
-[^1]:
+|      |      |      |      |
+| :--: | :--: | :--: | :--: |
+|      |      |      |      |
 
 ---
 
@@ -1511,36 +1592,6 @@ samtools index -c <sample_sorted.sam>
 ### 文库构建
 
 文库构建即给每个 DNA 双链加接头
-
-## 文件格式
-
-### BAM
-
-==miRNA 为啥还分正负链==
-
-**第一列**：Fastq ID
-
-**第二列**：FLAG
-
-> 0：该 read 是一条比对到参考基因组正链的单端测序 read
->
-> 16：该 read 的反向互补序列能比对到参考基因组上
-
-**第三列**：染色体
-
-**第四列**：比对到染色体上的位置，以第三列染色体第1位往后计算
-
-**第五列**：MAPQ比对质量值。0 表示比对到参考基因组多个位置，60 表示在参考基因组只有一个匹配
-
-**第六列**：M-匹配。22M 表示 22 个碱基全部匹配；128M2I11M 128个碱基匹配，2 个插入，11 个碱基匹配上
-
-**第七列**：第二次匹配的位置，* 表示没有完全一模一样的参考序列，= 表示参考基因组与 read 一模一样
-
-**第八列**：mate 的比对位置，没有 mate 则为 0
-
-**第九列**：序列模板长度，==正负号==
-
-**第十列**：read 的序列
 
 ## 转录组学
 
@@ -1592,7 +1643,19 @@ samtools index -c <sample_sorted.sam>
 
 ### 物种特异性数据库
 
+---
+
 ## 文件格式
+
+
+
+### 基因组 FASTA
+
+|      top_level.fa      |               primary_assembly.fa                |   *_rm.fa    |   *_sm.fa    |
+| :--------------------: | :----------------------------------------------: | :----------: | :----------: |
+| 所有染色体和未定位序列 | 剔除冗余和易混淆可变区域（haplotypes / patches） | 重复序列→“N” | 重复序列小写 |
+
+
 
 ### BAM
 
@@ -1600,11 +1663,37 @@ samtools index -c <sample_sorted.sam>
 | ---------------------------------------- | -------- | ------ | ----------------- | ------------------ | ----- | --------- | --------- | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------- |
 | LH00391:737:23JNNMLT4:7:1154:30472:12336 | 99       | chr1   | 253               | 1                  | 150M  | =         | 284       | 181      | CCACATATGTTTCCTTGTCGTAGATCACATTCTTGGATTTCTGGTGGAGACCATTTCTTGGTCAGAAAACCGTAGGTGTTAGCCTTCGATATTATTGAAAATGGTCGTTCATGGCTATTTTCGACAAAAATGGGGGTTGTGTGGCCATTG | IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII | AS:i:-6 XS:i:-6 XN:i:0 XM:i:1 XO:i:0 XG:i:0 |
 
+==miRNA 为啥还分正负链==
+
+**第一列**：Fastq ID
+
+**第二列**：FLAG
+
+> 0：该 read 是一条比对到参考基因组正链的单端测序 read
+>
+> 16：该 read 的反向互补序列能比对到参考基因组上
+
+**第三列**：染色体
+
+**第四列**：比对到染色体上的位置，以第三列染色体第1位往后计算
+
+**第五列**：MAPQ比对质量值。0 表示比对到参考基因组多个位置，60 表示在参考基因组只有一个匹配
+
+**第六列**：M-匹配。22M 表示 22 个碱基全部匹配；128M2I11M 128个碱基匹配，2 个插入，11 个碱基匹配上
+
+**第七列**：第二次匹配的位置，* 表示没有完全一模一样的参考序列，= 表示参考基因组与 read 一模一样
+
+**第八列**：mate 的比对位置，没有 mate 则为 0
+
+**第九列**：序列模板长度，==正负号==
+
+**第十列**：read 的序列
+
 [^1]: Read Next：双端测序中，pair reads 比对到的染色体位置。= 表示比对到同一条染色体；* 表示没有比对到参考基因组
 [^2]: Position of the NEXT read in the template：双端测序中，pair reads 的主要比对起始位置
 [^3]: Template Length：插入片段长度；如果 reads 在模板左端，即为 +；如果 reads 在模板右端，即为 -
 
----
+
 
 ### GTF
 
@@ -1617,11 +1706,19 @@ samtools index -c <sample_sorted.sam>
 | 1       | havana | transcript | 43782744 | 43783012 | .     | -      | .          | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
 | 1       | havana | exon       | 43782744 | 43783012 | .     | -      | .          | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; exon_number "1"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001328607"; exon_version "2"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
 
+[^11]: 仅对 CDS 而言，表示到达下一个密码子需要跳过的碱基数，可以是 0、1、2；非 CDS 则为 .
+
 featureCounts -t 选第三列中某个特征进行定量 -g 选第九列某个特征进行定量(张老师？)
 
 一个基因可含有多个转录本
 
----
+
+
+### GFF3
+
+
+
+
 
 ### outfmt 6
 
@@ -1640,8 +1737,22 @@ featureCounts -t 选第三列中某个特征进行定量 -g 选第九列某个�
 [^28]: subject sequence end
 [^29]: expect value
 
+
+
+### Question
+
+- [ ] GFF3 转化 GTF 文件会将 ncrna 等转化为基因
+
+---
+
 ## 图
 
 ### Violin
 
 中位数；两个四分位数；最大值；最小值
+
+---
+
+# AI
+
+---

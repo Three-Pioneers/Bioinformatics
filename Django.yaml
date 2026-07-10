@@ -1,0 +1,10 @@
+name: Django
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - django
+  - python
+  - cas-offinder
+
+prefix: "/home/zhangxuejie/miniconda3/envs/Django"
