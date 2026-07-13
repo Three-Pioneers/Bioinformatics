@@ -89,6 +89,11 @@ awk 'NR==1 || NR==2 || NR==4 || NR==6 || NR==8 || NR==10' test.txt
 # 数值判断
 awk '$3 > 20 || $3 <12 {print $0}' test.txt	# 判断：|| 或；&& 且
 
+# 打印单引号
+awk '{print "'\''"}' test.txt
+# 打印双引号
+awk '{print "\""}' test.txt
+
 # '{printf $1}' 无空格横向输出第一列；printf 格式化输出
 ~~~
 
