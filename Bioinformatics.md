@@ -985,6 +985,19 @@ hisat2
 
 **3.GenesExpress**
 
+~~~bash
+# featureCounts
+~~~
+
+**4.diffExprGene**
+
+~~~bash
+# DESeq2
+
+~~~
+
+
+
 
 
 ### Basic
