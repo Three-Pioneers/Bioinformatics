@@ -2,7 +2,7 @@
 
 ---
 
-# 语言122131
+# 语言
 
 ---
 
@@ -210,7 +210,7 @@ python sys.py haha ouha hehe
 
 ### 字典
 
-~~~python
+~~~
 print(dict)
 # 二者相等? 值，类型
 print(list(dict))
@@ -959,8 +959,9 @@ adapter 用于质控时的接头？
 -rwxrwxr-x 1 zhangxuejie bioinfo 425828469 Mar 12 12:05 'P9_55d_R2.fq.gz'$'\r'*
 ~~~
 
-- [ ] 小RNA质控的数据名称只能是WR2243M01.fq.gz样式，若是WR2243M01_R1.fq.gz的会出错
+- [x] 小RNA质控的数据名称只能是WR2243M01.fq.gz样式，若是WR2243M01_R1.fq.gz的会出错
 - [ ] conda 安装包报错 "fastp1.1.*.*"，由于 conda 解析包名出错导致，下载 mamba 代替 conda
+- [ ] 
 
 ---
 
