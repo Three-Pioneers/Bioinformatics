@@ -524,3 +524,41 @@ final <- left_join(PeakAnno, peaks, by = c("peak_name" = "name")) %>%
   select(c(1:8, 18, 9:17))
 ~~~
 
+### 宏基因组丰度循环优化
+
+~~~R
+library(tidyverse)
+
+args <- commandArgs(T)
+
+# 数据准备
+df <- read.table("species_abundance.txt",
+                 sep = "\t",
+                 quote = "",
+                 comment.char = "",
+                 check.names = FALSE,
+                 header = TRUE)
+
+uniq_df <- data.frame(sample = colnames(df)[2:ncol(df)])
+uniq_species <- unique(df$Species)
+
+for (i in uniq_species) {
+  sample_species <- df[df$Species == i,  2:ncol(df)]
+  uniq_df[1:nrow(uniq_df), i] <- colSums(sample_species)
+}
+
+tra_uniq_df <- as.data.frame(t(uniq_df)) %>%
+  rownames_to_column(var = "species")
+
+#colnames(tra_uniq_df) <- tra_uniq_df[1,1:ncol(tra_uniq_df)]
+#tra_uniq_df <- tra_uniq_df[-1,]
+#tra_uniq_df <- arrange(tra_uniq_df, tra_uniq_df[,2])
+
+write.table(x = tra_uniq_df,
+            file = "hehe.txt",
+            sep = "\t",
+            quote = FALSE,
+            col.names = FALSE,
+            row.names = FALSE)
+~~~
+

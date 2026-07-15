@@ -127,7 +127,11 @@ grep 'Au_60' Step_2_megahit.sh
 grep -i -E "word1|word2|word3|word4" Step_2_megahit.sh
 
 # ^a 表示以 a 开头；r$ 表示以 r 结尾；.* 表示任意字符（包括空字符）
-grep "^a.*r$" filename.txt
+grep "^a.*r\$" filename.txt	# 实际加不加 \ 都可
+
+# 查找文本中单双引号
+grep "'" test.txt
+grep "\"" test.txt
 ~~~
 
 ~~~bash
@@ -228,6 +232,19 @@ print(dict.keys())
 索引从 1 开始，Vector[-2] 打印除第二个外的向量
 
 R 计算的时候是从最右边往左边算的`a <- 10/5%%1`
+
+
+
+### 基础命令
+
+~~~R
+a <- read.table("test.txt",
+                sep = "\t",	# 制表符分割
+                quote = "",	# 取消默认把单双引号当引用，即将两个单（双）引号之间的内容当作一个元素，使行数大大变少
+                comment.char = "",	# 取消默认将 # 做注释，元素中含有 # 则会报错
+                check.names = FALSE,	# 取消默认直接计算列名中包含的运算公式，会修改列名
+                header = T)	# 根据需要加
+~~~
 
 
 
