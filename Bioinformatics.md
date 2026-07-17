@@ -227,11 +227,13 @@ print(dict.keys())
 
 ## R
 
-最小的数据结构是向量，==注: 不是标量==
+**最小的数据结构是向量，不是标量**
 
-索引从 1 开始，Vector[-2] 打印除第二个外的向量
+**索引从 1 开始**
 
-R 计算的时候是从最右边往左边算的`a <- 10/5%%1`
+~~~R
+10 / 5 %% 2	# 了解 R 的计算方式
+~~~
 
 
 
@@ -240,9 +242,9 @@ R 计算的时候是从最右边往左边算的`a <- 10/5%%1`
 ~~~R
 a <- read.table("test.txt",
                 sep = "\t",	# 制表符分割
-                quote = "",	# 取消默认把单双引号当引用，即将两个单（双）引号之间的内容当作一个元素，使行数大大变少
-                comment.char = "",	# 取消默认将 # 做注释，元素中含有 # 则会报错
-                check.names = FALSE,	# 取消默认直接计算列名中包含的运算公式，会修改列名
+                quote = "",	# 取消默认把单双引号当引用（将两个单（双）引号之间的内容当作一个元素，使行数大大变少）
+                comment.char = "",	# 取消默认将 # 做注释（元素中含有 # 则会报错）
+                check.names = FALSE,	# 取消默认直接计算列名中包含的运算公式（会修改列名为运算形式）
                 header = T)	# 根据需要加
 ~~~
 
@@ -250,7 +252,7 @@ a <- read.table("test.txt",
 
 ### Rstudio
 
-**设置**：zoom 75%；Editor font size 20
+**设置**：zoom 100%；Editor font size 14
 
 **初始下载或加载包**
 
@@ -259,7 +261,7 @@ a <- read.table("test.txt",
 for (pkg in c("tidyverse", "palmerpenguins", "ggthemes")) {
   if (!require(pkg, character.only = TRUE, quietly = TRUE)) {
     install.packages(pkg)
-    require(pkg, character.only = TRUE)
+    require(pkg, character.only = TRUE, quietly = TRUE)
   }
 }
 ~~~
@@ -335,44 +337,38 @@ df + c(1, 2)
 **向量（vector）**
 
 ~~~R
-# 
-## 创建
-a <- c(2, 4, 6)
+a <- c(2, 4, 6, 8, 10)
 
-a <- seq(1, 100, 4)
-
-a <- rep(1:5, 5)
-a <- rep(1:5, times = 5)
-
-a <- rep(1:5, each = 3)
-
-a <- rep(1:2, each = 3, times = 2)
-a <- rep(1:2, times = 2, each = 3)
-
-# 取值
-a <- c(13, 11, 12.3, 33.5, 55.3)
-## 位置
 a[2]
-a[-1]
 a[-5]
-
+a[1:3]
 a[c(2,5)]
 a[-c(2,5)]
 
-a[1:3]
+a < 7
+a[a < 7]
+a[a != 7]
+a[a == 6]
 
-## 逻辑
-a < 12
-a[a < 12]
-a[a != 11]
-a[a == 13]
+a %in% c(1:8)
+a[a %in% c(1:8)]
 
-a %in% c(1:20)
-a[a %in% c(1:20)]
-
-## 名称
 names(a) <- c("zhangsan", "lisi", "wangwu", "zhaoliu", "fugui")
 a["fugui"]
+a[5]
+unname(a["fugui"])
+
+
+seq(1, 100, 4)
+
+
+rep(1:5, 5)
+rep(1:5, times = 5)
+
+rep(1:5, each = 3)
+
+rep(1:2, each = 3, times = 2)
+rep(1:2, times = 2, each = 3)
 ~~~
 
 **数据框**
@@ -395,9 +391,15 @@ df[c(1, 3), 1:2]
 
 # 函数
 rownames(df)
+colnames(df)
+
 nrow(df)
 ncol(df)
+df[, c(1, 3)]
+sum(df$数学)
 dim(df)
+
+colSums(df[, c(1, 3)])
 ~~~
 
 
@@ -407,23 +409,34 @@ dim(df)
 **数值型（numeric）**
 
 ~~~R
-a <- 10
-b <- c(1.5, 4.1, 2.5, 11.531)
+a <- 9
+b <- c(1.5, 4.1, 2.5, 11.551)
 c <- c(-4, 20, 3.14, -124.1)
+
 log(a)
+log(a, 3)
+
 round(b, digits = 1)
+
 ceiling(b)
 floor(b)
+
 max(c)
 min(b)
 sum(b)
 mean(b)
 median(c)
-# 方差
+
+# 方差（variance）
 var(b)
-# 标准差：方差平方根
+# 标准差（standard deviation）
 sd(c)
 cor(b, c)
+
+data <- c(5,6,8,2,9,3)
+sort(data)
+orderdataorder(data)
+data[order(data)]
 
 data <- c(5,6,8,2,9,3)
 sort(data)
