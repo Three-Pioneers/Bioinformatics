@@ -638,12 +638,6 @@ pheatmap(log2(top_de + 1))
 
 ---
 
-### DESeq2
-
-
-
----
-
 # 工具
 
 ---
@@ -652,9 +646,9 @@ pheatmap(log2(top_de + 1))
 
 **通配符**
 
-1. 先制定输出，反向推导输入以确定通配符的值
-2. 自由选择字符，同一规则下有关联的输入输出通配符相同即可
-3. 输出为目录时，加函数 directory()，输入和 params 不可用
+1. 由输出反向推导输入以确定通配符的值
+2. 自由选择字符或者使用 Python 也可，同一 rule 关联输入输出通配符相同即可
+3. 输出为目录时，加函数 directory()，输入和 params 不可用；但一般目录不是实际输出，应此参数输出文件夹一般放在 params 中
 
 **运行**
 
@@ -1039,7 +1033,7 @@ hisat2
 
 ### Basic
 
-Cufflinks：软件干啥的？
+
 
 
 
@@ -1085,7 +1079,7 @@ STAR --runThreadN 12 --runMode genomeGenerate --genomeDir /data/users/minmingw/A
 
 
 
-### 基因课课程
+### 基因课
 
 1. 比对到参考基因组：数据准备
 2. 表达定量：对数据计数
@@ -1621,17 +1615,11 @@ samtools index -c <sample_sorted.sam>
 | VFDB     | Virulence Factors of Bacterial Pathogens         | The virulence factor database (VFDB) is an integrated and comprehensive online resource for curating information about virulence factors of bacterial pathogens |
 | UniProt  | Universal Protein Resource                       | UniProt is the world’s leading high-quality, comprehensive and freely accessible resource of protein sequence and functional information |
 
-|      |      |      |      |
-| :--: | :--: | :--: | :--: |
-|      |      |      |      |
-
 ---
 
-# Biology
+# 基因组学
 
 ---
-
-## 基因组学
 
 **基因组概念**
 
@@ -1648,11 +1636,59 @@ samtools index -c <sample_sorted.sam>
 
 文库构建即给每个 DNA 双链加接头
 
-## 转录组学
+---
 
-## 生物统计学
+# 转录组学
 
-## 数据库
+---
+
+**转录组**：**广义上**指同一时间或环境下，单个细胞或者一群细胞产生的所有 RNA 的总和。包括未成熟的 RNA（pre-RNA）、mRNA、ncRNA 等；**狭义上**指细胞产生的所有 mRNA
+
+**mRNA（message RNA，信使 RNA）**：
+
+**tRNA（transfer RNA，转运 RNA）**：
+
+**miRNA（micro RNA，微小 RNA）**：
+
+
+
+## 建库
+
+RNA 提取后其中 80%～90% 为 rRNA，10%～15% 为 tRNA，1%～5% 为 mRNA。对 mRNA 测序要消除 rRNA 的影响即富集 mRNA，而真核生物大多数成熟的 mRNA 3`端含有 PolyA 尾巴（几十上百 nt 连续的 A 碱基）**mRNA 建库**采用的 PolyA 试剂盒中含有 oligo（dT）即磁珠上含有大量的 T 碱基序列，可以结合 mRNA 的 PolyA 使得富集后 80% 都是 mRNA
+
+
+
+## 分析流程
+
+### 组装
+
+分为有参考基因组下的组装和无参考基因组下的组装（de nonvov，即从头组装）
+
+### 定量
+
+定量包括
+
+### 聚类
+
+### 降维
+
+### GCNA
+
+### 转录调控网络
+
+### 富集
+
+
+
+## 富集分析
+
+由读段计数的富集：edgeR、DESeq2、limma
+
+---
+
+# 数据库
+
+---
 
 ## 分类
 
