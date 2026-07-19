@@ -2,22 +2,20 @@
 
 ---
 
-# 语言
+# Linux
 
 ---
 
-## Linux
+数据块：存储文件内容
+元数据（文件附加属性）：文件大小、创建时间、创建人等以及 incode（系统识别文件的唯一标识符），名字方便人记不属于 incode，mv 名字后 incode 不变
 
-数据块: 存储文件内容
-元数据(文件附加属性): 文件大小、创建时间、创建人等以及 incode(系统识别文件的唯一标识符)，名字方便人记不属于 incode，mv 但 incode 不变
-
-链接: 硬链接(Hard link)和软链接(Soft link)
-硬链接: 文件副本，无独立 incode，必须在同一系统文件下创建，源文件必须存在且不能为目录
-软链接: 包含独立 incode，指向源文件
+链接: 硬链接（Hard link）和软链接（Soft link）
+硬链接：文件副本，无独立 incode，必须在同一系统文件下创建，源文件必须存在且不能为目录
+软链接：包含独立 incode，指向源文件
 
 
 
-### 基础命令
+## 基础命令
 
 ~~~bash
 # ls（list directory contents）
@@ -196,36 +194,9 @@ dG
 
 ---
 
-## Python
-
-~~~python
-import sys
-print(sys.argv[0])
-print(sys.argv[1:])
-print(sys.argv)
-print(type(sys.argv))
-
-python sys.py haha ouha hehe
-~~~
-
-文件 读取F1，F2，F3; 写入out; 读取后直接file1=F1.read()，anno=file.split()
-
-
-
-### 字典
-
-~~~
-print(dict)
-# 二者相等? 值，类型
-print(list(dict))
-print(dict.keys())
-~~~
-
-读取一个文件内容，如何去除空行
+# R
 
 ---
-
-## R
 
 **最小的数据结构是向量，不是标量**
 
@@ -237,7 +208,7 @@ print(dict.keys())
 
 
 
-### 基础命令
+## 基础命令
 
 ~~~R
 a <- read.table("test.txt",
@@ -250,7 +221,7 @@ a <- read.table("test.txt",
 
 
 
-### Rstudio
+## Rstudio
 
 **设置**：zoom 100%；Editor font size 14
 
@@ -332,7 +303,7 @@ df + c(1, 2)
 
 
 
-### 数据结构
+## 数据结构
 
 **向量（vector）**
 
@@ -404,7 +375,7 @@ colSums(df[, c(1, 3)])
 
 
 
-### 数据类型
+## 数据类型
 
 **数值型（numeric）**
 
@@ -431,43 +402,51 @@ median(c)
 var(b)
 # 标准差（standard deviation）
 sd(c)
+# 相关性（Correlation）
 cor(b, c)
 
-data <- c(5,6,8,2,9,3)
+data <- c(5, 6, 8, 2, 9, 3)
 sort(data)
-orderdataorder(data)
-data[order(data)]
-
-data <- c(5,6,8,2,9,3)
-sort(data)
-orderdataorder(data)
+order(data)
 data[order(data)]
 ~~~
 
 **字符型（character）**
 
 ~~~R
-library(stringr)
-DNA <- c("A", "AcccTT", "CCCtttGG", "TTTCCa")
+library(tidyverse)
+
+DNA <- c("Ac", "AcccTT", "CCCtttGG", "TTTCCa")
 str_count(DNA, "c")
-# 位置划分
+# 对每个字符串通过位置来提取元素
 str_sub(DNA, 1, 3)
+str_sub(DNA, 1, -2)
 
 a <- "asdfghjkl"
 str_sub(a, 1)
 str_sub(a, 1, 3)
+# 对每个字符串通过位置来替换元素
+str_sub(DNA, 1, 3) <- 1
+DNA
+
 # 输出符合的子集
+DNA <- c("Ac", "AcccTT", "CCCtttGG", "TTTCCa")
 str_subset(DNA, "C")
 str_length(DNA)
-# 代替
+
+# 第一个匹配代替和全部替代
 str_replace(DNA, "C", "M")
 str_replace_all(DNA, "C", "M")
 str_to_lower(DNA)
 str_to_upper(DNA)
+
 # 连接
 str_c("haha", DNA, sep = "_")
 # 分割
-str_split(a, "d", simplify = T)
+a <- "asdfghjklasd"
+str_split(a, "a")
+class(str_split(a, "d"))
+class(str_split(a, "d", simplify = T))
 
 str_sort(a)
 str_sort(DNA)
@@ -482,6 +461,8 @@ str_sort(b, decreasing = T)
 # 与 或 非
 & | ！
 ~~~
+
+
 
 **Tidyverse**
 
@@ -512,7 +493,7 @@ arrange(de_result, desc(abs(logFC)), FDR)
 ## 增加/修改列
 mutate(de_result, FC = 2 ** logFC)
 
-# 管道; 管道后的函数不带前面的文件结果, 逗号也可不带(left_join()函数在管道符后带带逗号错误!)
+# 管道后的函数不带前面的文件结果，逗号也可不带；left_join 函数在管道符后带带逗号错误!
 library(tidyverse, dplyr, tibble)
 result <- rownames_to_column(de_result, var = "gene_id") %>%
           filter(, abs(logFC) > 1 & FDR < 0.05) %>%
@@ -526,7 +507,7 @@ result_2 <- mutate(de_result,
                    description = if_else(abs(logFC) < 1 | FDR > 0.05, "ns",
                                          if_else(logFC >= 1, "up", "down")))
 
-## 将result_2按description分组, 统计函数n(), 重命名count=n()
+## 将 result_2 按 description 分组，统计函数 n()，重命名 count = n()
 group_by(result_2, description) %>%
   summarise(count = n())
 
@@ -534,7 +515,7 @@ group_by(result_2, description) %>%
 group_by(result_2, description) %>%
   summarise(max(abs(logFC)))
 
-## 筛选logFC绝对值最大数的行
+## 筛选 logFC 绝对值最大数的行
 group_by(result_2, description) %>%
   filter(abs(logFC) == max(abs(logFC)))
 
@@ -617,24 +598,36 @@ library(pheatmap)
 pheatmap(log2(top_de + 1))
 ~~~
 
-**富集分析**
+---
 
-~~~R
-# GO
-## 数据准备
-### 1.感兴趣的 gene_id，如：差异表达基因 → enrichGO() → barplot()、enrichplot()、emapplot()
-### 2.名字为 gene_id 的向量 log2FoldChange，即差异倍数向量 → cnetplot()
-## 富集分析
-## 绘图
-### barplot
-### enrichplot
-### cnetplot
-### emapplot
+# Python
 
-# KEGG
-## 数据准备
-### 输入类型严格：ENTREZ
+---
+
+~~~python
+import sys
+print(sys.argv[0])
+print(sys.argv[1:])
+print(sys.argv)
+print(type(sys.argv))
+
+python sys.py haha ouha hehe
 ~~~
+
+文件读取F1，F2，F3; 写入out; 读取后直接file1=F1.read()，anno=file.split()
+
+
+
+## 字典
+
+~~~python
+print(dict)
+# 二者相等? 值，类型
+print(list(dict))
+print(dict.keys())
+~~~
+
+读取一个文件内容，如何去除空行
 
 ---
 
