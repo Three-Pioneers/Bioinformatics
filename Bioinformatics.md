@@ -1242,6 +1242,18 @@ miRNA 入手分析 small RNA：占比大；易建库；公共数据库维护好�
 
 
 
+### miRDeep2
+
+**mapper.pl**
+
+成熟 miRNA 是 22nt，没有二级结构，要根据二级结构预测miRNA，就要找到有发夹结构的 miRNA 前体
+
+**gfold**：广义 Fold Change 对 RNA-Seq 中的差异表达基因排序，无重复时尤其适合
+
+**quafiler.pl**
+
+
+
 ### Basic
 
 **small RNA（小 RNA）**：长度18-40 nt，起转录后调控作用的非编码 RNA
@@ -1263,14 +1275,6 @@ miRNA 入手分析 small RNA：占比大；易建库；公共数据库维护好�
 crRNA（）
 
 **piRNA（）**：特异性 piwi 蛋白结合发挥作用
-
-
-
-### miRDeep2
-
-成熟 miRNA 是 22nt，没有二级结构，要根据二级结构预测miRNA，就要找到有发夹结构的 miRNA 前体
-
-**gfold**：广义 Fold Change 对 RNA-Seq 中的差异表达基因排序，无重复时尤其适合
 
 
 
@@ -1612,13 +1616,64 @@ samtools index -c <sample_sorted.sam>
 
 ---
 
+## 质控
+
+FastQC、Picard、PerSeq、Trimmomatic
+
+---
+
+## 比对
+
+Bowtie2、hisat2、STAR、Bowtie、bwa
+
+---
+
+## 计数
+
+featureCounts
+
+---
+
+## 差异
+
+基于读段数的差异分析（没有经过归一化）：DESeq2、edgeR、limma
+
+~~~bash
+A basic task in the analysis of count data from RNA-seq is the detection of differentially expressed genes. The count data are presented as a table which reports, for each sample, the number of sequence fragments that have been assigned to each gene. Analogous data also arise for other assay types, including comparative ChIP-Seq, HiC, shRNA screening, and mass spectrometry. An important analysis question is the quantification and statistical inference of systematic changes between conditions, as compared to within-condition variability. The package DESeq2 provides methods to test for differential expression by use of negative binomial generalized linear models; the estimates of dispersion and logarithmic fold changes incorporate data-driven prior distributions. This vignette explains the use of the package and demonstrates typical workflows. An RNA-seq workflow on the Bioconductor website covers similar material to this vignette but at a slower pace, including the generation of count matrices from FASTQ files. DESeq2 package version: 1.52.0
+
+RNA-Seq 计数分析的主要任务就是发现差异基因，计数展示位表格形式，行名为样本名称，列名为基因名称，他们的交集点为序列片段数。相似的数据也出现在 ChIP-Seq、HiC、shRNA 鉴定以及大量的分光光度定量分析中。重要的问题是鉴定和统计学推断在不同条件之间作为可比内部条件可变的系统性的不同；DESeq2 通过使用负二项分布概括线性模型来对差异表达进行测试。分散和对数倍数改变的评价包含在数据驱动优先分布。
+
+分析 RNA-seq 计数数据时，一项基本任务是检测差异表达基因。这些计数数据通常以表格形式呈现，记录了每个样本中分配给各个基因的序列片段数量。类似的数据形式也见于其他类型的实验分析，包括比较 ChIP-Seq、HiC、shRNA 筛选和质谱分析等。分析中的一个关键问题是量化并进行统计推断，以评估不同实验条件间的系统性变化与条件内部变异之间的差异。DESeq2 软件包利用负二项广义线性模型来检验基因的差异表达；其中，离散度（dispersion）和对数倍数变化（logarithmic fold changes）的估计过程结合了基于数据生成的先验分布。
+~~~
+
+### DESeq2
+
+基于读段计数的统计方法，利用负二项分布来估计
+
+创建一个格式，包含 COUNT coldata design（实验组或对照组）、进行计算、显示结果
+
+不懂，得看视频学下，太难了有点
+
+| id                  | baseMean[^31]    | log2FoldChange[^32] | pvalue[^33]        | padj              | Direction |
+| ------------------- | ---------------- | ------------------- | ------------------ | ----------------- | --------- |
+| TraesCS1A03G0013400 | 77.0233863074995 | 2.32107942326657    | 0.0212752711076134 | 0.619156717292587 | Up        |
+| TraesCS1A03G0015500 | 56.2981855998486 | -2.95982721680433   | 0.0372072141001547 | 0.720666820263197 | Down      |
+
+haha[^1]
+
+---
+
+### 富集
+
+---
+
 # 基因组学
 
 ---
 
 **基因组概念**
 
-### 高通量测序技术
+## 高通量测序技术
 
 **双脱氧链终止法（Sanger 测序法）**：
 ==如何读取凝胶上的序列，哪边大哪边小，即凝胶电泳咋跑的==
@@ -1627,7 +1682,7 @@ samtools index -c <sample_sorted.sam>
 
 二代测序（Next Generation Sequencing，NGS）引入可逆末端终止法，实现边合成边测序；同时引入荧光标记法，对单个 DNA 分子扩增相同 DNA 组成的簇，然后同步进行复制，以增强荧光信号来识别不同碱基。但过长 DNA 分子同步复制会导致协同性降低，碱基质量也会下降，因此读长限制在 500 bp
 
-### 文库构建
+## 文库构建
 
 文库构建即给每个 DNA 双链加接头
 
@@ -1672,12 +1727,6 @@ RNA 提取后其中 80%～90% 为 rRNA，10%～15% 为 tRNA，1%～5% 为 mRNA�
 ### 转录调控网络
 
 ### 富集
-
-
-
-## 富集分析
-
-由读段计数的富集：edgeR、DESeq2、limma
 
 ---
 
@@ -1775,10 +1824,6 @@ RNA 提取后其中 80%～90% 为 rRNA，10%～15% 为 tRNA，1%～5% 为 mRNA�
 
 **第十列**：read 的序列
 
-[^1]: Read Next：双端测序中，pair reads 比对到的染色体位置。= 表示比对到同一条染色体；* 表示没有比对到参考基因组
-[^2]: Position of the NEXT read in the template：双端测序中，pair reads 的主要比对起始位置
-[^3]: Template Length：插入片段长度；如果 reads 在模板左端，即为 +；如果 reads 在模板右端，即为 -
-
 
 
 ### GTF
@@ -1792,7 +1837,7 @@ RNA 提取后其中 80%～90% 为 rRNA，10%～15% 为 tRNA，1%～5% 为 mRNA�
 | 1       | havana | transcript | 43782744 | 43783012 | .     | -      | .          | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
 | 1       | havana | exon       | 43782744 | 43783012 | .     | -      | .          | gene_id "ENSMUSG00000100764"; gene_version "2"; transcript_id "ENSMUST00000185910"; transcript_version "2"; exon_number "1"; gene_name "Gm29155"; gene_source "havana"; gene_biotype "lncRNA"; transcript_name "Gm29155-201"; transcript_source "havana"; transcript_biotype "lncRNA"; exon_id "ENSMUSE00001328607"; exon_version "2"; tag "gencode_basic"; transcript_support_level "NA (assigned to previous version 1)"; |
 
-[^11]: 仅对 CDS 而言，表示到达下一个密码子需要跳过的碱基数，可以是 0、1、2；非 CDS 则为 .
+
 
 featureCounts -t 选第三列中某个特征进行定量 -g 选第九列某个特征进行定量(张老师？)
 
@@ -1813,16 +1858,6 @@ featureCounts -t 选第三列中某个特征进行定量 -g 选第九列某个�
 | TRINITY_DN31_c0_g1::TRINITY_DN31_c0_g1_i1::g.1::m.1 | sp\|Q94F47\|UBC28_ARATH | 98.496      | 133         | 2        | 0       | 1           | 133        | 1            | 133       | 1.18e-96     | 274      |
 | TRINITY_DN8_c0_g1::TRINITY_DN8_c0_g1_i1::g.6::m.6   | sp\|Q06396\|ARF1_ORYSJ  | 99.448      | 181         | 1        | 0       | 1           | 181        | 1            | 181       | 7.36e-135    | 374      |
 
-[^21]: qurey sequence id
-[^22]: subject sequence id
-[^23]: percentage of identical matches
-[^24]: alignment length (sequence overlap)
-[^25]: query sequence start
-[^26]: query sequence end
-[^27]: subject sequence start
-[^28]: subject sequence end
-[^29]: expect value
-
 
 
 ### Question
@@ -1841,4 +1876,22 @@ featureCounts -t 选第三列中某个特征进行定量 -g 选第九列某个�
 
 # AI
 
----
+
+
+[^1]: Read Next：双端测序中，pair reads 比对到的染色体位置。= 表示比对到同一条染色体；* 表示没有比对到参考基因组
+[^2]: Position of the NEXT read in the template：双端测序中，pair reads 的主要比对起始位置
+[^3]: Template Length：插入片段长度；如果 reads 在模板左端，即为 +；如果 reads 在模板右端，即为 -
+[^11]: 仅对 CDS 而言，表示到达下一个密码子需要跳过的碱基数，可以是 0、1、2；非 CDS 则为 “.”
+[^21]: qurey sequence id
+[^22]: subject sequence id
+[^23]: percentage of identical matches
+[^24]: alignment length (sequence overlap)
+[^25]: query sequence start
+[^26]: query sequence end
+[^27]: subject sequence start
+[^28]: subject sequence end
+[^29]: expect value
+[^31]:基础均值：基因在所有样本中标准化后的平均表达量，用于量化基因总体表达水平
+[^32]:差异倍数以 2 为底取对数，+1 即为 2 倍上调；-1 即为 0.5 倍下调，也即对照组表达量是实验组 2 倍
+[^33]:假设检验的重要指标，即假设 A 为真的情况下，出现该结果的概率，普遍以 0.05 为阈值；差异分析中 A 代表不存在差异，出现这种结果的概率极小，那么就存在差异
+

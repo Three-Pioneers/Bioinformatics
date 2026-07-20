@@ -180,23 +180,18 @@ with open(out, "w") as FW:
 
 ~~~R
 library(tidyverse)
-library(ggplot2)
-library(sysfonts)
-library(showtext)
+library(scales)
 
-font_add("yahei", "C:/Windows/Fonts/msyh.ttc")
-showtext_auto()
-showtext_opts(dpi = 300)
 
-a2_1 <- read.table("clean_a2_1_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "a2_1"))
-a2_2 <- read.table("clean_a2_2_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "a2_2"))
-a2_3 <- read.table("clean_a2_3_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "a2_3"))
-a7_1 <- read.table("clean_a7_1_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "a7_1"))
-a7_2 <- read.table("clean_a7_2_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "a7_2"))
-a7_3 <- read.table("clean_a7_3_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "a7_3"))
-W82_1 <- read.table("clean_W82_1_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "W82_1"))
-W82_2 <- read.table("clean_W82_2_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "W82_2"))
-W82_3 <- read.table("clean_W82_3_R1_SequencingDepth.txt", header = FALSE, col.names = c("length", "W82_3"))
+a2_1 <- read.table("a2_1_mapped_sort.txt", header = FALSE, col.names = c("length", "a2_1"))
+a2_2 <- read.table("a2_2_mapped_sort.txt", header = FALSE, col.names = c("length", "a2_2"))
+a2_3 <- read.table("a2_3_mapped_sort.txt", header = FALSE, col.names = c("length", "a2_3"))
+a7_1 <- read.table("a7_1_mapped_sort.txt", header = FALSE, col.names = c("length", "a7_1"))
+a7_2 <- read.table("a7_2_mapped_sort.txt", header = FALSE, col.names = c("length", "a7_2"))
+a7_3 <- read.table("a7_3_mapped_sort.txt", header = FALSE, col.names = c("length", "a7_3"))
+W82_1 <- read.table("W82_1_mapped_sort.txt", header = FALSE, col.names = c("length", "W82_1"))
+W82_2 <- read.table("W82_2_mapped_sort.txt", header = FALSE, col.names = c("length", "W82_2"))
+W82_3 <- read.table("W82_3_mapped_sort.txt", header = FALSE, col.names = c("length", "W82_3"))
 
 full <- full_join(a2_1, a2_2, by = "length") %>%
   full_join(a2_3, by = "length") %>%
@@ -211,36 +206,10 @@ full <- full_join(a2_1, a2_2, by = "length") %>%
   mutate(W82 = (W82_1 + W82_2 + W82_3) %/% 3) %>%
   arrange(length)
 
-write.csv(full, "full.csv", row.names = FALSE)
+write.csv(full, "all_miRNA.csv", row.names = FALSE)
 
-# a2_vs_W82 35bp reads 分布折线图
-a2_W82_average <- select(full, c(length, a2, W82))
-
-a2_W82_average_35bp <- filter(a2_W82_average, length <= 35 & length >= 18)
-
-dat_long <- pivot_longer(a2_W82_average_35bp,
-                         cols = -length,
-                         names_to = "Group",
-                         values_to = "Counts")
-
-p <- ggplot(dat_long, aes(x=length, y=Counts, color=Group)) +
-  geom_line(linewidth=0.5) +
-  geom_point(size=1) +
-  theme_bw() +
-  theme(text = element_text(family = "yahei")) +
-  scale_x_continuous(
-    breaks = c(18, 20, 22, 24, 26, 28, 30, 32, 34, 35),
-    labels = ~ paste0(.x, "nt")
-    ) +
-  labs(x="Length", y="Counts", title="小RNA reads 分布")
-
-ggsave("a2_vs_W82_reads_35bp.pdf", p, device = "pdf")
-ggsave("a2_vs_W82_reads_35bp.png", p, dpi = 300)
-
-
-
-# a2_vs_W82 28bp reads 分布折线图
-a2_W82_average_28bp <- filter(a2_W82_average, length <= 28 & length >= 18)
+a2_W82_average_28bp <- select(full, length, a2, W82) %>%
+  filter(length <= 28 & length >= 18)
 
 dat_long <- pivot_longer(a2_W82_average_28bp,
                          cols = -length,
@@ -251,44 +220,27 @@ p <- ggplot(dat_long, aes(x=length, y=Counts, color=Group)) +
   geom_line(linewidth=0.5) +
   geom_point(size=1) +
   theme_bw() +
-  theme(text = element_text(family = "yahei")) +
   scale_x_continuous(
     breaks = c(18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28),
     labels = ~ paste0(.x, "nt")
   ) +
-  labs(x="Length", y="Counts", title="小RNA reads 分布")
+  theme(
+    axis.text = element_text(size = 12),
+    axis.title = element_text(size = 16),
+    plot.title = element_text(size = 20),
+  ) +
+  theme(
+    legend.text = element_text(size = 12),
+    legend.title = element_text(size = 16)
+  ) +
+  labs(x="Length", y="Counts", title="Distribution of small RNA Reads Counts")
 
 ggsave("a2_vs_W82_reads_28bp.pdf", p, device = "pdf")
 ggsave("a2_vs_W82_reads_28bp.png", p, dpi = 300)
 
 
-# a7_vs_W82 35bp reads 分布折线图
-a7_W82_average <- select(full, c(length, a7, W82))
-
-a7_W82_average_35bp <- filter(a7_W82_average, length <= 35 & length >= 18)
-
-dat_long <- pivot_longer(a7_W82_average_35bp,
-                         cols = -length,
-                         names_to = "Group",
-                         values_to = "Counts")
-
-p <- ggplot(dat_long, aes(x=length, y=Counts, color=Group)) +
-  geom_line(linewidth=0.5) +
-  geom_point(size=1) +
-  theme_bw() +
-  theme(text = element_text(family = "yahei")) +
-  scale_x_continuous(
-    breaks = c(18, 20, 22, 24, 26, 28, 30, 32, 34, 35),
-    labels = ~ paste0(.x, "nt")
-  ) +
-  labs(x="Length", y="Counts", title="小RNA reads 分布")
-
-ggsave("a7_vs_W82_reads_35bp.pdf", p, device = "pdf")
-ggsave("a7_vs_W82_reads_35bp.png", p, dpi = 300)
-
-
-# a7_vs_W82 28bp reads 分布折线图
-a7_W82_average_28bp <- filter(a7_W82_average, length <= 28 & length >= 18)
+a7_W82_average_28bp <- select(full, length, a7, W82) %>%
+  filter(length <= 28 & length >= 18)
 
 dat_long <- pivot_longer(a7_W82_average_28bp,
                          cols = -length,
@@ -299,12 +251,20 @@ p <- ggplot(dat_long, aes(x=length, y=Counts, color=Group)) +
   geom_line(linewidth=0.5) +
   geom_point(size=1) +
   theme_bw() +
-  theme(text = element_text(family = "yahei")) +
   scale_x_continuous(
     breaks = c(18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28),
     labels = ~ paste0(.x, "nt")
   ) +
-  labs(x="Length", y="Counts", title="小RNA reads 分布")
+  theme(
+    axis.text = element_text(size = 12),
+    axis.title = element_text(size = 16),
+    plot.title = element_text(size = 20),
+  ) +
+  theme(
+    legend.text = element_text(size = 12),
+    legend.title = element_text(size = 16)
+  ) +
+  labs(x="Length", y="Counts", title="Distribution of small RNA Reads Counts")
 
 ggsave("a7_vs_W82_reads_28bp.pdf", p, device = "pdf")
 ggsave("a7_vs_W82_reads_28bp.png", p, dpi = 300)
@@ -560,5 +520,188 @@ write.table(x = tra_uniq_df,
             quote = FALSE,
             col.names = FALSE,
             row.names = FALSE)
+~~~
+
+### 柱状图
+
+~~~R
+# ============================================================
+# 根据 qc.txt 绘制测序 reads 柱状图
+# 比较组合：W82 vs a2、W82 vs a7
+# 数据类型：Raw、Clean（共输出 4 张 PNG）
+# ============================================================
+
+# 如尚未安装 ggplot2，请先运行：
+# install.packages("ggplot2")
+if (!requireNamespace("ggplot2", quietly = TRUE)) {
+  stop("缺少 R 包 ggplot2，请先运行 install.packages('ggplot2')")
+}
+
+library(ggplot2)
+
+# 输入文件。脚本默认读取用户提供的 qc.txt；如文件移动，请修改此处。
+input_file <- "C:/Users/zxj/Desktop/Rstudio/20260716_郭娜售后/qc.txt"
+
+# 图片保存到 qc.txt 所在目录下的 qc_barplots 文件夹。
+output_dir <- file.path(dirname(input_file), "qc_barplots")
+if (!dir.exists(output_dir)) {
+  dir.create(output_dir, recursive = TRUE)
+}
+
+# 读取并检查数据。
+qc <- read.delim(
+  input_file,
+  header = TRUE,
+  sep = "\t",
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
+
+required_columns <- c("Group", "Raw_Total_Reads", "Clean_Total_Reads")
+missing_columns <- setdiff(required_columns, names(qc))
+if (length(missing_columns) > 0) {
+  stop("qc.txt 缺少字段：", paste(missing_columns, collapse = ", "))
+}
+
+required_groups <- c("W82", "a2", "a7")
+missing_groups <- setdiff(required_groups, qc$Group)
+if (length(missing_groups) > 0) {
+  stop("qc.txt 缺少 Group：", paste(missing_groups, collapse = ", "))
+}
+
+# 纵轴刻度显示成 10 的幂，例如 10^7、10^8。
+power_of_ten_labels <- function(x) {
+  parse(text = paste0("10^", round(log10(x))))
+}
+
+plot_one_comparison <- function(group_pair, value_column, type_label) {
+  dat <- qc[match(group_pair, qc$Group), c("Group", value_column)]
+  names(dat)[2] <- "Reads"
+  dat$Group <- factor(dat$Group, levels = group_pair)
+  
+  # 只设置覆盖当前数据范围的 10^n 主刻度。
+  min_power <- floor(log10(min(dat$Reads, na.rm = TRUE)))
+  max_power <- ceiling(log10(max(dat$Reads, na.rm = TRUE)))
+  axis_breaks <- 10^(1:max_power)
+  
+  ggplot(dat, aes(x = Group, y = Reads, fill = Group)) +
+    geom_col(width = 0.62, show.legend = FALSE) +
+    geom_text(
+      aes(label = format(Reads, big.mark = ",", scientific = FALSE)),
+      vjust = -0.45,
+      size = 4
+    ) +
+    scale_fill_manual(values = c("W82" = "#4C78A8", "a2" = "#F58518", "a7" = "#54A24B")) +
+    scale_y_log10(
+      breaks = axis_breaks,
+      labels = power_of_ten_labels,
+      expand = expansion(mult = c(0, 0.16))
+    ) +
+    labs(
+      title = paste(type_label, "Total Reads:", paste(group_pair, collapse = "_vs_")),
+      x = "Group",
+      y = "Reads"
+    ) +
+    theme_classic(base_size = 14) +
+    theme(
+      plot.title = element_text(hjust = 0.5, face = "bold"),
+      axis.text.x = element_text(face = "bold"),
+      axis.line = element_line(linewidth = 0.6)
+    )
+}
+
+comparisons <- list(c("W82", "a2"), c("W82", "a7"))
+read_types <- list(
+  Raw = "Raw_Total_Reads",
+  Clean = "Clean_Total_Reads"
+)
+
+for (group_pair in comparisons) {
+  comparison_name <- paste(group_pair, collapse = "_vs_")
+  
+  for (type_label in names(read_types)) {
+    p <- plot_one_comparison(
+      group_pair = group_pair,
+      value_column = read_types[[type_label]],
+      type_label = type_label
+    )
+    
+    output_file <- file.path(
+      output_dir,
+      paste0(comparison_name, "_", tolower(type_label), ".png")
+    )
+    
+    ggsave(
+      filename = output_file,
+      plot = p,
+      width = 6.5,
+      height = 5.2,
+      units = "in",
+      dpi = 300,
+      bg = "white")
+      
+      output_file <- file.path(
+        output_dir,
+        paste0(comparison_name, "_", tolower(type_label), ".pdf")
+      )
+      
+      ggsave(
+        filename = output_file,
+        plot = p,
+        width = 6.5,
+        height = 5.2,
+        units = "in",
+        bg = "white"
+    )
+  }
+}
+
+message("绘图完成，图片保存在：", normalizePath(output_dir, winslash = "/"))
+~~~
+
+### 比例分布图
+
+~~~R
+a7_W82_average_28bp <- select(full, c(length, a7, W82)) %>%
+  filter(length <= 28 & length >= 18)
+
+a7_W82_average_28bp <- mutate(a7_W82_average_28bp,
+                              a7_fraction = round(a7_W82_average_28bp$a7 / sum(a7_W82_average_28bp$a7), digits = 4) * 100) %>%
+  mutate(W82_fraction = round(a7_W82_average_28bp$W82 / sum(a7_W82_average_28bp$W82), digits = 4) * 100)
+
+a7_W82_average_28bp_fraction <- select(a7_W82_average_28bp,
+                                       length,
+                                       a7_fraction,
+                                       W82_fraction)
+
+colnames(a7_W82_average_28bp_fraction) <- c("length", "a7", "W82")
+dat_long <- pivot_longer(a7_W82_average_28bp_fraction,
+                         cols = -length,
+                         names_to = "Group",
+                         values_to = "Percent")
+
+p <- ggplot(dat_long, aes(x=length, y=Percent, color=Group)) +
+  geom_line(linewidth=0.5) +
+  geom_point(size=1) +
+  theme_bw() +
+  scale_x_continuous(
+    breaks = c(18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28),
+    labels = ~ paste0(.x, "nt")) +
+  scale_y_continuous(
+    breaks = c(5, 10, 15, 20, 25),
+    labels = ~ paste0(.x, "%")) +
+  theme(
+    axis.text = element_text(size = 20),
+    axis.title = element_text(size = 24),
+    plot.title = element_text(size = 30),
+  ) +
+  theme(
+    legend.text = element_text(size = 20),
+    legend.title = element_text(size = 24)
+  ) +
+  labs(x="Length", y="Percent of Counts", title="Percent of small RNA reads length distribution")
+p
+ggsave("a7_vs_W82_reads_28bp_Percent.pdf", p, device = "pdf")
+ggsave("a7_vs_W82_reads_28bp_Percent.png", p, dpi = 300)
 ~~~
 
