@@ -1128,8 +1128,10 @@ Protein：丰度差异、折叠方式差异
 count 受 基因长度、测序深度的影响
 
 RPKM / FPKM：（count / length） / all_reads
+不对的，all reads 也会受到基因长度的影响
 
 TPM：（count / length） / sum(count / length)
+正确，消除了基因长度和基因深度的影响
 
 TMM：假定大多数没有发生差异变化，避免单一基因过度影响整体基因
 
@@ -1543,7 +1545,7 @@ samtools index -c <sample_sorted.sam>
 
 ## Concept
 
-**模式物种**：科学家为研究生命现象普遍规律而选定的生物，具有易于实验操作，遗传背景清晰等优点
+**模式物种**：科学家为研究生命现象普遍规律而选定的生物，具有易于实验操作，遗传背景清晰（遗传特征简单？）等优点
 
 **转录本**：由一条基因转录形成成熟 RNA 分子，包括编码蛋白质的 mRNA 和非编码 RNA（ncRNA）
 
