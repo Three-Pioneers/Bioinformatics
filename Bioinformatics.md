@@ -629,6 +629,14 @@ print(dict.keys())
 
 读取一个文件内容，如何去除空行
 
+
+
+## Pandas
+
+替换脚本中繁琐的循环，改成 [Pandas](https://www.runoob.com/pandas/pandas-intro.html)
+
+在 VsCode 中安装 Jupyter 扩展
+
 ---
 
 # 工具
@@ -769,12 +777,6 @@ wget https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR3624173/SRR3624173
 # 2 下载结果为 SRR3624175.man（和 sra 只是后缀不一样，不用管），转化为 fastq；多个样本并行运行即可
 fastq-dump --gzip --split-3 SRR3624125.man
 ~~~
-
----
-
-## Pandas
-
-将脚本中繁琐的循环等尽量用简短命令，即改成 Pandas（Python） 或者 Tidyverse（R）
 
 ---
 
@@ -1636,7 +1638,7 @@ featureCounts
 
 ## 差异
 
-基于读段数的差异分析（没有经过归一化）：DESeq2、edgeR、limma
+基于读段数的差异分析（没有经过归一化）：DESeq2、edgeR、limma；其中 DESeq2 只能用于含有重复样本的情况，对于没有重复样本可以选择 edgeR 和 gfold（我司选择的）
 
 ~~~bash
 A basic task in the analysis of count data from RNA-seq is the detection of differentially expressed genes. The count data are presented as a table which reports, for each sample, the number of sequence fragments that have been assigned to each gene. Analogous data also arise for other assay types, including comparative ChIP-Seq, HiC, shRNA screening, and mass spectrometry. An important analysis question is the quantification and statistical inference of systematic changes between conditions, as compared to within-condition variability. The package DESeq2 provides methods to test for differential expression by use of negative binomial generalized linear models; the estimates of dispersion and logarithmic fold changes incorporate data-driven prior distributions. This vignette explains the use of the package and demonstrates typical workflows. An RNA-seq workflow on the Bioconductor website covers similar material to this vignette but at a slower pace, including the generation of count matrices from FASTQ files. DESeq2 package version: 1.52.0
@@ -1648,7 +1650,7 @@ RNA-Seq 计数分析的主要任务就是发现差异基因，计数展示位表
 
 ### DESeq2
 
-基于读段计数的统计方法，利用负二项分布来估计
+基于读段计数的统计方法，利用负二项分布来估计，必须含有重复样本
 
 创建一个格式，包含 COUNT coldata design（实验组或对照组）、进行计算、显示结果
 
@@ -1659,7 +1661,7 @@ RNA-Seq 计数分析的主要任务就是发现差异基因，计数展示位表
 | TraesCS1A03G0013400 | 77.0233863074995 | 2.32107942326657    | 0.0212752711076134 | 0.619156717292587 | Up        |
 | TraesCS1A03G0015500 | 56.2981855998486 | -2.95982721680433   | 0.0372072141001547 | 0.720666820263197 | Down      |
 
-haha[^1]
+
 
 ---
 
@@ -1893,5 +1895,5 @@ featureCounts -t 选第三列中某个特征进行定量 -g 选第九列某个�
 [^29]: expect value
 [^31]:基础均值：基因在所有样本中标准化后的平均表达量，用于量化基因总体表达水平
 [^32]:差异倍数以 2 为底取对数，+1 即为 2 倍上调；-1 即为 0.5 倍下调，也即对照组表达量是实验组 2 倍
-[^33]:假设检验的重要指标，即假设 A 为真的情况下，出现该结果的概率，普遍以 0.05 为阈值；差异分析中 A 代表不存在差异，出现这种结果的概率极小，那么就存在差异
+[^33]:假设检验的重要指标，即假设 A 为真的情况下，出现该结果的概率，普遍以 0.05 为阈值；差异分析中 A 代表不存在差异，出现这种结果的概率极小，那么就存在差异；这个版本解释有待商榷；还有其他版本的
 
