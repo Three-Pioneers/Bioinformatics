@@ -1433,6 +1433,29 @@ megahit --presets meta-large
 
 8个 DNA 缠绕的组蛋白形成核小体，核小体串珠并联、折叠、聚合形成染色体
 
+https://www.jianshu.com/p/e8f236a98613
+
+
+
+### Basic
+
+**TSS（Transcription Start Sites，转录起始位点）**：DNA 链上与 RNA 链第一个核苷酸对应的碱基
+
+TES（Transcription End Sites，转录终止位点）
+
+~~~bash
+/data3/Data_all/Software/miniconda3/bin/computeMatrix scale-regions -S Z733-2_bowtie2_sort.bigwig Z733-1_bowtie2_sort.bigwig  -R /data3/2026_05/XuTuo_2_MaGuZi_ATAC/ref/gene.bed -b 3000 -a 3000 -out Matrix.txt.gz --binSize 150 --regionBodyLength 4500 -p 40 --missingDataAsZero --metagene
+/data3/Data_all/Software/miniconda3/bin/plotHeatmap -m Matrix.txt.gz --samplesLabel Z733-2 Z733-1  -out TSS_Heatmap.png --heatmapHeight 12 --heatmapWidth 5 --regionsLabel 'Genes' --startLabel TSS --endLabel TES --yAxisLabel 'ATAC signal' --colorMap YlGnBu --plotTitle 'Genes' --dpi 300
+~~~
+
+
+
+### Question
+
+- [x] bw 生成 Matrix 的步骤，小于 bin size 的会过滤掉，现有信号图曲线会不平滑，考虑 bin size 设置大一点 1000；或者干脆不要过滤
+  不要先默认 10 就可以
+- [ ] 拿 GTF 文件来做 computeMatrix
+
 ---
 
 ## 无参转录组分析（芍药为例）
@@ -1595,8 +1618,6 @@ samtools index -c <sample_sorted.sam>
 **SSR**（Simple Sequence Repeat，简单重复序列）：由 1~6 个核苷酸组成的短串联重复序列
 
 **启动子（Promoter）**：结合 RNA 聚合酶转录特定基因合成 RNA 的 DNA 序列
-
-**TSS（Transcription Start Sites，转录起始位点）**：DNA 链上与 RNA 链第一个核苷酸对应的碱基
 
 **UTR（Untranslated Region，非翻译区）**：mRNA 编码区（CDS）两端的非编码片段
 
