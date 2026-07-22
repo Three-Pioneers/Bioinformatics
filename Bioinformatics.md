@@ -1427,6 +1427,12 @@ megahit --presets meta-large
 
 ## ATAC
 
+[ATAC-Seq（Assay for Transposase-Accessible Chromatin with high throughput Sequencing）](https://zhuanlan.zhihu.com/p/512163334)
+
+对携带NGS接头的转座酶剪切后的样本进行测序
+
+8个 DNA 缠绕的组蛋白形成核小体，核小体串珠并联、折叠、聚合形成染色体
+
 ---
 
 ## 无参转录组分析（芍药为例）
