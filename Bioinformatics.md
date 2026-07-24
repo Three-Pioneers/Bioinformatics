@@ -1473,7 +1473,8 @@ https://www.jianshu.com/p/e8f236a98613
 
 - [x] bw 生成 Matrix 的步骤，小于 bin size 的会过滤掉，现有信号图曲线会不平滑，考虑 bin size 设置大一点 1000；或者干脆不要过滤
   不要先默认 10 就可以
-- [ ] 拿 GTF 文件来做 computeMatrix
+- [x] 拿 GTF 文件来做 computeMatrix
+  拿 gene.bed 做，因为 GTF 包含 exon、gene、CDS 等，==ATAC 是关于基因的？==
 
 ---
 
