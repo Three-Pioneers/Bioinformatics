@@ -85,8 +85,8 @@ custom_channels:
   bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
 auto_activate: false
 use_sharded_repodata: false
-repodata_threads: 8
-download_threads: 8
+repodata_threads: 12
+download_threads: 12
 
 # 安装 mamba：C++ package 解释器, 替代绝大多数 conda 功能
 ~~~

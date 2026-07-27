@@ -60,6 +60,9 @@ conda run -n 环境名称 python --version
 
 # 查看当前环境下自己下载的包，不包括依赖
 conda env export --from-history
+
+# conda activate 在命令行可以用，在脚本中不可用，原因是激活 conda 默认运行 .bashrc；而 bash 脚本不会加载 .bashrc
+conda run -n vs2 
 ~~~
 
 
@@ -635,16 +638,47 @@ print(dict.keys())
 
 替换脚本中繁琐的循环，改成 [Pandas](https://www.runoob.com/pandas/pandas-intro.html)；需要在 VsCode 中安装 Jupyter 扩展
 
+
+
+### 读取文件
+
 ~~~python
 import pandas as pd
 
-data = {"Name" : ["zhangsan", "lisi", "wangwu"], "age" : [1, 2, 3]}
-type(data)
-
-df = pd.DataFrame(data)
-data
-type(data)
+df = pd.read_csv(
+    "file.txt",
+    sep = "\t",
+    header = 0,	# 以第 0 行作为表头；不用则为 None
+    skiprows = 3,	# 跳过行的数量
+    index_col = ["Chr"]	# 这样会看着奇怪，除[2, 1]外其余第二行其余元素为空，应该有设置方法；也可以用索引
+)
 ~~~
+
+
+
+### 排序
+
+~~~python
+# 按 Length 列升序排列，默认升序
+df = df.sort_values(by = "Length", ascending = True)
+# 按 Length 列降序排列
+df = df.sort_values(by = "Length", ascending = False)
+~~~
+
+
+
+### 数据聚合
+
+~~~python
+# 根据
+df.groupby(by = "Length")
+~~~
+
+
+
+
+
+## Jupyter
 
 
 
@@ -1310,7 +1344,7 @@ crRNA（）
 
 ## Metagene
 
-0. 改名：测序名称→样本名称
+0. 改名：下机名称 → 样本名称
 1. 质控：**fastq** 过滤低质量 reads 和测序接头；**kneaddata** 过滤重复序列
 2. 组装：**megahit** 组装经过滤及去重后的测序文件，输出 **fasta** 文件；**quast** 评估组装结果
 3. 预测：**prodigal** 通过起始密码子和终止密码子预测**开放阅读框**，进而反向从 fasta 文件中寻找可能 DNA 和蛋白质
@@ -1535,6 +1569,11 @@ SNP-Indel
 ---
 
 ## Phage_denovo
+
+0. 改名：软链接下机名称 → 样本名称
+1. 质控：**fastp** 过滤质量值大于 **15** 的碱基、质量合格率高于 **40%** 且长度大于 **15bp** 的读段
+2. 比对：**bowtie2** 比对宿主基因组输出排序后 **BAM**，根据比对 **FLAG** 挑选 read1 和 read2 **都没有比对上**的序列
+3. 
 
 
 
@@ -1779,7 +1818,7 @@ RNA 提取后其中 80%～90% 为 rRNA，10%～15% 为 tRNA，1%～5% 为 mRNA�
 
 ---
 
-# 数据库
+# 数据
 
 ---
 
@@ -1829,7 +1868,13 @@ RNA 提取后其中 80%～90% 为 rRNA，10%～15% 为 tRNA，1%～5% 为 mRNA�
 
 ---
 
-## 文件格式
+## 数据格式
+
+
+
+**CSV（Comma Separated Values）**即逗号为分隔符
+
+**TSV（Tab Separated Values）**即制表符为分割符号
 
 
 
@@ -1843,9 +1888,10 @@ RNA 提取后其中 80%～90% 为 rRNA，10%～15% 为 tRNA，1%～5% 为 mRNA�
 
 ### BAM
 
-| 比对序列名称                             | 比对信息 | 染色体 | 染色体起始（1起） | 比对质量值（MAPQ） | CIGAR | RNEXT[^1] | PNEXT[^2] | TLEN[^3] | Seq                                                          | BaseQ                                                        | 可选标签                                    |
-| ---------------------------------------- | -------- | ------ | ----------------- | ------------------ | ----- | --------- | --------- | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------- |
-| LH00391:737:23JNNMLT4:7:1154:30472:12336 | 99       | chr1   | 253               | 1                  | 150M  | =         | 284       | 181      | CCACATATGTTTCCTTGTCGTAGATCACATTCTTGGATTTCTGGTGGAGACCATTTCTTGGTCAGAAAACCGTAGGTGTTAGCCTTCGATATTATTGAAAATGGTCGTTCATGGCTATTTTCGACAAAAATGGGGGTTGTGTGGCCATTG | IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII | AS:i:-6 XS:i:-6 XN:i:0 XM:i:1 XO:i:0 XG:i:0 |
+| 比对序列名称                             | 比对信息 | 参考序列   | 染色体起始（1起） | 比对质量值（MAPQ） | CIGAR    | RNEXT[^1] | PNEXT[^2] | TLEN[^3] | Seq                                                          | BaseQ                                                        | 可选标签                                                     |
+| ---------------------------------------- | -------- | ---------- | ----------------- | ------------------ | -------- | --------- | --------- | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| LH00391:737:23JNNMLT4:7:1154:30472:12336 | 99       | chr1       | 253               | 1                  | 150M     | =         | 284       | 181      | CCACATATGTTTCCTTGTCGTAGATCACATTCTTGGATTTCTGGTGGAGACCATTTCTTGGTCAGAAAACCGTAGGTGTTAGCCTTCGATATTATTGAAAATGGTCGTTCATGGCTATTTTCGACAAAAATGGGGGTTGTGTGGCCATTG | IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII | AS:i:-6 XS:i:-6 XN:i:0 XM:i:1 XO:i:0 XG:i:0                  |
+| E250146686L1C041R04200374075             | 163      | CP099973.1 | 1                 | 40                 | 4M7I139M | =         | 125       | 274      | GTCCGCCGTGTCACTTTCGCTTTGGCAGCAGTGTCTTGCCCGATTGCAGGATGAGTTACCAGCCACAGAATTCAGTATGTGGATACGCCCGTTGCAGGCGGAACTGAGCGATAACACGCTGGCTTTGTATGCGCCAAACCGTTTTGTGCT | C?HAHH@H)H4FCB3DBH5EDB?IACC@;CIBICG?DIG:BIB<@IECEDC>GC??>C?ICI;HCGCICC?DICIECAIBDDC?CFGEHHG??IDBHCDICCBDEIC(IDCBCCHCFCH"ADGDCDIBC?IDFFICBCGID?3D?G>EEE | AS:i:-36 XN:i:0  XM:i:2 XO:i:1  XG:i:7 NM:i:9   MD:Z:2G0T139               YS:i:0 YT:Z:CP |
 
 ==miRNA 为啥还分正负链==
 
