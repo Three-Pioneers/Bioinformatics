@@ -676,8 +676,6 @@ df.groupby(by = "Length")
 
 
 
-
-
 ## Jupyter
 
 
@@ -1443,6 +1441,12 @@ python /Data_all/script/Metagene/bin/Card_function.py /Data_all/Databases/Card_d
 
 
 
+### Basic
+
+**Gene**：携带遗传物质的 DNA 或 RNA
+
+
+
 ### Question
 
 - [ ] awk 挑选在排序相比于 csvtk cut + awk 分别负责挑选和排序慢很多
@@ -1582,6 +1586,7 @@ SNP-Indel
 - [ ] 第二步：使用`mamba activate vs2`需要 mamba 初始化，改成 conda 最好
   不对，只有这一步不要 vs2 环境，直接写 VirSorter2 的环境路径
   不行，这个软件需要 snakemake 多软件运行，必须进环境，但是下一步又必须出环境
+- [ ] 这个环境 Python=3.8 后续安装 virsorter 要加上它的配置文件，总的配置文件来安装
 
 ---
 
