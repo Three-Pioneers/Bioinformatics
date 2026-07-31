@@ -273,12 +273,8 @@ ggsave("a7_vs_W82_reads_28bp.png", p, dpi = 300)
 ### 统计质控后碱基分布及平均碱基质量
 
 ~~~bash
-for (pkg in c("jsonlite", "tidyverse")) {
-  if(!require(pkg, character.only = TRUE, quietly = TRUE)) {
-    install.packages(pkg)
-    require(pkg, character.only = TRUE)
-  }
-}
+library(jsonlite)
+library(tidyverse)
 
 json <- fromJSON("WCB2024001_fastp.json")
 

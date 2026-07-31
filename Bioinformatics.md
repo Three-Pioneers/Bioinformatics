@@ -1513,6 +1513,7 @@ https://www.jianshu.com/p/e8f236a98613
   不要先默认 10 就可以
 - [x] 拿 GTF 文件来做 computeMatrix
   拿 gene.bed 做，因为 GTF 包含 exon、gene、CDS 等，==ATAC 是关于基因的？==
+- [x] ATAC 第三步 read_distribution.sh 不可以同时运行，他们会争抢阅读 tmp 和 基因组文件
 
 ---
 
@@ -1624,7 +1625,7 @@ samtools index -c <sample_sorted.sam>
 
 ---
 
-## 16S
+## Vector_detection
 
 
 
@@ -1638,7 +1639,26 @@ samtools index -c <sample_sorted.sam>
 
 ### Question
 
-- [ ] GTF 转化成 GFF3
+- [ ] 
+
+---
+
+## 致病性位点检测
+
+
+
+
+
+### Basic
+
+
+
+
+
+### Question
+
+- [ ] 第七步注释表：`head -n 13 cnv_outputfile_anno.txt|awk '{print $1,$2,$3,$4,$5,$6,$7,$21,$22,$31,$32,$34}'|ct -s ' '|le`
+- [ ] 报告的 html 模板：`/Databackup3/2026_07/ZhuYaSha_1_human_WGS/analysis/5.Report/report.Rmd`
 
 ---
 
@@ -1760,6 +1780,12 @@ RNA-Seq 计数分析的主要任务就是发现差异基因，计数展示位表
 
 ---
 
+### 变异检测
+
+[GATK（Genome Analysis Toolkit）](https://gatk.broadinstitute.org/hc/en-us)
+
+---
+
 # 基因组学
 
 ---
@@ -1820,6 +1846,18 @@ RNA 提取后其中 80%～90% 为 rRNA，10%～15% 为 tRNA，1%～5% 为 mRNA�
 ### 转录调控网络
 
 ### 富集
+
+
+
+### 表观遗传
+
+
+
+### Basic
+
+**表观遗传**：在 DNA 序列不发生改变的情况下，基因表达发生可遗传的改变，从而影响生物体的表型
+
+**DNA 甲基化（DNA methylation）**：DNA 在甲基转移酶的作用下选择性的将甲基转移到特定的碱基上，可以在不改变 DNA 序列的前提下，改变基因的表达，是表观遗传的调控方式
 
 ---
 
