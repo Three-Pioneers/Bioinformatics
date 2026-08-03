@@ -276,7 +276,13 @@ ggsave("a7_vs_W82_reads_28bp.png", p, dpi = 300)
 library(jsonlite)
 library(tidyverse)
 
-json <- fromJSON("WCB2024001_fastp.json")
+args <- commandArgs(trailingOnly = T)
+
+file <- args[1]
+outdir <- args[2]
+
+sample <- strsplit(basename(args[1]), "_")[[1]][1]
+json <- fromJSON(args[1])
 
 # 每个位置碱基比例
 r1 <- json$read1_after_filtering$content_curves
@@ -328,7 +334,7 @@ Base_Distribution <- ggplot(data = dat_long,
     ) +
   geom_vline(xintercept = length(r1$A), linetype = "twodash") +
   labs(
-    title = "Base Distribution of WCB2024001",
+    title = paste0("Base Distribution of ", sample),
     x = "Position",
     y = "Percent(%)"
   ) +
@@ -346,14 +352,14 @@ Base_Distribution <- ggplot(data = dat_long,
     )
 
 ggsave(
-  filename = "Base Distribution of WCB2024001.pdf",
+  filename = paste0("Base Distribution of ", sample, ".pdf"),
   plot = Base_Distribution,
   width = 8,
   height = 5
 )
 
 ggsave(
-  filename = "Base Distribution of WCB2024001.png",
+  filename = paste0("Base Distribution of ", sample, ".png"),
   plot = Base_Distribution,
   width = 8,
   height = 5,
@@ -393,15 +399,15 @@ Mean_Quality <- ggplot(
   labs(
     x = "Position",
     y = "Quality",
-    title = "Mean Quality Distribution of WCB2024001"
+    title = paste0("Mean Quality Distribution of ", sample)
   ) +
   scale_x_continuous(
     limits = c(0, 300),
     breaks = seq(0, 300, 25)
   ) +
   scale_y_continuous(
-    limits = c(0, 40),
-    breaks = seq(0, 40, 10)
+    limits = c(0, 41),
+    breaks = seq(0, 41, 10)
   ) +
   theme(
     plot.title = element_text(hjust = 0.5, size = 16),
@@ -409,14 +415,14 @@ Mean_Quality <- ggplot(
   )
 
 ggsave(
-  filename = "Mean Quality Distribution of WCB2024001.pdf",
+  filename = paste0("Mean Quality Distribution of ", sample, ".pdf"),
   plot = Mean_Quality,
   width = 8,
   height = 5
 )
 
 ggsave(
-  filename = "Mean Quality Distribution of WCB2024001.png",
+  filename = paste0("Mean Quality Distribution of ", sample, ".png"),
   plot = Mean_Quality,
   width = 8,
   height = 5,
