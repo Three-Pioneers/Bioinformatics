@@ -1,0 +1,2000 @@
+Species	Au_1	Au_2	Au_3	Au_4	Au_5	Au_6	HC_De_1	HC_De_2	HC_De_3	HC_Sp_1	HC_Sp_2	HC_Sp_3	HLB_De_1	HLB_De_2	HLB_De_3	HLB_Sp_1	HLB_Sp_2	HLB_Sp_3	sus_HLB_1	sus_HLB_2	sus_HLB_3	sus_HLB_4	sus_HLB_5	sus_HLB_6
+Herminiimonas arsenicoxydans	0	0	1	3	0	0	0	0	0	3	11	1	1	0	0	5.642	2	3	0	0.5	0	0	0	3
+Herminiimonas arsenicoxydans	0	0	2	0	0	0	0	0	0	1	3	1	0	0	0	1	0	0	0	0	0	0	0	0
+Herminiimonas arsenicoxydans	0	0	0	9	1	0	0	0	0	2	14	2	1	0	0	6	0	0	0	0	0	0	0	0
+Enterobacter sp. 638	2.086	0	0	0	0	0	0	0	0	14	1	0	0	0	0	7.965	2	42.038	0	0	0	0	0	0
+Enterobacter sp. 638	1	0	0	0	0	0	0	0	0	18	3	0	0	0	0	9	3	79	0	0	0	0	0	0
+Enterobacter sp. 638	1	0	0	0	0	0	0	0	0	10	0	1	0	0	0	10	0	96	0	0	0	1	0	0
+Caenorhabditis elegans	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6	0
+Homo sapiens	15	13	47	33	4	12	52	15	13	20	28	16	25	9	11	385	9	149	0	0	0	0	1	0
+Lactococcus cremoris	19	41.226	38.348	37	36	42	0	0	0	1	2	0	0	0	0	13	0	7.819	0	0	0	0	0	0
+Stylochus zebra	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	96.154	0	0	0	0	0	0	0
+Lactococcus lactis	6	4	4	4	6	7	0	0	0	7	2	0	0	0	0	32	9	32	0	0	0	0	0	0
+Synechococcus elongatus	3	3	2.047	0	0	1	1	1	1	1	2	0	29	5.7	3	45	5	28	0	0	0	0	0	0
+Ascaridia galli	0	0	0	0	0	0	0	0	0	1	0	0	2	0	0	0	0	1	0	1	0	0	10	0
+Haemophilus influenzae	2	1	2	0	0	0	0	0	0	24	1	1	0	0	0	8	1	63	0	0	0	0	0	0
+Heterodera glycines	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0
+Bradyrhizobium japonicum	1	1	2	0	0	3	1	0	0	2	0	0	1	1	2	1	2	0	0	1	2.862	2	1	5.464
+Novosphingobium aromaticivorans	6	40	59	25	35	66	8	11	3	9	6	8	6	6	2	5	5	8	3	1	6	17	24	22
+Novosphingobium aromaticivorans	1	0	0	0	0	0	0	2	0	4	1	0	0	0	1	1	0	0	4	1	1	21	5	3
+Lactococcus lactis	1	4	3	3	1	2	0	0	0	4	3	0	0	0	0	28	7	9	0	0	0	0	0	0
+Pseudomonas fluorescens	0	0	0	0	0	0	0	0	0	41.886	4	1	0	0	1.095	19.23	1	75.379	0	0	0	0	0	0
+Heterodera glycines	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	8	0
+Homo sapiens	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	3	2	8	36	8
+Ralstonia pickettii	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	5	13	6
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	3	0	5	19	1
+Medicago sativa	1	0	0	2	1	0	1	0	1	4	2	1	5	0	2.013	74	1	1	0	1	0	1.015	1	0
+Sus scrofa	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	14	0
+Sus scrofa	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	15	0
+Methylophaga thalassica	4	5	4	1	2	4	1	0	15	26	12	7	2	1	4	6	1	7	0	0	0	0	0	0
+Pseudomonas sp. JR1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	8	0	0	0	0	0	0
+Salmonella enterica	85.791	286	281	144	514	178	42	70	87	571	201	89	39	25	78	157	104	786	1	0	0	0	0	1
+uncultured bacterium HB1-14	0	0	0	2	0	0	0	2	1	3	8	3	1	1	0	1	2	1	0	0	0	0	0	0
+Lactococcus lactis	2	0	0	1	0	2	0	0	0	2	3	0	0	0	0	3	1	3	0	0	0	0	0	0
+Lactococcus lactis	0	2	4	1	1	1	0	0	0	1	1	0	0	0	0	14	4	16	0	0	0	0	0	0
+Lactococcus lactis	3	3	4	4	3	4	0	0	0	3	1	1	0	0	0	18	7	19	0	0	0	0	0	0
+Lactococcus lactis	4	2	5	7	6	4	0	0	0	7	5	1	0	0	0	45	5	26	0	0	0	0	0	0
+Lactococcus lactis	10	14	11	16	17	15	0	0	0	0	0	0	0	0	0	7	3	1	0	0	0	0	0	0
+Lactococcus lactis	2	10	6	8	6	5	0	0	0	6	7	3	0	0	0	42	8	42	0	0	0	0	0	0
+Lactococcus lactis	2	3	4	4	1	0	0	0	0	3	3	0	0	0	0	9	5	8	0	0	0	0	0	0
+Lactococcus lactis	2	2	5	1	3	2	0	0	0	2	0	2	0	0	0	9	4	7	0	0	0	0	0	0
+Lactococcus lactis	4	6	4	2	4	3	0	0	0	5	0	1	0	0	0	17	8	11	0	0	0	0	0	0
+Sinorhizobium meliloti	1	1	0	0	1	1.114	6.391	6	10	7	7	1	3	3.283	1.196	30.717	3.337	4	0	0	0	0	0	0
+Citrus x paradisi	1	1	1	5	2	0	3	4	19	22	14	14	9	5	5	8	27	38	0	5	10	27	27	37
+Agrobacterium fabrum	1	1	0	0	0	0	0	0	0	0	1	0	0	0	0	1	0	5	1	0	2	0	0	14
+Agrobacterium fabrum	0	0	0	0	0	2	0	0	0	0	1	0	0	0	0	0	3	1.5	0	0	1	0	0	13
+Agrobacterium fabrum	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	2	4
+Agrobacterium fabrum	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	1	2	0	0	4	1	0
+Agrobacterium fabrum	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	2	0	3
+Agrobacterium fabrum	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	1	0	0
+Agrobacterium fabrum	0	0	0	1	4	0	0	0	0	0	2	0	0	0	2	4	1	3	1	0	1	3	1	10
+uncultured bacterium	5	0	7	2	14	2	2	11	0	2	2	3	7	0	19	3	6	9	0	0	0	0	0	0
+Nocardioides sp. C190	0	3	2	39	6	22	0	2	5	3	3	1	0	1	2	3	1	0	0	0	0	0	0	0
+Heterodera glycines	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0	0	1	0	0	0	0	9	0
+Heterodera glycines	0	0	0	0	0	0	0	2	1	0	0	0	2	0	0	0	0	0	0	2	0	0	29	0
+Streptococcus pyogenes	1.124	2.427	11.212	4.08	3.346	8.483	0	0	0	4.713	2.116	0	1	0	1	16.527	4.135	19.416	0	4	0	0	0	0
+Yersinia pestis	15	6	16	4	11	21	1	0	0	209	21	25	2	0	35	69	21	493	1	0	0	0	1	2
+Citrus trifoliata	1	0	2	5.139	0	3	3.967	1	33.543	35.369	14.543	11.394	7.226	0	10.186	9.37	27.172	26.107	11	38	95.188	140.479	248.621	277.735
+Pseudomonas putida	2	0	0	0	2	1	0	0	0	23	3	0	0	0	10	9	1	36	0	0	0	0	0	1
+Pseudomonas putida	6.502	9	9.602	3.819	11.199	5.502	6.46	2.305	2.008	226.28	12.288	7.543	2.142	0	40.791	51.311	14.139	368.976	5.563	2	9	10	2	11.055
+Pseudomonas putida	2	1	0	1	1	2	1	0	0	30	1	0	0	0	17	14	4	57	0	0	2	2	0	5
+Pseudomonas putida	0	0	0	0	0	1	2	2	0	25	0	0	0	0	10	5	2	52	0	0	0	1	2	0
+Pseudomonas putida	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2.183	0	0	0	0	0	0
+Pseudomonas putida	0	1	0	0	1	1	0	0	0	37	3	2	0	0	11	8.457	2	87	0	0	0	3	0	0
+Pseudomonas putida	6	3	2	0	5	2	3	0	2	64	0	1	0	0	26	14	2	65	0	0	0	1	0	2
+Pseudomonas putida	0	1	1	0	2	0	2	0	0	63	2	0	0	0	12	12	2	42	0	0	0	1	0	0
+Escherichia coli	0	5.028	0	10.444	0	13.103	45.154	22.231	49.225	34.922	40.818	56.323	6.556	16.523	28.318	59.138	11.131	11.646	3.542	0	2.273	0	2.318	3.182
+Escherichia coli	5.41	3.702	0	1.436	8.566	3.515	17.263	8.103	22.791	22.465	52.82	43.485	20.072	11.696	36.785	35.312	31.548	17.956	2.359	0	3.691	0	12.28	8.185
+Escherichia coli	0	1	0	0	0	0	0	0	0	1	0	0	1	0	0	1	0	6	0	0	0	0	0	0
+Ceratitis capitata	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	1587	0	0	0	0	0	0	0
+Blumeria hordei	0	0	0	0	0	0	0	0	11	3	0	2	0	0	0	0	0	1	0	0	0	0	0	0
+Enterobacter cloacae	7	4	1	1	4.857	2.918	0	0	0	7.871	0	0	1	0	10.85	9.373	2	36.49	0	0	0	0	0	1.388
+Pseudomonas syringae group genomosp. 3	0	0	0	0	0	0	0	0	0	13	0	0	0	0	0	0	0	2	0	0	0	0	0	0
+uncultured bacterium	0	0	0	0	0	0	0	26	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+Salmonella enterica	0	0	0	0	0	0	0	0	0	46.762	9.374	9.857	0	0	9.852	24.186	5.237	191.484	0	0	0	0	0	0
+uncultured bacterium	27	21	54	15	11	18	13	7	0	2	4	2	5	4	1	1	8	1	14	20	13	13	18	7
+Cloning vector pDXM32	0	1	1	1	0	0	4	14	17	0	4	1	0	0	0	0	1	0	0	0	0	0	0	0
+Mordwilkoja vagabunda	0	0	0	0	0	0	7	0	6	12	0	11	0	0	0	5	4	1	0	0	0	0	0	0
+uncultured Acidobacteriota bacterium	42.173	13	31.356	11.207	8.692	16	4.13	8.52	2	7	3	11.738	12.466	19	8	3	8	5.811	23.654	29.162	24.336	19.461	22.023	13.65
+uncultured Acidobacteriota bacterium	25.093	5	30	1	5	7	0	2	0	3	2	4	0	2	0	2	2	2	0	0	0	0	0	0
+Girardia tigrina	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1267	0	0	0	0	0	0	0
+Hartmannella cantabrigiensis	2	0	0	0	0	19	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Chromobacterium violaceum	3	0	1	0	6	0	1	8	6	0	0	0	0	2	5	0	0	2	0	0	0	0	0	0
+Lottia austrodigitalis	0	0	0	0	0	0	0	5	1	0	0	0	1	2	0	0	0	0	1	1	0	0	27	0
+Sinorhizobium fredii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	18
+uncultured marine bacterium 581	32.855	25.603	54.393	26.732	35.881	27.971	38.863	44.48	49.206	45.815	45.714	57.125	92.262	52.474	68.759	51.551	80.785	57.379	49	25.678	25.738	36.444	27.633	41.421
+Mycolicibacterium smegmatis	0	0	0	0	1	0	0	1.785	1	4	2	1	3	4.805	6.83	2	0	1.676	0	0	0	0	0	0
+uncultured organism	1	2	2	9	1	2	27	43	88	19	14	16	30	51	11	19	15	6	0	0	0	0	0	0
+uncultured organism	0	0	0	0	0	0	1	0	0	1	0	0	0	2	0	0	0	0	0	0	0	0	0	0
+Alphatectivirus PRD1	0	0	0	1	0	0	3	2	7	8	25	13	5	0	3	0	2	0	0	0	0	0	0	0
+Methylococcus capsulatus	12.707	2.37	11.252	9.254	8.615	2.038	14.671	11.909	4.815	10.853	9.482	25.749	15.296	2.504	22.009	3.243	21.056	15.788	4.405	0	1.146	1.3	1.081	1.163
+Methylococcus capsulatus	0	0	2	0	0	0	1	24	0	1	1	1	15.155	24.068	1	0	2	2	14	44.881	5.527	3	21.973	9.626
+Methylococcus capsulatus	5	0	4	4	3	2.003	4.469	11	6	11.006	7	15.015	5	4.007	10	11	8	6	2.014	0	1	0	1	3.01
+Herminiimonas arsenicoxydans	0	0	2	9	0	1	0	0	0	1	12	2	0	1	0	5	1	3	0	0	0	0	0	0
+Fusarium oxysporum	0	0	0	1	0	0	5	0	0	1.382	5.402	0	0	0	1.275	4.489	0	4	0	0	0	0	0	0
+Xanthomonas oryzae	0	0	3	2	11	0	0	0	1	1	0	1.156	0	1	0	1	3.641	0	0	0	1	0	0	1
+Xanthomonas oryzae	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	0
+Xanthomonas oryzae	0	2	1.672	2	1	0	2.257	0	10.55	7.001	4.768	11.068	1.255	1	3.333	2.209	0	10.117	0	0	0	0	0	0
+Xanthomonas oryzae	0	1	1	0	3	0	2	0	10	1	7	3	0	3	3	5	5	16	2	0	0	2	0	1
+Xanthomonas oryzae	0	1	1.328	1	0	4	6.743	5	8.45	4.999	8.232	14.662	4.745	4	8.667	9.791	3	18.883	0	0	0	0	0	0
+Xanthomonas oryzae	2	1	1	0	1	5	0	1	0	0	0	0	0	0	0	1	2	3	0	0	0	1	1	0
+uncultured bacterium	0	0	0	0	0	0	0	0	0	0	0	0	1	6	0	0	0	0	0	0	0	0	0	0
+Schistosoma japonicum	0	2	2	10	0	4	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0	0
+Heterodera glycines	0	0	0	0	0	0	0	0	0	0	0	0	2	0	1	0	0	0	0	1	0	0	8	0
+Xanthomonas campestris	12.321	12.866	33.207	11.658	10.577	16.981	16.69	22.604	55.853	33.875	51.31	50.581	31.709	8.003	31.894	52.353	25.186	18.694	20.6	23.662	25.895	16.948	16.618	26.246
+Nitrobacter winogradskyi	0	0	0	1	0	1	1	4	0	3	2	3	3	4	2	2	1	1	0	12	1	0	66	0
+Burkholderia cepacia	9	5	2	0	3	1	0	2	2	0	1	1	5	1	1	4	2	12	0	0	1	0	0	0
+Burkholderia pseudomallei	6	0	4	5	3	8	1	3	2	3	1	7	3	2	1	6	1	4	0	0	0	4	1	1
+Burkholderia pseudomallei	0	3	2	1.689	1	2	2	0	3	2	4	2	6	2	7.9	12	1	7	0	2	0	0	1	1
+Burkholderia pseudomallei	38.591	32	4.631	1	26.27	19.495	12.684	15.571	19	13.524	4	15	20	9	13.136	11.824	18	26.455	0	1	0	3	2	4
+Burkholderia pseudomallei	0	0	0	0	0	0	0	0	0	0	25	0	0	0	0	0	0	0	0	0	0	0	0	0
+Burkholderia pseudomallei	6	22	3	5	4	14	6.259	11	13	1	3	4	5	7	14	21.445	7	9	0	0	0	0	0	0
+Burkholderia pseudomallei	24.209	33.684	0	13.202	12.869	34.28	11.236	11	20.034	22.778	6.519	56.305	39.467	1.235	17.146	27.246	18.83	17.861	0	0	0	2.362	0	0
+Burkholderia pseudomallei	2	0	0	0	1	3	2	4	1	3	2	0	2	1	0	22	1	3	1	1	0	3	2	2
+Burkholderia pseudomallei	0	1.504	2.916	0	0	0	0	0	2.932	4.915	6.751	4	5.413	1	6	5.266	1.693	4	0.881	0	0	1	0	1
+Burkholderia pseudomallei	0	2	0	1	0	0	0	0	0	1	1	0	0	0	0	15	2	16	0	0	0	0	0	0
+Burkholderia pseudomallei	3	1	2	1	2.638	2	3.962	9	3	1	5.467	0	8.904	2	3	1	1	4	1	2	0	0	0	0
+Burkholderia pseudomallei	13	20	1	28	7	11	51	48	112	66	86	118	46	77	75	76	44	34	0	0	0	0	0	0
+Alcaligenes sp. O-1	1	3	2	1	1	0	0	2	0	1	1	1	2	3	0	25	3	2	0	2	1	0	0	1
+Alcaligenes sp. O-1	2.15	3	2	0	1	0	0	0	1	2	2	0	8.516	14	0	3.509	3	2	2	1	5.278	5	0	3
+Nitrosococcus oceani	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+Pseudomonas fluorescens	0	1.331	4	0	1	2	2	3	0	53.448	5	4	1	4	11	65.684	4.162	140.144	0	0	4	1	0	69
+Pseudomonas fluorescens	0	0	1	1	0	0	0	0	0	23.379	1.022	0	0	0	1	9.181	2	23.583	0	0	0	0	0	0
+Pseudomonas fluorescens	0	0	0	0	0	0	1	0	0	20	0	1	0	0	1	11	1	17	0	0	0	0	0	0
+Pseudomonas fluorescens	0	0	0	0	0	0	0	0	0	9	1	0	0	1	2	10	2	53	0	0	0	0	0	15
+Pseudomonas fluorescens	0	2	1	0	0	1	4	0	1	54.309	4.472	3.585	0	5	10.609	30.325	5	90.04	0	0	1	3	0	54
+Pseudomonas fluorescens	0	0	0	0	0	0	0	0	0	3	0	1	0	0	0	7	0	31	0	0	1	0	0	8
+Pseudomonas fluorescens	0	2	1.247	0	1	2	1	2	0	27.011	2	1	2	2	2	30.267	0	103.736	0	0	3.641	0	1	28
+Pseudomonas fluorescens	0	0	0	2	0	0	0	3.273	0	32.656	4	4	1	1	1	17	7	77	0	0	3	0	1	17
+Pseudomonas fluorescens	3	1	5	2	2	1	2	0	1	36.282	5	4	1	3	2	23	3	106.115	2	1	7	2.5	2	37
+Pseudomonas fluorescens	12.294	6	26.474	6.363	12	12.353	12	8	3	57	18	11	13	11	16	62.681	15.361	164	9.357	4	12	20	17	48
+Pseudomonas fluorescens	0	0	0	0	1	3	0	0	0	1	0	0	0	0	0	1	0	7	0	0	0	0	1	7
+Pseudomonas fluorescens	0	0	0	0	0	0	0	0	0	4	0	1	0	0	1	7	0	16	0	0	0	0	0	0
+Pseudomonas fluorescens	3	1	8	2	4	4	6	6	0	87.46	5.23	2	2	0	12	46.415	4	150.894	0	1	3	3	2	40
+Pseudomonas fluorescens	0	0	0	0	0	0	0	0	1	11	5	0	1	0	2	10	2	30	0	0	0	0	0	18
+Pseudomonas fluorescens	0	1	1	0	1	2	1	0	1	21	6	2	0	0	6	16	9	63	1	1	1	0	0	12
+Pseudomonas fluorescens	0	0	0	0	0	0	0	0	0	5	0	1	1	0	3	5	2	12	0	0	0	0	0	4
+Pseudomonas fluorescens	3	0	9	6	4	2	2	4	3	82	12	2	0	0	6	61	5	154	0	0	1	0	0	14
+Pseudomonas fluorescens	1	1	1	0	0	1	0	0	0	12	1	0	0	0	2.735	21	1.11	59.875	0	0	0	0	0	6
+Pseudomonas fluorescens	3.892	2	12	3	2	5	4	7	7	82.001	12.163	8.329	10	3	8	58.532	14.723	144.553	5	3	2.729	3	0	2
+Pseudomonas fluorescens	2.357	0	0	0	0	0	1	1	1	32.999	2.125	3	1	1	3	23.089	1.277	61.447	0	1	2	1	0	23
+Pseudomonas fluorescens	0	0	2	0	0	0	0	0	0	4	2	1	0	0	1	3	0	13	0	0	2	0	0	9
+Pseudomonas fluorescens	2	0	1	0	1	1.333	0	2	0	6	0	0	2	0	0	7	2	37.151	0	1	2	1	0	18
+Pseudomonas fluorescens	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Pseudomonas fluorescens	0	0	1	0	2	0	2	1	1	37	4	2	0	0	4	30	7	117.681	0	0	1	0	0	29
+Pseudomonas fluorescens	1.266	0	3.481	0	0	3	4.688	0	0.5	25.431	2	2	0	1	8	33.491	4	109.119	0	0	2	1	0	29.96
+Pseudomonas fluorescens	1	0	2	0	1	2	0	0	0	17.717	2	1	0	1	4	12	3	33	0	0	0	1	0	2
+Pseudomonas fluorescens	3	5	17	6	6	12	13	7	3	183.876	15	17	3	2	12	140.441	23	410.608	1	7	2	0	4	56
+Pseudomonas fluorescens	1	3	7.495	3	3.998	3	1	0	0	55.656	0	6	2	0	17.459	53.578	12.235	184.827	0	0	3	2	0	40
+Pseudomonas fluorescens	4	0	1	0	2	1	0	2	0	20.315	6	0	2	0	5.753	17.262	2	63.863	2	0	7.39	0	1	44
+Pseudomonas fluorescens	1	1	3	0	0	1	2	2	1	31	3	2	0	0	5	19	3	86	0	0	1	1.258	0	41
+Pseudomonas fluorescens	1.267	1	1.32	0	2	0	0	2.253	2	16.652	2.785	2.235	4	1.162	4.582	18.389	1	84.134	0	3	3	0	1	53.972
+Pseudomonas fluorescens	3	2	9.847	4.543	3	2.679	3.521	8	1.529	43.576	4.27	4	5.692	12	6.733	37.055	4.532	147.988	1	5.747	4	1	2	67
+Burkholderia lata	8	14	4	7	9	11	15	14.31	12	1	5	4	8	5	16	16	5	11.106	0	0	0	0	0	0
+Burkholderia lata	4	11	7	1	107	2	1	12	7	3	1	6	5	0	1	7	7	30	0	0	2	3	4	2
+Burkholderia lata	3	6	5	3	33	1	0	1	3	1	1	5	4	2	1	3	2	10	2	1	1	1	2	0
+Burkholderia lata	4	4	2	0	40	0	0	1	1	4	2	0	3	0	1	2	0	7	0	0	0	0	0	0
+Burkholderia lata	2	7	1	0	1	0	0	2	0	0	0	2	2	1	1	0	0	4	0	0	0	0	1	0
+Burkholderia lata	1.038	7.272	11	3	68.468	4.248	1.043	1.075	1.008	6.499	0	2.185	5.686	7.228	3.21	5.344	4	10.044	10.478	3.353	9.977	6.991	4.404	2.487
+Burkholderia lata	34.388	56.054	8.375	13	41.75	48.831	31.897	17.899	24.415	13	6	16.81	29.838	7	20.972	33.803	7	36.532	0	0	2	7.81	4	3
+Burkholderia lata	6.612	7.946	13.625	0	49.25	2.169	1.103	7.101	4.585	3	0	2.19	6.162	1	1.028	2.197	1	15.468	0	0	1	2.19	0	2
+Burkholderia lata	25.666	43.844	12	12	48.618	50.897	31	29.548	22.696	12.698	2.59	25	20.591	16.682	37.958	47.676	15.901	34.655	5	0	0	10.824	3	2.557
+Burkholderia lata	50.694	131.083	19.825	32	121.699	97.388	71.086	46.585	65.783	14.809	11.26	50.437	57.296	30.889	58.644	62.345	27.725	70.042	1	3	2	8	4	3.802
+Burkholderia lata	2.355	8	3.421	2.72	43.811	3	0	4	3.153	2.155	1.464	3	1	1.048	1.01	2	3	9	2	2.06	2.24	2.72	5.102	5.243
+Burkholderia lata	5	16	3	7	18	16	6	6	9	1	1	1	1	3	1	6	3	17	0	0	0	0	0	1
+Shigella boydii	46	34	94	33	56	41	28	23.436	21	33	30	17	24	15	18.359	48.827	18.913	17.275	23	11	28	38.581	17	27
+Rhodospirillum rubrum	1	1	0	5	1	2	3	1	16	6	13	9	10	3	12	13	18	7	0	0	0	0	0	0
+Rhodospirillum rubrum	0	1	0	1	0	1	6	4	7	3	3	6	2	8	3	5	1	1	0	0	0	0	0	0
+Rhodospirillum rubrum	0	3	1	0	1	0	5	5	4	2	9	7	4	3	1	0	2	5	0	0	0	0	0	0
+Erythrobacter litoralis	0	0	2	0	0	2	0	0	0	0	0	18	0	1	0	0	0	0	0	0	0	0	0	0
+Aster yellows witches'-broom phytoplasma	2.039	5.111	9.243	2.025	7.254	3.06	2.027	0	2.022	2.016	6.024	3.024	1.014	1.011	1.008	5.042	8.215	2.009	1.024	0	0	1.016	2.026	0
+Rhizobium etli	5.454	1	6.381	4.62	4.663	8.355	2.113	6.648	2	9.423	5.299	5	9.022	4.557	3.964	13.5	6.569	9	12.798	8	7	14.353	3	41.672
+Rhizobium etli	1	6	5	2	3	3	0	1	2	7	6	1	3	1	2	10	2	3	7	1	4	63	8	32.296
+Rhizobium etli	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	1	10	3	7
+Rhizobium etli	0	0	1	1	2	0	1	0	0	2	0	0	0	0	0	0	2	4	1	2	0	14	2	8
+Rhizobium etli	1	0	0	2	4	0	0	1	0	1	1	0	1	0	0	0	2	3	2	1	3	26	5	17
+Rhizobium etli	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	2	1	1	14	3	8
+Staphylococcus aureus	62	77	150	70	98	118	20	13	21	43	70	20	14	9	17	17	22	13	5	4	5	6	4	10
+Sphingomonas agrestis	1	7	8	4	4	0	0	1	0	2	1	0	0	0	0	1	0	1	1	0	0	5	2	1
+Ostertagia ostertagi	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	5	0
+Paraburkholderia xenovorans	9	5	1	0	1	3	0	1	3	0	0	1	4	1	0	8	0	10	0	0	0	0	1	0
+Paraburkholderia xenovorans	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	5	0	0	0	0	0	0
+Paraburkholderia xenovorans	3	9	0	4.901	4	1	0	4	7.963	10	4	12.428	2	2	9	8.477	4	4.848	0	0	0	0	0	0
+Rhodopseudomonas palustris	0	0	0	0	0	0	1	0	1	1	8	3	4	1	9	8	6	2	0	0	0	0	0	0
+Nitrobacter hamburgensis	4	5	0	4	4	12	3	2	3	3	5	7	4	3	5	0	9	0	0	1	1	3	0	1
+Nitrobacter hamburgensis	4	7	3	3	0	8	2	2	1	6	0	5	3	3	3	3	6	2	2	1	1	5	0	6
+Nitrobacter hamburgensis	1	1	1	2	2	5	1	4	3	1	1	0	0	2	0	0	1	1	0	0	1	4	0	5
+Nitrobacter hamburgensis	2	8	1	1	2	2	14	10.067	18	13	5	17	8	10.643	15	15.69	5	7	0	0	0	0	0	0
+Nitrobacter hamburgensis	1	5	4	0	1	5	5	4	8	5	8	7	5	5	9	11	3	6	0	0	0	0	0	0
+Nitrobacter hamburgensis	3	2	6	3	5	7	18	8.9	55.874	29	26	32	19	6.357	33	30	18	19	0	0	0	0	0	0
+Nitrobacter hamburgensis	0	0	0	1	0	1	8	1.033	8.126	5	4	9	3	1	2	7.31	2	3	0	0	0	0	0	0
+Pseudomonas sp. Q37-87	0	1	0	0	0	0	1	0	0	12	0	1	0	0	4	7	0	19	1	0	0	0	0	1
+Cupriavidus metallidurans	4	5	4	3	6	3	1	2	0	2.712	0	3	7	7	0	0	1	5	0	8.924	1	6	25.773	11.414
+Cupriavidus metallidurans	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	1	2	4	2.217
+Cupriavidus metallidurans	5.557	2	3.881	0	0	2	0	1.5	0.5	1	2	0	6.926	0	0	0	0	3.82	1	2	2	4.864	12	7.695
+Cupriavidus metallidurans	1	7	7.366	50	4	3	4	1	1	11	3	3	1	1	0	1	3	5	1	0	3	3	0	0
+Cupriavidus metallidurans	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	2	2	0	4
+Cupriavidus metallidurans	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1	8	2
+Cupriavidus metallidurans	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	5	5	1
+Cupriavidus metallidurans	4	5	7.896	4	5	2	4	8	1	3	2	9	4	5	2	6.871	9	2.597	4	6	5	25	33	38
+Candidatus Korobacter versatilis	13	13	35	25	22	15	57	65	146	85	108	118	98	85	83	134	58	94	14	13	24	19	19	25
+Sphingopyxis alaskensis	1	1	1	1	1	4	0	0	0	4	6	2	1	1	0	1	0	1	3	0	6	17	1	18.892
+Sphingopyxis alaskensis	1	3	5	0	8	11	1	0	0	0	0	0	5	0	0	0	1	0	1	0	0	5	6	3
+Myxococcus xanthus	0	0	0	0	0	0	0	0	0	0	0	0	1	7	0	0	0	0	1	0	1	0	0	0
+Rubrobacter xylanophilus	13	0	0	0	1	2	13	1	47	155	12	2	6	2	19	55	2	0	0	0	0	0	0	0
+Cytophaga hutchinsonii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	7	0	1
+Cytophaga hutchinsonii	0	0	1	3	1	7	3	1	11	3	10	1	2	1	2	3	4	1	0	0	0	0	0	0
+Rhodococcus jostii	1	1	2	1.271	1	2	0	0	1	4	4	7	2	0	0	4	5	0	1	0	0	0	0	0
+Rhodococcus jostii	0	0	1	1	0	0	1	1	0	2	0	4	1	4	0	0	2	0	0	0	0	0	0	0
+Rhodococcus jostii	1	1	6	6	2	0	1	2	3	6	8	14	3	12	0	2	19	0	3	0	0	13	0	2
+Rhodococcus jostii	0	0	0	0	0	1.914	0	0	0	0	0	0	0	0	2.738	0	1.794	4.019	0	0	0	0	0	0
+Arachis hypogaea	87.044	59	106.698	89.585	77	83.516	143.149	124.988	204	151.072	210.302	224.573	302.426	130.326	191.686	246.14	138.45	211.145	33.202	74.57	64.508	27.064	32.422	40.37
+Terrabacter sp. HH4	2	3	8	5	4	9	6	0	6	3	10	3	3	6	1	2	2	0	3	3	3	2	0	2
+Streptomyces sp. 139	16	14.852	17	28	17.497	36.937	11.349	9.576	25	15.843	25.284	30.32	12.451	11.18	11.861	15.754	17	6.634	23.596	7.497	22	16.717	11	23.96
+Nitrosomonas eutropha	1	2	0	5	9	1	7	11	15	22	24	34	0	4	8	25	0	4	0	0	0	0	0	0
+Burkholderia ambifaria	21	36	7	14	25	40	22	5	20	3	8	18	18	13	25	31	15	24	1	0	0	4	1	0
+Burkholderia ambifaria	5.289	25	5	8.851	18	16	16	11	11	3	2	3.16	10	4	10.383	19.098	5	17	0	0	0	0	0	2
+Burkholderia ambifaria	1	1	1	0	0	2	0	1	0	1	1	0	5	0	3	0	0	1	0	0	0	0	0	0
+Burkholderia ambifaria	10	34	6	17	38	37	19	10	10	9	2	8	20	1	4	21	2.679	30.645	0	0	1	3	0	1
+Burkholderia ambifaria	16	40	5	10	27	27	24	16	11	2.644	4.878	7	11	11	20	13.052	7	17	0	0	0	0	0	0
+Burkholderia ambifaria	30	34	8	11	35	40	24	10.912	21	3.711	4	13	16	8	13	12.69	10	18.743	0	1	0	0	0	1
+Burkholderia ambifaria	28	47	7	19	38	43	22	29	16	5	1	15	15	7	23	24	9	13	0	0	0	2	0	1
+Burkholderia ambifaria	25.745	21	9.662	7	14	5	2	11	8.511	11	1	6	17.906	1	7	5	1	4.254	2	0	1	2	1	2
+Burkholderia ambifaria	6	14	3	5	14	20	10	9	4	4	3	4.303	3	5	3	11	4	15.875	0	0	0	0	0	0
+Burkholderia ambifaria	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0
+Burkholderia ambifaria	16	38	5	9	39.757	14	20	16.544	15	6	3	13	12	11	18.831	23	12	30.339	1	2	0	6	1	5.229
+Burkholderia ambifaria	16	26.348	6	9.798	47.86	24	12	9.554	12.652	3	4	7.577	14	4	11.932	22.05	7.894	27.851	0	0	1	2	0	0
+Burkholderia ambifaria	12	0	0	0	1	0	1	0	0	3	0	1	2	0	0	0	0	0	0	0	0	0	0	0
+Burkholderia ambifaria	6	3.192	0	1	9.184	2.089	0	4	3.478	4.74	0	0	9.384	1	2	2.041	0	1	0	0	0	1.592	0	1.329
+Burkholderia ambifaria	8.301	20.905	4.632	9.102	34.055	24	8	3.182	4	4	0	4.359	3.035	3	6	10.861	2	9.66	0	1	0	2	0	0
+Burkholderia ambifaria	18	38	14	15	21	30	17.543	14	25	9	1	14	22.651	6	25	25	7	20	2	0	0	0	3	2
+Burkholderia ambifaria	18	7.348	2.475	0	6.59	7	2	1	4	1	1	1	6	0	2.476	2	2	4.371	0	0	0	4	0	0
+Arthrobacter sp. FB24	0	0	1	1	0	0	1	0	0	14	13	5	1	0	0	3	3	1	0	0	0	0	0	0
+Arthrobacter sp. FB24	0	1	1	2	0	0	2	0	0	15	19	6	3	0	0	6	3	7	0	0	0	0	0	0
+Arthrobacter sp. FB24	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	22	0	0	0	0	0	0
+Arthrobacter sp. FB24	1	1.431	3	2	1	4.218	2	1	2	25.268	8.806	3.17	0	0	1.321	6.918	0	21.839	2	0	3	2	1	0
+Arthrobacter sp. FB24	1	3	3	4.679	1	4	2	1	0	28.851	12.95	10	3	3	1	10.274	3	13	2	1	2	2	5	1
+Arthrobacter sp. FB24	0	2	3	1.138	1	5.381	1	0	2.636	33	14	9	2	2	0	9	4	15	0	0	3.078	0	0	0
+Burkholderia cenocepacia	1	3	0	2	4	7	1	8	2	1	0	1	0	0	14	1	2	9.607	0	0	0	0	0	0
+Burkholderia cenocepacia	4	3	0	0	5	4	1	0	2	1	2	3	2	0	3	4	3	2	0	0	0	0	0	0
+Burkholderia cenocepacia	1.093	0	5.45	0	38	0	3.074	5	2.069	1.099	0	1.068	4.129	0	1.018	1.056	6.387	9.973	0	2	2	4	1	2
+Burkholderia cenocepacia	14	7	8	4	30	3	1	8	14	9	1	3	19	0	6	5	2.131	13	0	0	0	0	0	0
+Methanothrix thermoacetophila	0	0	0	0	0	0	0	0	0	0	0.706	1	2	1.85	0	0	0	0	0	0	0	0	0	0
+Acidothermus cellulolyticus	0	0	2	11	1	7	1	2	4	7	2	5	1	1	3	6	0	2	0	0	0	0	0	0
+Mycolicibacterium smegmatis	5	5	2	2	5	3	3	1	4	2	4	2	0	3	2	1	2	0	5	1	5	3	0	2
+Bacillus thuringiensis	1	0	0	0	1	1	0	0	0	0	4	1	0	0	0	2	24	3	1	0	0	0	0	0
+uncultured bacterium	0	0	0	1	0	0	7.974	1.841	3	2.918	7.95	1	1.901	3	6.911	0	3	3	0	0	0	0	0	0
+uncultured bacterium	0	1	0	0	0	1	1	4	10	6	8	19	1	5	1	9	2	3	0	0	0	0	0	0
+uncultured bacterium	3	0	0	0	0	0	1	3	2	2	2	2	6	1	6	3	1	2	0	0	0	0	0	0
+Populus trichocarpa	2	2	2	1	5	0	22	13	41	85	33	29	32	35	53	44	47	133	2	4	8	9	29	35
+Paracoccus denitrificans	21.969	11.48	9.373	27.077	16.689	19.891	33.653	29.742	61.686	40.823	50.566	86.841	33.202	34.356	40.205	49.232	22.391	30.342	0	3.068	8.235	0	5.148	4.16
+Nocardioides sp. JS614	0	4	2	0	1	15	0	0	2	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0
+Nocardioides sp. JS614	5	22	2	15	10	25	2	3	3	1	2	1	2	0	0	0	0	0	0	0	0	0	0	0
+Nocardioides sp. JS614	3	3	4	1	0	4	0	0	0	0	0	1	0	0	0	0	1	0	0	0	1	1	0	1
+Nocardioides sp. JS614	27	146	3	125	69	137	2	9	10	1	9	3	5	2	4	0	2	3	0	0	0	0	1	0
+Paenarthrobacter aurescens	2.278	0	1.207	1	5	0	3.285	1.24	2	8.064	18.294	20.334	1.471	1	5.322	6.804	27.628	44.401	0	2.994	3.052	1.016	2.092	0
+Paenarthrobacter aurescens	4	0	5	0	1	4	0	0	0	17.327	37.123	30.913	0	0	5	21.075	27.296	57.543	0	0	0	0	0	1
+Paenarthrobacter aurescens	0	0	0	1	0	0	0	0	0	2.673	5.877	6.087	0	0	3	11.925	8.704	24.457	0	0	0	1	0	0
+Paenarthrobacter aurescens	2	0	4	0	0	5	0	1	0	12	11	7	1	1	2	13	10	23	0	0	1	2	1	1
+Paenarthrobacter aurescens	2	5	3	0	4.216	8	3	2	1	40.463	28	47.461	3	0	11	42.744	44.867	96.202	0	3	5	1	1	0
+Paenarthrobacter aurescens	9	7	7	5	3	5	7	3	3	21	8	7	4	5	2	14	6	32	1	0	1	0	1	3
+Paenarthrobacter aurescens	7	5.99	5	1	4	4.787	0	1	3	19.76	7.316	7.422	3.913	2	3	15.157	13.875	39.816	1	0.784	3	0	0	1.939
+Paenarthrobacter aurescens	0	0	1	4	1	2.289	0	2	0	9	9	20	2	1	4	7	21.633	33	0	0	0	0	0	0
+Paenarthrobacter aurescens	0	0	3	2	0	0	0	0	0	4.97	4.613	1.17	0	0	0	11	13.897	26.88	1	0	0	0	1	1
+Paenarthrobacter aurescens	2	1.057	5	2	1	0	0	2	0	10	19	27	1	0	10	25.936	17	33	0	0	2	2.589	0	1
+Paenarthrobacter aurescens	0	7	0	0	1	6	0	0	2	0	0	0	1	0	2	0	0	0	0	0	0	0	0	0
+Paenarthrobacter aurescens	2	14	0	17	5	7	1	2	1	0	2	1	2	1	2	0	1	0	0	0	0	0	0	0
+Paenarthrobacter aurescens	2	21	0	11	5	14	1	3	2	0	3	1	1	0	1	0	1	0	1	0	0	0	0	0
+Paenarthrobacter aurescens	4	74	4	43	15	34	1	5	2	1	1	1	2	2	4	0	4	1	2	0	1	0	0	0
+Capniomyces stellatus	6	1	0	0	0	59	2	0	0	0	0	0	2	0	1	11	2	0	0	0	0	0	0	0
+Polaromonas naphthalenivorans	29	3	5	0	11	0	0	0	2	3	0	6	8	1	0	0	3	11	0	0	0	0	0	0
+Sinorhizobium meliloti	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	12	1	3
+Sinorhizobium meliloti	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	14	1	10
+Burkholderia pseudomallei	9	6	2	3	186	0	0	19	3	2	0	3	3	0	0	0	8	6	0	0	0	0	0	0
+Burkholderia pseudomallei	26	44	13	13	56	31	13	20	24	20.675	14	23	26	8	39	39	17.904	54	0	0	0	8	1	10
+Acinetobacter baumannii	1	0	0	1	0	0	0	0	0	144	3	1	0	0	0	1	2	1	0	0	0	0	0	0
+Acinetobacter baumannii	14	5	1	1	1	0	0	0	0	45	15	0	0	0	0	4	1	3	0	0	0	0	0	0
+Pseudomonas putida	1	3	1	4	2	2	31.637	19.504	32.038	12.669	33.438	11.329	7	8	15.323	6	9	8.59	0	0	0	0	0	0
+Pseudomonas putida	0	4	0	8	0	1	32.363	23.496	37.962	30.331	44.562	27.671	14	11	13.677	10	10	7.41	0	0	0	0	0	0
+Burkholderia vietnamiensis	18	14	0	0	2	1	1	2	4	3	0	1	5	1	0	0	3	8	0	0	0	0	0	0
+Burkholderia vietnamiensis	14.319	74	8	9	33.872	48.908	30	10	23.741	7.575	4	17.86	18	16	22	27.465	8	39.931	1	0	3	3	1	3
+Burkholderia vietnamiensis	10	1	2	0	4	0	1	0	0	2	0	1	1	1	1	6	1	10	0	0	0	0	0	0
+Burkholderia vietnamiensis	22	33.85	8.634	11	22.654	32.689	18	12.497	25.58	6.888	5	10.383	18	10.392	10.587	29.87	15.348	18.562	1	0	1	5.699	4.086	5
+Burkholderia vietnamiensis	0	0	0	0	0	7	0	0	0	0	0	2	0	0	1	0	0	0	0	0	0	0	0	0
+Burkholderia vietnamiensis	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	1	4	22	0	0	0	0	0	0
+Burkholderia vietnamiensis	0	0	1	0	0	0	0	0	1	4	3	7	0	0	11	2	1	62	0	0	0	1	0	0
+Burkholderia vietnamiensis	0	1	0	0	2	0	0	0	0	0	0	0	0	0	0	1	0	2	1	0	0	0	0	0
+Burkholderia vietnamiensis	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	35	0	0	0	0	0	0	0	0
+Burkholderia vietnamiensis	0	0	0	0	3	0	0	0	0	0	0	1	0	0	45	0	0	2	0	0	0	0	0	0
+Aeromonas salmonicida	1	0	0	0	0	0	0	0	0	2	0	0	0	0	0	2	0	70	0	0	0	0	0	0
+Enterobacter sp. 638	3	0	1	2	1	6	0	2	0	47.076	8.713	6.34	0	0	1	17.79	2	229.489	0	0	0	0	0	0
+Enterobacter sp. 638	5	3	1	0	2	3	0	0	0	24.81	1	2	0	0	2	9	1	115.191	0	0	0	0	0	0
+Enterobacter sp. 638	0	0	0	0	2	1	0	0	0	57	3	3	0	0	0	24	5	231.271	0	0	0	0	0	0
+Enterobacter sp. 638	0	0	0	0	1	0	0	0	0	11	0	1	0	0	0	6	0	54	0	0	0	0	0	0
+Enterobacter sp. 638	0	0	0	1	0	0	0	0	0	9.07	1.107	1	0	0	0	6.603	2	102.005	0	0	0	0	0	0
+Enterobacter sp. 638	4.441	2	2	1	1	3.421	0	0	0	22.263	3.722	2	1	0	4	19.307	0	110.318	0	0	0	0	0	0
+Enterobacter sp. 638	1	0	0	0	0	0	0	0	0	14	4	1	0	0	1	18.547	3	107	0	0	0	0	0	0
+Enterobacter sp. 638	0	0	0	0	0	0	0	0	0	14	0	1	0	0	0	7	0	81	0	0	0	0	0	0
+Enterobacter sp. 638	0	0	0	0	0	0	0	0	0	10	0	0	0	0	1	1	0	16	0	0	0	0	0	0
+Enterobacter sp. 638	0	0	0.333	0	0	2.457	0	0	0	14.099	1.39	1	0	1	0	10.899	2	92.035	0	0	0	1	0	0
+Enterobacter sp. 638	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	17	0	0	0	0	0	0
+Enterobacter sp. 638	0	0	0	0	0	0	0	0	0	6	0	0	0	0	0	1	0	10	0	0	0	0	0	0
+Flavobacterium johnsoniae	0	0	0	0	4	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0
+Flavobacterium johnsoniae	0	0	0	0	0	2	0	0	0	0	6	0	0	0	0	1	0	0	0	0	0	0	0	0
+Flavobacterium johnsoniae	2	0	1	0	15	4	0	0	0	3	43	1	1	0	0	20	2	12	0	0	0	0	0	0
+Flavobacterium johnsoniae	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	1	0	0	0	0	0	0	0	0
+Acidiphilium cryptum	1	0	3	1	1	0	10	5	12	4	2	4	1	3	3	10	1	1	0	0	0	0	0	0
+Acidiphilium cryptum	0	0	1	4	0	0	43	6	0	0	0	2	2	5	2	10	0	5	0	0	0	0	0	0
+Acidiphilium cryptum	0	0	0	0	0	0	1	0	1	0	0	0	2	0	1	52	3	5	0	0	0	0	0	0
+Bradyrhizobium sp. BTAi1	1	0	2	0	0	0	1	6	18	6	14	3	3	1	6	9	6	4	0	0	3	1	3	1
+Bradyrhizobium sp. BTAi1	1	3	2	0	1	1	1	2	0	1	1	3	1	2	2	0	0	3	9	4	9	42	16	76.449
+Bradyrhizobium sp. BTAi1	2	3	4	1	10	3	0	1	2	1	1	9	5	7	3	2	3	7	0	0	0	0	0	0
+Bradyrhizobium sp. BTAi1	4	3	3	2	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+Rhizorhabdus wittichii	6	64	3	3	15	24	1	3.258	4	3.055	4	1	4.159	2.117	1	2.087	3.061	1.011	2.252	6	3	13	4	14
+Rhizorhabdus wittichii	6	61	3	0	4	19	2	0	1	2	1	4	3	4	4	4	4	0	3	1	5	16	3	6
+Rhizorhabdus wittichii	0	5	2	1	12	15	0	0	0	1	2	0	0	0	1	0	0	1	0	0	0	0	0	0
+Rhizorhabdus wittichii	8	32	28	11	8	55	1	7	1	0	1	3	1	5	1	0	8	5	0	0	0	0	0	0
+Rhizorhabdus wittichii	0	2	1	2	1	5	3	3	11	6	8	14	11	4	6	1	6	1	0	0	0	0	0	0
+Rhizorhabdus wittichii	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Rhizorhabdus wittichii	1	8	3	1	2	4	1	3	3	3	0	1	1	4	3	0	5	2	0	0	0	0	0	0
+Rhizorhabdus wittichii	2	8	3	1	1	0	5	8	15	14	10	10	21	23	39	14	13	13	0	0	0	0	0	0
+Rhizorhabdus wittichii	1	0	1	1	2	0	1	1	0	0	1	2	1	1	0	1	1	1	5	4	4	39	7	33
+Rhizorhabdus wittichii	0	1	0	1	1	1	4	2	10	5	17	5	18	4	5	2	7	1	0	0	0	0	0	0
+Rhizorhabdus wittichii	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	5	0	3	18	8	19
+Rhizorhabdus wittichii	1.077	32	1	1.789	0	6.267	0	1	0	0	5.352	3.364	3.035	4.333	1.542	7.922	2.344	1.022	0	0	3.743	3.549	3.534	0
+Rhizorhabdus wittichii	5.293	30	1	3.665	11.736	16.733	2	4	1.5	7	9.648	5.636	7.965	5.399	3.458	11.078	4.122	10.361	3	5	1.592	5.451	3.466	11
+Rhizorhabdus wittichii	0	0	8	0	1	0	2	0	0	5	0	1	0	0	0	0	0	0	1	3	1	13	2	2
+Rhizorhabdus wittichii	0	1	3	0	0	6	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	0	0	4
+Rhizorhabdus wittichii	1	18	28	10	22	13	1	2	2	5	6	1	1	0	1	0	2	5	5	3	11	26	12	31
+Rhizorhabdus wittichii	7	51	45	16	28	52	5	8	2	7	2	2	2	6	0	0	10	5	4	4	7	40	21	46
+Rhizorhabdus wittichii	11	42	91	29	20	107	2	17	5	6	7	5	2	10	11	1	9	6	4	2	4	7	6	18
+synthetic construct	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	1118	0	0	0	0	0	0	0
+synthetic construct	0	0	0	0	0	0	0	0	0	0	0	9	0	0	1	1	2261	0	0	0	0	0	0	0
+synthetic construct	0	0	0	0	0	0	0	0	0	1	0	22	0	0	0	1	2501	0	0	0	0	0	0	0
+synthetic construct	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	2	9450	0	0	0	0	0	0	0
+synthetic construct	0	0	0	0	0	0	0	0	0	1	0	2	0	0	0	1	1992	2	0	0	0	0	0	0
+Arthrobacter sp. Chr15	0	2	0	0	3	0	1	1	4	41.155	28	14	0	1.103	1	5	10	26	1	0	0	1	0	0
+Populus tremuloides	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	2	0
+Flavobacterium johnsoniae	0	0	0	0	2	1	0	0	0	2	7	0	0	0	0	3	0	1	0	0	0	0	0	0
+Janthinobacterium sp. Marseille	0	0	2	8	2	0	0	0	1	6	34	1	2	0	1	13	1	3	0	0	0	0	0	0
+Janthinobacterium sp. Marseille	7	7	3	14	14	11	7	7	22	17	21	13	5	3	8	7	15	6	0	0	0	0	0	0
+Kineococcus radiotolerans	2	2	0	1	0	0	2	2	5	1	1	0	19	3	11	6	7	8	0	0	0	0	0	0
+Brucella anthropi	2	4	0.5	1	1	0.5	0	0	1	7	3.623	1	0	1	0	4	1	1.356	0	0	0	24	2.735	13.782
+Brucella anthropi	0	0	0.5	0	3	0.5	0	0	0	0	2.377	1	0	0	0	0	0	4.644	0	0	0	19	1.265	1.218
+Anaeromyxobacter sp. Fw109-5	0	0	0	0	0	0	1	0	0	1	0	0	0	1	0	0	0	0	1	0	1	5	1	2
+Anaeromyxobacter sp. Fw109-5	0	0	1	3	0	0	9	8	13	11	13	13	6	6	3	9	3	3	0	0	0	0	0	1
+Anaeromyxobacter sp. Fw109-5	1	5	4	1	4	3	12	6	14	13	17	11	26	17	10	9	7	8	0	1	0	1	0	1
+Anaeromyxobacter sp. Fw109-5	27	3	24	12	6	16	6	2	3	3	4	7	1	4	1	6	3	2	1	0	2	0	1	0
+Xanthobacter autotrophicus	9	0	2	4	7	3	8	10	7	10	24	23	7	7	3	6	10	6	4	3	1	4	0	8
+Xanthobacter autotrophicus	4	2.035	7.02	4	3.583	5.482	3	6.364	5	2.133	4	5	6.68	3	2	30.631	1.183	9.064	9	13.073	4.855	6.187	7.461	8.441
+Xanthobacter autotrophicus	0	2	0	0	0	2	0	0	0	0	2	0	1	0	1	10	1	1	0	0	1	4	1	0
+Xanthobacter autotrophicus	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	25	0	0	1	2	1	3	2	0
+Xanthobacter autotrophicus	0	1	0	0	0	0	1	1	1	2	11	3	0	0	0	1	4	3	0	0	0	0	0	0
+Acinetobacter baumannii	6	2	1	0	0	0	0	0	0	27	3	0	0	0	0	0	1	0	0	0	0	0	0	0
+Akanthomyces lecanii	0	0	0	0	0	0	1	0	3	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+uncultured bacterium Bio5	0	0	0	2	0	1	5	4	10	10	16	14	1	6	3	17	3	1	0	0	0	0	0	0
+Cronobacter sakazakii	0	0	0	2	1	0	0	0	0	0	0	0	0	0	0	0	0	11	0	0	0	0	0	0
+Citrobacter koseri	3	0	0	0	0	1	0	0	0	3	0	0	0	0	2	2	0	12	0	0	0	0	0	0
+Citrobacter koseri	2	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	6	0	0	0	0	0	0
+Citrobacter koseri	0	0	0	0	0	0	0	0	0	2	1	0	0	0	13	0	0	84	0	0	0	0	0	0
+uncultured Acidobacteria bacterium cosmid p2H8	0	0	12	0	0	0	1	6	0	0	0	0	0	3	0	0	0	0	0	4	0	2	1	0
+uncultured Acidobacteria bacterium cosmid p2H8	1	0	54	0	2	0	0	6	0	0	0	0	3	5	0	0	0	0	0	6	0	0	3	2
+Acrobeloides maximus	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	1	0	0	0	0	0	25	0
+Mesorhabditis sp. 'Bursilla' PS1179	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	3	0
+Frankia sp. EAN1pec	0	0	0	0	1	0	0	0	3	2	2	1	0	0	1	1	0	0	0	0	0	0	0	0
+Frankia sp. EAN1pec	2	1	1	0	4	1.141	0	11	2	0	0	2	6	1	10	0	0	3	1	1	1	2	1	1
+Frankia sp. EAN1pec	6	85	1	119	64	59	0	1	2	0	0	0	1	0	3	0	0	0	0	0	0	0	0	0
+Frankia sp. EAN1pec	2	0	0	2	2	14	0	0	10	2	2	10	1	0	1	3	6	0	0	0	0	0	0	0
+Frankia sp. EAN1pec	1	0	0	0	0	0	1	0	3	0	2	2	6	1	5	14	0	1	0	0	0	0	0	0
+Frankia sp. EAN1pec	2	0	1	0	0	0	12	3	16	3	5	22	52	8	38	92	6	11	0	0	2	0	0	0
+Frankia sp. EAN1pec	2	0	1	0	0	0	7	4	14	6	7	12	29	2	30	65	4	13	0	0	0	0	0	0
+Pleurotus ostreatus	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	13	0	0	1	0	0
+Burkholderia multivorans	20	6	3	0	11	2	0	5	8	3	1	0	9	2	3	3	1	14.252	2	2	0	21	21	16.914
+Burkholderia multivorans	16.512	24	1	13	15.748	9	5	11	19	9	7	29	9	5	12	10	10	14.436	1	0	0	8.633	0	2
+Burkholderia multivorans	57.656	104.408	15.878	14.228	60.366	85.967	54.855	43.717	58.735	27.153	13.717	22.834	43.652	18.351	59.009	84.229	25.22	59.853	0	2	2.255	1.32	0	3.924
+Burkholderia multivorans	44	99.772	21	26	74	80	60	38	45	13	4	39	38	25	49	68	18	70	0	1	0	0	1	1
+Burkholderia multivorans	1	9	8	3	19	1	2	3	10	3	0	2	4	0	5	1	3	50	0	0	0	0	0	2
+Burkholderia multivorans	8	4	3	5	15	3.14	1	1	11	2	2	1	1	0	8	0	1	31.669	0	0	0	0	0	0
+Salmonella enterica	6	1	0	0	0	3	0	0	0	7.059	0	1	0	0	0	6	0	19	0	0	0	0	0	0
+Lactococcus lactis	6	5	10	5	7	7	0	0	0	11	14	0	0	0	0	60	19	47	0	0	0	0	0	0
+Chloroflexus aurantiacus	1	1	0	0	0	1	5	1	4	5	12	39	7	2	5	4	8	2	0	0	0	0	0	0
+Pseudomonas putida	0	0	1	0	1	0	0	0	0	13	0	0	0	0	2	1	0	30	0	0	0	0	0	0
+Pseudomonas putida	3	4	1	1	2	0	0	0	0	45.244	1	0	0	0	21.27	12.552	5	63.853	0	0	1	0	2	1
+Pseudomonas putida	3	5	5	3	4	5	2	0	1	73	5	2	0	0	32	18	7	144.445	1	0	1	8	3	9
+Pseudomonas putida	1	1	0	1	1	1	0	0	0	49	2	0	0	1	8	21	4	103	0	0	0	3	3	2
+uncultured marine microorganism HF4000_48F7	12.44	6.767	13.521	3	6	9	14.128	4.008	44	51.742	6.41	20.602	46.509	9	66.286	10.458	27.008	25.744	0	0	0	0	0	0
+uncultured marine microorganism HF4000_48F7	9.56	4.233	8.479	20	6	10	10.872	6.992	73	108.258	16.59	25.398	84.184	18	93.714	22.542	24.992	34.256	0	0	0	0	0	0
+uncultured marine crenarchaeote HF4000_ANIW93E5	0	0	0	0	0	0	0	14	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Leptospira biflexa	1.592	0	0	1.957	2.921	0	2.932	4.288	13.529	5.952	10.328	4	7.618	5.961	11.411	6	3	6.149	0	0	0	0	0	0
+Burkholderia orbicola	5	4	1	1	62	3	1	8	4	2.101	1	3	4.063	1	3.108	3.388	7.233	13.401	0	2	3.465	1.116	1.037	1.026
+Burkholderia orbicola	5	6	4	0	2.084	0	1.027	3.299	3	5.347	0	6	7.252	2	1.019	2.098	0	10.184	0	0	0	5.727	0	3.987
+Burkholderia orbicola	12	24	6	6	17.916	29	21.973	15.61	18	3.972	5	15	18.681	9	30.981	27.648	8	28.292	1	2	0	1.273	3	4.013
+Burkholderia orbicola	0	2	1	3	1	2	7	1	4	1	1	5	3	0	3	6.076	2	3	0	0	0	0	0	0.5
+Burkholderia orbicola	1	0	1	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0
+Burkholderia ambifaria	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Burkholderia ambifaria	84.155	141.476	26.036	49.628	106.714	88.803	70.926	54.588	50.43	27.606	19.724	41.324	52.152	13	68.089	81.513	30.748	92.052	7.382	5.535	10.584	14.08	7.912	5.625
+Burkholderia ambifaria	46.565	40.09	4.629	11.304	35.065	12.876	6.423	4.026	26.641	9.044	2	6.147	24.539	1	8.442	13.853	0	17.854	0	0	0	2	0	1
+Burkholderia ambifaria	63	93	29	27	150	76	39	47	48	19	19	30	51	21	31	61	22	62	1	1	2	6	4	5
+Burkholderia ambifaria	13	27	4	3	17	21	20	9	11	4	2	8	10.877	2	12	16.927	8	8.858	0	0	0	0	0	0
+Opitutus terrae	0	1	0	2	0	0	8	4	4	2	8	13	6	5	7	6	4	9	0	0	0	0	0	0
+Beijerinckia indica	1	3	3	1	0	5	2	2	4	7	3	2	5	2	6	2	1	4	0	0	0	0	0	0
+Beijerinckia indica	1	31	0	0	5	3	1	0	2	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0
+Acinetobacter baumannii	2	1	2	0	1	0	0	0	0	62	16	0	0	0	1	4	3	11	0	0	0	0	0	0
+Acinetobacter baumannii	0	0	0	0	0	1	0	3	0	31	5	1	0	0	0	7	3	22	0	0	0	0	0	0
+Paraburkholderia phymatum	3	2	1	0	6	2	3	2	2	2	2	2	3	4	1	4	1	17	1	0	1	5	3	4
+Paraburkholderia phymatum	0	2	1	1	2	0	0	2	1	1	0	0	0	0	0	0	0	2	0	0	0	1	0	5
+Paraburkholderia phymatum	0	0	0	0	0	0	0	0	1	1.678	0	1	1	0	5	0	0	1.457	0	0	0	0	0	0
+Paraburkholderia phymatum	2.906	2	0	0	0	0	2	2	0	4.354	1	4	5	0	2	13.62	1	2.253	0	0	0	0	0	1
+Paraburkholderia phymatum	1	2	0	0	0	3	0	1	1	8	1	1	16	0	1	2	1	0	0	0	0	0	0	0
+Paraburkholderia phymatum	31	64	7	19	62	26	32	36	51	16	7	45	9.274	8	30	41	23	44	0	0	10	3	0	9
+Paraburkholderia phymatum	0	0	1	0	49	0	0	0	3	2	0	0	0	0	0	0	0	9	0	0	0	0	0	0
+Paraburkholderia phymatum	0	4	0	0	1	0	0	0	0	0	0	0	8	0	0	0	0	0	0	0	0	0	0	0
+Paraburkholderia phymatum	1.098	7.309	0	0	2	0	0	3	6	0	1	29	0	1.527	0	0	0	0	0	0	0	0	0	0
+Paraburkholderia phytofirmans	15	7	2	0	8	0	1	1	0	5	0	0	7	1	0	1	3	3	0	0	0	0	0	0
+Paraburkholderia phytofirmans	8	8	1	3	6	1	6	2	7	3	1	11	3	2	6	8	6	12.598	0	0	0	0	0	0
+Paraburkholderia phytofirmans	0	10	0	1	0	0	0	1.274	6	0	2	22	0	0	0	1	0	1	0	0	0	0	0	0
+Paraburkholderia phytofirmans	1.034	6.006	0	0	0	0	1.097	1	5	1	2	16	3	2	0	0	0	1.056	0	0	0	0	0	0
+Cellvibrio japonicus	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	23	0	0	0	0	0	0	0	0
+Cellvibrio japonicus	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	26	0	0	0	0	0	0	0	0
+Cellvibrio japonicus	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	28	0	0	0	0	0	0	0	0
+Cellvibrio japonicus	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	65	0	0	0	0	0	0	0	0
+Cellvibrio japonicus	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0	0	0
+Rhizobium etli	3	4	7	3	6	2	1	4	1	2	3	3	3	2	2	4.679	1	1.649	5	1	4	24.1	3	10
+Rhizobium etli	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	2	0	0	10	1	6
+Rhizobium etli	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	16	0	8
+Rhizobium etli	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	1	2
+Rhizobium etli	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	2	0	9
+Rhizobium etli	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	23	0	13
+uncultured bacterium 888	4	0	4	1	2	1	6	16	0	0	1	0	5	2	2	1	0	2	3	17	4	5	9	3
+Cyriopagopus schmidti	0	0	0	0	0	0	3	2	0	0	2	7	0	0	4	3	483	3	2	2	1	3	0	0
+Cyriopagopus schmidti	0	0	0	3	1	0	5	2	6	19	16.128	5	6	3	15	40.045	7	64.801	0	0	0	1	0	0
+Globodera pallida	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0	1	0	0	0	0	9	0
+uncultured bacterium	1	0	1	0	1	0	0	0	1	0	0	1	2	0	0	0	0	1	0	0	0	0	0	0
+Gluconacetobacter diazotrophicus	5	7	1	2	3	1	2	1	0	1	2	4	4	2	3	0	4	1	1	12	1	0	62	1
+Rhizobium leguminosarum	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	1	4	1	0	16	6	7
+Afipia carboxidovorans	3	0	2	1	0	0	2	3	1	2	4	2	1	2	0	3	0	11	0	0	0	0	0	0
+Drosophila yakuba	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0	0	0	0	3	0	0	22	0
+Episyrphus balteatus	0	0	0	0	0	0	0	2	0	0	0	0	1	0	1	0	0	1	0	1	0	0	32	0
+Pseudomonas fluorescens	1	1	0	0	0	0	0	0	0	16.164	0	2.857	1	0	9.194	5.13	0	49.368	0	0	0	1	0	3.191
+Methylocella silvestris	0	0	0	3	1	0	3	3	0	2	3	15	0	0	1	2	5	1	0	0	0	0	0	0
+Methylocella silvestris	0	2	0	2	1	0	8	4	1	5	3	10	0	1	2	8	0	0	0	0	0	0	0	0
+Methylorubrum extorquens	11	40.888	6.663	30	10.776	11.911	120.305	88.406	157.675	105.34	126.447	168.987	70.268	155.091	92.171	115.391	85.829	54.607	1	0	0	0	1	0
+Pseudarthrobacter chlorophenolicus	0	0	1	0	0	2	0	0	0	6	5	4	1	0	1	4	1	18	0	1	0	2	0	0
+Pseudarthrobacter chlorophenolicus	0	0	0	0	0	0	0	0	0	4	3	3	0	0	0	2	2	16	0	0	0	0	0	0
+Pseudarthrobacter chlorophenolicus	0	0	1	1	0	5	0	0	0	7	1	3	0	0	1	7	1	8	2	0	3	0	0	0
+Anaeromyxobacter dehalogenans	14	9	25	13	9	19	2	0	3	4	4	0	2	1	3	1	5	0	0	0	0	0	0	0
+Enterococcus faecium	28	38	44	47	33	56	0	0	0	1	0	0	0	0	0	18	0	12	0	0	0	0	0	0
+Rhizobium rhizogenes	3	2	7	3	7	2	2	6	9	2	5	6	5	3	4	11	5	6	6	2	3	15	4	3
+Rhizobium rhizogenes	1.142	3	3.181	1.073	1	1.093	1	1	1.134	3.184	0	0	1.177	1	1	1.213	4.623	0	3.306	0	2.327	20.468	1	6
+Rhizobium rhizogenes	1	0	1	1	2	2	0	1	0	0	0	1	2	2	0	5	1	3	2	2	1	28	4	38
+uncultured bacterium BLR5	0	0	25	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+Strongyloides ratti	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0
+Acinetobacter pittii	5	4	4	2	2	2	0	0	0	84	8	1	0	0	0	2	2	5	0	0	0	0	0	0
+Acidobacterium capsulatum	1	1	1	2	1	2	7	9	5	9	10	35	0	1	8	10	2	3	3	1	1	1	0	0
+Acidobacterium capsulatum	0	3	0	3	0	0	8	7	19	14	7	15	2	4	1	3	4	5	0	0	0	0	0	0
+Acidobacterium capsulatum	0	1	0	3	0	0	3	3	8	1	2	3	3	0	0	0	0	1	0	0	0	0	0	0
+Acidobacterium capsulatum	2	0	2	60	1	22	25	24	21	16	1	7	2	7	3	16	7	6	0	0	0	0	0	0
+Acidobacterium capsulatum	1	0	0	20	1	2	8	2	6	3	3	0	0	3	0	3	4	3	0	0	0	0	0	0
+Acidobacterium capsulatum	0	3	0	7	2	1	5	12	28	15	18	26	2	2	0	1	4	5	0	0	0	0	0	0
+Acidobacterium capsulatum	2	3	3	6	3	2	10	8	20	11	12	10	12	12	12	19	16.787	16	1	0	0	1	0	3
+Acidobacterium capsulatum	0	3	0	10	1	1	11	11	46.847	31	29	21.816	6	8	4	6	2	12	0	0	0	0	0	0
+Acidobacterium capsulatum	0	0	0	5	0	0	0	1	0	2	1	0	0	0	0	0	0	1	0	0	0	0	0	0
+Acidobacterium capsulatum	0	1	0	0	0	0	3	3	12	11	9	6	0	0	2	1	2	2	0	0	0	0	0	0
+Acidobacterium capsulatum	1	5	2	10.174	1	2	11.488	8	35.388	14	27.944	20	4	3	1.094	7.737	7	8.284	0	1	1	2	3	0
+Acidobacterium capsulatum	0	5	0	7	0	6	12	11.201	53	28	30	36	2.258	5	9.369	8	3	8	2	0	0	2	1	0
+Acidobacterium capsulatum	0	1	0	0	1	0	3	0	7.593	3	9	11	1	6.029	7	5	4	3	0	0	0	0	0	0
+Acidobacterium capsulatum	2	2	1	1.078	1	3.521	2	12.827	16.775	13.83	21.735	27.001	7.368	5.777	11.797	15	8	11	2.505	6	2.157	6.653	3	2
+Acidobacterium capsulatum	3	0	0	0	1.181	1	2	0	5	4	8	10	2	3	3	2.164	2.143	4	0	0	1	0	1	0
+Acidobacterium capsulatum	1	2	0	1	0	0	4	6	17	5	5	10	1	3	2	0	2	3	1	0	1	1	1	0
+Acidobacterium capsulatum	0	4	0	11	0	2	7	8	26	14	15	16	1	5	1	4	4	6	1	0	1	0	0	0
+Acidobacterium capsulatum	0	0	0	0	0	0	1	0	2	1	0	2	0	0	0	0	2	0	0	0	0	0	0	0
+Acidobacterium capsulatum	0	5	0	13	0	1	5	13	35	13	22	19	3	6	1	3	6	7	0	0	0	0	0	0
+Acidobacterium capsulatum	0	4	0	4	0	0	2	3	14	8	7	4	2	0	0	0	4	3	0	0	0	0	0	0
+Acidobacterium capsulatum	8	6	1	9	10	10	19	21	34	32	15	26	16	13	46	21	70	26	0	0	0	0	0	0
+Acidobacterium capsulatum	0	1	0	1	0	0	2	6	15	7	5	8	0	2	1	0	1	2	0	0	0	0	0	0
+Acidobacterium capsulatum	1	4	0	12.534	2	0	11.478	13.321	35	17.261	20	19.316	6.306	2	3.078	5.375	3.063	8	0	2	2	1	2	2
+Acidobacterium capsulatum	0	6	0	12.466	0	0	11	17	34	17	17	20	3	2	3	2	8	11	0	0	0	0	1	0
+Acidobacterium capsulatum	0	2	0	2	2	1	3	5	8	8	11	5	1	1	2	0	2	3	0	0	0	0	0	0
+Acidobacterium capsulatum	2	5	0	6	0	0	7	15	12	17	14	11	3	2	6	6	5	6	0	1	0	0	0	0
+Acidobacterium capsulatum	1	0	1	13	0	3	8	10	9	5	8	6	0	5	6	12	5	2	0	1	0	2	2	0
+Acidobacterium capsulatum	1	0	0	1	0	0	2	3	5	3	1	6	1	2	8	4	0	2	0	0	0	0	0	0
+Acidobacterium capsulatum	0	0	0	2	1	1	1	2	4	1	0	3	0	0	0	0	0	0	0	0	0	0	0	0
+Acidobacterium capsulatum	0	5	0	19	0	0	12	23	67	37	25	41	5	7	5	2	3	12	0	0	0	0	0	0
+Acidobacterium capsulatum	0	0	0	1	0	0	10	3	7	24	12	23	0	2	3	15	4	0	0	0	0	0	0	0
+Acidobacterium capsulatum	1	1	0	1	2	0	1	6	6	13	2	8	8	2	10	10	6	9	0	0	0	0	0	0
+Acidobacterium capsulatum	1	0	1	2.566	0	4.738	4.311	2.111	1.057	57	2.105	3	2.059	2.308	1.012	2.324	6.208	0	0	0	1	1	0	0
+Acidobacterium capsulatum	2	0	0	3	3	0	5	1	17	14	15	17	3	3	7	5	10	2	0	0	0	0	0	0
+Acidobacterium capsulatum	0	1	0	5	0	1	0	0	5	4	7	4	1	0	1	3	0	1	0	0	0	0	0	0
+Acidobacterium capsulatum	0	1	0	4	0	0	1	5	11	6	8	2	3	2	0	0	0	2	0	0	0	0	0	0
+Acidobacterium capsulatum	0	4	0	0	0	0	0	5	10	5	21	2	0	3	1	0	0	0	0	0	0	0	0	0
+Acidobacterium capsulatum	2.205	3	4	6	1	4	23.679	31.475	60.12	44.051	86.437	82.73	23.895	29.489	26.444	45.838	35.996	25.224	0	0	0	0	0	0
+Acidobacterium capsulatum	0	0	1	2	0	1	12	4	11	33	16	32	0	2	6	19	1	5	0	0	0	0	0	0
+Acidobacterium capsulatum	2	1	0	37	0	9	21	20	14	8	3	3	0	6	4	22	6	16	0	0	0	0	0	0
+Acidobacterium capsulatum	0	5	0	6	0	0	8	6	36	16	11	14	1	3	3	2	4	4	0	0	0	0	0	0
+Acidobacterium capsulatum	0	2	0	6	0	1	5	5	3.174	6	5	7	0	1	1	2	2	1	0	0	0	0	0	0
+Acidobacterium capsulatum	0	4	0	7	0	0	6	15	39	16	19	18	2	1	0	1	6	7	0	0	0	0	0	0
+Acidobacterium capsulatum	0	1	0	3	0	1	0	0	4	4	6	7	1	2	1	2	1	2	0	0	0	0	0	0
+Acidobacterium capsulatum	0	1	1	1	2	3	7	23	43	30	54	57	38	18	17	36	6	21	0	1	0	0	0	0
+Acidobacterium capsulatum	0	3	0	9	0	0	3	6	5	6	4	1	1	1	1	0	0	2	0	0	0	0	0	0
+Acidobacterium capsulatum	2	0	0	0	0	1	9	16	27	23	27	38	6	7	14	14	17	4	0	0	0	0	0	0
+Acidobacterium capsulatum	1	2	0	5	1	2	7	8	42	18	16	10	0	2	1	5	2	7	0	0	0	1	0	1
+Acidobacterium capsulatum	0	1	0	2	0	1	2	6	11	6	7	5	1	1	1	2	3	3	0	0	0	0	0	0
+Acidobacterium capsulatum	0	0	0	2	0	1	2	3	9	10	8	3	2	0	0	0	2	1	0	0	0	0	1	0
+Acidobacterium capsulatum	0	0	0	2	0	0	2	0	8	3	1	5	2	0	0	0	1	2	0	0	0	0	0	0
+Pseudomonas nitroreducens	3	4	19	3	2	7	0	0	0	3	0	1	1	0	3	5	7	4	0	0	0	0	0	0
+Sinorhizobium fredii	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	25	0	11	2	0	0	2	1	0
+Burkholderia pseudomallei	5	5	0	1	1	5	2	1	2	1	0	0	19	2	0	0	1	0	0	0	0	0	0	0
+Burkholderia glumae	71.744	8	4	1	2	1	10	0	0	3.588	4	2.081	14	2	2	18.694	6.26	38.412	0.5	0	1.5	1.08	0	2.015
+Zea mays	2.046	1.108	3.344	0	0	1.938	0	0	0	2	0	1.068	0	0	2.817	1.699	1.984	0	5.134	5.235	13.667	5.077	4.412	3.499
+Rhizobium leguminosarum	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Rhizobium leguminosarum	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	16	1	6
+Musicola paradisiaca	0	1	0	2	1	0	0	0	0	3	1	0	0	0	1	15	0	24	0	0	0	0	0	0
+Pectobacterium carotovorum	0	0	0	0	0	0	0	0	0	4	1	0	0	0	2	2	0	18	0	0	0	0	0	0
+Onchocerca volvulus	0	0	0	0	0	0	0	1	0	0	1	0	2	0	1	0	0	0	0	2	0	0	35	0
+Flavobacteriaceae bacterium 3519-10	0	0	0	0	0	0	0	0	0	0	15	0	0	0	0	0	0	0	0	0	0	0	0	0
+Flavobacteriaceae bacterium 3519-10	0	0	0	0	0	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0
+Flavobacteriaceae bacterium 3519-10	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Flavobacteriaceae bacterium 3519-10	0	0	0	0	0	0	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0	0	0
+Flavobacteriaceae bacterium 3519-10	0	0	0	0	0	0	0	0	0	0	20	0	0	0	0	0	0	0	0	0	0	0	0	0
+Acidimicrobium ferrooxidans	1	20	1	8	1	5	2	1	8	4	4	3	0	3	3	5	8	2	1	0	0	0	1	0
+Chitinophaga pinensis	0	0	0	1	2	1	1	1	0	1	0	0	1	0	2	2	1	1	1	1	10	4	9	31
+Chitinophaga pinensis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	2	2	1	33
+Chitinophaga pinensis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	12	0	0	0	0	0	0	0	0
+Chitinophaga pinensis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	1
+Globodera virginiae	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0	2	0	0	16	0
+Catenulispora acidiphila	0	0	0	0	0	0	1	0	1	0	0	1	4	0	0	0	0	0	0	0	0	0	0	0
+Catenulispora acidiphila	0	0	0	0	1	0	1	1	3	1	1	2	2	7	3	0	1	1	17	0	29	100	6	72
+Catenulispora acidiphila	0	0	2	1	0	0	4	0	7	1	4	3	99	7	0	8	3	5	0	0	0	0	0	0
+Catenulispora acidiphila	0	0	0	0	0	0	0	13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Catenulispora acidiphila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Desulfomicrobium baculatum	1	2	0	2	0	5	19	7	16	2	15	11	9	5	6	4	3	0	0	0	0	0	0	0
+uncultured bacterium B7P37metaSE	5	3	10	8	1	4	1	1	2	0	1	0	2	3	1	1	0	0	2	0	3	1	0	2
+Pseudomonas fluorescens	0	0	0	0	0	0	0	0	0	12.255	1.077	1	0	0	1.085	2	0	25.268	0	0	0	0	0	0
+uncultured crenarchaeote 29d5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	22	5	0	30	3
+uncultured crenarchaeote 29d5	1	0	1	0	0	0	0	9	0	0	0	0	3.187	23.157	0	0	0	0	18	129	32	12	117	13
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	3	20	0	2	8
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	2	14	1	2	3
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	3	12	2	2	8
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	3	30	3	1	12
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	3	1	1	2
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	2	30	0	8	11
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6	4	30	2	4	3
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	4	17	4	3	10
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	2	26	1	5	8
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	9	1	3	7
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	16	0	2	6
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	15	1	1	2
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	6	0	0	3
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	1	10	1	1	2
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	2	7	2	1	3
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	2	10	1	2	2
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	2	10	2	1	2
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	2	12	0	0	4
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	1	0	0
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	2	22	3	5	4
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	2	24	1	0	4
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	8	3	25	4	5	8
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6	4	13	2	1	8
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	5	18	2	3	10
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	2	15	3	5	4
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	11	5	64	4	3	17
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6	2	33	1	1	13
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	4	19	4	1	5
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	2	14	1	1	4
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	1	3
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	2	12	3	2	6
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	6	22	1	3	10
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	4	40	6	10	11
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	1	18	1	1	8
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	1	22	3	2	12
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	13	5	38	8	4	20
+uncultured crenarchaeote 57a5	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	16	11	66	11	13	29
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	3	0	0	0	0	1	11	0	0	0	0	2	55	9	2	52	4
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	1	3	0	0	0	0	0	7	3	0	7	0
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	2	1	4	2	0
+uncultured crenarchaeote 76h13	0	0	0	0	0	1	0	0	0	0	0	0	0	5	0	0	0	0	3	2	8	0	6	1
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	1	0	0	0	0	1	1	0	0	0	0	6	30.678	4	0	36	0
+uncultured crenarchaeote 76h13	1	0	0	0	0	0	0	2	0	0	0	0	3	3	0	0	0	0	3	7	10	1	12	0
+uncultured crenarchaeote 76h13	1	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	1	7	3	0	7	2
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	1	3	0	0	0	0	0	1	0	0	0	1
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	6	5	0	13	0
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	4	3	0	10	2
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	13	110.823	8	5	101.688	8
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	1	1	0	0	0	0	2	10	0	0	0	0	10	24.177	24	5	46.312	8
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	5	7	1	7	2
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	1	3	0	0	0	0	2	20	0	0	0	0	6	73	18	5	69	10
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	1	0	0	0	0	1	7	0	0	0	0	1	4	3	1	4	1
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	2	12	6	1	18	4
+uncultured crenarchaeote 76h13	0	0	0	0	1	0	1	0	0	0	0	0	0	1	0	0	0	0	1	43	7	1	50	4
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	2	13	0	0	0	0	2	5	17	0	24	8
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	4	4	1	5	1
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	24	3	1	20	2
+uncultured crenarchaeote 76h13	1	0	0	1	0	0	0	3	0	0	0	0	0	5	0	0	0	0	3	10	12	3	10	1
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	8	3	0	9	1
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	2	0	0	0	0	1	6	0	0	0	0	4	5	1	1	6	1
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	1	0	0	0	0	0	7	0	0	0	0	6	75	14	2	62	8
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	4	0	0	0	0	3	7	0	0	0	0	2	12	14	3	22	4
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	3	55	16	0	55	2
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	40	1	1	28	1
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	4	0	0	0	0	2	9	0	0	0	0	5	18	15	2	21	7
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	12	2	0	7	1
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	2	1	8	0
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	83	6	2	64	4
+uncultured crenarchaeote 76h13	0	0	0	0	0	1	2	5	0	0	0	0	2	24	0	0	0	0	6	34	14	4	28	6
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	31	7	1	36	0
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0	0	6	10	6	0	10	3
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	18	3	1	21	3
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	10	8	0	10	0
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	46	12	0	63	3
+uncultured crenarchaeote 76h13	2	0	0	0	0	0	0	4	0	0	0	0	3	16	0	0	0	0	6	18	19	2	24	8
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	28	2	1	26	6
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	1	0	0	0	0	1	8	0	0	0	0	4	11	10	6	20	2
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	2	1
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	2	1	0	0	0	0	0	16	2	0	13	0
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	6	0	0	0	0	6	13	0	0	0	0	6	60	15	4	65	7
+uncultured crenarchaeote 76h13	1	0	0	0	0	2	3	1	0	0	0	0	2	15	0	0	0	0	1.557	8.235	2.793	4	17.821	1.286
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	37	4	0	61	1
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	2	0	0	0	0	2	10	0	0	0	0	4	11	6	2	23	7
+uncultured crenarchaeote 76h13	1	0	0	0	0	0	2	4	0	0	0	0	1	6	0	0	0	0	6	17	15	6	19.248	7
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	3	52	12	2	58.752	2
+uncultured crenarchaeote 76h13	0	0	0	0	0	0	1	0	0	0	0	0	0	3	0	0	0	0	3	11	5	0	13	2
+uncultured organism	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	96	0	0	0	0	0	0	0	0
+uncultured organism	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	194	0	8	0	0	0	0	0	0
+uncultured organism	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	112	0	5	0	0	0	0	0	0
+uncultured organism	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	96	1	3	0	0	0	0	0	0
+Phytophthora palmivora	0	0	1	0	0	0	0	1	1	0	4	2	0	0	0	1	0	0	0	0	0	0	0	0
+Dinothrombium pandorae	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	8	0
+Bursaphelenchus xylophilus	1	0	0	0	0	0	0	0	0	1	0	0	1	0	3	1	1	2	0	1	0	0	25	0
+Bursaphelenchus xylophilus	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	18	0
+Globisporangium ultimum	2	3	3	7	2	2	12	3	13	13	81	9	5	0	4	27	6	27	4	0	8	4	0	5
+Didymium iridis	0	0	0	0	0	0	9	0	13	0	3	0	2	0	0	0	0	0	0	0	0	0	0	0
+Kernia pachypleura	0	0	3	0	0	0	20	1	12	17	58	16	1	0	2	24	6	5	0	0	0	0	0	0
+Kernia pachypleura	0	0	0	0	0	0	0	0	2	0	2	0	1	0	0	79	0	0	0	0	0	0	0	0
+Kernia pachypleura	0	0	0	0	0	1	4	1	3	2	4	2	0	0	1	33	1	0	0	0	0	0	0	0
+Lactococcus lactis	2	0	1	1	4	3	0	0	0	3	2	0	0	0	0	9	5	9	0	0	0	0	0	0
+Lactococcus lactis	1	6	9	1	9	6	0	0	0	9	4	1	0	0	0	60	7	34	0	0	0	0	0	0
+Lactococcus lactis	0	4	4	3	2	1	0	0	0	3	3	1	0	0	0	7	3	14	0	0	0	0	0	0
+Lactococcus lactis	0	1	2	1	3	3	0	0	0	0	1	0	0	0	0	12	3	10	0	0	0	0	0	0
+Lactococcus lactis	3	4	13	4	1	4	0	0	0	6	3	0	0	0	0	34	5	21	0	0	0	0	0	0
+Lactococcus lactis	3	3	11	12	12	8	0	0	0	12	7	1	0	0	0	51	14	48	0	0	0	0	0	0
+Lactococcus lactis	3	6	6	3	2	3	0	0	0	3	2	0	0	0	0	13	5	12	0	0	0	0	0	0
+Lactococcus lactis	4	2	4	6	10	7	0	0	0	8	7	1	0	0	0	36	14	25	0	0	0	0	0	0
+Lactococcus lactis	10	8	13	3	10	11	0	0	0	5	6	1	0	0	0	74	10	59	0	0	0	0	0	0
+Pirellula staleyi	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	11	2	0	4
+Kribbella flavida	5	14	0	11	1	10	2	0	0	0	2	3	1	1	1	0	0	1	0	0	0	0	0	0
+Spirosoma linguale	0	0	0	0	0	0	0	0	0	1	2	0	0	0	0	30	0	0	0	0	0	0	0	0
+Spirosoma linguale	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	43	1	0	0	0	0	0	0	0
+Spirosoma linguale	0	1	0	0	0	0	5	2	0	0	0	1	1	5	1	1	0	0	0	0	0	0	0	0
+Spirosoma linguale	0	0	0	0	13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Conexibacter woesei	15	27	11	25	17	19	11	10	26	14	20	25	19	16	19	22	15	10	5	7	9	8	2	3
+Conexibacter woesei	18.463	10.46	17.362	1.119	7.982	0	0	0	0	0	0	0	0	0	0	0	1.015	0	0	0	0	0	0	0
+Conexibacter woesei	8.117	89.753	35.864	24.222	16.286	19.37	6	8.76	21.816	9.839	14.079	7.338	1.297	4.716	15.284	4	2.027	2.243	1.027	0.505	2.023	2	2.086	0
+Conexibacter woesei	13.784	54.722	9.31	7.06	5.072	3.016	0	1.005	1.004	1.015	1.003	1.009	0	0	1.011	1	0	0	0	1.02	0	0	0	0
+Conexibacter woesei	9.889	3.074	41.367	8.91	10.842	61.264	1	0	2.011	2.014	2.009	3.072	0	2.007	0	1	5.077	1.04	0	0	0	0	0	0
+Conexibacter woesei	31.475	19.371	58.414	61.572	63.133	90.769	3	4.356	37.947	23.02	26.148	23.116	2.813	2.312	2.03	27	18.305	3.399	0	0.505	0	0	0	0
+Conexibacter woesei	3	19	10	16	22	18	4	3	6	21	1	5	0	4	2	5	1	1	1	0	0	0	0	0
+Archaeoglobus profundus	0	0	1	1	0	0	2	0	8	5	0	1	16	0	0	3	1	2	0	0	0	0	0	0
+uncultured bacterium 282	0	0	0	0	0	0	1	3	0	0	1	0	1	1	1	0	0	2	1	0	1	31	7	7
+uncultured bacterium 66	20	7	8	8	5	14	0	3	2	5	1	9	3	13	4	4	2	2	2	4	1	2	2	3
+uncultured bacterium 66	11	7	2	3	0	3	0	0	0	2	1	1	2	11	0	0	1	0	1	0	0	0	0	0
+uncultured bacterium 66	3	1	1	2	0	4	0	0	1	1	0	1	1	1	1	0	1	0	0	4	0	1	0	0
+uncultured bacterium 66	143	45	62	89	18	45	10	4	8	11	8	48	7	50	26	3	16	0	6	1	10	6	0	6
+uncultured bacterium 92	49	11	56	8	14	16	7	3	2	5	7	6	3	8	3	3	9	4	2	11	2	5	9	1
+uncultured bacterium 59	8	10	9	3	3	4	1	0	1	0	1	0	3	1	1	0	1	1	0	2	3	0	3	0
+uncultured bacterium 213	20	11	22	5	8	24	0	2	1	2	3	5	1	3	3	7	7	1	2	8	4	0	3	1
+uncultured bacterium 126	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	2	8	0	0	5	1
+Cupriavidus metallidurans	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	3	0	0	0	0	0	0
+Cupriavidus metallidurans	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	1	2	9
+Pseudomonas alcaligenes	5	13	6	7	19	4	1	5	5	8	16	4	2	2	10	15	4	44	0	0	1	0	0	0
+Escherichia coli	1.038	0	0	0	0	0	0	0	0	46.105	0	0	0	0	0	0	1	2	0	0	0	0	0	0
+Verrucomonas bifida	0	0	0	0	0	0	0	0	1	0	4	1	2	0	0	1	0	1	0	0	0	0	0	0
+Pantoea ananatis	0	0	0	0	0	0	0	1	1	22	5	21	0	0	15	14	3	146	0	0	0	0	0	0
+Pantoea ananatis	0	0	0	0	0	0	0	0	0	9.813	1	1	0	0	0	0	0	5.315	0	0	0	0	0	0
+Pantoea ananatis	0	0	0	0	0	0	0	0	1	12	3	2	0	0	1	4	0	30	0	0	0	0	0	0
+uncultured organism MedDCM-OCT-S09-C213	0	0	1	0	0	0	0	2	0	1	0	0	0	0	0	48	0	0	0	0	0	0	0	0
+Nitrosococcus halophilus	0	0	0	0	0	0	0	0	0	0	0	0	2	18	0	0	0	1	0	0	0	0	0	0
+Nitrosococcus halophilus	1	0	1	0	0	0	0	0	0	1	1	0	12	40	0	0	0	3	0	0	0	0	0	0
+Nitrosococcus halophilus	0	5	0	100	0	7	74	39	5	4	5	18	0	3	1	73	4	21	0	0	0	0	0	0
+Nitrosococcus halophilus	5	1	3	12	11	5	3	7	47	34	17	11	3	8	4	5	1	2	0	0	0	0	0	0
+Enterobacter cloacae	2	0	0	0	1	4	0	0	0	3	0	0	0	0	2	2	0	1	0	0	0	0	0	0
+Enterobacter cloacae	12	3	2	2	2	1	0	0	1	249	8	4	0	0	14	85.386	5	352.215	1	0	0	0	0	3
+Caulobacter segnis	40	9	39	33	5	27	15	13	12	15	15	10	2	5	5	29	28	7	3	1	4	5	0	4
+Paraburkholderia atlantica	12	9	0	7	10	15	0	7	9	5	3.784	9	3	3	14	9	12	12.57	1	0	0	4	0	9.583
+Paraburkholderia atlantica	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6	0	0	0	0	0	0
+Paraburkholderia atlantica	3	5	3	7	18	3	12	21	13	2	2	2	16	4	15	0	3	7	0	0	0	0	0	0
+Paraburkholderia atlantica	17	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0
+Paraburkholderia atlantica	8	3	1	0	3	8	1	2	1	4	2	3	0	2	0	3	8	3	2	0	1	7	2	5
+Paraburkholderia atlantica	24	14	1	0	8	0	1	2	0	6	1	6	10	0	3	2	2	18	0	0	0	1	0	0
+Pseudomonas sp. 2663	0	0	0	0	3	0	0	0	0	0	0	0	0	0	14	0	0	0	0	0	0	0	0	0
+Desulfurivibrio alkaliphilus	0	0	0	0	0	0	0	0	0	0	0	0	8	0	0	0	0	0	0	0	0	0	0	0
+Ancylobacter novellus	2	0	3	2	6	2	4	0	4	1	2	9	4	4	4	8	5	3	0	0	0	0	0	0
+Ancylobacter novellus	5	2	4.861	7	4	10	4.861	6	2	5	10	1	5	6	5	34	5	11.948	12	8	16	12.492	14.841	8
+Streptomyces bingchenggensis	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	3	0	1	0	0	0	0	0	0
+uncultured Sphingobacteriales bacterium HF0010_19H17	18	0	0	61	1	16	3	0	0	0	2	0	3	0	0	2	1	3	0	0	0	0	0	0
+uncultured alpha proteobacterium HF0070_14E07	12.05	17.078	47.107	18.817	20.197	10.678	10.398	16.437	16.507	68.291	44.156	19.945	34.025	23.53	13.455	14.068	51.444	12.963	6.778	4.982	11.771	8.75	2.265	5.911
+uncultured alpha proteobacterium HF0130_06E21	68.346	37.753	101.332	78.642	92.6	60.341	97.169	84.879	200.521	167.509	183.731	141.799	143.455	61.405	115.652	191.944	122.72	188.878	24.899	40.575	29.667	31.992	26.514	49.032
+uncultured alpha proteobacterium HF0130_20P23	5	3	5	0	5	3	1	2	1	3	3	1	57	3	5	3	2	2	5	1	0	1	0	0
+uncultured Chloroflexi bacterium HF0200_09I09	16.135	15.696	34.137	9.76	28.054	10.903	7.015	8.349	13.522	17.758	29.234	18.201	6.198	8.162	14.77	18.154	19.736	11.464	16.435	15.641	12.848	11.979	13.44	7.272
+uncultured Chloroflexi bacterium HF0200_09I09	41.596	18.032	18.918	17.587	17.894	18.039	7.336	10.61	10.678	14.717	7.839	10.293	4.739	11.214	7.516	10.127	4.872	4.727	15.646	11.225	32.983	10.168	6.876	6.525
+uncultured delta proteobacterium HF0200_19J16	3	2	3	0	1	1.175	17	8.276	4	6	13	21.089	43.455	7	30	11.307	3	23	3	2	3	1	4	3
+uncultured Acidobacteriales bacterium HF0200_23L05	63	37	75	25	46	54	50	63	49.587	40	53	42	72	76	52	38	49	34	97	65	65	36	64	65
+uncultured Acidobacteriales bacterium HF0200_23L05	22.151	28.676	25.431	22.643	25.618	11.941	30.332	42.616	32.593	30.076	25.629	24.368	82.873	36.298	48.415	69.251	28.627	55.352	52.566	25.792	46.507	30.762	38.614	28.975
+uncultured delta proteobacterium HF0200_39N20	2.617	6.527	5.268	0	1.456	0	9.669	13.475	6.793	4.715	17.27	44.78	11.428	4.711	9.287	9.291	0	9.745	5.43	3.151	2.807	2.286	1.019	4.292
+uncultured Rhodobacterales bacterium HF4000_03E16	58.936	117.821	135.354	73.235	90.814	150.091	42.886	55.376	30.121	44.001	51.408	31.381	38.387	36.439	38.324	63.942	46.776	61.132	24.232	25.987	47.6	77.445	39.167	99.35
+uncultured delta proteobacterium HF4000_08N17	53.521	17.148	50.301	22.786	21.062	27.792	44.48	29.177	17.017	437.484	61.451	31.146	10.743	15.36	51.021	220.77	65.836	907.017	21.037	34.786	27.345	24.823	30.886	56.353
+uncultured delta proteobacterium HF4000_08N17	26.431	32.826	27.385	6.272	30.243	8.102	58.399	50.804	66.291	36.293	72.664	63.125	113.87	51.506	88.369	100.909	52.302	72.188	14.377	9.342	10.341	10.107	18.942	9.884
+uncultured Acidobacteria bacterium HF4000_26D02	11.697	13.971	7.353	4.136	3.279	8.593	44.614	72.492	89.869	71.956	94.315	53.307	97.54	102.491	128.295	77.596	35.178	74.893	19.725	73.675	49.182	26.877	52.839	22.901
+uncultured Acidobacteria bacterium HF4000_26D02	3	6	4	3	3	5	11	18.982	5	9	6	5.032	33	21	21	6	16	17	6	18	4.139	2	9	4
+uncultured Acidobacteria bacterium HF4000_26D02	30.785	24.185	57.227	17.991	51.478	40.807	46	52.64	67.304	45.158	70	61	74.869	32.18	47	64.062	54.787	39	8.583	8.465	8.476	9.443	6.666	12.739
+uncultured Acidobacteria bacterium HF4000_26D02	30.604	9.078	45.139	11.825	12.217	11.076	58.149	26.205	15.427	35.164	17.057	31.68	69.154	52.288	76.008	48.75	22.162	34.411	16.08	17.51	21.694	12	20.997	11.482
+uncultured Acidobacteria bacterium HF4000_26D02	0	0	0	0	0	0	0	0	1	1	1	1	2	1	0	1	0	0	0	12	6	1	4	2
+uncultured Acidobacteria bacterium HF4000_26D02	55.732	27	74.44	39.845	54	39.705	32	46.615	29.992	34	33	36	25.395	38.82	25	26.938	45	22.245	61.511	119.847	88.309	36.557	88.225	57.404
+uncultured delta proteobacterium HF0010_08B07	50	50	52	72	55	52	30	36	46	40	45	41	30	17	39	32	27	21.883	21	20	17	13	11	9
+uncultured Sphingomonadales bacterium HF0500_24B12	31	67.109	88.332	45	62	79	36	26	16	33	34	27	25	19.14	13	33.099	51.423	58	8	12	16.139	59	18	35
+uncultured Sphingomonadales bacterium HF0500_24B12	1.689	0	1.502	0	0	0	5.014	7.265	15.916	4.805	10.444	10.994	11.379	1.699	16.774	22.758	8.166	7.595	0	0	0	0	0	0
+uncultured Sphingomonadales bacterium HF0500_24B12	0	6.223	13.187	0	0	3.712	7.616	3.183	21.743	30.413	13.515	11.258	44.311	32.386	20.268	7.082	10.651	21.517	0	0	0	0	0	0
+uncultured Sphingomonadales bacterium HF0500_24B12	15.362	0	0	16.062	12.766	10.553	11.367	47.829	5.231	0	16.04	5.666	0	23.675	4.606	13.703	0	23.506	29.201	71.825	33.658	12.791	59.317	17.838
+uncultured Sphingomonadales bacterium HF0500_24B12	57.62	148.915	136.729	72.805	80.806	136.828	19.529	24.943	22.527	57.612	69.284	45.272	37.389	21.582	15.913	88.357	66.619	52.739	34.342	21	38	92.88	71.916	73.941
+uncultured actinobacterium HF0500_35G12	80.126	62.779	52.6	97.752	63.547	109.495	43.879	40.677	62.214	75.854	60.711	50.895	52.403	16.619	35.033	61.255	30.981	85.872	68.332	41.134	84.082	70.97	49.496	43.638
+uncultured actinobacterium HF0500_35G12	5.165	3.009	3.106	1.262	5.654	3.36	15.023	41.659	40.73	13.399	8.847	17.72	85.334	62.151	82.758	49.59	24.725	39.217	17.676	56.317	25.243	7.601	44.735	20.417
+uncultured nuHF1 cluster bacterium HF0770_35I22	25.469	16.85	17.985	23.196	29.522	27.124	45.792	47.197	53.303	182.908	80.053	68.818	64.233	38.274	63.464	130.546	53.322	489.803	59.438	29.63	39.583	50.472	33.791	59.504
+Waddlia chondrophila	8	7	11	3	2	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Waddlia chondrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Pantoea vagans	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0
+Chlamydia pneumoniae	1	0	17	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Acinetobacter oleivorans	18	1	1	1	3	2	0	0	0	1	1	0	0	0	0	0	0	1	0	0	0	0	0	0
+Acinetobacter oleivorans	1	1	0	0	3	0	0	0	0	152	24	0	0	0	0	0	1	2	0	0	0	0	0	0
+Acinetobacter oleivorans	9	2	1.5	2	4	0	1	0	1	136.886	17	0	0	0	0	4	6	31.113	0	0	0	0	0	1
+Acinetobacter oleivorans	22	7	9	1	2	8	0	0	0	267.724	46.535	3.21	0	0	0	18.547	4	31.607	0	0	0	1	0	1
+Acinetobacter oleivorans	4	0	1	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0
+Acinetobacter oleivorans	4	1	0	4	0	0	0	0	0	16	1	0	0	0	0	1	0	1	0	0	0	0	0	0
+Acinetobacter oleivorans	31	2	17	4	2	1	0	0	0	244	36	4	0	0	0	6	5	13	0	0	0	0	0	0
+Acinetobacter oleivorans	14	1	5	1	2	3	0	0	0	210	38	2	0	0	1	7	3	18	0	0	0	0	0	0
+Acinetobacter oleivorans	16	3	17	2	4	5	0	0	0	259	41	0	0	0	0	16	2	6	0	0	1	0	0	0
+Acinetobacter oleivorans	6	1	1	0	0	1	0	0	0	38	10	0	0	0	0	1	0	0	0	0	0	0	0	0
+Acinetobacter oleivorans	27	4	7	0	4	1	0	0	0	273	40	2	0	0	0	11	1	10	0	0	0	0	0	0
+Acinetobacter oleivorans	7	0	1	0	2	0	0	0	0	0	0	0	0	0	0	2	0	2	0	0	0	0	0	0
+Acinetobacter oleivorans	7	1	4	0	2	0	0	0	0	180	28	2	0	0	0	3	2	8	0	0	0	0	0	0
+Acinetobacter oleivorans	3	0	0	2	1	0	0	0	0	135	18	0	0	0	0	3	1	3	0	0	0	0	0	0
+Acinetobacter oleivorans	7	1	6	0	1	2	0	0	0	75.961	3	0	0	0	0	2	0	3	0	0	0	0	0	0
+Acinetobacter oleivorans	23	2	10	3	4	1	0	0	0	200.785	34	0	0	0	3	17	3	50.564	0	0	1	0	0	0
+Acinetobacter oleivorans	3	0	0	0	0	0	0	0	0	41	3	1	0	0	0	1	1	1	0	0	0	0	0	0
+Acinetobacter oleivorans	8	1	1	0	2	0	0	0	0	29	10	0	0	0	0	0	1	2	0	0	0	0	0	0
+Acinetobacter oleivorans	0	1	1	0	0	0	0	0	0	27	5	0	0	0	0	0	1	0	0	0	0	0	0	0
+Acinetobacter oleivorans	38	9	20	7	6	6	0	0	0	538	63	3	0	0	0	23	11	19	0	0	0	0	0	0
+Acinetobacter oleivorans	5	0	3	2	1	3	0	0	0	73	19	0	0	0	0	3	0	3	0	0	0	0	0	0
+Acinetobacter oleivorans	6	5	2	0	1	1	0	0	0	70	11	0	0	0	0	2	2	3	0	0	0	0	0	0
+Acinetobacter oleivorans	14	2	9	0	2	1	0	0	0	212	41	0	0	0	0	7	6	6	0	0	0	0	0	0
+Acinetobacter oleivorans	5	1	1	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0
+Acinetobacter oleivorans	11	2	4	1	2	1.615	0	0	0	0	2	1.236	0	0	0	1	0	3.446	0	0	0	0	0	0
+Acinetobacter oleivorans	5	4	4	1	2	4	0	0	0	117	17	3	0	0	0	2	3	2	0	0	0	0	0	0
+Acinetobacter oleivorans	35	6	7	3	3	5	0	0	0	270	49	1	0	0	0	8	1	14	0	0	0	0	0	0
+Nitrosococcus watsonii	1	0	0	0	1	0	0	0	0	0	0	0	0	1	0	0	1	0	5	12	7	3	3	4
+Lactococcus cremoris	0	5	4	1	2	3	0	0	0	2	3	1	0	0	0	12	1	10	0	0	0	0	0	0
+Dirofilaria immitis	0	0	0	0	0	0	0	1	0	0	0	0	1	0	1	0	0	0	0	0	0	0	6	0
+Dirofilaria immitis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	13	0
+Pantoea vagans	0	0	0	0	1	0	0	0	0	27.187	4	2	0	0	1.243	9.119	5	176.625	0	0	0	0	0	1
+Pantoea vagans	0	0	0	0	0	0	0	0	0	12	2	0	0	0	3	1	1	57	0	0	0	0	0	0
+Pantoea vagans	0	0	0	0	0	0	0	0	0	3	1	0	0	0	0	1	1	26	0	1	0	0	0	0
+Pantoea vagans	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	1	0	8	0	0	0	0	0	0
+Pantoea vagans	0	0	1	0	0	1	0	0	0	20	6	7	0	0	2	5	1	97	0	0	0	1	0	1
+Pantoea vagans	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	14	0	0	0	0	0	0
+Pantoea vagans	0.5	0	0	0	0	0	0	0	0	17.288	3.218	0	0	0	1.273	2.347	1	119.113	0	0	0	1	0	0
+Pantoea vagans	0.5	0	0	0	0	0	0	0	0	5.712	5.39	2	0	0	5.727	2.347	2	50.581	0	0	0	0	0	0
+Nostoc flagelliforme	0	0	4	0	1	0	2	10	4	5	11	2	0	1	2	1	1	2	0	0	0	0	0	0
+Ketogulonicigenium vulgare	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	9	0	0	0	0	0	0	0	0
+Erwinia sp. Ejp617	0	0	0	0	1	1	0	0	0	20	3	1	0	0	0	8	4	52	0	0	0	0	0	0
+Erwinia sp. Ejp617	1	1	0	0	0	0	0	0	0	44.575	0	0	0	0	5	2.39	2.735	37.709	0	0	0	0	0	0
+Rhodomicrobium vannielii	1	0	0	3	1	1	1	4	2	6	7	9	3	2	4	0	0	3	0	0	0	0	0	0
+Assulina muscorum	0	0	0	0	0	1	7	2	2	9	4	5	0	0	0	4	2	2	0	0	0	0	0	0
+Pseudomonas putida	1	1	5	1	1	6	0	0	0	43	7	1	1	0	8	11	4	85	0	0	0	0	0	3
+Pseudomonas putida	0	0	2	0	1	0	0	0	0	20	2	0	0	0	8	11	2	53.972	0	0	0	0	0	1
+Pseudomonas putida	0	0	0	0	3	0	1	0	0	2	0	0	0	0	1	1	0	18	0	0	0	0	0	1
+Pseudomonas putida	0	0	0	0	0	1	0	0	0	36	2	0	0	0	11	9	2	59	0	0	0	2	0	3
+Mesocriconema xenoplax	3	3	2	0	0	0	0	5	2	0	4	0	3	0	0	1	0	1	0	2	0	0	54	0
+Mesorhizobium plurifarium	0	0	1.038	0	0	0	1.375	0	0	0	1.191	0	0	0	1	0	0	1	0	0	2	0	0	2
+Asticcacaulis excentricus	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	14	0	1	0	0	0	0	0	0
+Pantoea sp. At-9b	0	0	0	0	0	0	0	0	0	7	3	1	0	0	1	1	1	19	0	0	0	0	0	0
+Mesorhizobium ciceri	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	3	2	3
+Terriglobus saanensis	1	0	3	1	2	5	16	30	45	28	78	69	11	8	17	33	42	6	0	0	0	0	0	0
+Terriglobus saanensis	1	0	0	0	0	1	0	4	3	6	3	15	1	0	3	3	2	1	0	0	0	0	0	0
+Terriglobus saanensis	0	0	0	1	0	0	2	0	0	0	3	4	0	2	0	1	0	0	0	0	0	0	0	0
+Terriglobus saanensis	1	0	1	0	0	0	2	13	6	3	9	5	4	1	7	4	1	4	0	0	0	0	0	0
+Terriglobus saanensis	1	0	0	0	3	2	12	12	11	22	21	36	10	3	9	18	5	6	0	0	0	0	0	0
+Terriglobus saanensis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	41	3	1
+Terriglobus saanensis	0	0	0	7.694	0	1	10	10	9.799	35	22.042	28.468	0	1	5	20	2	1	0	0	0	0	0	0
+Terriglobus saanensis	0	7	0	2	0	0	6	2	20	10	3	12	6	3	1	5	0	1	0	0	0	0	0	0
+Terriglobus saanensis	3	0	0	0	0	5	10	4	21	12	14	16	22	5	29	13	10	15	0	0	0	0	0	0
+Schmidtea mediterranea	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	80	0	0	0	0	0	0	0
+Schmidtea mediterranea	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	17.641	0	0	0	0	0	0	0
+Granulicella tundricola	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Granulicella tundricola	0	1	0	0	0	0	13	0	2	0	0	3	1	2	0	20	0	7	0	0	0	0	0	0
+Granulicella tundricola	0	0	0	0	0	0	0	0	0	0	0	3	0	2	0	5	1	0	0	0	0	0	0	0
+Granulicella tundricola	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	9	0
+Rahnella aceris	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	23	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	3	3	1	0	0	2	3	1	27	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	23	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	5.617	0	0	1	0	0	3	1	37.38	0	1	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	13	0	0	0	0	0	0
+Rahnella aceris	0	0	1	0	0	0	0	0	0	34	4	1	0	0	0	9	3	112.241	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	15	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	2	0	26	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	18	0	0	0	0	0	1	1	56	0	0	0	0	0	0
+Rahnella aceris	1	1	0	0	2	0	0	0	0	4	0	0	0	0	0	3	1	55	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	11	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	14	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	11	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	8	0	0	0	0	0	0
+Rahnella aceris	0	1	0	0	0	0	0	0	0	10	0	0	0	0	1	2	1	43.522	1	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	17	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	34.644	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	38	2	1	0	0	0	4	2	50	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	46	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	7	0	0	0	0	0	0	0	19	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	14	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	13	1	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	2	0	1	0	0	1	2	0	25.339	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	12	0	0	0	0	0	2	1	44	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	11	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	1	0	11	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	8	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	9.531	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	37	0	0	0	0	0	0
+Rahnella aceris	1	0	1	0	0	0	0	0	1	4	0	0	1	0	1	1	0	38	0	0	1	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	32	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	40	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	3	0	21.329	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	1	0	0	0	5	0	0	0	0	0	2	0	83	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	2	0	0	0	45	0	0	0	0	0	3	1	119	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	13	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	1	0	28	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	1	0	30.536	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	1	31	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	2.372	0	35	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	8.8	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	2	0	0	0	1	0	0	0	0	0	1	0	37	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	18	0	0	0	0	0	0	1	6.104	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	41	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1	46	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	47.692	2	0	0	0	1	11.517	3	103.105	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	1	0	30	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	17	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	6	0	0	0	0	1	2	0	15.246	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	9	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	50	0	0	0	0	0	0
+Rahnella aceris	0	0	0	0	1	0	1	0	0	0	0	0	0	0	3	2	0	35	0	0	0	0	1	1
+Rahnella aceris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	6	0	0	0	0	0	0
+Rahnella aceris	1	0	0	0	0	0	0	0	0	13.355	1	0	0	0	0	3.644	1.265	4.772	0	0	0	0	0	0
+Heterodera glycines	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	3	0
+Ovis aries	0	0	0	0	0	0	0	0	0	1	0	0	3	0	1	0	0	1	0	1	0	0	19	0
+Acinetobacter baumannii	1	0	0	0	0	0	0	0	0	65	1	0	0	0	0	1	0	1	0	0	0	0	0	0
+Organic Lake phycodnavirus 2	17	0	0	0	2	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Pseudarthrobacter phenanthrenivorans	3	3	2	1	2	1	2	0	0	23	13	14	1	1	6	22	13	41	1	0	1	0	0	0
+Pseudarthrobacter phenanthrenivorans	12	10	10	7	4	7	3	2	1	65	52	70	5	0	25	71	59	149	0	1	1	1	0	0
+bacterium enrichment culture clone P43-9H:P46-4G	2	0	1	0	0	2	0	0	0	1	0	0	0	0	6	2.155	0	9	0	0	0	0	0	1
+Pseudopedobacter saltans	3	0	2	2	3	1	2	0	0	2	7	0	0	0	0	12	0	2	0	0	0	1	0	1
+Agrobacterium tumefaciens	3.087	0	5.084	0	1.151	0	0	1	0	1.137	1	1	0	2	0	1.099	0	2.099	1	1.137	1	0	2	13
+Agrobacterium tumefaciens	3	3	7.744	3	2.973	3.552	2	0	5.089	6.08	4.457	1.027	2.172	2	2.764	7.273	1	7.664	3	1	0	11	4	15
+Agrobacterium tumefaciens	0	1	1	1	1	3	1	0	1	0	3	0	1	1	1	4	2	10	3	2	5	24	5	21
+Trinickia soli	4.677	3.118	1.109	4	4.762	3.385	3.703	0	2.239	3.937	3.093	0	26.697	4.784	10.405	23.703	3.364	24.929	1.416	0	3	2	0	0
+Pseudomonas fluorescens	5	5	3	4	7	13	28	13	22	22	13	31	22	13	39	10	33	28	0	0	0	0	0	0
+Lactococcus lactis	0	1	1	2	0	0	0	0	0	2	1	0	0	0	0	4	0	4	0	0	0	0	0	0
+Lactococcus lactis	5	8	11	12	6	8	0	0	0	4	6	1	0	0	0	78	14	50	0	0	0	0	0	0
+Lactococcus lactis	1	0	3	0	0	0	0	0	0	0	0	1	0	0	0	2	2	7	0	0	0	0	0	0
+Lactococcus lactis	0	0	0	0	0	1	0	0	0	0	2	0	0	0	0	2	1	3	0	0	0	0	0	0
+Lactococcus lactis	2	1	1	0	1	0	0	0	0	0	1	0	0	0	0	3	0	5	0	0	0	0	0	0
+Lactococcus lactis	0	0	0	4	1	1	0	0	0	2	0	0	0	0	0	5	0	2	0	0	0	0	0	0
+Lactococcus lactis	1	5	6	8	8	7	0	0	0	9	3	1	0	0	0	36	12	24	0	0	0	0	0	0
+Physarum polycephalum	0	0	0	0	0	0	0	0	0	0	7	0	0	0	0	0	0	0	0	0	0	0	0	0
+Pseudonocardia dioxanivorans	2.405	9.868	5.51	5.67	3	12.586	1.707	0	6.714	4.962	2.678	4.948	2.026	5.842	1	4.954	3.567	2	8.927	3	10.901	10.845	7.939	8.995
+Fluviicola taffensis	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	108	0	0	0	0	0	0	0	0
+Pseudomonas brassicacearum	2	6	2	5	6	6	5	4	1	5	1	4	3	5	5	3	8	2	1	0	1	7	0	3
+Pusillimonas sp. T7-7	4.522	7	2.429	55.842	5.638	6	4	5	10	17	15	6	5.43	6	0	4	9	11	3	5	5	4	1	5.496
+Pusillimonas sp. T7-7	1	0	0	11	0	1	1	1	1	4	3	2	1	2	0	0	1	3	0	0	0	0	0	0
+Sterkiella nova	0	0	1	0	16	0	0	3	0	0	2	0	0	0	0	0	1	0	0	0	0	0	0	0
+Haliscomenobacter hydrossis	0	0	0	0	0	0	1	0	1	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0
+Pseudomonas fulva	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	0	0	0	0	0	0
+Mycolicibacter sinensis	0	0	0	0	6	2	2	4	29	4	12	0	0	1	4	8	1	0	0	0	0	0	0	0
+Mycolicibacter sinensis	2	1	3	8	8	2	19	14	68	27	31	21	6	7	33	22	14	8	0	0	0	0	0	2
+Pantoea agglomerans	0	0	0	0	0	0	0	0	0	0	2	2	0	0	1	0	2	30.967	0	0	0	0	0	0
+Desulfofundulus kuznetsovii	1	0	0	1	0	1	2	0	21	1	4	7	0	0	4	5	24	1	0	0	0	0	0	0
+Desulfofundulus kuznetsovii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	32	0	0	0	0	0	0	0	0
+Sphingobium chlorophenolicum	7	11	32	1	0	5	0	1	0	0	0	0	1	0	0	0	0	2	0	0	0	0	0	0
+Sphingobium chlorophenolicum	2	10	14	10	2	25	1	3	0	0	1	1	2	2	4	3	1	0	0	0	0	0	0	0
+Sphingobium chlorophenolicum	5.269	16	40	10	4	52	0	5	0	1	5	1	6	3	4	3	1	11	4	0	0	5	0	4
+Sphingobium chlorophenolicum	1	10	15	0	3	2	0	3	0	2	0	0	5	1	0	0	0	2	0	0	0	0	0	0
+Sphingobium chlorophenolicum	0	5	3	2	2	17	1	2	1	0	1	0	2	0	0	0	0	3	0	0	1	0	0	1
+Sphingobium chlorophenolicum	12	30	17	2	14.191	11	0	2	4	2	4	2	5	2	1	9	4	3	1.155	1	0	2.051	2.11	1.038
+Sphingobium chlorophenolicum	1	14.923	15	7	6	9	0	2	0	1	0	2	3	3	0	0	0	0	0	0	1	0	2	0
+Sphingobium chlorophenolicum	4.367	8.16	22.273	1.655	0	11.801	1	0	0	0	1	2	3.463	1.403	0	2.736	2	3.696	0	0	0	0	0	0
+Sphingobium chlorophenolicum	1	11	11	2	3	19	1	5	0	3	0	1	1	0	1	3.291	3	3.345	0	0	1	1	0	0
+Sphingobium chlorophenolicum	0	1	1	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0
+Sphingobium chlorophenolicum	4.502	3.535	1.271	0	5.909	1.227	3.097	1.223	0	0	1.474	1.249	1.051	0	2.506	6.406	4.574	2.554	6.569	1.207	12.475	44.791	4.14	22.744
+Sphingobium chlorophenolicum	6	12	4	2	2	7	1	1	1	3	1	2	4	1	0	2	5	4	3	2	5	3	5	13
+Sphingobium chlorophenolicum	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+Sphingobium chlorophenolicum	2	6	6.553	0	0	6.845	0	3	0	1	1	0	1	0	1	0	0	2.772	0	0	1	0	0	0
+Sphingobium chlorophenolicum	1	6.687	10	0	0	1.165	0	1.265	0	0	1	0	2.735	0	0	0	0	1	2	0	0	1.024	0	0
+Sphingobium chlorophenolicum	3	5.313	0	1	3	12.835	0	2.735	0	2	0	0	1.265	1	1	0	1	1	0	0	0	0	0	0
+Sphingobium chlorophenolicum	1	23	30.641	0	0	0	0	1	0	0	0	0	5	1	0	0	0	5	0	0	0	0	0	1
+Sphingobium chlorophenolicum	15.582	40	95.189	3	4	13	0	7.502	4.948	0	1	1	8.502	4	1.114	8.465	5	5.283	0	1	2.193	1	3.152	1
+Sphingobium chlorophenolicum	3	6	3	0	3	2	0	0	0	0	1	0	0	1	0	1	1	0	4	1	3	1	3	4
+Sphingobium chlorophenolicum	1	5	5	1	1	2	0	0	0	0	2	0	0	0	0	0	2	0	1	1	1	2	3	1
+Sphingobium chlorophenolicum	1	5	10	1	2	3	0	0	0	0	2	0	4	1	0	7.793	0	2	1	0	0	0	0	0
+Sphingobium chlorophenolicum	1	12	15	0	0	1	0	0	0	0	0	0	2	1	0	0	0	1	0	0	0	0	0	0
+Sphingobium chlorophenolicum	0	0	10	63	26	113	0	5	0	3	0	3	2	0	0	0	3	0	0	0	0	0	0	0
+Sphingobium chlorophenolicum	1	2	8	27	14	69	1	1	1	3	1	1	2	1	4	4	5	5	0	0	0	0	2	1
+Sphingobium chlorophenolicum	0	1	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+Sphingobium chlorophenolicum	3	12	5	1	2	6	0	0	0	0	0	0	0	0	0	0	2	0	1	1	1	1	1	9
+Sphingobium chlorophenolicum	2	3	8	2	0	4	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+Sphingobium chlorophenolicum	3	12	32	0	2	15	0	6	0	3	1	0	4	0	0	4	0	1	0	0	0	0	0	1
+Sphingobium chlorophenolicum	0	4	1	0	0	3	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Sphingobium chlorophenolicum	5	40	36	11	28	38	2	2	0	4	4	1	10	2	1	1	1	5	0	3	0	2	6	0
+Sphingobium chlorophenolicum	4	5	4	7	1	4	12	11	34	27	26	44	41	6	30	38	33	6	0	0	0	0	0	0
+Candidatus Protofrankia datiscae	13	4	2	0	4	2	2	0	0	2	1	2	1	5	3	0	1	1	0	0	0	0	0	0
+Sinorhizobium meliloti	0	3	1	2	3	3	0	1	0	0	0	0	0	0	0	0	4	0	1	0	0	8	0	0
+Afipia carboxidovorans	5	10	10	2	4	1	1	0	4	9	20	8	0	3	4	6	1	5	0	0	0	0	0	0
+Afipia carboxidovorans	25	17	20	14.575	28	17	4	6	5	17	14	8	7	8	9	7	14	11	17	13	27	7	19	12
+Afipia carboxidovorans	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	1	6	9	7	17
+uncultured bacterium	8	3	2	0	1	0	1	2	8	3	2	5	0	4	4	1	4	2	0	0	0	0	0	0
+EBPR siphovirus 2	0	0	1	0	0	0	1	0	4	1	2	0	8	4	7	1	1	3	0	0	0	0	0	0
+EBPR siphovirus 2	0	0	0	0	0	0	0	0	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0
+Cupriavidus necator	1	7	1	0	1	1	0	2	1	0	2	1	1	0	1	0	1	0	0	0	0	2	0	6
+Cupriavidus necator	3	0	2	2	1	1	0	1	2	2	0	1	13	1	0	3	0	0	0	0	0	0	0	0
+Cupriavidus necator	6	23	3	2	16	9	7	3	2	3	1	5	15	12	14	2	23	14	9	5	8	29	6	35
+Cupriavidus necator	0	0	0	0	0	0	0	0	0	0	0	0	2	0	1	0	0	0	0	0	0	0	0	0
+Cupriavidus necator	0	1	0	0	3	0	0	0	0	0	0	0	4	2	0	1	0	3	10	0	1	79	1	21
+Cupriavidus necator	0	0	2	0	5	1	0	2	0	0	0	0	0	1	0	0	0	1	14	0	2	46	0	12
+Cupriavidus necator	2	2	4	15.296	2	8	20	15	33.461	28	21	33	1	6	6	23	5	8	0	0	1	0	1	2.107
+Pseudomonas putida	3	1	0	2	1	0	1	2	0	113.324	4	0	1	1	39	27	8	175.348	0	0	1	1	2	3
+Pseudomonas putida	2	2	3	2	2	3	1	2	1	54	5	7	0	1	6	17	2	100	0	1	0	0	0	5
+Pseudomonas putida	0	5	1	1	1	0	1	0	0	11	0	1	0	0	5	1	5	12	1	0	0	1	0	6
+Pseudomonas putida	1	2	1	1	1	0	2	0	0	24.572	1	0	1	0	7.516	5.329	0	29.88	0	0	0	1	0	5
+Pseudomonas putida	0	2	1	0	0	2	2	0	0	22	1	0	0	1	5	3	1	31	0	0	0	0	0	0
+Pseudomonas putida	0	0	0	2	1	0	1	0	0	16	6	1	0	0	8	9	1	46	0	0	0	1	0	1
+Mycobacterium tuberculosis	2	0	3	3	1	1	0	6	13	5	8	8	3	2	9	2	5	3	1	1	0	2	0	1
+Xanthomonas campestris	0	1	2	1	2	0	1	2	5	3	5	7	2	1	2	9	12	3	0	0	0	0.943	0	0
+uncultured organism	0	1	1	41	0	2	33	26	4	5	2	8	1	3	0	32	1	12	0	0	1	0	0	1
+Enterobacter soli	1	1	0	1	4.496	13	0	0	0	1	0	1	0	0	2	10.419	0	7.267	0	0	0	0	0	0
+Enterobacter soli	0	1	1	0	2	2	0	0	0	0	0	0	0	0	1	2	1	6	0	0	0	0	0	0
+Enterobacter soli	9	1	3	2	15	32	0	0	0	1	0	0	0	0	6	26	1	19	0	0	0	0	0	0
+Enterobacter soli	13.063	2	0	1	7.939	10.957	0	0	0	2.468	0	0	0	0	5	14.566	0	17.075	0	0	0	0	0	0
+Enterobacter soli	6	1	0	1	8	4	0	0	0	0	0	0	1	0	3	9	0	19	0	0	0	0	0	2
+Enterobacter soli	3	0	0	0	3	19	0	0	0	1	0	1	0	0	6	15	0	10	0	0	0	0	0	0
+Enterobacter soli	3	3	0	3	6	8	0	0	0	0	0	0	0	0	3	8	0	3	0	0	0	0	0	0
+Enterobacter soli	7	1	0	2	3	18	0	0	0	2	0	1	0	0	4	13	1	13	0	0	0	0	0	0
+Enterobacter soli	1	0	1	0	1	3	0	0	0	0	0	0	0	0	1	0	0	2	0	0	0	0	0	0
+Enterobacter soli	5	0	2	1	9	21	0	0	0	7	0	1	0	0	10.91	10	0	10	0	0	0	0	0	0
+Enterobacter soli	3	4	0	0	5	13	0	0	0	1	0	0	0	0	5	11	0	7	0	0	0	0	0	0
+Enterobacter soli	3	2	0	1	3	8	0	0	0	1	0	1	0	0	1	3	1	8.186	0	0	0	0	0	0
+Enterobacter soli	3.279	2	0	0	7	9.772	0	0	0	0	0	0	0	0	1.265	4	0	7.232	0	0	0	0	0	0
+Enterobacter soli	4	0	0	1	0	2	0	0	0	2	0	0	0	0	2	2	0	7	0	0	0	0	0	0
+Enterobacter soli	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	2	1	4.957	0	0	1	0	0	2
+Enterobacter soli	2	0	1	0	2	11	0	0	0	0	0	0	0	0	5	3	2	4	0	0	0	0	0	0
+Enterobacter soli	11.126	7	3	1	8.451	24.896	0	0	0	3.264	1.482	0	0	0	7	19.445	0	19.206	0	0	0	0	0	0
+Enterobacter soli	5	3	0	3	5	12.695	0	0	0	3	0	0	0	0	2	8	0	22.548	0	0	0	0	0	0
+Enterobacter soli	0	0	0	0	1	5	0	1	0	2	0	1	0	0	0	4.605	0	13.002	0	0	0	0	0	0
+Enterobacter soli	10	1	1	0	6	20	0	0	0	2	0	0	0	0	11	10	1	7	0	0	0	0	0	0
+Enterobacter soli	2	1	0	0	3	9	0	0	0	0	2	0	0	0	2	5	0	6	0	0	0	0	0	0
+Enterobacter soli	3	1	0	0	1	7	0	0	0	1	0	0	0	0	0	6	0	4	0	0	0	0	0	0
+Enterobacter soli	1	1	1	2	2	10	0	0	0	0	1	0	0	0	2	4	0	3	0	0	0	0	0	0
+Enterobacter soli	3	0	4	1	4	15	0	0	0	1	2	0	1	0	6	8	2	11.077	0	0	0	0	0	2.464
+Enterobacter soli	1	0	0	0.5	2.504	4.697	0	0	0	1.5	0	0	0	0	2	1	0	4.3	0	0	0	0	0	0
+Enterobacter soli	14	3	3	0	4	10	0	0	0	1	0	0	0	0	9	8	0	49.849	0	0	0	0	0	2
+Enterobacter soli	3	1	0	1	3	12	0	0	0	1	0	0	0	0	6	5	2	13	0	0	0	0	0	0
+Enterobacter soli	2.183	1.181	0	0	4	2.298	0	0	0	9.49	5	0	0	0	1.184	14.089	0	41.839	0	0	0	0	0	0
+Enterobacter soli	6	1	1	0	5	10	0	0	0	0	0	0	0	0	7	7	0	5	0	0	0	0	0	0
+Enterobacter soli	13	3	4	1	7	17	0	0	0	2	0	0	0	1	10	13	1	38	0	0	0	0	0	1
+Enterobacter soli	1	1	0	0	0	3	0	0	0	0	0	0	0	0	1	1	0	1	0	0	0	0	0	0
+Enterobacter soli	2	0	0	1	8	15	0	0	0	1.022	0	0	0	0	7.944	8	0	6.145	0	0	0	0	0	0
+Enterobacter soli	1	0	0	2	1	2	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+Enterobacter soli	11	8	3	3	7	39	0	0	0	3	1	0	0	0	8	21	0	28	0	0	0	0	0	0
+Enterobacter soli	7	1	2	1	5	7	0	0	0	3	1	1	0	0	3	7.41	0	39.944	0	0	0	0	0	0
+Enterobacter soli	4	1	1	0	2	9	0	0	0	0	0	0	0	0	2	5	1	5	0	0	0	0	0	0
+Enterobacter soli	10.184	0	0	0	10	22	0	0	0	7	1	1	0	0	7	13	0	37	0	0	0	1	0	0
+Enterobacter soli	3	0	0	0	1	9	0	0	0	3.261	0	0	0	0	2	8.606	1	8.141	0	0	0	0	0	0
+Enterobacter soli	7	5	2	0	3	15	0	0	0	34.482	2	2	0	0	11	14	0	28	0	0	0	0	0	0
+Pseudomonas phage phiPto-bp6g	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	11	0	0	0	0	0	0
+Pseudomonas phage phiPto-bp6g	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	2	0	0	0	0	0	0
+Pseudomonas phage phiPto-bp6g	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0
+Pseudomonas phage phiPto-bp6g	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	14	0	0	0	0	0	0
+Pseudomonas phage phiPto-bp6g	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6	0	0	0	0	0	0
+Pseudomonas phage phiPto-bp6g	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	14	0	0	0	0	0	0
+Pseudomonas phage phiPto-bp6g	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	0
+Pseudomonas phage phiPto-bp6g	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	13	0	0	0	0	0	0
+Pseudomonas phage phiPto-bp6g	3	7	0	2	3	8	7	2	7	0	3	3	6	2	9	1	10	5	0	0	0	0	0	0
+Pseudomonas phage phiPto-bp6g	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	8	0	0	0	0	0	0
+Pseudomonas phage phiPto-bp6g	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	8	0	0	0	0	0	0
+Pseudomonas phage phiPto-bp6g	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	16	0	0	0	0	0	0
+Chloracidobacterium thermophilum	2	1	1	5	0	1	8	4	19	11	3	9	32	4	39	9	6	17	0	0	0	0	0	0
+uncultured bacterium CSLG7	3	0	1	3	2	3	2	7	13	6	9	30	5	5	1	1	6	5	0	0	0	0	0	0
+uncultured bacterium CSL12	0	0	79	0	0	0	1	0	0	0	0	0	3	6	0	0	0	0	0	0	0	0	0	0
+Xanthomonas oryzae	0	0	0	3	1	4.006	5.116	4	18	71.615	7	3	5	2.013	9	36	1.013	2	0	0	0	0	0	0
+Variovorax sp. HH01	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	18	0	0	0	0	0	0	0	0
+Variovorax sp. HH01	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0	0	0
+Variovorax sp. HH01	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	37	1	0	0	0	0	1	0	1
+Pantoea ananatis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	122	0	0	0	0	0	0
+Pseudoxanthomonas spadix	0	0	3	1	4	3	4	0	17	10	10	17	1	3	5	1	4	3	0	0	0	0	0	0
+Pseudoxanthomonas spadix	3.26	6.866	6.35	7.941	0	49.506	28.879	31.707	12.04	7.054	15.035	36.546	9	11.742	13.431	36.131	11.371	11.597	0	1	0	5.792	2	0
+Escherichia coli	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	2	0	16	0	0	0	0	0	0
+uncultured archaeon	4	1	8	2	6	8	37	37	7	16	1	2	42	7	21	10	12	10	4	2	4	2	0	2
+Burkholderia sp. YI23	3	2	3	1.043	4	1	1.038	2	2.044	2	0	1	3	1	1.024	2.095	2.045	11.653	3	0	5	18	0	29
+Burkholderia sp. YI23	3	5	4	2	2	0	3	1	1	5	1	3	6	0	1	4	3	21	6	0	14	65	3	44
+Burkholderia sp. YI23	1	4	2	0	2	1	0	0	0	4	0	3	7	0	0	3	1	12	3	0	2	28	3	19
+Burkholderia sp. YI23	3.819	3.291	3.898	2.257	6.488	3.473	1	9.097	3.622	9.782	7.927	8.096	7.811	7.157	4.106	17.993	10.244	21.586	7.595	7.645	7.798	16.177	3.057	16.905
+Burkholderia sp. YI23	0	3	0	0	2	0	0	0	1	0	0	0	2	0	3	2	0	3	0	0	1	7	0	13
+Burkholderia sp. YI23	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	5.5	0	0	1	10.214	0	3
+Burkholderia sp. YI23	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	10	0	15
+Burkholderia sp. YI23	7	0	0	0	1	0	0	0	0	0	1	3	1	1	0	0	4	5	0	0	1	10	0	2
+Burkholderia sp. YI23	3.518	4	3.238	2.869	3	0	1.221	3.391	4.057	3.127	2.064	2.347	12.312	1.091	3.129	1.136	2.335	12.131	3.08	5	7.85	27.279	2.04	13.915
+Burkholderia sp. YI23	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	10	0	9
+Burkholderia sp. YI23	0	0	0	0	1	0	0	0	0	0	0	1	2	0	0	0	2	4	0	0	0	13	1	7
+Burkholderia sp. YI23	8	13.495	12	2	5.362	4.399	4	5	2.728	3	4.543	6	7.277	2	2.151	6	4.226	26	1.201	1	6.795	9	4	18.599
+Burkholderia sp. YI23	0	3	1	0	1	1	1	0	0	1	0	2	0	2	0	1	1	6.797	3	1	4	13	3	7
+Burkholderia sp. YI23	0	2	1	2	0	2	0	1	0	1	3	2	2	2	1	3	0	8	1	0	2	12	1	10
+Burkholderia sp. YI23	0	3	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	37.589	0	0	0	0	0	0
+Burkholderia sp. YI23	3	1	5	0	0	0	1	0	0	0	0	1	4	0	0	0	0	27	0	0	0	0	0	0
+Burkholderia sp. YI23	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3.505	0	0	1	0	0	0
+Burkholderia sp. YI23	1	1	1	0	0	0	0	0	0	0	0	0	3	0	0	0	1	17	0	0	0	0	0	0
+Burkholderia sp. YI23	0	0	1	0	1	0	0	0	0	0	0	0	1	0	0	0	0	24	0	0	0	0	0	0
+Burkholderia sp. YI23	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	11	0	0	0	1	0	1
+Burkholderia sp. YI23	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	18	2	0	0	0	0	0
+Burkholderia sp. YI23	0	1	0	0	0	0	0	0	0	1	0	1	0	0	0	2	0	2	4	3	1	9	0	6
+Burkholderia sp. YI23	4	3	3	1	4	1	2	1	0	2	0	1	5.088	0	0	3	3	16	3	0	2	30	3	15
+Burkholderia sp. YI23	16.361	17.092	0	0	14.47	2.716	0	0	10.385	15.434	0	16.522	5.775	0	2.134	8.703	7.217	0	0	0	0	0	0	3.052
+Burkholderia sp. YI23	2	4	1	1	6	2	1	0	1	5	3	0	5	2	0	7	3	11	2	2	2	17	1	26
+Burkholderia sp. YI23	2	4	0	1	3	14	1	1	0	0	0	6	1	0	1	3	2	5	1	0	2	5	0	6
+Burkholderia sp. YI23	2	0	0	0	1	0	1	0	0	1	0	1	0	0	0	4	3	3	2	0	2	18	1	12
+Burkholderia sp. YI23	1	0	0	0	1	1	1	0	1	1	1	3	1	0	2	0	1	1	3	2	3	29	1	23
+Burkholderia sp. YI23	28	11	2	2	4	2	3	5	1	3.17	1.187	2	26.721	4	1.032	8.066	5.758	11.609	0	0	0	3.057	0	6
+Burkholderia sp. YI23	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	7	0	2
+Burkholderia sp. YI23	0	0	0	0	0	0	0	1	0	1	0	2	0	0	0	0	0	1	1	1	2	18	1	14
+Burkholderia sp. YI23	2	2	1	0	1	1	1	0	0	1	0	2	0	0	2	1	0	5	3	0	2	12	1	11
+Burkholderia sp. YI23	4.533	1	6.873	4	7.694	4	2	1	2	2.479	3	4	5	2.488	5	7	7	14.782	2	0	1.133	19	3.357	24.807
+Burkholderia sp. YI23	6	6	3	1	2	0	4	1	1	6	0	5	4	0	3	3	0	26	3	0	2	18	1	22
+Burkholderia sp. YI23	8	12	13	2	4	8	7	2	4	7	5	9	8	7	8	7	11	22	16	8	6	45	6	33
+Burkholderia sp. YI23	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	3	0	5
+Burkholderia sp. YI23	0	1	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	9	1	5
+Burkholderia sp. YI23	16.507	13.215	4	2	9.771	4	1	4.545	3	3.289	1	10.584	4	0	3	3	9	16.818	0	0	3	5.152	1	8.56
+Burkholderia sp. YI23	11.493	4.554	2	0	5.246	0	0	1	0	4.569	0	0	8	0	0	1	3	18.182	1	0	0	5.688	0	1.057
+Burkholderia sp. YI23	0	3	2	0	3	1	0	0	0	5	0	2	2	2	1	1	0	10	1	1	3	31	1	16
+Burkholderia sp. YI23	0	3	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	1	0	2	8	0	4
+Burkholderia sp. YI23	0	0	0	0	1	1	0	0	0	1	2	2	1	0	2	0	0	1	0	0	2	2	1	6
+Burkholderia sp. YI23	0	8	2	0	3	1	0	0	2	5	1	8	3	0	0	3	4	13	2	0	3	28	2	25
+Burkholderia sp. YI23	8	11	6	1	4	1	1.007	1	0	3.004	0	3.079	9	0	2	8	0	30.425	0	0	1	2.121	0	3
+Burkholderia sp. YI23	2	2	3.061	0	1.056	1	0	0	1	0	1	3	2	1	1	2	0	16.392	0	0	2	2	0	1
+Burkholderia sp. YI23	0	0	0	9	0	38	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Granulicella mallensis	0	0	0	0	0	0	4	4	8	6	11	7	0	0	1	4	4	3	0	0	0	0	0	0
+Granulicella mallensis	0	0	0	0	0	1	2	3	15	6	8	9	5	4	11	15	4	8	0	0	0	0	0	0
+Granulicella mallensis	0	1	3	0	0	1	5	8	33	3	9	12	8	9	1	10	3	7	0	0	0	0	0	0
+Granulicella mallensis	0	0	0	0	0	0	0	75	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Azospira oryzae	6	3	6	5	13	25.739	2.654	4	4	14	13.449	2	1	0	1	13	2	56.433	0	0	0	0	0	2
+Klebsiella pneumoniae	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	4	0	0	0	0	0	0
+Pseudomonas ogarae	2	1	1.243	0	0	1	1	2	0	71.818	6.908	3	1.321	2	4	31.34	7.555	92.088	0	0	0	0	2	1
+Pseudomonas ogarae	0	0	0	0	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Pseudomonas ogarae	0	0	0	0	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Actinoplanes sp. SE50/110	1	4	11	11	1	10	4	8	4	14	17.707	12	3	2	1	3	5.715	1	5	0	0	3	0	0
+Niastella koreensis	0	0	0	0	0	0	0	0	0	1	3	1	0	0	0	0	0	0	1	0	9	7	0	36
+Niastella koreensis	2	0	3	2	1	0	1	2	3	5	10	5	1	1	0	4	2	1	1	1	7	1	5	6
+Niastella koreensis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Enterobacter ludwigii	1.056	0	0	0	0	1.782	0	0	0	29.88	1	0	0	0	4.217	21.5	4	121.603	0	0	0	0	0	0
+Enterobacter ludwigii	1.328	1	1	0	0	1	0	0	0	0	0	0	0	0	0	2	0	29	0	0	0	0	0	1
+Enterobacter ludwigii	5	1	3	1	7	7	0	0	0	2	2	0	0	0	15	7	0	29	0	0	0	0	0	2
+Enterobacter ludwigii	15	2	4	1	3	3	1	0	0	1	0	0	2	0	3	5	0	88	0	0	0	0	0	0
+Enterobacter ludwigii	31	3	4	1	8	16	0	0	0	38	2.735	0	0	1	3	16	2	131.906	0	0	0	1	0	0
+Enterobacter ludwigii	12	2	6	0	3	10	0	0	0	7	1	1	0	0	13	5	0	103.765	1	0	0	0	0	0
+Enterobacter ludwigii	0	0	0	0	0	0	0	0	0	11	1	0	0	0	0	7	1	37.34	0	0	0	0	0	0
+Enterobacter ludwigii	9	1	4	1	1	6	0	0	0	51	3	1	1	0	4	20	3	137	0	0	0	0	0	0
+Enterobacter ludwigii	12	1	1	0	7.64	4	0	0	0	3	1	0	0	0	1	4.433	0	122	0	0	0	0	0	0
+Streptantibioticus cattleyicolor	0	0	0	0	0	0	27	6	11	0	1	1	0	1	7	0	3	0	0	0	0	0	0	0
+Streptantibioticus cattleyicolor	0	0	0	0	0	0	97	7	23	1	4	0	0	1	13	0	4	0	0	0	0	0	0	0
+Comamonas testosteroni	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+Rahnella aquatilis	0	0	1	0	0	0	0	0	0	13	0	0	0	0	0	2	0	6	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	1	0	0	0	21	1	2	0	0	4	3	1	49	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	24	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	10	0	0	0	0	0	1	0	15	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	7	1	0	0	0	0	0	0	12	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0
+Rahnella aquatilis	2	0	0	0	0	0	0	0	0	56	0	0	0	0	1	6	0	157	0	0	0	0	0	0
+Rahnella aquatilis	1	0	0	0	0	0	0	0	0	25.482	0	0	0	0	0	7.585	1	87.868	0	1	0	0	0	0
+Rahnella aquatilis	0	1	0	0	0	0	0	0	0	10	0	0	0	0	0	1	0	4	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	45	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	15	0	0	0	0	0	0
+Rahnella aquatilis	2	0	0	0	0	0	1	0	0	9.726	0.941	1	0	2	1	2	0	53	0	0	0	0	0	0
+Rahnella aquatilis	0	0	1.546	1.539	0	0	1.594	1	0	46	3.25	0	0	2	0	4.523	0	24.102	1	1.233	1	1	0	3
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	3	0	24	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0
+Raphanus sativus	1	0	1	1	1	0	3	1	7	12	4	2	1	2	3	5	5	14	1	2	10	8	12	9
+Megavirus courdo7	0	0	0	0	2	0	6	0	0	0	35	3	0	0	2	3	14	1	0	0	0	0	0	0
+Streptomyces hygroscopicus	2	0	1	4	2	2	5.704	10.774	7.476	1.165	12	12.552	18	3	16	33	2	10	1	0	0	1	0	1
+Streptomyces hygroscopicus	3	1	3	0	0	0	0	0	0	0	0	0	3	1	1	0	1	1	0	0	0	0	0	0
+Streptomyces hygroscopicus	0	0	0	0	0	0	0	1	0	0	0	0	7	0	0	28	0	1	0	0	0	0	0	0
+uncultured bacterium	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	19	0	1	10	1
+uncultured bacterium	14	1	1	0	1	0	0	1	0	0	0	0	2	5	1	0	1	0	0	0	0	0	0	0
+Solitalea canadensis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	9	0	0	0	0	0	0	0	0
+Pseudomonas fluorescens	0	0	0	0	1	0	0	0	0	17	2	3.623	1	2	1	20.449	2	60.251	0	0	1	1	0	27
+Talaromyces stipitatus	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	11	0	0	0	0	0	0	0	0
+Penicillium chrysogenum	0	5	3	19	1	6	65.63	16	98.635	48.955	64.921	9.539	13	1	26	41.886	9.748	75.76	0	0	1.053	0	2	0
+Mycobacterium tuberculosis	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1.815	8.979	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	13	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10	0	0	0	0	0	0
+Rahnella aquatilis	1	1	0	0	3	0	1	0	0	2	1	1	0	0	0	3	0	18	0	0	2.579	2	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	1	0	0	0	57	1	0	0	0	0	4	4	65	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	1	0	89	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	24	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	3.062	0	0	0	0	0	4	0	57.663	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	2	0	33	0	0	0	0	0	0
+Rahnella aquatilis	0	1	0	0	0	0	0	0	0	40	0	0	0	0	0	2	1	36.441	0	0	0	1	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	8	0	0	0	0	0	0
+Rahnella aquatilis	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	29	0	0	0	0	0	0
+Meloidogyne incognita	0	0	0	0	0	1	0	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	7	0
+uncultured organism	0	0	1	1	1	0	0	4	0	0	0	0	1	27	0	1	1	1	1	7	1	1	4	2
+environmental Halophage eHP-23	0	0	0	0	1	1	12	1	0	1	0	0	6	0	1	0	1	1	0	0	0	0	0	0
+Paenibacillus mucilaginosus	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	10	5	1	8	0
+Erwinia amylovora	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	4	0	0	0	0	0	0
+Chorthippus parallelus	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	1	1	0	0	42	0
+Chorthippus parallelus	0	1	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	4	0	0	23	0
+Acinetobacter baumannii	5	0	0	0	0	0	12	8	26	50	47	6	6	1	11	21	20	32	0	0	0	0	0	0
+Pectobacterium parmentieri	0	0	0	0	0	0	0	0	0	40	0	0	0	0	0	4	1	3.669	0	0	0	0	0	0
+Burkholderia sp. KJ006	10	15	3	3	23	16	11	4	9	4	1	6	7	3	5	4	4	2	0	0	0	1	0	0
+Burkholderia sp. KJ006	12.907	17.108	0	0	7.238	5	1	3.551	7.611	9.322	0	11.532	5.584	1.597	6.169	3.405	3.5	1	0	0	0	0	0	1
+Emticicia oligotrophica	8	4	14	4	9	9	6	7	32	16	47	10	4	2	2	17	15	15	3	2	6	4	3	5
+Tistrella mobilis	1	0	1	2	1	0	11	15	8.707	4	6	5	2	2	0	21	3	1	0	0	1	3	0	1
+Tistrella mobilis	1	7	0	2	8	12	10	4.207	13	19	13	7	11	2	12	4.094	9	4	1	0	0	0	0	2
+Advenella kashmirensis	0	0	0	1	1	1	0	0	1	4	1	1	0	0	0	1	0	0	0	0	0	0	0	0
+Pseudomonas putida	5.161	3	1.217	2	5	5	4.834	1	2	89.559	11	4	4	2	11	27.465	9	157.579	1	4	12	12	4	6
+Pseudomonas putida	0	1	1	1	0	0	0	0	1	18	1	0	0	0	1	3	1	27	0	0	1	1	0	2
+Pseudomonas putida	2	0	0	1	0	0	0	0	1	38	2	1	0	0	8	12	2	71	0	0	2	1	0	1
+Pseudomonas putida	12.222	9.829	11.951	5.636	4	1.681	6.52	4.067	4.146	119.378	12.539	7.337	0	1.528	31.376	45.993	16.741	250.966	10.369	4.046	7.71	12.495	5.951	12.727
+Pseudomonas putida	0	1	0	0	0	1	0	0	1	26	5.574	5	0	0	10	9.307	3	48.802	0	0	0	0	1	3.901
+Pseudomonas putida	2	5	5	2	2.449	1	2	2	3	92	8	5	0	2	22	27.565	10	145	1	1	3	4	2	11
+Pseudomonas putida	0	1	4	1	5	1	2	2	0	56	4	4	0	0	12	31	6	114	1	0	3	0	2	10
+uncultured bacterium F41-01	0	0	52	0	0	0	1	1	0	0	0	0	1	2	0	0	0	0	0	0	0	0	0	0
+Sinorhizobium fredii	4	9	8	3	7	10	9	22.484	14	22.785	13.534	13	10	14	16	18.784	8	15	11	8	6	28	10	28
+Thiocystis violascens	0	0	1	2	2	0	0	1	10	1	18	0	0	0	0	6	0	1	0	0	0	0	0	0
+Terriglobus roseus	0	0	1	0	0	0	2	0	11	0	3	3	10	2	5	1	0	2	0	0	0	0	0	0
+Terriglobus roseus	0	0	0	0	0	0	0	2	0	0	0	0	0	0	1	0	0	0	4	2	0	41	13	38
+Terriglobus roseus	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	0	0	70	9	2
+Desulfomonile tiedjei	1	0	23	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Stutzerimonas stutzeri	0	0	3.925	0	2	0	1	0	0	32	1	0	0	0	0	4	2	2	0	1	0	0	1	2
+Ophiostoma hyalothecium	0	0	0	2	0	0	5	0	41	2	1	3	2	0	1	2	4	2	0	1	0	1	1	0
+uncultured bacterium	0	0	0	1	0	0	0	0	0	0	1	1	0	0	11	0	0	0	0	0	0	0	0	0
+Anoplophora chinensis	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	6	1
+Pseudomonas putida	2	1	2	1	3	0	0	3	0	4	0	1	2	1	1	4	1	22	2	0	1	4	5	10
+Pseudomonas putida	8	11	5	10	18	11	4	5	17	25	8	17	13	9	8	23	8	17	1	1	3	1	4	6
+Pseudomonas putida	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Pseudomonas putida	0	0	0	0	0	0	0	0	0	25	2	1	0	0	5	7	0	24	0	0	2	1	0	24
+Pseudomonas putida	1	0	0	0	0	1	0	0	0	9	0	0	0	0	4	1	0	18	0	0	0	0	0	0
+Pseudomonas putida	0	0	0	0	1	1	0	0	0	15	1	0	0	1	8	9	2	27	0	0	0	0	0	1
+Mycolicibacterium smegmatis	2	2	1	2	1	0	0	2	5	0	1	4	48	1	4	4	1	2	0	0	1	1	0	0
+Citrobacter freundii	0	0	0	0	0	0	0	0	0	9	1	0	0	0	0	1	0	1	0	0	0	0	0	0
+Enterobacter kobei	6	1	2	0	1	0	0	0	0	1	0	0	0	0	4	0	0	2	0	0	0	0	0	0
+Enterobacter kobei	10	1	1	1	5	2	0	0	0	1	0	0	0	0	3	5.5	0	60.917	0	0	0	0	0	2
+Burkholderia cepacia	15	8	0	0	2	4	0	1	0	0	0	1	3	0	2	1	2	0	1	0	1	4	0	2
+Burkholderia cepacia	50	109	12	20	58	83	38	28	30	7	9	22	34	22	46	56	20	56	2	3	2	7	1	5
+Burkholderia cepacia	3.386	8.932	0	1.51	2.156	0	1	1.542	1.185	0	0	3.823	1.335	1	4	2	2	0	0	0	1	0	0	1.511
+Burkholderia cepacia	38	78	11	13	51	88	33	27.801	33	13.872	4	30.942	35	13	36	55	12	28	0	0	2	1.398	0	3
+Burkholderia cepacia	34.599	51.419	21.228	13.353	85.592	44	25.61	28.528	27.994	22.479	13.176	32.845	24.265	12.796	35.425	53.278	17.652	84.133	0	0	2	8.542	2	6.987
+Burkholderia cepacia	18	43	9	2	24	39	24	16	21	5	5	18	15	9	28	35	10	29	0	0	0	2	0	0
+Burkholderia cepacia	31	68	13	16	39.327	64	30	19	35	3	6	14	23	12	39	27	20	35	0	0	0	0	0	0
+Burkholderia cepacia	10	25	2	3	15	19	6	6	3	4	1	4	5	5	9	6	4	2	0	0	0	0	0	0
+Burkholderia cepacia	0	1	0	0	0	0	0	1	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0
+Burkholderia cepacia	0	0	0	0	1	2	0	1	1	0	0	0	1	0	1	1	0	1.252	0	0	0	0	0	0
+Burkholderia cepacia	30	55	12	14	75	37	17	12	27	7	4	8	23	6	16	23	13	22	1	1	0	3	2	2
+Burkholderia cepacia	18.427	19	3	6	15.262	6	3.08	7	11	5	0	4	13.598	1	7	6	1	10	0	1	0	1	1	2.853
+Burkholderia cepacia	1	1	0	0	0	7	0	0	2	0	3	2	1	0	1	2	1	1	0	0	0	0	0	0
+Burkholderia cepacia	20	19	3	1	12	8	0	8	10	3	0	5	13	0	4	5	0	4	0	0	0	3	0	1
+Pectobacterium carotovorum	0	0	1	0	0	0	0	0	0	9	4	0	0	0	5	9	1	56	0	0	0	0	0	0
+Arthrobacter sp. Rue61a	0	1	1	0	0	1	0	1	0	8	11	5	0	0	0	5	17	12	0	0	0	0	0	0
+Arthrobacter sp. Rue61a	0	0	1	1	1	2	0	0	0	4	3	8	0	0	0	6	4	10.929	0	0	2	0	0	1
+Arthrobacter sp. Rue61a	1	1	3	0	0	1	1	0	0	15	27	26	0	0	10	21	30	45	1	0	0	0	0	0
+Riemerella anatipestifer	26.926	5.933	36.059	14.846	23.568	50.141	7	4.396	7.565	26	151.938	11	4	1	4	28.688	17.802	37.456	7	3	9.226	7.232	4.45	11.617
+Mycobacterium intracellulare	0	0	1	3	2	1	5	1	2	2	0	10	9	4	5	3	8	4	1	0	0	0	0	0
+Candidatus Nitrosopumilus sediminis	0	0	1	0	0	0	2	0	0	1	1	0	20	2	3	1	9	1	0	0	0	0	0	0
+Paraburkholderia phenoliruptrix	10	6	2	1	3	0	5	5	9	2	2	7	18	5	12	25	3	8	0	0	0	0	0	0
+Paraburkholderia phenoliruptrix	4	3	0	0	0	0	0	0	0	0	0	0	2	0	1	0	2	0	0	0	0	0	0	0
+Paraburkholderia phenoliruptrix	16.02	16.431	3	5	11	6	0	3.141	7	1	0	4.545	12	1	4	2.672	1	3.257	0	0	0	0	0	0
+Paraburkholderia phenoliruptrix	19.38	8	0	0	5	0	0	0	0	3	3	0	6	0	2	2	5	6	0	0	0	0	0	1.749
+Candidatus Nitrososphaera gargensis	0	1	0	0	0	0	29	1	0	0	0	0	1	0	8	0	0	0	0	0	0	0	0	0
+Methanolobus psychrophilus	1	0	0	5	2	2	18	33	4	14	7	25	4	8	6	6	5	7	0	0	0	0	0	0
+Methanolobus psychrophilus	3	0	5	10	5	3	19	46	18	19	12	38	11	22	6	11	18	7	0	0	0	1	0	0
+Vibrio coralliilyticus	0	2	0	0	1	0	0	0	0	1	2	0	0	0	0	1	0	1	1	0	0	26	0	0
+uncultured bacterium	3	11	1	0	10	0	1	1	0	4	1	2	0	0	0	1	1	22	0	0	0	0	0	1
+Streptoalloteichus sp. ATCC 53650	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Lactococcus cremoris	8	4	8	11	9	6	0	0	0	15	4	3	0	0	0	37	9	32	0	0	0	0	0	0
+Lactococcus cremoris	1	2	3	2	2	1	0	0	0	1	1	0	0	0	0	21	5	22	0	0	0	0	0	0
+Lactococcus cremoris	2	3	2	1	1	3	0	0	0	3	1	0	0	0	0	19	4	18	0	0	0	0	0	0
+Serratia marcescens	1	1	2	3	0	5	0	0	0	4	3	3	1	3	1	263	0	1	0	0	2	4	4	1
+Pseudomonas sp. UW4	0	1	1	0	1.463	0	3	1	1	33	3	6	3	0	0	18	14	46.136	0	0	0	0	0	0
+Pseudomonas sp. UW4	0.5	0.5	1	0	0	0	0	0	0.5	38.139	1.12	1	0	0	3.007	18.622	1.358	61.957	0	0	0	0	0	1.016
+Sinorhizobium meliloti	4	1	2	5	5	1	5	4	18	15	10	13	6	3	11	15	12	5	0	0	0	0	0	0
+Mycobacterium sp. JS623	2	1	5	2	1	0	0	3	7	3	1	4	1	2	1	26	4	6	6	0	1	3	0	2
+Rhizobium tropici	2	1	1	1	4	3	1	0	0	2.251	0	0	0	0	0	0	1	2	1	0	1.052	16.603	2.553	2.143
+Rhizobium tropici	0	3	0	0	1	2	0	0	0	1	0	2	0	0	0	0	0	0	0	0	0	4	0	2
+Rhizobium tropici	0	1	1	0	2	5	1	0	0	2	1	0	0	0	2	0	2	1	0	0	0	34	0	13
+Rhizobium tropici	2	8	4	0	5	5	2	1	2	4	2	1	1	3	0	4	5	2	10	2	8	43	11	18
+Rhizobium tropici	0	1	0	0	0	0	0	0	0	2	0	0	0	0	0	0	1	0	0	0	0	13	0	2
+Enterobacteriaceae bacterium strain FGI 57	0.728	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6.269	0	0	0	0	0	0
+uncultured bacterium	0	0	0	0	1	1	0	0	1	0	0	0	13	2	0	0	0	0	5	2	2	2	2	1
+uncultured bacterium A1Q1_fos_1870	7	3	2	4	4	2	16	19	33	23	62	83	17	17	14	24	24	14	1	0	4	0	7	2
+Vicia faba	1	1	1	0	2	0	1	1	5	9	3	1	5	1	7	5	5	20	2	0	6	4	10	9
+uncultured bacterium	56	17	62	6	15	24	2	1	1	6	8	5	0	0	1	12	21	2	0	0	0	0	0	0
+Citrobacter freundii	4	1	20	5	5	3	8	8	7	100	11	11	1	4	6	20	10	82	0	0	0	0	0	0
+Serratia marcescens	1.065	1	0	0	1.134	1.166	0	0	0	3.113	0	0	0	0	0	41.698	1	25.405	1	0	0	0	1	0
+Serratia marcescens	0	0	0	2	0	1	0	0	0	12	1	0	0	0	1	79	1	46.571	0	0	0	0	0	0
+Serratia marcescens	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	1	0	0	0	0	0	0
+Serratia marcescens	1	0	0	0	0	0	0	0	0	2	1	1	0	0	3	26	1	8	1	0	2	1	0	1
+Serratia marcescens	1	0	1	0	2	0	0	0	0	4	1	0	0	0	0	51	0	28	0	0	0	0	0	0
+Serratia marcescens	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	11	0	2	0	0	0	0	0	0
+Serratia marcescens	5	0	2	3	0	1	0	0	0	5	2	1	0	0	1	102.87	0	71	0	0	0	0	0	0
+Serratia marcescens	1	0	0	1	0	1	0	0	0	9	0	0	0	0	0	57.838	1	21.344	0	0	0	0	0	0
+Serratia marcescens	0	0	1	0	1	0	0	0	0	3	0	0	0	0	0	21	1	7.083	0	0	0	0	0	0
+Serratia marcescens	0	1	1	1	0	2	0	0	0	10	1	0	0	0	3	52	1	12	0	1	0	0	1	0
+Serratia marcescens	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1.045	0	10	0	0	0	0	0	0
+Serratia marcescens	1	1	1	1	0	0	0	0	0	5	2	0	0	0	0	56	1	25	0	0	0	0	0	0
+Serratia marcescens	0	0	0	0	0	1	0	0	0	8	0	1	0	0	0	21	1	14	0	0	0	0	0	0
+Serratia marcescens	1	1	2	1	1	3	0	0	0	0	0	1	0	1	1	38	1	13	0	1	0	0	0	2
+Serratia marcescens	1	0	0	0	0	0	0	0	0	1	0	0	0	2	0	21	1	7	0	0	0	0	0	0
+Serratia marcescens	0	1	1	0	1	1	0	0	0	8	0	1	0	0	1	31	2	18	0	0	0	0	0	0
+Serratia marcescens	0	0	0	4	3	0	0	0	0	3.758	0	0	1	0	0	40	1.203	37.621	0	0	0	0	0	1
+Serratia marcescens	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	5	0	0	0	0	0	0
+Serratia marcescens	1	0	1	0	1	2	1	0	0	0	0	1	2.16	0	0	68	0	31	0	0	0	0	0	0
+Serratia marcescens	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	25	0	6	0	0	0	0	0	0
+Serratia marcescens	0	0	1	1	0	0	0	0	0	1	0	0	0	0	0	17	0	13	0	0	0	0	0	0
+Serratia marcescens	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	23	0	13	0	0	0	0	0	0
+Serratia marcescens	0	0	1	0	0	0	0	0	0	6	1	0	0	0	0	58	0	38	0	0	0	0	0	0
+Serratia marcescens	0	0	1	0	1	0	0	0	0	5	0	1	0	0	0	36	0	25	0	0	0	0	0	0
+Serratia marcescens	0	0	0	0	1	0	0	0	0	3	0	0	0	0	0	24	0	19	0	0	0	0	0	0
+Acanthocystis turfacea Chlorella virus MN0810.1	0	13	0	2	1	0	0	0	0	4	0	0	0	3	0	0	1	0	0	0	0	0	0	0
+Acanthocystis turfacea Chlorella virus NTS-1	2	2	0	0	3	0	6	15	14	14	32	0	1	0	0	2	10	1	0	0	0	0	0	0
+Capsaspora owczarzaki	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Salmonella enterica	15.967	0	3	1	8	8	0	0	0	14.472	6	2	0	0	6	7	1	104	0	0	0	0	0	1
+Sinorhizobium meliloti	0	0	13.168	2.282	6.954	3.066	4.49	12.364	1.604	0	0	0	4.26	4.051	0	0	0	14	2.319	4	4.026	0	8	1.801
+Rhodanobacter denitrificans	2	0	4	12	0	7	33	11	15	10	2	60	1	0	0	1	1	1	0	0	0	0	0	0
+Rhodanobacter denitrificans	0	0	0	1	0	1	0	0	0	0	4	0	0	2	0	0	0	1	0	0	0	0	0	0
+Sphingomonas sp. MM-1	12	17	15.445	3.18	22.789	8.571	8.684	4.498	0	7.274	9.495	5.706	12.808	6.206	2	32.4	6.249	10.12	13.843	8.843	7	25.906	14.737	21.806
+Sphingomonas sp. MM-1	113	225.553	219	115.403	165.461	275.435	62	56	43	102	151.301	98	77	66	47	131.926	167.41	119.365	76	33.776	94.33	153.383	118	143.435
+Sphingomonas sp. MM-1	12	21	31	4	30	38	9	5	5.352	3.784	2.354	2	15.583	5	5	1.148	7.371	2	0	2	1	0	4.385	3
+Sphingomonas sp. MM-1	6.859	19.454	22.957	7	12.629	47.608	2.156	8	4	6.471	8.571	4	3	3	1	1	9.148	5.216	3	2	1	15.968	8	9.185
+Sphingomonas sp. MM-1	0	6	3	0	6	11	1	2	0	2	7	1	1	2	3	2	1	0	0	1	0	1	4	3
+Sphingomonas sp. MM-1	0	0	0	0	0	0	0	0	0	2.527	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+Edwardsiella piscicida	7	1	2	0	3	4	0	0	0	1	0	0	0	0	2	13	0	55	0	0	0	0	0	0
+Xanthomonas citri	8.814	5	16.962	20.458	0	28.993	28.262	36.641	16.512	27.097	32.867	82.687	10.572	20.133	2.681	31.848	10.388	12.95	10.044	7.065	0	1.367	4.041	4.27
+Pseudomonas sp. ATCC 13867	1	3	12	0	4	7	2	0	0	2	0	0	0	0	2	3	0	1	0.5	0	0	0	0	1
+Pseudomonas sp. ATCC 13867	8	10	25	1	10	24	0	2	0	7	1	1	2	0	14	14	5	25	0	0	0	2	1	1
+Pseudomonas sp. ATCC 13867	4	16	24	4	5	16	2.392	1	0	6.135	0	0	2	0	11	10.205	5	13.473	1	1	0	1	2	0
+Streptomyces sp. PAMC 26508	0	0	1	0	2	0	0	2.058	3	21.21	5.639	0	5.358	1	12	2.109	5.321	39.264	0	0	2	0	0	0
+Comamonas sp. 7D-2	0	0	1	0	0	0	1	0	0	0	1	1	0	0	0	2	2	9	1	1	1	8	2	3
+Calycanthus floridus	1	0	1	1	2	0	2	7	10	22	10	3	4	3	7	5	12	22	1	5	4	11	9	26
+Hyphomicrobium denitrificans	3.8	0	3	2.482	6	4	3	5	24	9	28	6.536	2	5	2	15	2	6	1	0	3	2	1	3
+Hyphomicrobium denitrificans	3	1	0	5	3	2	18	7	23	13	22	41	14	7	12	12	3	5	1	1	0	0	0	0
+Hyphomicrobium denitrificans	0	6	0	3	2	0	10	7	8	7	13	20	1	3	6	5	2	4	0	0	0	1	0	0
+Hyphomicrobium denitrificans	3	0	0	10	5	1	3	7	20	17	16	20	2	8	8	8	9	2	0	0	0	0	0	0
+Streptomyces microflavus	8	15	5	1	5	2	0	0	0	0	0	0	0	1	2	0	1	0	0	0	0	0	0	0
+Actinoplanes sp. N902-109	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	7	3	0	0
+Actinoplanes sp. N902-109	0	0	0	5	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Pseudomonas aeruginosa	1	0	0	0	0	0	0	0	0	22	1	0	0	0	0	0	0	6	0	0	0	0	0	0
+Candidatus Saccharimonas aalborgensis	5	12	24	15	26	16	5	2	1	7	9	3	2	1	0	1	6	3	0	0	2	1	1	0
+Candidatus Saccharimonas aalborgensis	0	3	0	2	3	2	1	0	0	0	1	1	0	0	0	0	1	0	0	0	0	0	0	0
+Candidatus Saccharimonas aalborgensis	2	2	2	1	1	4	0	0	2	0	3	0	0	0	0	0	1	0	4	1	6	4	0	4
+Pseudomonas protegens	1	2	2.477	0	0	1	0	0	0	15.813	5	0	0	0	2.392	14.833	1.28	52.956	1.282	0	1	0	0	0
+Pseudomonas protegens	1	0	4.93	0	0	2	1	0	0	12	2.659	1	0	0	0	9	2	11	0	0	0	0	3	3
+Candidatus Phytoplasma australiense	38.902	31.737	36.023	31.279	36.585	25.72	56.094	82.534	61.932	52.004	63.229	59.607	72.966	49.139	54.875	69.681	29.836	66.915	26.173	40.854	30.884	22.075	48.269	31.233
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	37	0	0	0	0	0	0
+Simiduia agarivorans	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0
+Synechococcus phage S-CBS4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0
+Pseudomonas fluorescens	0	0	0	0	0	1	0	0	0	16	0	0	0	0	1	7	0	2	0	0	0	0	0	0
+Pseudomonas putida	7	19	7	2	8.056	8	7	1	0	126.323	12	3	1	2	67	50.352	10	330.684	2	0	7	4	10	17.078
+Pseudomonas putida	0	0	0	0	0	0	0	0	0	2	5	0	0	0	4	1	0	22	0	0	0	0	1	2
+Pseudomonas putida	1	2	1	1	1	0	1	0	0	36.665	3	1	0	0	6	13	2	85	0	0	2	1	1	1
+Pseudomonas putida	2.483	2.846	2.071	2.108	3	5.05	4	1	4.684	78.29	5.337	2.145	2.013	4.52	24	25.856	4	213.695	2.403	7	3	8.604	5.587	13
+Pseudomonas putida	1	1	0	0	0	0	0	0	1	16	1	1	0	0	2	4	0	28	0	0	0	0.5	0	1
+Pseudomonas putida	0	2	0	0	1	0	0	0	1	20.147	1	0	0	0	5.801	4.276	1	27.508	0	0	0	2	0	3
+Pseudomonas putida	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	8	0	0	0	0	0	0
+Pseudomonas putida	0	0	1	0	0	0	0	0	0	33.42	5	0	0	0	10	12.639	6	119.18	1	0	2	3	1	1
+Pseudomonas putida	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Pseudomonas putida	0	0	0	0	0	0	0	0	0	3	4	0	0	0	1	3	2	19	0	0	0	0	0	0
+Enterobacter sp. R4-368	1	0	0	0	0	0	0	0	0	3	1.265	0	0	0	0	2	0	14.094	0	0	0	0	0	0
+[Ashbya] aceris (nom. inval.)	0	1	0	0	0	0	0	5.329	0	2	2	0	9.375	4	10.539	2	0	2.619	0	13.389	0	0	186.717	0
+Pseudomonas aeruginosa	3	12	9	1	0	14	0	1	0	1	0	0	4	0	1	0	1	3	0	0	0	0	0	0
+Serratia plymuthica	0	3.158	1	0	3	0	2	1	0	7	0	0	1	0	0	46	1	17	0	2.048	1	0	3	0
+Klebsiella pneumoniae	0	0	0	0	0	0	0	0	1	10	2	1	0	0	0	2	0	20	0	0	0	0	0	0
+Trechispora farinacea	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	88	0	1	20	0	0
+uncultured bacterium FPPP_13C3	44.552	38.747	82.412	34.178	44.555	27.846	19.249	21.251	16.478	18.173	30.385	21.844	23.315	13.411	17.261	16.571	31.687	10.584	15.204	10.436	13.12	12.66	7.969	6.398
+Serratia plymuthica	0	0	0	0	0	1	0	0	0	89	0	0	0	0	0	10	3	24	0	0	0	0	0	0
+Mycobacterium intracellulare	1	8	5	8	1	7	12	12	10	15	15	34	8	15	23	9	8	6	2	2	1	0	1	2
+Acinetobacter baumannii	37.203	11.771	40.869	9.049	19.507	11.631	10.481	17.262	21.855	338.236	90.558	48.071	14.325	6.766	9.42	68.658	44.575	402.12	8.523	0	1.458	9.214	4.256	3.507
+Acinetobacter baumannii	106.067	76.123	133.32	84.611	72.452	75.397	175.905	166.356	353.041	249.23	243.602	287.86	308.614	194.406	417.688	248.228	347.813	251.284	24.07	28.923	32.991	26.291	24.176	27.652
+Acinetobacter baumannii	32.192	19.128	32.453	13.644	22.374	13.606	15.366	24.798	26.389	303.349	101.422	51.484	28.629	16.246	26.775	75.125	58.273	383.068	10.122	13.243	9.074	16.782	7.463	10.379
+Acinetobacter baumannii	0	0	0	0	0	0	0	0	0	44	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+Serratia liquefaciens	3	3	1	0	0	2	0	0	1	16.242	0	0	0	0	3	0	1.797	18.37	0	0	0	0	0	0
+Salmonella enterica	0	0	0	0	3	0	0	0	0	100	6	3	0	0	5	28	3	85	0	0	0	0	0	0
+Salmonella enterica	0	0	0	0	0	0	0	0	0	65	1	0	0	0	0	12	1	23	0	0	0	0	0	0
+Salmonella enterica	5	3	0	2	5	3	0	0	0	111.647	1	3	0	0	5	42.194	0	218.08	0	0	0	0	0	1
+Salmonella enterica	0	0.5	0	0	1	0	0	0	1	65	1	4	0	0	0	4	0	44	0.333	0.333	0	0	0	1.18
+Ostreococcus tauri	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	21	0	0	0	0	0	0	0	0
+Meloidogyne ichinohei	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	0
+Rhizobium etli	1	0	0	1	5	5	2	2	0	7.36	4	3	0	2	3	2.212	5	5	5	4	6	35	6	24
+Rhizobium etli	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	3	0	3
+uncultured bacterium contig00146	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Streptomyces collinus	0	1	0	13	0	4	1	1	0	0	2	1	0	0	0	1	0	0	0	0	0	0	0	0
+uncultured organism	12	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+uncultured organism	1	1	3	0	5	2	1	0	0	2	0	1	0	0	0	0	0	0	0	0	0	0	0	0
+uncultured organism	1	0	13	0	2	2	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+uncultured organism	4	5	8	8	7	7	2	2	4	5	5	4	1	3	0	30	7	10	3	5	3	9	5	5
+uncultured organism	0	1	3	1	2	7	0	3	0	1	4	0	1	1	1	1	2	2	0	0	0	0	0	0
+Variovorax paradoxus	0	0	0	0	2	0	0	0	0	71	0	0	0	0	0	10	1	35	0	0	0	0	0	0
+Variovorax paradoxus	1.054	0	7.113	7	4	9.651	11.398	11.407	25.945	5.875	7.78	14.58	13.677	9.01	12	39.012	2.881	11.87	0	1	3	1	0	0
+Variovorax paradoxus	0	0	0	0	0	1	0	2	1	2	2	1	0	2	0	22	0	4	0	0	0	4	0	0
+Caenorhabditis elegans	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	8	0
+Leifsonia xyli	2	6	0	9	0	3	1	2	4	0	3.42	7	6.107	1	4	0	2	0	0	0	0	0	0	0
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	2
+Ralstonia pickettii	0	0	0	0	0	0	0	1	0	2.632	0	0	1.155	0	0	0	0	4.067	1	0	0	0	2	0
+Ralstonia pickettii	0	0	0	0	0	0	1	0	0	0	1	0	0	0	0	208	0	1	0	0	0	0	0	0
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	9	7	3	46
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	3	1	0	11
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	1	1	10
+Ralstonia pickettii	0	0	0	0	0	1	1	2	2	1	2	5	1	2	2	2	2	3	0	0	0	0	0	0
+Ralstonia pickettii	0	0	0	0	26	3	0	0	0	0	0	1	0	0	0	0	0	0	0	0	1	2	0	0
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	12	0	6
+Ralstonia pickettii	1	1	2	1	0	3	2	0	0	4	1	4	6	1	2	2	1	2	1	1	2	4	3	5
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	6	8	1	17	42	5
+Ralstonia pickettii	1	0	0	1	0	0	2	2	0	1	0	0	1	2	0	3	0	3	1	2	0	3	8	3
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	3	2	8	25	4
+Ralstonia pickettii	2	1	4	2	3	0	1	1	1	3	0	0	4	3	0	3	1	8	0	0	6	3	2	17
+Ralstonia pickettii	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	2	0	2	1	1
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	2	8	7	5	25
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	4	3	3
+Ralstonia pickettii	32	0	0	1	2	0	2	1	1	0	0	0	4	0	0	7	0	3	0	0	0	0	0	0
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	12	0	0	0	0	0	0	0	0
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	18	0	0	0	0	0	0	0	0
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	15	0	0	0	0	0	0	0	0
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	56	0	1	0	0	0	0	0	0
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	33	1	0	0	0	0	0	0	0
+Ralstonia pickettii	0	0	1	0	1	0	0	0	0	1	0	0	1	0	0	0	0	0	0	1	0	3	6	7
+Ralstonia pickettii	1	1	2	1	4	3	2	1	0	2	0	3	3	0	1	0	2	2	0	0	2	4	1	16
+Ralstonia pickettii	3	6	5	1	6	2	2	2	0	2	0	2	6	5	2	2	7	3	0	4	2	12	10	11
+Ralstonia pickettii	4	1	5	3	8	3	3	7	0	1	3	2	3	3	1	1	3	2	2	3	4	9	6	25
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0	22	1	22
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	8	3	8	37	7
+Ralstonia pickettii	2	4	0	41	6	4	2	4	6	28	16	5	7	0	3	7	4	22	4	1	3	11	1	8
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	8
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	1	3	0	6
+Ralstonia pickettii	20	8	1	0	5	4	2	2	2	1	1	1	3	2	2	3	6	9	1	0	1	1	1	2
+Ralstonia pickettii	2	5	4	0	12	1	0	1.1	0	10	0	4	6.552	2	0	2	2	20	0	0	0	0	0	0
+Ralstonia pickettii	0	1	2	1	4	1	3	2	0	4	3	0	0	2	0	32	2	5	2	1	0	1	8	0
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	4	13	2
+Ralstonia pickettii	3	5	9	5	8	1	3.473	2	0.5	4	0	2	11	3	0	2	5	7.623	7	4	7	42.668	28	34
+Ralstonia pickettii	4	3	7	1	6	2	5	3	1	4	0	6	8	6	3	5	9	8	16	11	5	56	43	37
+Ralstonia pickettii	7	3.532	9	4	11	7	6	5	1	4	1	5	8	10	3	4	11.184	11	8	10.594	9	62.571	60	52
+Ralstonia pickettii	6	4	12	7	8	14	6	7	1	1	3	12	19	9	0	2	10	7	4	3	3	9	6	12
+Ralstonia pickettii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	6	6	2	46	31	18
+Ralstonia pickettii	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1.754	0	0	3	3	2.549
+uncultured virus	0	0	0	1	0	0	1	2	5	0	2	1.462	0	1	0	0	0	0	0	0	0	0	0	0
+uncultured bacterium	2	1	0	2	3	2	1	4	10	4	8	5	2	2	2	5	4	1	0	0	0	0	0	0
+uncultured bacterium	0	1	1	3	1	0	0	1	1	3	3	2	6	0	4	0	5	1	0	0	0	0	0	0
+Burkholderia pseudomallei	3	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+Pseudomonas sp. VLB120	0	0	0	0	0	0	0	0	0	2	0	1	0	0	1	0	0	11	0	0	0	0	0	0
+Pseudomonas sp. VLB120	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	10	0	0	0	0	0	0
+Pseudomonas sp. VLB120	0	0	0	0	0	0	0	0	0	3	0	1	0	0	2	3	0	16	0	0	0	0	0	0
+Actinoplanes friuliensis	0	0	0	0	0	0	2	0	1	2	2	7	1	0	0	1	0	1	0	0	0	0	0	0
+Insectomime virus	0	0	0	0	3	0	13	0	0	0	23	3	1	0	9	0	13	2	0	0	0	0	0	0
+Heterodera avenae	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	9	0
+Geobacillus genomosp. 3	0	0	0	0	0	0	0	0	1	0	0	0	0	2	4	19	0	1	0	0	0	0	0	0
+Globodera tabacum	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	5	0
+candidate division WWE3 bacterium RAAC2_WWE3_1	25	6	15	3	9	2	2	0	1	2	0	2	1	0	1	1	1	0	0	0	0	0	0	0
+candidate division WWE3 bacterium RAAC2_WWE3_1	7	3	7	2	11	9	1	1	3	5	7	4	0	0	1	5	5	0	0	0	0	0	0	0
+candidate division WWE3 bacterium RAAC2_WWE3_1	10	4	9	9	9	12	1	0	1	4	8	5	1	0	0	1	9	1	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	10	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	33	1	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	7	14	10	7	18	19	4	0	3	6	8	13	6	1	1	1	7	4	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	1	2	2	0	7.118	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	0	14	5	1	8	0	0	0	3	1	1	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	16	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	1	16	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	16	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	18	0	1	0	4	0	1	0	1	1	1	1	0	0	0	0	0	1	1	1	1	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	4	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	0	8	1	4	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	10	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	12	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	2	2	50	26	6	24	0	0	1	7	3	4	0	1	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	6	19	0	1	4	7	0	0	1	1	0	0	6	1	5	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	5	1	0	7	0	1	1	0	1	3	1	0	0	5	0	1	0	0	0	0	1	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	2	53	2	2	1	0	0	0	0	1	6	2	0	1	0	0	1	5	0	0	0	1	0	2
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	5	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	3	53	1	1	3	2	0	0	0	0	4	1	1	1	0	0	0	5	0	1	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	6	11	0	1	2	3	0	0	0	0	0	0	2	0	3	0	1	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	14	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	34	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	1	7	20	13	4	18	1	0	1	1	3	0	0	0	0	1	1	1	1	0	1	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	7	0	0	0	1	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	0	0	0	0	13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	2	11	0	2	1	4	0	0	0	1	0	0	1	1	1	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	7	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	94	47	45	22	26	4	3	7	30	12	6	6	97	11	50	8	13	10	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	20	10	11	8	6	2	1	0	4	2	0	0	35	4	11	4	1	0	0	0	0	0	0	0
+Candidatus Saccharibacteria bacterium RAAC3_TM7_1	0	0	13	12	1	9	1	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0
+Hyphomicrobium nitrativorans	4	15	22	6	3	0	41	6	140	85	17	19	44	29	31	56	34	66	0	0	0	0	0	0
+Pandoraea pnomenusa	3	2	0	5	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Perisivirus Tb	0	0	1	0	0	0	0	1	2	0	2	0	0	0	0	2	0	32	0	0	0	0	0	0
+Perisivirus Pr	0	0	5	0	0	0	0	1	8	1	1	0	2	0	0	1	0	51	0	0	0	0	0	0
+Salmonella enterica	3	2	1	2	0	1	0	0	0	136.728	4	1	0	0	4.391	49	5	117.668	0	0	0	0	0	0
+Mycolicibacterium neoaurum	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	15	0	1	0	0	0	0	0	0
+Pseudomonas sp. TKP	0	0	0	0	0	0	0	0	0	19	2	0	0	0	0	0	0	8	0	0	0	0	0	0
+Pseudomonas sp. TKP	0	0	0	0	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Pseudomonas sp. TKP	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0	0	3	0	0	0	0	0	0
+Pseudomonas sp. TKP	0	0	0	0	0	0	0	0	0	15	0	0	0	0	0	9	1	27	0	0	0	0	0	0
+Pseudomonas monteilii	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	1	12	0	0	0	0	0	0
+Pseudomonas sp. FGI182	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0
+Rhodococcus pyridinivorans	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+Burkholderia pseudomallei	2	1	0	0	1	6	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	31	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	50	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	72	0	0	0	0	0	0
+Aeromonas hydrophila	1	1	1	0	1	1	1	0	0	2	0	0	0	0	0	1	0	56	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	2	0	0	0	0	0	0	1	1	0	0	0	0	0	0	96	0	0	0	1	0	0
+Aeromonas hydrophila	2	0	0	0	1	2	1	1	1	1	3	0	1	1	0	6	0	87	0	1	1	1	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	45	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	56	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	2	0	291	1	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	2	1	88	0	0	0	0	0	0
+Aeromonas hydrophila	4	1	1	1	1	2	2	4	4	8	5	4	3	4	4	6	1	201	0	0	1	2	0	3
+Aeromonas hydrophila	0	0	0	0	2	1	1	1	0	1	1	0	1	0	1	3	0	63	0	0	0	0	0	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	4	0	48	2	0	0	0	0	0
+Aeromonas hydrophila	1	3	1	1	0	1	0	0	1	1	2	1	1	0	3	2	5	77	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	64	0	0	0	0	0	0
+Aeromonas hydrophila	2	1	3	1	3	0	6	5	1.035	11	4	1	3	2	2	12	4	276.407	2	3	0	2	3	2
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	28	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	0	0	1	3	0	0	0	1	0	0	0	0	1	7	0	138	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	0	0	0	1	0	0	0	4	0	0	0	0	0	4	1	150	0	0	0	0	0	0
+Aeromonas hydrophila	3.253	0	1	0	0	0	0	0	0	2	0	0	1	0	0	1	1.03	161.94	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	29	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	4	0	1	1	0	0	1	2	1	1	0	0	0	3	0	88	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	51	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	48	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	13	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	30	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	17	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	108	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	39	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	4	0	0	1	0	0	0	1	3	0	0	0	0	1	0	81	0	0	1	0	0	0
+Aeromonas hydrophila	1	0	1	0	1	0	0	0	0	0	0	0	0	0	0	2	1	49	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	4	0	0	1	1	0	0	1	0	1	0	1	0	1	1	150	0	0	0	0	0	0
+Aeromonas hydrophila	3	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	0	57	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	2	0	0	1	0	1	1	4	0	0	2	1	1	2	2	130	0	0	1	0	0	0
+Aeromonas hydrophila	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	2	0	151	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	3	1	0	0	0	0	0	1	118	0	0	0	0	0	0
+Aeromonas hydrophila	1	2	3	2	1	5	0	2	0	1	2	3	1	0	1	8	1	127	2	1	1	3	1	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	56	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	3	0	0	0	0	0	0	0	100	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	74	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	34	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	1	1	1	0	0	0	2	5	0	1	0	0	5	0	108	2	0	0	2	3	3
+Aeromonas hydrophila	2	1	2	0	5	3	1	5	1	1	1	6	4	0	0	6	0	76	1	1	0	4	1	2
+Aeromonas hydrophila	2	0	3	2	2	2	3	3.249	2	4	1	2	5	1	2	5	1	67	0	2	0	0	1	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	64	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	3	0	0	0	1	0	0	0	1	0	0	0	1	3	1	131	0	0	0	0	0	0
+Aeromonas hydrophila	0	2	0	0	0	0	0	0	0	0	1	0	0	0	0	2	2	121	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	63	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	1	0	55	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	4	0	0	0	0	2	6	3	0	3	0	49	0	1.088	0	0	0	0
+Aeromonas hydrophila	6.183	6	8	3	5.134	4.151	8.3	5.349	6	13.324	7.363	4.005	9.22	5	15.034	13.962	7.012	296.986	7	9.686	7.059	5	7	5.377
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	79	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	2	0	0	1	0	0	0	1	0	1	0	0	0	3	0	92	0	0	0	0	0	0
+Aeromonas hydrophila	6.441	3.035	4	2.544	2.549	3.06	0	7.312	6.107	3.099	8.037	1.03	4.571	3.257	3.7	7.042	3.816	172.504	3.954	4.035	2.971	1.611	5.281	7.823
+Aeromonas hydrophila	1	0	0	0	0	0	1	0	0	1	0	0	0	2	0	1	1	84	0	0	1	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	20	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	50	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	2	0	59	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	2	0	0	0	0	0	1	0	78	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	2	0	0	0	0	0	0	1	0	0	0	0	0	2	0	58.516	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	56	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	1	0	0	0	0	0	2	0	0	0	0	0	0	0	55	0	0	2	1	1	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	113	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	0	0	1	0	0	0	1	2	1	0	1	0	0	2	2	55	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	2	0	103	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	1	1	0	0	1	0	1	0	0	0	3	2	83	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	1	1	0	0	0	0	1	0	89	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	6	1	101	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	2	0	0	0	2	0	2	0	0	0	5	0	120	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	45	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	1	0	0	0	1	0	0	0	0	0	0	0	75	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	1	0	1	0	0	0	6	1	187	0	0	0	0	0	0
+Aeromonas hydrophila	3	0	2	0	3	0	1	2	3	9	1	2	5	0	4	3	2	65	2	1	2	5	1	0
+Aeromonas hydrophila	2	0	0	0	0	0	0	0	0	1	1	0	0	0	0	1	0	87	0	0	0	0	0	0
+Aeromonas hydrophila	1	1	2	0	1	1	1	0	0	1	0	0	0	0	0	0	0	80	0	0	1	0	0	0
+Aeromonas hydrophila	3	0	0	0	1	2	0	0	0	17	4	0	0	1	2	8	1	140	0	0	0	1	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	26	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	2	0	1	0	0	0	1	0	79	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	3	0	0	0	0	0	0	1	1	0	0	0	0	1	0	186	0	0	1	3	2	1
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	2	0	60	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	34	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	39	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	73	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	67	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	77	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	14	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	2	0	0	0	0	0	3	0	91	0	0	0	1	0	0
+Aeromonas hydrophila	1	0	0	0	0	1	1	1	0	3	0	1	0	1	0	1	0	94	0	0	0	1	0	0
+Aeromonas hydrophila	4.927	1.181	4.28	1	2.085	1	6.467	4.446	8.84	8.444	8.035	6.333	7.564	4	2.015	11.181	4.467	293.583	3.266	3.827	2	3.244	5.747	2.013
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	9	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	54	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	60	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	2	0	0	0	0	0	0	2	0	0	1	0	0	3	1	143	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	2	0	54	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	2	0	0	0	0	0	0	2	1	0	0	0	0	1	0	40	0	0	0	0	0	0
+Aeromonas hydrophila	1.297	0	0	0	2	2	2	1	1	4.252	3	1.123	1	0	0	3.203	0	102	3	2	2	1	0	1
+Aeromonas hydrophila	0	0	0	0	0	1	0	1	1	1	1	1	1	0	2	2	2	78	0	3	0	0	0	0
+Aeromonas hydrophila	0	0	2	0	0	1	0	0	0	1	1	0	0	0	0	0	0	57	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	3	0	40	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	15	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	5	1	2	1	0	3	0	3	0	0	0	2	1	0	1	102	2	5	0	0	3	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	31	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	1	1	1	1	1	0	1	0	1	2	0	2	1	3	1	78	0	1	1	1	1	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	2	0	1	0	0	0	0	0	1	0	0	0	0	0	0	45	0	0	0	1	0	0
+Aeromonas hydrophila	2	0	1	0	0	0	0	0	0	2	0	0	0	0	0	1	0	94	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	6	1	0	0	1	0	0	7	0	0	0	0	0	2	1	181	0	0	0	0	1	0
+Aeromonas hydrophila	0	0	0	0	1	2	2	5.614	0	3.076	0	0	2	0	0	2.375	0	83.715	2	0	1	0	1	2
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	42	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	58	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	29	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	2	0	0	0	0	0	0	1	1	1	0	0	0	2	0	84.817	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	28	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	1	1	2	0	0	0	0	0	3	0	304	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	39	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	1	1	68	0	0	0	0	0	0
+Aeromonas hydrophila	3	2	1	0	0	1	0	0	1	2	1	0	0	0	0	4	2	99	0	0	0	3	1	0
+Aeromonas hydrophila	0	0	0	0	1	2	0	0	0	1	0	0	1	0	0	4	0	75	1	0	0	0	0	0
+Aeromonas hydrophila	11	0	3	0	0	2	3	0	3	3	2	0	1	1	0	6	3	331	3	5	10	5	2	1
+Aeromonas hydrophila	1	2.699	7	2	5.874	2	1	1	4	3	3	0	2	1	1	7	0	149	1	0	2	2	1	1
+Aeromonas hydrophila	0	0	2	0	1	0	0	0	0	0	0	0	0	0	0	2	0	81	2	2	0	1	0	0
+Aeromonas hydrophila	1	0	1	0	0	1	0	0	0	2	1	0	0	0	0	2	0	64	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	59	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	2	0	0	0	0	0	0	1	0	0	0	0	0	1	0	123	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	2	0	54	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	1	0	2	1	0	0	1	4.127	2	1	0	2	1	8.192	1	144.127	4	1	3	1	0	1
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	2	0	0	0	0	0	3	1	87	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	2	0	68	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	72	0	0	0	0	0	0
+Aeromonas hydrophila	4	0	3	0	1	2	0	0	0	9	1	0	0	0	1	5	0	171	0	0	0	0	0	0
+Aeromonas hydrophila	2.246	0	4.052	1	2.045	3	3	2.095	2	13	4	2.058	4	2	1	7	4	153.786	1.066	4	4.097	4	5.417	3.02
+Aeromonas hydrophila	4	0	3	0	1	0	0	0	0	0	0	0	0	0	0	0	0	69	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	49	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	16	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	1	0	0	0	0	0	0	0	0	0	0	0	0	2	0	79	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	2	0	0	0	0	0	0	1	0	0	0	0	0	2	0	26	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	2	0	1	0	0	0	1	0	119	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	1	0	83	0	0	0	0	0	0
+Aeromonas hydrophila	4.358	0	2	2	4	1.035	7	4	7	6	4	4	2	3.013	3.186	7	3	163	3	2.038	6.085	2.026	0	6
+Aeromonas hydrophila	1	1	4	1	2	1	0	0	1	2	1	2	0	0	1	3	1	107	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	2	0	0	0	0	0	0	0	0	0	0	0	0	1	0	68	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	3	1	75	0	0	0	0	0	0
+Aeromonas hydrophila	1	3	1	1	1	1	1	0	0	15	2	2	0	0	5	8	3	155	0	0	0	0	1	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	2	0	2	0	1.032	0	1	0	99	1	0	2.207	3	2.112	1
+Aeromonas hydrophila	3	0	0	0	0	0	0	1	1	3	0	1	0	0	0	1	0	107	1	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	16	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	1	0	53	0	0	0	1	2	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	57	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	70	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	2	0	0	2	0	0	0	0	0	0	0	0	0	0	0	25	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	1	1	0	0	0	1	1	0	0	0	0	0	0	81	0	1	0	0	1	0
+Aeromonas hydrophila	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	0	0	38	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	0	0	0	1	2	1	1	0	0	0	0	0	0	1	0	75	1	3	4	3	4	4
+Aeromonas hydrophila	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	68	0	0	0	0	1	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	1	65	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	90	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	42	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	1	0	2	0	0	0	0	52	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	2	0	0	0	0	0	0	2	0	0	0	0	0	3	0	128	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	1	2	0	0	10	0	0	0	0	0	13	3	848.659	0	1	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	64	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	4	2	1	2	0	0	0	2	0	1	1	0	0	5	0	132	0	0	0	3	4	4
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	42	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	21	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	21	0	0	0	0	0	0
+Aeromonas hydrophila	7	4	2.173	9	3	6	1	4.317	0	2.015	3	5.682	2	1	1	6	1	147.915	2	3	3	3.817	0	2
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	48	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	2	0	1	0	0	0	3	0	107	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	2	1	2	2	0	0	0	0	1	0	45	0	0	1	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	2	0	0	0	0	0	2	0	93	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	54	0	0	0	0	0	0
+Aeromonas hydrophila	2	2	3	0	0	1	0	0	0	5	0	1	0	0	0	3	0	206	0	1	1	1	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	47	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	2	0	1	1	0	0	0	1	0	1	0	0	0	3	0	90	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	21	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	43	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	0	0	0	0	1	0	0	3	0	0	0	1	0	1	0	73.206	1	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	1	1	1	0	0	0	2	0	0	0	0	0	3	0	63	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	40	0	0	0	0	0	0
+Aeromonas hydrophila	4	1	4	0	0	2	0	0	0	1	2	1	0	1	0	4	2	105	0	1	0	0	3	2
+Aeromonas hydrophila	3	0	2	1	0	2	0	0	0	3	1	0	0	0	0	2	2	135	1	0	0	1	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	40	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	29	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	2	1	36	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	3	0	103	0	0	0	0	0	0
+Aeromonas hydrophila	1	1	1	1	2	0	1	3	0	0	1	0	1	0	0	4	2	109	1	3	0	0	1	2
+Aeromonas hydrophila	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	60	0	0	0	0	0	0
+Aeromonas hydrophila	1	3	4	0	2	1	0	2	1	4	0	0	1	2	1	3	1	143	1	2	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	24	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	1	0	35	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	70	0	1	1	0	0	0
+Aeromonas hydrophila	6	2	7	1	3	3	0	2	2	5	2	1	3	2	1	5	0	137.992	0	1	3	2	0	2
+Aeromonas hydrophila	1	1.274	6	1	0	0	0	1.432	0	0	0	0	0	0	1	1.101	2	72	1	0	0	3.971	3	1.03
+Aeromonas hydrophila	0	0	0	1	0	0	1	0	0	0	0	0	0	1	0	1	0	83	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	55	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	36	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	44	0	0	0	0	0	0
+Aeromonas hydrophila	0	4	1	0	2	1	3	1.129	0	1.004	0	1.154	2	0	1.007	2.043	3	115.927	1.402	2	4.811	1.134	2	0
+Aeromonas hydrophila	0	0	0	0	0	1	0	1	0	0	0	1	1	1	0	1	0	62	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	3.625	1	1	0	0	0	1	3	3	0	2	2	0	5.243	0	130.018	0	1	0	2	0	1
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	2	1	100	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	15.417	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	0	0	0	0	0	0
+Aeromonas hydrophila	1	1	4	0	1	0	1	6	0	2	0	1	2	0	1	1	0	70	1	0	1	1	0	1
+Aeromonas hydrophila	3	0	0	0	1	0	0	0	1	1	0	0	1	0	1	6	0	105	0	1	0	0	0	0
+Aeromonas hydrophila	0	0	2	0	0	0	0	0	0	0	1	0	0	0	0	2	0	102	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	2	0	0	0	0	0	0	0	49	0	0	0	0	0	0
+Aeromonas hydrophila	1.026	2	1	0	1.25	0	0	1	2.138	8	2.107	0	2	0	5	9	1	244	0	3	1	4	3	2
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	3	0	25	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	19	0	1	0	0	0	1
+Aeromonas hydrophila	0	0	1.09	1.063	1	0	1.175	0	1	1.118	0	1.197	0	1.423	0	3.037	1.263	62	0	1	1	1.357	5	1.046
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	25	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	1	0	2	0	0	0	0	0	0	0	0	0	0	0	0	93	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	1	1	0	0	0	0	1	0	30	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	2	0	0	0	0	1	2	0	2	0	46	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	42	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	33	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	3	0	92	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	51	0	0	0	0	0	0
+Aeromonas hydrophila	3	1	2	0	0	0	1	0	0	5	0	0	0	0	0	4	0	105.512	0	0	0	0	0	0
+Aeromonas hydrophila	3	0	0	0	0	0	0	0	0	0	1	0	0	0	0	2	0	100	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	4	0	0	0	0	0	0	0	0	0	0	0	0	1	0	146	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	37	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	76	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	53	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	2	0	0	1	0	0	0	0	1	0	0	0	0	3	0	58	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	0	61	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	90	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	2	0	0	0	0	0	0	1	0	0	0	0	0	0	1	64	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	6	0	3	0	0	1	0	1	2	2	0	1	0	3	1	64	0	0	0	0	0	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	39	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	2	0	1	0	0	0	1	1	0	0	64	0	0	1	0	0	0
+Aeromonas hydrophila	0	0	2	0	1	0	0	0	0	4	2	0	2	1	0	2	0	105	0	1	0	0	0	2
+Aeromonas hydrophila	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	38	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	65	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	2	0	1	0	0	2	0	0	2	0	1	0	0	4	1	120	1	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	54	0	0	1	1	0	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	40	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	16	0	0	0	0	0	0
+Aeromonas hydrophila	3	0	0	0	0	0	1	0	1	6	0	1	0	1	0	6.507	2	108.867	1	0	0	0	0	1
+Aeromonas hydrophila	1	0	0	0	0	2	0	0	0	1	0	0	0	0	0	0	0	74	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	59	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	3	0	57	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	8	0	0	1	0	0	0	5	1	0	2	0	1	4	2	208	0	1.184	0	0	1	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	26	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	2	0	82	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	2	1	0	0	0	1	0	0	0	1	0	4	0	4	0	79	1	2	0	1	0	0
+Aeromonas hydrophila	0	0	3	0	0	0	0	0	0	2	1	0	0	0	0	9	1	148	0	1	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	23	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	97	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	4	0	0	0	0	0	0	0	0	0	0	0	0	2	0	65	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	4	0	0	0	0	0	2	0	139	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	19	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	1	0	0	0	0	3	0	0	0	0	1	0	82	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	1	34	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	26	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	56	0	0	0	0	0	0
+Aeromonas hydrophila	2	1	1	0	0	1	0	0	0	0	0	0	1	0	0	1	1	61	1	1	0	0	1	2
+Aeromonas hydrophila	1	3	0	0	0	1	0	0	0	1	0	1	0	1	1	5	1	102	1	0	1	0	1	0
+Aeromonas hydrophila	3	1.043	3	1	1	1	0	1.092	1	4	0	2.035	2	0	1	3	3	65	1	1	0	1	4	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	1	0	1	1	0	0	0	25	0	0	1	1	1	0
+Aeromonas hydrophila	0	0	1	0	0	0	3	0	0	0	5	5	0	0	0	3	1	89	0	0	0	2	0	0
+Aeromonas hydrophila	0	1	0	3	3	2	1	2	3	7.826	1	0	0	3	2	2	2	92.943	0	0	0	3	1	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	37	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	45	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	3	0	0	0	0	0	0	3	0	1	0	0	0	3	2	98	0	1	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	8	0	0	0	0	0	0
+Aeromonas hydrophila	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	60	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	2	0	0	2	0	0	0	1	0	0	0	0	0	2	0	129	0	0	0	0	0	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	0	23	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	5	0	0	1	0	0	0	7	0	0	0	0	0	7	0	200	0	0	0	0	0	0
+Aeromonas hydrophila	1.431	1	1.984	1	0	1	3.889	0	0	3	4	0	3.889	2	3	5	4	85	1	4.332	3.751	3	0	1
+Aeromonas hydrophila	1.036	0	2	0	0	0	0	0	0	1	0	0	0	0	0	9	1	86	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	2	0	58	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	1	0	0	0	1	0	1	3	0	0	0	3	0	1	0	114	2	0	1	0	1	2
+Aeromonas hydrophila	4	0	1	0	1	1	0	0	0	2	0	0	0	2	0	1	0	108	1.072	0	0	2	1	1.056
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	66	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	1	0	0	0	1	0	2	1	137	1	0	0	0	0	0
+Aeromonas hydrophila	2	1	3	0	0	1	1	0	0	8.033	0	1	1	0	0	3	0	105.112	0	0	1	0	0	1
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	2	0	0	0	0	0	1	0	52	0	0	0	0	0	0
+Aeromonas hydrophila	5	0	0	0	0	0	0	0	0	1	1	0	0	0	0	1	0	85	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	35	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	1	0	1	0	0	0	0	1	2	0	76	1	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	1	0	0	0	0	0	1	0	37	0	0	0	0	0	0
+Aeromonas hydrophila	4	4	6	1	6	13	4	5	5	12	16	14	10	7	6	29	3	172	11.563	10	10.663	9.694	13	9
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	1	49	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	27	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	58	0	0	0	0	1	0
+Aeromonas hydrophila	1	0	2	1	3	1	0	0	0	4.042	0	1	0	0	0	2	0	120	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	0	0	0	1	0	0	0	1	1	0	0	0	1	1	0	86	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	6	0	0	0	0	0	1	1	148	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	54	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	1	0	0	0	1	1	0	0	0	0	2	1	83	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	3	0	0	0	0	0	0	1	1	0	0	0	0	3	1	122	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	17	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	38	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	1	1	0	0	0	1	0	0	0	0	0	2	0	83	0	0	0	0	0	0
+Aeromonas hydrophila	1	1	2	0	1	0	0	1	0	4	2	1	1	0	1	2	1	84	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	2	1	84	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	2	1	0	0	0	0	0	2	0	0	0	0	0	2	1	75	0	0	0	2	0	0
+Aeromonas hydrophila	0	0	1	0	0	1	0	0	0	1	0	0	0	0	0	1	0	75	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	19	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	34	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	48	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	54	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	0	1	0	0	0	0	1	0	47	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	48	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	1	56	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	1	0	0	0	0	0	0	1	2	0	0	1	0	7	0	116	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	1	67	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	1	30	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	1	0	0	0	1	1	0	0	0	0	0	0	59	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	2	0	132	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	2	1	0	0	0	0	1	0	90	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	1	0	0	0	0	1	0	0	0	0	0	0	0	113	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	1	0	0	1	0	0	3	0	116	0	0	1	0	0	1
+Aeromonas hydrophila	1	0	2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	92	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	1	0	1	0	0	0	0	3	1	2	1	0	0	5	0	225	0	0	1	0	0	0
+Aeromonas hydrophila	4	0	4	0	1	1	0	1	0	3	0	0	0	0	0	3	1	156	0	0	0	0	0	0
+Aeromonas hydrophila	0	1.11	3.637	1.015	6.487	2	5	0	4	1.02	3.043	3	3.491	1	0	2.236	1.462	41	3.255	7.972	2.11	0	4.269	3.26
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	13	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	48	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	27	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	110	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	0	0	1	0	0	0	0	2	0	0	0	0	0	2	0	64	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	2	0	0	0	0	0	1	0	124	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	2	1	1	1	89	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	30	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	49	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	36	0	0	0	0	1	0
+Aeromonas hydrophila	0	0	3	0	0	0	0	1	0	1	0	0	0	0	0	1	0	51	0	0	0	0	0	0
+Aeromonas hydrophila	2	1	3	1	1	2	0	3	0	2	4	0	0	1	0	4	1	49	1	1	2	0	0	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	1	99	0	0	0	0	0	0
+Aeromonas hydrophila	3.387	0	1	0	0	1	0	0	0	1	0	0	0	0	0	1.116	0	156.625	2	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	5	0	100	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	64	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	83	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	54	0	0	1	0	1	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	3	1	0	0	0	0	2	8	2	146	1	1	2	1	1	0
+Aeromonas hydrophila	1	1	1	0	1	1	1	1	0	0	0	1	1	0	0	3	2	80	0	2	0	0	2	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	30	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	54	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	2	0	86	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	37	0	0	0	0	0	0
+Aeromonas hydrophila	4	5	7.017	2	5.015	3	0	2	4.003	11	9	7	6.033	5.018	3	12.237	8	139.54	3.096	1	5	6	1	5
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	3	2	138	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	1	0	0	0	0	0	0	2	0	0	0	0	0	2	0	126	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	85	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	2	2	1	0	0	1	2	0	65	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	36	0	1	0	0	1	0
+Aeromonas hydrophila	6	0	4	0	1	1	0	2	1	11	0	1	4	1	0	7	4	352	2	2	4	0	4	5
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	60	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	1	0	0	0	2	0	0	0	0	0	1	0	86	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	1	1	1	0	2	0	0	2	2	0	3	0	2	2	2	48	1	0	0	0	1	1
+Aeromonas hydrophila	0	0	0	0	2	0	0	1	0	1	1	0	0	1	0	4	0	97	0	0	0	0	0	0
+Aeromonas hydrophila	5	0	1	1	3.278	3	1	2	0	0	0	0	0	0	0	8	1	105	0	0	1	0	0	3.884
+Aeromonas hydrophila	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	44	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	44	0	0	0	0	0	0
+Aeromonas hydrophila	4	0	5	1	0	0	3	4	1	6.029	4	0	2	2	1	9	1	206.446	0	0	2	2	2	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	53	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	1	0	39	0	0	0	0	0	0
+Aeromonas hydrophila	3	2	2	0	2	3	2	0	0	2.01	5	2	0	1	1	10	2	125	0	0	4	3	1	3
+Aeromonas hydrophila	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	63	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	7	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	1	0	0	1	0	0	0	0	0	0	0	3	0	65	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	1	0	0	0	0	0	0	2	0	0	0	0	0	3	0	108	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	2	0	0	0	1	0	0	3	1	1	1	0	2	1	0	94	1	0	0	0	0	2
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	44	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	1	2	0	1	0	0	0	1.027	1	1.218	40	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	60	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	1	0	0	0	0	1	0	0	0	0	0	0	0	92	0	0	0	0	0	0
+Aeromonas hydrophila	3	1	1	0	1	1	1	0	0	3	3	0	0	0	0	6	0	225	1	0	1	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	1	0	0	0	0	0	1	0	99	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	2	0	0	0	0	0	2	1	144	0	0	0	0	0	0
+Aeromonas hydrophila	3.514	0	8.818	0	5.96	3	1.09	2	0	0	2.431	2	4	2	0	6.108	3.819	94.155	4.154	6	1	5	3	0
+Aeromonas hydrophila	3	0	2	0	0	1	0	0	0	1	0	0	0	0	0	3	0	171	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	1	0	3	0	0	0	0	0	2	0	26	1	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	57	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	2	0	0	0	1	0	0	1	0	0	3	0	0	3	2	85	0	0	0	1	2	1
+Aeromonas hydrophila	2	0	0	0	0	4	0	1	1	0	2	0	0	0	0	5	3	61	0	0	1	1	4	1
+Aeromonas hydrophila	2	0	2	0	0	0	1	0	0	0	0	0	0	0	0	1	1	65	0	0	0	1	1	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	60	0	0	0	0	0	0
+Aeromonas hydrophila	3	0	1	0	0	0	0	0	0	0	2	1	1	0	0	2	0	56	1	2	0	3	0	0
+Aeromonas hydrophila	2	1	6	3	4	3	7	3	7	14	6	2	3	5	3	9	3	77	2	4	2	7	1	8
+Aeromonas hydrophila	1.777	0	3	2	1	2.753	0	1	0	2	0	2	4	2	1	4	1	78	1	0	1	4	0	1
+Aeromonas hydrophila	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	1	0	80	0	0	0	0	0	0
+Aeromonas hydrophila	1	1	1	0	0	2	1	0	0	0	1	1	1	2	1	3	0	97	0	1	0	0	0	0
+Aeromonas hydrophila	3	0	1	0	1	0	0	0	0	1	0	0	0	0	0	2	0	47	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	2	0	0	2	0	0	1	1	1	1	0	0	0	2	1	103	0	1	2	1	4	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	2	0	131	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	1	0	0	0	2	2	0	0	0	0	1	0	61	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	26	0	0	0	0	0	0
+Aeromonas hydrophila	3	0	3	0	1	0	0	0	0	1	0	0	2	0	1	1	0	173	0	0	0	0	3	4
+Aeromonas hydrophila	0	0	2	0	0	1	0	0	0	2	1	0	0	0	0	0	1	102	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	2	0	0	1	0	0	0	0	0	0	0	0	0	1	0	48	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	1	0	0	1	0	0	1	1	35	0	0	0	0	0	0
+Aeromonas hydrophila	3	2	3	2	0	0	1	0	0	2	1	0	2	0	0	7	1	75.475	1	1	0	2	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	72	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	1	0	0	0	0	0	0	0	0	0	2	0	102	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	5	2	1	1	1	1	2	2	1	1	0	1	0	4	4	72	3	1	0	6	1	1
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	1	0	1	0	0	0	0	0	56	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	2	0	0	0	0	0	0	0	0	0	2	0	85	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	2	1	0	0	0	0	0	0	39	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	54	0	0	0	0	0	0
+Aeromonas hydrophila	0	4	6	2	3	0	1	4	2	4	4	2.242	0	0	0	4	2	180	1	3	4	0	6	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	46	0	0	0	0	0	0
+Aeromonas hydrophila	3.544	0	6.463	1.023	6	5.58	1.088	4.148	3	2.051	3.131	7.122	7.615	1.013	6	6	0	105.537	5.451	9	6	5.121	4	2.053
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	2	0	67	0	0	0	0	0	0
+Aeromonas hydrophila	7	1	10.275	2	2	1.047	3	3	3	2	5	1	2.051	3	1	9.148	2	190	6.001	8.85	2.046	3.094	5.107	8
+Aeromonas hydrophila	7	3	13	3	1	5	0	4	2	2	7	5	12	4	3	7	4	63	11	9	3	3	6	2
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	56	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	39	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	49	0	0	0	0	0	0
+Aeromonas hydrophila	1.266	4.09	4.412	4.214	1.016	2	1	3.18	0	3.116	2	2.264	1	0	2	5	1.091	137.368	2	2	1	3.41	1	2.248
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	42	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	15	0	0	0	0	0	0
+Aeromonas hydrophila	4	0	2	0	1	0	1	0	0	1	1	2	1	1	3	2	2	72	1	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	26	0	0	0	0	0	0
+Aeromonas hydrophila	1	1	0	0	0	2	0	1	0	0	0	0	1	1	1	2	1	49.506	0	0	0	1	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	63	0	1	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	2	0	85	0	0	0	0	0	0
+Aeromonas hydrophila	6	2	10	3	1	1	0	1	1	4	1	1.019	0	1	1	4	2	270	0	1	5.438	3	2	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	43	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	29	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1.022	1.247	0	0	0	1	0	1.006	1	0	0	0	0	2.012	0	89.458	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	2	1	0	0	0	0	0	0	1	0	1	1	0	0	0	81	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	44	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	1	0	0	0	2	0	0	0	0	0	1	1	53	0	0	0	2	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	146	0	0	0	0	0	0
+Aeromonas hydrophila	5.113	1	6.145	0	5.047	4.788	3.51	4	2	7.235	10	6.161	3.508	3.629	6.201	5.083	3.049	143.838	4.04	1	3.099	4.126	3	2.31
+Aeromonas hydrophila	6	1	0	0	0	0	0	0	0	2	2	0	0	0	0	4	0	147	0	0	0	0	0	0
+Aeromonas hydrophila	0	2	8	1	7	0	1	1	3	6	10.094	8	0	1	1	15	3	190.282	1	2	1	0	0	1.005
+Aeromonas hydrophila	2	0	1	0	1	1	0	0	0	0	0	0	3	1	0	2	0	161	1	1	0	0	0	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	39	0	0	0	0	0	0
+Aeromonas hydrophila	4	0	3	3	2.155	3	0	3	3.208	2.291	4	6.421	2.104	1	1	2.045	0	104	3.088	0	0	4	4	2
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	1	0	26	0	0	0	0	0	1
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	79	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	29	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	25	0	0	0	0	0	0
+Aeromonas hydrophila	2.101	0	5	2	0	0	0	0	0	0	1	0	1	0	0	2.061	0	203.812	0	0	0	1	2.205	0
+Aeromonas hydrophila	0	0	3	0	0	0	0	0	0	3	0	0	0	0	0	2	1	79	1	0	1	0	0	0
+Aeromonas hydrophila	0	1	0	0	2	2	1	0	0	0	0	0	1	0	2	4	0	45	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	9	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	2	0	0	0	0	1	0	79	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	56	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	1	0	44	0	0	1	2	0	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	32	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	30	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	1	0	28	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	2	0	55	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	55	0	0	0	0	0	0
+Aeromonas hydrophila	3	0	0	0	1	1	0	0	0	0	0	0	0	0	0	4	0	78	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	2	0	0	0	1	0	0	1	0	0	0	0	0	0	1	85	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	2	0	0	0	0	0	1	1	2	1	0	0	0	0	0	114	0	0	1	0	0	0
+Aeromonas hydrophila	4.786	0	9	1.252	6	3.635	1.042	2	2.054	3.204	0	2.02	2.025	2.038	1.005	11.185	1.02	211.499	2	3.976	3	1.004	3.014	0
+Aeromonas hydrophila	0	1	0	0	1	1	1	0	0	2	0	0	2	1	0	1	0	41	3	0	0	4	2	2
+Aeromonas hydrophila	1	0	3	1	0	0	0	0	0	3	1	0	0	0	0	3	1	90	0	0	0	0	0	0
+Aeromonas hydrophila	5	4	5	0	1	3	1	3	0	2.042	3	2	5	0	0	4	1.015	216.905	0	2	2	0	2	1
+Aeromonas hydrophila	2	2	4	0	0	0	0	0	0	5	0	3	1	4	0	1	1	98	3	1.031	1	0	1	0
+Aeromonas hydrophila	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	38	0	0	0	0	0	0
+Aeromonas hydrophila	4	0	0	1	0	0	0	2.201	0	3	3	0	4.259	0	0	6.716	1	136.904	2	4	3	1.085	1	0
+Aeromonas hydrophila	3.758	0	2	1	1.114	1	0	2	1	5	0	0	2.185	0	0	4	0	102	0	0	1	1	0	0
+Aeromonas hydrophila	1	2	2	0	1	0	1	2	0	6.257	2	1	1	0	2	10	2	142	2	1	4	1	1	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	1	1	65	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	1	1	1	3	1	1	0	0	1	4.103	2	118	0	1	1	0	0	0
+Aeromonas hydrophila	1	2	3	0	1	1	1	3	1	1	4	0	2	5	3	2	0	40	0	2	1	0	0	2
+Aeromonas hydrophila	0	0	1	0	0	1	0	0	0	1	0	0	0	0	0	2	0	81	0	0	0	0	0	0
+Aeromonas hydrophila	4	0	6	0	1	2	0	0	0	3	0	0	1	0	0	14	0	774	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1.003	0	0	0	0	0	0	1	1	0	0	0	0	3	0	112.831	1.037	1	0	1.033	0	2.07
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	40	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	57	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	33	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	0	0	1	0	0	0	0	3	1	0	0	0	0	2	0	65	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	0	0	0	2	0	0	0	1	0	0	0	0	0	0	0	84	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	2	0	47	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	1	0	39	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	4	0	0	0	0	0	1	1	1	0	0	0	0	6	0	160	3	2	0	1	1	1
+Aeromonas hydrophila	1	0	0	0	0	1	0	0	0	1	1	0	0	0	0	1	0	73	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	48	0	2	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	25	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	1	0	0	0	1	1	0	0	0	0	3	0	57	0	0	0	0	0	0
+Aeromonas hydrophila	1	2	5	0	0	5	5	5.389	7	5	7	6	6	1	4	3	2	105.621	1	2	0	3	2	2
+Aeromonas hydrophila	1	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	33	0	0	0	1	0	0
+Aeromonas hydrophila	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	0	45	0	0	0	0	0	0
+Aeromonas hydrophila	2	2	1	0	2	0	1	0	0	1	0	0	1	0	0	2	3	61	2	2	1	10	2	3
+Aeromonas hydrophila	2	0	5	1	1	0	1	0	0	7	0	0	0	0	0	4	3	45	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	0	1	0	1	0	0	0	2	0	0	0	0	0	1	0	74	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	1	0	96	0	0	0	0	0	0
+Aeromonas hydrophila	1	1	1	2	1	1	0	2	2	0	5	0	1	2	0	4	0	37	0	1	0	0	2	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	43	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	1	2	0	0	0	0	0	0	47	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	72	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	1	0	29	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	3	0	0	0	0	0	0	2	1	0	0	0	0	4	0	223	0	0	0	0	2	1
+Aeromonas hydrophila	1	0	2	0	3	4	0	1	2	1	3	0	0	1	0	1	0	83	1	0	0	2	1	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	54	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	2	0	0	0	0	0	0	0	3	0	0	0	1	2	0	99	0	0	0	0	1	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	2	2	0	0	0	1	2	0	114	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	3	0	0	0	0	0	0	0	0	0	0	0	0	4	1	81.479	0	0	0	0	0	0
+Aeromonas hydrophila	3	0	1	0	0	0	0	1	0	2	0	0	1	0	0	3	0	87	0	0	1	0	1	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	17	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	2	0	203	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	41	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	77	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	34	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	51	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	23	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	3	0	0	1	0	0	0	5	1	0	0	0	0	3	0	141	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	1	0	0	0	1	1	0	1	0	0	0	0	80	0	0	0	4	1	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	38	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	2	0	0	0	0	0	0	1	0	0	0	0	0	2	0	22	0	0	0	0	0	0
+Aeromonas hydrophila	1	1	6	0	0	2	1	2	0	0	0	0	0	2	1	4	1	80	7	0	2	1	1	1
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	5	0	0	1	0	0	5	1	138	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	40	0	0	0	0	0	0
+Aeromonas hydrophila	6.331	4	2	5	1	2	4	3.05	3.333	3.082	4	3.719	3.072	2	1	9	5	183.25	2	2	1	4	5	3
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	2	0	519	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	2	0	0	0	1	0	0	0	0	0	0	0	66	0	0	0	0	0	0
+Aeromonas hydrophila	8.024	3.008	6.267	1	5.126	5.088	1	1.004	1	7.039	4.254	2.019	5.021	3.374	3.011	11.072	3.025	359.521	5.027	1	0	2.091	2.044	1
+Aeromonas hydrophila	1	1	1	0	0	1	1	0	0	1	0	0	0	0	1	5	0	78	2	2	1	3	8	3
+Aeromonas hydrophila	4	3	6	2	0	2	0	0	0	1	0	2	0	0	0	5	2	79	0	1	0	0	3	1
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	49	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	3	1	0	2	0	0	0	0	0	0	0	0	0	1	0	84	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	0	2	0	0	0	0	0	2	0	0	0	0	0	2	0	76	0	0	0	0	1	0
+Aeromonas hydrophila	2	0	3	0	1	0	3	2	2	3	2	3	3	0	2	5	3	96	3	2	2	1	1	0
+Aeromonas hydrophila	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	29	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	28	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	2	0	30	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	40	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	75	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	50	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	3	0	0	1	0	0	0	0	1	0	0	1	0	2	0	135	0	0	0	0	0	0
+Aeromonas hydrophila	3	1	9	0	0	1	1	2	0	0	4	1	1	2	2	3	2	42	0	0	1	3	2	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	11	0	0	0	0	0	0
+Aeromonas hydrophila	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	3	1	70	0	0	0	0	0	0
+Aeromonas hydrophila	1	1	1	0	0	0	0	0	0	1	1	0	0	0	0	1	0	97	0	0	0	0	0	0
+Aeromonas hydrophila	1	1	2	1	0	0	1	0	0	1	0	0	1.018	1	1	3.35	1	69.941	1	1	0	1	1	1
+Aeromonas hydrophila	1	0	3	2	0	1	0	0	0	2	0	0	0	0	0	1	0	75	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	45	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	2	0	0	0	0	0	0	1	0	0	0	0	0	1	1	47	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	1	0	1	1	0	0	0	2	1	0	0	0	0	2	0	153	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	46	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	1	2	0	0	0	1	1	3	1	1	5	0	1	1	3.524	101	0	0	1	3	0	1
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0
+Aeromonas hydrophila	2	2	1	2	0	0	1	0	0	1	1	0	0	0	0	2	0	94	1	0	3	0	1	0
+Aeromonas hydrophila	2	0	1	0	0	0	0	0	0	0	0	0	0	0	0	4	0	66	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	33	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	22	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	0	0	74	0	0	0	0	0	0
+Aeromonas hydrophila	1	0	0	0	0	1	0	0	0	2	1	0	0	0	0	2	0	78	0	0	0	0	0	0
+Aeromonas hydrophila	2	0	3	0	0	1	0	0	0	5	1	0	2	1	1	4	3	194	0	2	1	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	103	0	0	0	1	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	68	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	81	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	3	0	0	0	0	0	2	1	0	1	0	1	0	0	1	62	0	0	0	1	0	2
+Aeromonas hydrophila	1	5	1	2	3	4	0	0	0	2	1	1	0	0	1	2	0	91	0	2	0	2	4	2
+Aeromonas hydrophila	1	0	2	0	0	2	0	0	0	0	0	0	0	0	0	2	0	91	0	0	0	0	0	0
+Aeromonas hydrophila	3	1	0	0	0	0	0	0	0	1	2	0	0	0	0	0	0	76	0	0	0	0	0	0
+Aeromonas hydrophila	5	3	6	2	3	4	4	6	4	3	5	1	4	2	0	8	5	42	3	8	5	3	4	7
+Aeromonas hydrophila	0	0	0	0	0	1.523	0	0	0	0	0	0	0	0	0	1	1.507	52	0	0	1	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10	0	0	0	0	0	0
+Aeromonas hydrophila	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	1	1	57	0	0	0	0	0	1
+Aeromonas hydrophila	2	3	1	0	1	4	1	3	3	2	5	3	1	2	0	2	3	72	6	3	5	1	1	2
+Aeromonas hydrophila	1	0	1	0	2	1	1	1	0	5	1	1	2	0	0	6	0	123	1	0	0	0	0	1
+Aeromonas hydrophila	1	0	1	0	0	0	0	0	0	0	1	0	0	0	2	1	0	72	0	0	0	0	0	0
