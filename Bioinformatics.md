@@ -197,6 +197,19 @@ dG
 
 ---
 
+## U 盘挂载卸载
+
+~~~bash
+# U 盘挂载
+sudo fdisk -l
+sudo mount /dev/sds1 /Databackup3	# 前面命名有时需要根据不同盘符来更改数字
+
+# U 盘卸载
+sudo umount /Databackup3
+~~~
+
+---
+
 # R
 
 ---
@@ -2024,6 +2037,7 @@ featureCounts -t 选第三列中某个特征进行定量 -g 选第九列某个�
 2. 数理统计知识
 3. 机器学习深度算法
 4. 生物计算机双修可是还是要学历才有钱拿
+5. [Rosalind](https://rosalind.info/problems/list-view/)
 
 ---
 
