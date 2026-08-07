@@ -1748,6 +1748,12 @@ samtools index -c <sample_sorted.sam>
 
 FastQC、Picard、PerSeq、Trimmomatic
 
+read、contig、scaffold
+
+Q20
+
+Q30
+
 ---
 
 ## 比对
@@ -2038,6 +2044,18 @@ featureCounts -t 选第三列中某个特征进行定量 -g 选第九列某个�
 3. 机器学习深度算法
 4. 生物计算机双修可是还是要学历才有钱拿
 5. [Rosalind](https://rosalind.info/problems/list-view/)
+
+
+
+---
+
+# Rosalind
+
+
+
+### 费波纳茨数列
+
+**GC含量**：大多数真核生物的GC含量是 50%，原核生物的GC含量远远大于 50%，可以此简单判断真核和原核生物
 
 ---
 
