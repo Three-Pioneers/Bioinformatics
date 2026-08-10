@@ -1005,43 +1005,6 @@ intergenic：
 
 ---
 
-## 质控
-
-测序多个样本凑一条 lane 跑，通过接头 Index_i5 Index_i7 不同的组合区分不同样本，用于下机拆分样本
-
-adapter 用于质控时的接头？
-
-~~~bash
-# ln(link files) -s 创建软链接, 链接指向源文件
-~~~
-
-~~~bash
-# fastp SE(Single-End Sequencing); PE(Paired-End Sequencing)
-~~~
-
-~~~bash
-# md5sum 生成文件在网络传输前后的md5值(只与文件内容有关), 根据前后值判断文件内容传输过程是否变化
-~~~
-
-~~~bash
-# multiqc 识别 json 生成总文件
-~~~
-
-
-
-### Question
-
-- [ ] 不同格式文件要将文件内容复制到另一种格式中，不能直接改名字，否则会出现不可控错误
-  批量修改文件名，尤其如何批量输出
-
-~~~bash
--rwxrwxr-x 1 zhangxuejie bioinfo 425861587 Mar 12 12:05 'P9_40d_R2.fq.gz'$'\r'*
--rwxrwxr-x 1 zhangxuejie bioinfo 402502035 Mar 12 12:05 'P9_55d_R1.fq.gz'$'\r'*
--rwxrwxr-x 1 zhangxuejie bioinfo 425828469 Mar 12 12:05 'P9_55d_R2.fq.gz'$'\r'*
-~~~
-
-- [x] 小 RNA 质控的数据名称只能是 WR2243M01.fq.gz 样式，若是 WR2243M01_R1.fq.gz 的会出错
-- [ ] conda 安装包报错 "fastp1.1.*.*"，由于 conda 解析包名出错导致，下载 mamba 代替 conda
 - [ ] 
 
 ---
@@ -1084,7 +1047,38 @@ hisat2
 
 ### Basic
 
+#### 3.4 基因表达水平分析
 
+- [ ] 标准化计算方法：FPKM / TPM
+- [ ] 相关性图
+- [ ] 小提琴图
+
+#### 3.5 差异分析
+
+- [ ] 差异分析热图
+- [ ] 差异分析火山图
+
+#### 3.7 GO KEGG 富集分析
+
+- [ ] 输入、输出、作用、解释
+- [ ] GO 柱状图
+- [ ] GO 气泡图
+- [ ] GO 圈图
+- [ ] KEGG 柱状图
+- [ ] KEGG 气泡图
+
+#### 3.8 GSEA 基因集富集分析
+
+- [ ] 软件、定义
+- [ ] 基因集富集分析图
+
+#### 3.9 可变剪切
+
+- [ ] 软件
+
+#### 3.10 变异位点
+
+- [ ] 软件
 
 
 
@@ -1103,24 +1097,15 @@ STAR --runThreadN 12 --runMode genomeGenerate --genomeDir /data/users/minmingw/A
 ~~~
 
 - [ ] SAM 和 BAM 文件区别
-
 - [ ] featureCounts 以 GTF 和 GFF 分别做注释统计 exon 的到的 Counts 数相同；统计 gene 的 Counts 数不同，应是 GTF 文件将 GFF 特征为 ncrna 等的都转化为 gene，但是计数应该更高啊，因为基因多了，为啥比同条件下 GFF 更低呢？需了解计数原理，应该是按照坐标统计的
-
 - [ ] GO 和 KEGG 富集分析选择差异基因的参数是 pvalue 但好像通用的是 padj
-
 - [ ] 下载 KEGG 通路图必须开 VPN，服务器可以，是默认开 VPN？~~
-
 - [ ] 富集分析 clusterProfiler 服务器版本 4.6.2，本地 4.18.4；导致输出的富集分析的文件结果列数，新版多了3列
-
 - [ ] R 脚本排版混乱，命名混乱，注释不足；后期要统一；同时最好使用 python-pandas 处理数据，R-ggplot2 只负责作图
-
 - [ ] rmats --readLength 服务器是 149，应该为 150~~
   149 会将 reads 数小于 149 的过滤掉；测试发现会过滤掉绝大部分
-
 - [ ] Step9 总文件根本没有 2.mapping/hisat2_sorter.bam 这个文件，本地要报错，服务器不报错；echo，rmatsplot 的参数都要改
-
 - [ ] rmatsplot 服务器和本地版本一致，但是本地 python3 缺少了某个模块；服务器是 python2
-
 - [ ] Step 10 rush 改为 parallel，后者用的人很多
 - [ ] 基因组和注释文件选择问题，以及不同软件的匹配度相关性
 - [ ] Functional_annotation.conf 是干嘛的，分类号在 miRNA 第四步 RepeatMasker 使用替代了 species，好像更快
@@ -1746,6 +1731,10 @@ samtools index -c <sample_sorted.sam>
 
 ## 质控
 
+测序多个样本凑一条 lane 跑，通过接头 Index_i5 Index_i7 不同的组合区分不同样本，用于下机拆分样本
+
+adapter 用于质控时的接头？
+
 FastQC、Picard、PerSeq、Trimmomatic
 
 read、contig、scaffold
@@ -1753,6 +1742,38 @@ read、contig、scaffold
 Q20
 
 Q30
+
+~~~bash
+# ln(link files) -s 创建软链接, 链接指向源文件
+~~~
+
+~~~bash
+# fastp SE(Single-End Sequencing); PE(Paired-End Sequencing)
+~~~
+
+~~~bash
+# md5sum 生成文件在网络传输前后的md5值(只与文件内容有关), 根据前后值判断文件内容传输过程是否变化
+~~~
+
+~~~bash
+# multiqc 识别 json 生成总文件
+~~~
+
+
+
+### Question
+
+- [ ] 不同格式文件要将文件内容复制到另一种格式中，不能直接改名字，否则会出现不可控错误
+  批量修改文件名，尤其如何批量输出
+
+~~~bash
+-rwxrwxr-x 1 zhangxuejie bioinfo 425861587 Mar 12 12:05 'P9_40d_R2.fq.gz'$'\r'*
+-rwxrwxr-x 1 zhangxuejie bioinfo 402502035 Mar 12 12:05 'P9_55d_R1.fq.gz'$'\r'*
+-rwxrwxr-x 1 zhangxuejie bioinfo 425828469 Mar 12 12:05 'P9_55d_R2.fq.gz'$'\r'*
+~~~
+
+- [x] 小 RNA 质控的数据名称只能是 WR2243M01.fq.gz 样式，若是 WR2243M01_R1.fq.gz 的会出错
+- [ ] conda 安装包报错 "fastp1.1.*.*"，由于 conda 解析包名出错导致，下载 mamba 代替 conda
 
 ---
 
