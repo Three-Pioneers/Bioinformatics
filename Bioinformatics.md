@@ -724,6 +724,12 @@ df.groupby(by = "Length")
 # threads 不是越多越好，最好多任务，小线程，找到每个软件最佳线程数
 
 --dag | dot -Tsvg > dag.svg	# 画图
+
+# 若 Snakefile 下含有多个文件，则 all 规则要放到 Snakefile 里，放到下属文件中不会识别 all 为默认规则
+
+# {} 在规则里要双用，不能单独使用
+RuleException in rule process_2 in file "/home/zhangxuejie/Workspace/Fe_EET/work_smk/Step1.BLASTP.smk", line 39:
+NameError: The name 'OFS="\t"' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
 ~~~
 
 **规则**
@@ -1903,15 +1909,21 @@ RNA 提取后其中 80%～90% 为 rRNA，10%～15% 为 tRNA，1%～5% 为 mRNA�
 
 ---
 
-# 数据
+# 数据库
+
+
+
+## 蛋白质数据库
+
+### Uniprot
+
+
 
 ---
 
-## 分类
+## DNA 数据库
 
-### DNA 数据库
-
-#### 核酸序列数据库
+### 核酸序列数据库
 
 | Database | Belong To |
 | -------- | --------- |
@@ -1946,8 +1958,6 @@ RNA 提取后其中 80%～90% 为 rRNA，10%～15% 为 tRNA，1%～5% 为 mRNA�
 #### 非编码 RNA 数据库
 
 收录不同类型非编码 RNA 的 **miRBase**、**RNAcentral**、**lncRNAdb**
-
-### 蛋白质数据库
 
 ### 物种特异性数据库
 
