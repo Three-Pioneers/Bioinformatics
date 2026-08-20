@@ -1028,7 +1028,12 @@ intergenic：
 
 **1.QC**
 
+
+
 **2.Mapping**
+
+1. hisat2 尽量跑物理核心，不要多线程多任务运行。即每次只跑一个任务
+2. hisat2 可以直接和 Samtools 联动运行。即不产生 Sam 直接将标准输出交给 Samtools 进行排序
 
 ~~~bash
 hisat2
@@ -1046,6 +1051,16 @@ hisat2
 # DESeq2
 
 ~~~
+
+
+
+**9.rMATS**
+
+[MATS](Multivariate Analysis of Transcript Splicing)：根据有重复的两个样本的 bam 和 GTF，计算可变剪切位点发生概率，并根据样本之间的概率差和 FDR 判断可变剪切是否是可信
+
+
+
+**10.Variance Calling**
 
 
 
