@@ -1,0 +1,1 @@
+/data1/software/miniconda3/envs/R-3.6/bin/Rscript /Databackup2/2025_05/ZhuYaSha_1_human_reseq/2/bin/trim_pieplot.R --infile /Databackup2/2025_05/ZhuYaSha_1_human_reseq/2/analysis/work_sh/tmp/NouvSight001_RPC2024001_trim_stats.txt --outdir /Databackup2/2025_05/ZhuYaSha_1_human_reseq/2/analysis/1.QualityControl/trim --height 6 --width 8

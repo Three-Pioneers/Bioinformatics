@@ -1,0 +1,1 @@
+/data1/software/csvtk/0.22.0/csvtk grep -C '$' -t -T -f 1 -p NouvSight001_RPC2024001 /Databackup2/2025_05/ZhuYaSha_1_human_reseq/2/analysis/1.QualityControl/stats/cm_trim_stats.txt > /Databackup2/2025_05/ZhuYaSha_1_human_reseq/2/analysis/work_sh/tmp/NouvSight001_RPC2024001_trim_stats.txt
