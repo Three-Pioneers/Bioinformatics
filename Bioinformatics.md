@@ -193,6 +193,16 @@ dG
 
 ---
 
+## 脚本
+
+~~~bash
+
+~~~
+
+
+
+---
+
 ## U 盘挂载卸载
 
 ~~~bash
@@ -1035,11 +1045,15 @@ intergenic：
 hisat2
 ~~~
 
+
+
 **3.GenesExpress**
 
 ~~~bash
 # featureCounts
 ~~~
+
+
 
 **4.diffExprGene**
 
@@ -1052,7 +1066,7 @@ hisat2
 
 **9.rMATS**
 
-
+1. rmats.py 每个脚本需要消耗 20 个线程，Snakemake 最多使用 2 或 3 个同时运行
 
 
 
