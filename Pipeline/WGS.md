@@ -1,3 +1,13 @@
+# WGS
+
+## 准备
+
+```bash
+https://github.com/dellytools/svprops	# github 下载 svprops，sampleprops 也在其中
+```
+
+
+
 ## 步骤
 
 1. multiqc_config.yaml 去掉
