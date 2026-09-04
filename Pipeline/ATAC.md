@@ -40,3 +40,4 @@ https://www.jianshu.com/p/e8f236a98613
 - [x] 拿 GTF 文件来做 computeMatrix
   拿 gene.bed 做，因为 GTF 包含 exon、gene、CDS 等，==ATAC 是关于基因的？==
 - [x] ATAC 第三步 read_distribution.sh 不可以同时运行，他们会争抢阅读 tmp 和 基因组文件
+- [ ] findMotif.pl 可以使用多线程，后续项目多起来可以研判只物理核心或者全线程速度比对
