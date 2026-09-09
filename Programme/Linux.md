@@ -137,6 +137,9 @@ grep "^a.*r\$" filename.txt	# 实际加不加 \ 都可
 # 查找文本中单双引号
 grep "'" test.txt
 grep "\"" test.txt
+
+# 查找 A 文件中 B 文件的补集
+grep -vf B.txt A.txt
 ~~~
 
 ~~~bash

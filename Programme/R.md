@@ -25,6 +25,24 @@ a <- read.table("test.txt",
 
 
 
+## 安装软件
+
+~~~R
+# R 环境中下载
+install.packages()
+
+# biocondactor 下载
+BiocManager::install()
+
+# github 下载
+pak::pak("jinworks/CellChat")
+
+# 载入软件，如果是 github 上下载的软件，可能会需要重新加载 Rstudio
+suppressMessages(library(CellChat))
+~~~
+
+
+
 ## Rstudio
 
 **设置**：zoom 100%；Editor font size 14
