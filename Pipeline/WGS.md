@@ -43,3 +43,4 @@ https://github.com/dellytools/svprops	# github 下载 svprops，sampleprops 也�
 
 - [ ] 第七步注释表：`head -n 13 cnv_outputfile_anno.txt|awk '{print $1,$2,$3,$4,$5,$6,$7,$21,$22,$31,$32,$34}'|ct -s ' '|le`
 - [ ] 报告的 html 模板：`/Databackup3/2026_07/ZhuYaSha_1_human_WGS/analysis/5.Report/report.Rmd`
+- [ ] 修改了 delly_stats.pl 的 191 行，新版本 svprops 输出结果在原有基础上增加了两列。而原脚本根据位置进行筛选，而不是根据字段进行筛选，因此以后尽量改成字段

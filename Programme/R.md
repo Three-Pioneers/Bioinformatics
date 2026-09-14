@@ -2,6 +2,22 @@
 
 ---
 
+## Install And Initialize
+
+~~~R
+# 1.服务器安装最新版本 R=4.6.1，conda 可以安装指定版本
+
+# 2.安装 BiocManager
+
+# 3.安装 Rtools，注意版本
+~~~
+
+
+
+==Rstudio server 在服务器2 的家目录，记得安装==
+
+
+
 **最小的数据结构是向量，不是标量**
 
 **索引从 1 开始**
@@ -21,6 +37,9 @@ a <- read.table("test.txt",
                 comment.char = "",	# 取消默认将 # 做注释（元素中含有 # 则会报错）
                 check.names = FALSE,	# 取消默认直接计算列名中包含的运算公式（会修改列名为运算形式）
                 header = T)	# 根据需要加
+
+ls()	# 查看所有对象
+rm(a)	# 删除对象 a
 ~~~
 
 

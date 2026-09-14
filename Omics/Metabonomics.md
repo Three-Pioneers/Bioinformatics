@@ -30,3 +30,8 @@ HMDB 中 common name 为 1-(3-Aminopropyl)-pyrrolinium 的化合物如果以此�
 
 **数据库关联**字段依据：
 
+
+
+## Information
+
+1. HMDB 可下载全部数据，不用单个爬虫
