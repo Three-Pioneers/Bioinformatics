@@ -69,6 +69,11 @@ conda env export --from-history
 conda run -n vs2 
 ~~~
 
+~~~bash
+# 显示两个文件中共有的部分
+comm -12 file1.txt file2.txt
+~~~
+
 
 
 ### awk

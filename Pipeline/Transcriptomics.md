@@ -1,72 +1,52 @@
-## 步骤
+# Transcriptomics
 
-0. 改名：测序名称 → 样本名称
+## Sketch
+
 1. 质控：**fastp** 过滤低质量 reads 和测序接头
-2. 比对：**hisat2-build** 对基因组 fasta 建索引输出 **8个ht2** 结尾的文件；**hisat2** 比对质控后的序列到基因组索引，输出的 **sam** 文件被**samtools** 排序后转换输出 **bam** 文件
-3. 量化：**subread** 软件下 **featureCounts** 对排序后 bam 量化，生成
+2. 比对：**hisat2-build** 建立基因组 Fasta 的索引；**hisat2** 比对质控后序列及索引输出的 **sam** 文件，经过 **samtools** 排序转换输出 **bam**
+3. 量化：**subread** 包的 **featureCounts** 根据 bam 结果的位置信息及 GTF 注释统计不同位置的基因落得的 reads 数
 
 
 
-### 步骤
+## Process
 
-**1.QC**
+### 1.QC
 
 
 
-**2.Mapping**
+### 2.Mapping
 
 1. hisat2 尽量跑物理核心，不要多线程多任务运行。即每次只跑一个任务
 2. hisat2 可以直接和 Samtools 联动运行。即不产生 Sam 直接将标准输出交给 Samtools 进行排序
 
-~~~bash
-hisat2
-~~~
 
 
-
-**3.GenesExpress**
+### 3.GenesExpress
 
 ~~~bash
 # featureCounts
 ~~~
 
+#### 定量结果的质量控制
+
+由于存在批次效应（实验或者数据采集的过程中，由于不同实验批次、测序平台、试剂、实验人员及实验环境等造成的系统性误差，与生物学差异无关）会导致实验误差
 
 
-**4.diffExprGene**
-
-~~~bash
-# DESeq2
-
-~~~
-
-
-
-**9.rMATS**
-
-1. rmats.py 每个脚本需要消耗 20 个线程，Snakemake 最多使用 2 或 3 个同时运行
-
-
-
-**10.Variance Calling**
-
-
-
-
-
-### Basic
-
-#### 3.4 基因表达水平分析
 
 - [ ] 标准化计算方法：FPKM / TPM
 - [ ] 相关性图
 - [ ] 小提琴图
 
-#### 3.5 差异分析
+### 4.diffExprGene
+
+~~~bash
+# DESeq2
+~~~
 
 - [ ] 差异分析热图
 - [ ] 差异分析火山图
 
-#### 3.7 GO KEGG 富集分析
+### 6.Enrichment
 
 - [ ] 输入、输出、作用、解释
 - [ ] GO 柱状图
@@ -75,22 +55,26 @@ hisat2
 - [ ] KEGG 柱状图
 - [ ] KEGG 气泡图
 
-#### 3.8 GSEA 基因集富集分析
+### 8.GSEA
 
 - [ ] 软件、定义
 - [ ] 基因集富集分析图
 
-#### 3.9 可变剪切
+### 9.rMATS
 
-- [ ] 软件
+| 可变剪切 |                           |                |
+| -------- | ------------------------- | -------------- |
+| SE       | Skippedexon               | 外显子跳跃     |
+| A5SS     | Alternative5' splice site | 5’端可变剪切   |
+| A3SS     | Alternative3' splice site | 3’端可变剪切   |
+| MXE      | Mutually exclusive exons  | 互斥可变外显子 |
+| RT       | Retainedintron            | 内含子保留     |
 
-#### 3.10 变异位点
-
-- [ ] 软件
+### 10.Variance Calling
 
 
 
-### Question
+## Question
 
 - [ ] 质控 md5sum 这一步无效，可以删除
 
@@ -153,18 +137,6 @@ taxonomy 10090 #NCBI 分类号
 gene_type SYMBOL
 Species mmu
 ~~~
-
-**可变剪切**
-
-|      |                           |                |
-| ---- | ------------------------- | -------------- |
-| SE   | Skippedexon               | 外显子跳跃     |
-| A5SS | Alternative5' splice site | 5’端可变剪切   |
-| A3SS | Alternative3' splice site | 3’端可变剪切   |
-| MXE  | Mutually exclusive exons  | 互斥可变外显子 |
-| RT   | Retainedintron            | 内含子保留     |
-
-
 
 **表型差异缘由**
 
@@ -271,3 +243,59 @@ tpm = exp(log(fpkm) - log(sum(fpkm)) + log(1e6))
 
 write.table(fCountsList$stat, outStatsFilePath, sep="\t", col.names=FALSE, row.names=FALSE, quote=FALSE)
 ~~~
+
+---
+
+# 无参转录组分析（芍药为例）
+
+`/data0_2/2026_06/LiuJiaWei_9_shaoyao_Denovo_transcriptome`
+
+对于没有高质量参考基因组的物种，无参转录组组装通过对 RNA-Seq reads 进行图结构重建、直接恢复转录本，获得完整的转录本集合，芍药（凤丹 Paeonia ostii）的同属不同种 2025 年发布了参考基因组
+
+0. 改名：测序名称 → 样本名称
+1. 质控：**fastq** 过滤低质量 reads 和测序接头
+2. 组装：**Trinity** **分别合并**样本的单端数据，构建 contig、生成结构图、最终生成新的**转录本**及基因和转录本**映射表**
+3. 预测：**TransDecoder** 预测**最长开放阅读框**，将预测的蛋白 blastp Uniprot 数据库输出**比对信息表**，重新预测生成最终注释、蛋白和编码序列，根据最终注释文件过滤 Trinity 生成的转录本文件
+4. 比对
+
+
+
+### 转录本组装
+
+**Trinity** 中三个独立的模块：**Inchworm**、**Chrysalis**、**Butterfly** 分别负责初始 contig 构建、图结构划分和最终转录本解析
+
+**Trinity.fasta**
+
+~~~bash
+>TRINITY_DN31_c0_g1_i1 len=525 path=[1:0-201 2:202-230 3:231-524]
+>TRINITY_DN31_c0_g1_i2 len=892 path=[1:0-201 2:202-230 4:231-891]
+
+TRINITY_DN31_c0	# 对应基因
+g1_i1	# 不同转录本
+len=525	# 转录本长度
+path=[1:0-201 2:202-230 3:231-524]	# 组装路径
+~~~
+
+==脚本：/data3/Data_all/script/Denovo_transcriptome/bin//gene_result_stas.py pandas 以及简短循环判断写的太好了，要认真学习==
+
+~~~bash
+# 物种 ko，则去除所有 kegg 编号，加上 ko；物种为 kegg 缩写，则选取所有 kegg 编号前缀相等的
+/data3/Data_all/script/Denovo_transcriptome/bin//Enrichment_KEGG_id.py
+~~~
+
+### Variance Calling（变异检测）
+
+SNP-Indel
+
+
+
+### Question
+
+- [ ] Step1.QC.smk：fastp 过滤啥东西
+
+- [x] Step4.Mapping.sh：bowtie2 log 报错：[WARNING] Failed to launch x86-64-v3 version, staying with default
+  修改总结脚本，其他流程若有要类似修改
+
+- [ ] 第二步 Trinity 组装，如果要输入有改变，则需要删除 Trinity 已有结果的文件夹
+
+- [ ] 第三步 TransDecoder 模块，如果输入有改变，也需要删除 TransDecoder 已有结果文件夹

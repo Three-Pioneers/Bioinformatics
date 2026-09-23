@@ -35,3 +35,104 @@ HMDB 中 common name 为 1-(3-Aminopropyl)-pyrrolinium 的化合物如果以此�
 ## Information
 
 1. HMDB 可下载全部数据，不用单个爬虫
+
+~~~bash
+
+
+
+
+
+
+~~~
+
+
+
+|                                |
+| ------------------------------ |
+| accession                      |
+| status                         |
+| secondary_accessions.accession |
+| name                           |
+| chemical_formula               |
+| average_molecular_weight       |
+| iupac_name                     |
+| traditional_iupac              |
+| smiles                         |
+| inchikey                       |
+| taxonomy.direct_parent         |
+| taxonomy.kingdom               |
+| taxonomy.super_class           |
+| taxonomy.class                 |
+| taxonomy.sub_class             |
+| state                          |
+| drugbank_id                    |
+| pubchem_compound_id            |
+| kegg_id                        |
+| metlin_id                      |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+

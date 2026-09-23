@@ -707,3 +707,55 @@ ggsave("a7_vs_W82_reads_28bp_Percent.pdf", p, device = "pdf")
 ggsave("a7_vs_W82_reads_28bp_Percent.png", p, dpi = 300)
 ~~~
 
+### 火山图
+
+~~~R
+suppressMessages(library(tidyverse))
+
+All_exprData <- read.table("All_genes_exprData.txt", header = T, sep = "\t", quote = "", check.names = F, as.is = T) 
+outdir <- "./"
+
+# 过滤空值
+All_exprData <- subset(All_exprData, All_exprData$log2FoldChange != "NA")
+All_exprData <- subset(All_exprData, All_exprData$pvalue != "NA")
+
+# 显著上调两倍和显著下调高倍分别着红蓝色，否则着灰色
+All_exprData$color <- ifelse(
+  All_exprData$pvalue < 0.05 & abs(All_exprData$log2FoldChange) >= 1,
+  ifelse(
+    All_exprData$log2FoldChange >= 1,
+    "red",
+    "blue"
+  ),
+  "gray"
+)
+
+# 不明白为啥设置两次颜色
+color <- c(red = "red", blue = "blue")
+
+p <- ggplot(data = All_exprData, mapping = aes(log2FoldChange, -log10(pvalue), col = color)) +	# col?
+  geom_point() +
+  theme_bw() +
+  scale_color_manual(values = color) +
+  labs(x = "log2(Fold Change)", y = "-log10(P Value)") +
+  geom_hline(yintercept = -log10(0.05), lty = 5, col = "grey", lwd = 0.75) +	# lyt 线条类型
+  geom_vline(xintercept = c(-1, 1), lty = 5, col = "grey", lwd = 0.5) +	# lwd 线条宽度
+  theme(
+    legend.position = "none",	# 不显示 color 标签
+    panel.grid = element_blank(),	# 不显示面板背景线条
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 12)
+  ) +
+  coord_cartesian(y = c(1, 50)) +	# 控制 Y 轴数据量范围在（1，50）之间，不显示数据而不删除数据，ylim 删除数据
+  
+
+volcano_png <- paste0(outdir, "/volcano.png")
+volcano_pdf <- paste0(outdir, "/volcano.pdf")
+
+ggsave(file = volcano_png, p, width = 10, height = 10, dpi = 300)
+ggsave(file = volcano_pdf, p, width = 10, height = 10, dpi = 300)
+
+~~~
+
+
+
