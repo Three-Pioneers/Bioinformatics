@@ -17,8 +17,6 @@ rsync -a --info=progress2 --delete /database/ server2:/database/
 
 
 
-
-
 ## 基础命令
 
 ~~~bash
@@ -72,6 +70,22 @@ conda run -n vs2
 ~~~bash
 # 显示两个文件中共有的部分
 comm -12 file1.txt file2.txt
+~~~
+
+
+
+### 控制结构
+
+~~~bash
+if [ ! -d file ]	# -d 是否为目录；-s 是否存在且非空
+then
+	mkdir file
+elif [ ! -s file ]
+then
+	touch file
+else
+	rm file
+fi
 ~~~
 
 
