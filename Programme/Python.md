@@ -42,10 +42,12 @@ import pandas as pd
 
 df = pd.read_csv(
     "file.txt",
-    sep = "\t",
-    header = 0,	# 以第 0 行作为表头；不用则为 None
-    skiprows = 3,	# 跳过行的数量
-    index_col = ["Chr"]	# 这样会看着奇怪，除[2, 1]外其余第二行其余元素为空，应该有设置方法；也可以用索引
+    sep="\t",
+    header=0,	# 以第 0 行作为表头；不用则为 None
+    skiprows=3,	# 跳过行的数量
+    index_col=["Chr"],	# 这样会看着奇怪，除[2, 1]外其余第二行其余元素为空，应该有设置方法；也可以用索引
+    low_memory=False,	# 一次性全部读入，否则将分块读入，每一块推断数据类型，最后合并若推断不一致报错
+    dtype='string'	# 指定数据类型，若设定，则不用 low_memory，同时空值会变成 pd.NA
 )
 ~~~
 

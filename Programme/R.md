@@ -10,6 +10,8 @@
 # 2.安装 BiocManager
 
 # 3.安装 Rtools，注意版本
+
+# 4.R 语言的包不像 Python 会产生冲突，因此所有 Package 都装到一个 R 环境中即可
 ~~~
 
 

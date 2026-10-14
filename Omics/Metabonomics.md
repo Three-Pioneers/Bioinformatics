@@ -28,15 +28,28 @@
 2. 模式动物及微生物样本：至少 8 次生物学重复，建议 10 次以上
 3. 临床样本：至少 30 次生物学重复，建议 50 次以上
 
+
+
+## 代谢分析流程
+
+### 下机数据
+
+m/z 即质荷比，小分子代谢物正负电荷都为 1，fragment ions 即碎片离子，collision energy 即碰撞能，不同碰撞能产生不同的碎片离子，RT 即保留时间
+
+
+
 ### 代谢组学的实验技术
 
-## 联合数据库
+---
 
-**字段**
+## 人联合数据库
 
-| Common Name       | Chemical Formula | Average Molecular Weigh | SMILES        | IUPAC Name                        | InChI Key                   | Kingdom                                                      | Super Class                                                  | Class                                                        | Sub Class | InChIKey                    | HMDB ID     | PubChem Compound ID | KEGG Compound ID | METLIN ID | DrugBank ID | MetaboLights ID | HMDB（Secondary Accession ID） | Other Name |
-| ----------------- | ---------------- | ----------------------- | ------------- | --------------------------------- | --------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | --------------------------- | ----------- | ------------------- | ---------------- | --------- | ----------- | --------------- | ------------------------------ | ---------- |
-| 1-Methylhistidine | C7H11N3O2        | 169.1811                | C1CC2NCCCN2C1 | octahydropyrrolo[1,2-a]pyrimidine | IHGJZNUBLMAEGL-UHFFFAOYSA-N | [Organic compounds](http://classyfire.wishartlab.com/tax_nodes/C0000000) | [Organoheterocyclic compounds](http://classyfire.wishartlab.com/tax_nodes/C0000002) | [Pyrrolopyrimidines ](http://classyfire.wishartlab.com/tax_nodes/C0001799) | None      | IHGJZNUBLMAEGL-UHFFFAOYSA-N | HMDB0302340 | 11094624            |                  |           |             |                 |                                |            |
+**ChEMBL** 即；**MetaboLights** 即；**Metabolomics WorkBench** 即
+
+
+
+| accession | name | chemical_formula | average_molecular_weight | inchikey | pubchem_compound_id | chebi_id | kegg_id | drugbank_id | metlin_id | iupac_name | synonyms.synonym | monisotopic_molecular_weight | inchi | smiles | hmdb_accessions[^11] |
+| --------- | ---- | ---------------- | ------------------------ | -------- | ------------------- | -------- | ------- | ----------- | --------- | ---------- | ---------------- | ---------------------------- | ----- | ------ | -------------------- |
 
 
 
@@ -44,11 +57,16 @@
 
 HMDB 中 common name 为 1-(3-Aminopropyl)-pyrrolinium 的化合物如果以此去搜索就发现 MF、MW 都不一样。因此这不可作为搜索的依据，以 traditional name / IUPAC Name 去搜索就发现时一致的，但同一化合物也有许多名称，因此我们将 HMDB 的 common name 为主，Traditional name 为辅，其他的别名以 | 单独列一列
 
-[^1]:内源性小分子：生物体内部因素产生或引起的物质
+---
+
+## 植物联合数据库
 
 
 
+|      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 
+---
 
 ## Question
 
@@ -58,4 +76,17 @@ HMDB 中 common name 为 1-(3-Aminopropyl)-pyrrolinium 的化合物如果以此�
 
 2. 代谢组学如何进行定量，比较的是什么
 
-代谢组学不能比较绝对定量，只能比较不同样本间的相对浓度，不能比较同化合物的绝对定量和不同化合物之间的定量关系，其实是根据峰的面积来定量，面积越大，离子越多，但是呢由于
+代谢物含量和进入质谱离子数量与信号强度和峰面积是正相关，所以可根据峰面积（信号强度：intensity）推断代谢物含量，且只能比较不同样本同一代谢物的相对含量，由于 m/z、RT、离子转化率不同，所以不同代谢物之间不能通过直接比较峰面积判断绝对含量高低，当做标准曲线后就可通过靶向代谢比较绝对定量
+
+3. 代谢组学化合物定性时，Mass 和 m/z 为何相差很大也能定性为同一类物质
+
+m/z 是 MS1 测定的离子质荷比，是通过色谱的化合物进入质谱后，电离带上质子、钠离子或失去质子形成正电荷或负电荷，因此相差是这些离子的分子质量可初步判断，需要根据离子片段打断后的 MS/MS、RT 综合判断是否属于同一物质；同时由于电离时或许会带有不同的正电离子也可能带有负电荷，所以一个化合物或许会被检测到多次，同一极性需要通过加减 MS1 和离子池中正负电离子分子质量的差值以及 MS/MS 判断是否为同一化合物，不同极性之间也以此判断
+
+4. 信号强度（intensit）除多次检测、高分辨率鉴定后确认为零，绝大多数为 NULL
+
+不轻易写 0 是因为如果有峰但检测不到，贸然认定为零在差异比较相对浓度时，会出现 500 / 0.01 = 50000 和 500 / 0 = 正无穷，这两种相差极大的结论，会错误得出代谢物及其显著增大的结论。因此有四种情况：1.质谱仪只能检测到 0.1，而峰为 0.01，此时不代表没有只能说检测不出来，注释为 NOT_DETECTED；2.质谱仪检测出来了 0.5，但是可信阈值设定为 1，认为此峰值不可信，也设定为 NULL，注释为 BELOW_LOQ；3.峰为空值但软件不支持空值，因此设定为一个随意值如最低检测值的一半，注释为 IMPUTED；4.经过多次检测、高分辨率检测、标准品验证后确定不含有这个化合物，才可设定为 0
+
+
+
+[^1]:内源性小分子：生物体内部因素产生或引起的物质
+[^11]:accession 和 secondary_accession 通过 “ | ” 合并到一起
