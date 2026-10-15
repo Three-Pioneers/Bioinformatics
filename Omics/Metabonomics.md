@@ -42,14 +42,26 @@ m/z 即质荷比，小分子代谢物正负电荷都为 1，fragment ions 即碎
 
 ---
 
+### 代谢数据库字段
+
+| IUPAC Name[^11] | SMILES[^12] | InChiKey[^13] | InChi[^14] |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| --------------- | ----------- | ------------- | ---------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+
+
+
+## 鉴定数据库
+
+
+
 ## 人联合数据库
 
 **ChEMBL** 即；**MetaboLights** 即；**Metabolomics WorkBench** 即
 
 
 
-| accession | name | chemical_formula | average_molecular_weight | inchikey | pubchem_compound_id | chebi_id | kegg_id | drugbank_id | metlin_id | iupac_name | synonyms.synonym | monisotopic_molecular_weight | inchi | smiles | hmdb_accessions[^11] |
-| --------- | ---- | ---------------- | ------------------------ | -------- | ------------------- | -------- | ------- | ----------- | --------- | ---------- | ---------------- | ---------------------------- | ----- | ------ | -------------------- |
+| accession    | name                   | chemical_formula | average_molecular_weight | inchikey           | pubchem_compound_id | chebi_id | kegg_id | drugbank_id | metlin_id | iupac_name | synonyms.synonym   | monisotopic_molecular_weight | inchi                  | smiles     | hmdb_accessions[^21]                            |
+| ------------ | ---------------------- | ---------------- | ------------------------ | ------------------ | ------------------- | -------- | ------- | ----------- | --------- | ---------- | ------------------ | ---------------------------- | ---------------------- | ---------- | ----------------------------------------------- |
+| 唯一 HMDB ID | 化合物多个名称中的一个 | 化学式           | 平均分子质量             | 唯一的化合物通用式 |                     |          |         |             |           | 标准名称   | 该化合物所有的名称 | 手性分子质量                 | 唯一化合物通用式的大类 | 化合物结构 | accession 和 secondary accession 联合起来的字段 |
 
 
 
@@ -86,7 +98,17 @@ m/z 是 MS1 测定的离子质荷比，是通过色谱的化合物进入质谱�
 
 不轻易写 0 是因为如果有峰但检测不到，贸然认定为零在差异比较相对浓度时，会出现 500 / 0.01 = 50000 和 500 / 0 = 正无穷，这两种相差极大的结论，会错误得出代谢物及其显著增大的结论。因此有四种情况：1.质谱仪只能检测到 0.1，而峰为 0.01，此时不代表没有只能说检测不出来，注释为 NOT_DETECTED；2.质谱仪检测出来了 0.5，但是可信阈值设定为 1，认为此峰值不可信，也设定为 NULL，注释为 BELOW_LOQ；3.峰为空值但软件不支持空值，因此设定为一个随意值如最低检测值的一半，注释为 IMPUTED；4.经过多次检测、高分辨率检测、标准品验证后确定不含有这个化合物，才可设定为 0
 
+5. 代谢物鉴定的原理
 
+根据 MS1 也就是一级质谱的范围检测到的带加和离子的化合物的分子质量初步计算推断可能的化合物的分子式，但是一级质谱是检测峰附近的分子质量再根据二级质谱 MS/MS 缩小区间内的峰检测出来的分子质量
+
+---
+
+## Reference
 
 [^1]:内源性小分子：生物体内部因素产生或引起的物质
-[^11]:accession 和 secondary_accession 通过 “ | ” 合并到一起
+[^11]:Standard International Union of Pure and Applied Chemistry name
+[^21]:accession 和 secondary_accession 通过 “ | ” 合并到一起
+[^12]:Simplyfied Molecular Input Line Entry System is a line notation for representing molecules
+[^13]:Standard IUPAC International Chemical Identifier key
+[^14]:International Chemical Identifier computed from chemical structure using IUPAC standard

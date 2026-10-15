@@ -4,11 +4,17 @@
 
 ## VSCode
 
+
+
 ~~~bash
 # 修改视窗大小不要 Ctrl + / -，容易触发 BUG，直接要修改配置文件
 "terminal.integrated.fontSize": 18,
 "editor.fontSize": 18
 ~~~
+
+
+
+VSCode 启动 WSL 在连接远程服务器和启动 WSL 耗时很久
 
 ---
 

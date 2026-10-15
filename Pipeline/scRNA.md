@@ -8,7 +8,7 @@
 
 
 
-**重要**：
+**Import**
 
 1. 更新下流程，了解 scRNA 中 Cellchat 2.x 版本和 Seurat 新版本官方文档，将旧有流程的函数和包全部更新替换
 2. 此流程必须要重新搭建，还需要运行 Rstudio server 在本地时刻关注参数、图片、包等信息
@@ -87,12 +87,14 @@ cellranger 将下机数据比对到 STAR 索引上，输出 barcode 即列名细
 - [ ] 将所有 R 加载包函数 library() 改为 suppressMessages(library()) 即加载包时不产生过多信息
 - [ ] 将脚本包所有的对象重新命名，并且将所有的函数认真解析，最终目标是写解释流程
 - [x] 原流程里 --expect-cells 会对细胞数量产生大概 0.01% 的影响，后续就不加了
-- [ ] 为啥要过滤两遍双细胞？
+- [ ] 为啥要过滤两遍双细胞，也就是 scDefinder 和手动过滤阈值
+- [ ] cellranger 的输出报告如何根据指标判断好坏
 
 ---
 
-[^1]:https://zhuanlan.zhihu.com/p/2020798579149684921
+## Reference
 
+[^1]:https://zhuanlan.zhihu.com/p/2020798579149684921
 [^2]:https://zhuanlan.zhihu.com/p/584186874
 [^11]:神经元细胞、癌细胞、T 细胞不同类型的：基因数，转录本数、线粒体 UMI 比例差异明显
 [^12]:不同组织所含有细胞类型、处理方式、筛选阈值都不同

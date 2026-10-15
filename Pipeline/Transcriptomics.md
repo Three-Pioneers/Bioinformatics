@@ -1,27 +1,23 @@
 # Transcriptomics
 
-## Sketch
-
 1. 质控：**fastp** 过滤低质量 reads 和测序接头
 2. 比对：**hisat2-build** 建立基因组 Fasta 的索引；**hisat2** 比对质控后序列及索引输出的 **sam** 文件，经过 **samtools** 排序转换输出 **bam**
 3. 量化：**subread** 包的 **featureCounts** 根据 bam 结果的位置信息及 GTF 注释统计不同位置的基因落得的 reads 数
 
+---
 
+## Step1.Quality Control
 
-## Process
+Fastp 输出 report.html 重要的指标，以及下机数据和质控后的数据如何判断合格
 
-### 1.QC
-
-
-
-### 2.Mapping
+## Step2.Mapping
 
 1. hisat2 尽量跑物理核心，不要多线程多任务运行。即每次只跑一个任务
 2. hisat2 可以直接和 Samtools 联动运行。即不产生 Sam 直接将标准输出交给 Samtools 进行排序
 
 
 
-### 3.GenesExpress
+## Step3.GenesExpress
 
 ~~~bash
 # featureCounts
@@ -37,7 +33,7 @@
 - [ ] 相关性图
 - [ ] 小提琴图
 
-### 4.diffExprGene
+## Step4.diffExprGene
 
 ~~~bash
 # DESeq2
@@ -46,7 +42,7 @@
 - [ ] 差异分析热图
 - [ ] 差异分析火山图
 
-### 6.Enrichment
+## Step6.Enrichment
 
 - [ ] 输入、输出、作用、解释
 - [ ] GO 柱状图
@@ -55,12 +51,16 @@
 - [ ] KEGG 柱状图
 - [ ] KEGG 气泡图
 
-### 8.GSEA
+## Step8.GSEA
 
 - [ ] 软件、定义
 - [ ] 基因集富集分析图
 
-### 9.rMATS
+## Step9.rMATS
+
+MATS 是 Mutually Alternative Trim Splice 可变剪接。根据 BAM 记载的比对到基因组上覆盖和跳过该区域的 reads 的不同个体的差值来判断某个个体的该基因的剪接事件是否属于显著
+
+
 
 | 可变剪切 |                           |                |
 | -------- | ------------------------- | -------------- |
@@ -70,11 +70,11 @@
 | MXE      | Mutually exclusive exons  | 互斥可变外显子 |
 | RT       | Retainedintron            | 内含子保留     |
 
-### 10.Variance Calling
+## Step10.Variance Calling
 
 
 
-## Question
+## ToDo
 
 - [ ] 质控 md5sum 这一步无效，可以删除
 
@@ -96,6 +96,7 @@ STAR --runThreadN 12 --runMode genomeGenerate --genomeDir /data/users/minmingw/A
 - [ ] R 脚本排版混乱，命名混乱，注释不足；后期要统一；同时最好使用 python-pandas 处理数据，R-ggplot2 只负责作图
 - [ ] rmats --readLength 服务器是 149，应该为 150~~
   149 会将 reads 数小于 149 的过滤掉；测试发现会过滤掉绝大部分
+- [ ] rMATS 输入的 reads 是否经过了质控导致长度不一是否会影响 rMATS 的事件判断也就是 inchelevel 的数量会由于 150 149 的不同而不同？
 - [ ] Step9 总文件根本没有 2.mapping/hisat2_sorter.bam 这个文件，本地要报错，服务器不报错；echo，rmatsplot 的参数都要改
 - [ ] rmatsplot 服务器和本地版本一致，但是本地 python3 缺少了某个模块；服务器是 python2
 - [ ] Step 10 rush 改为 parallel，后者用的人很多
@@ -105,7 +106,20 @@ STAR --runThreadN 12 --runMode genomeGenerate --genomeDir /data/users/minmingw/A
 - [ ] gene_type SYMBOL；Species mmu 这俩干嘛用的
 - [ ] 有参转录组第七步蛋白互作，有问题
 
+---
 
+## Thought
+
+1. 反向比对序列的特征：即比对到基因组的序列负链的序列其真正的序列是啥样的，用的时候用他的原顺序还是转换再颠倒后的顺序，用这些序列做比对后他们是正链还是负链（由功能注释的脚本：提取基因fa.py 联想而来），提取之后用于功能注释的比对，相同基因下的多个转录本如何命名？
+2. 跑注释，提取基因或转录本的 fa 脚本中根据非正链转换再倒序输出是否不妥，而且非正链不代表是负链；同时发现大豆基因组中 GCF_000004515.6_Glycine_max_v4.0_genomic.fna 对应的 gtf 文件中，有除了 transcript ID 外其他都一摸一样的 transcript，需要讨论一下如何处理，跑注释的时候去重？做一个重复 ID 映射表？跑注释到底用 gene 还是 transcript，按理应该用 transcript，因为一个基因可能有不同的转录本，但是不同转录本用的是相同的 ID，所以会有一些不当？给 ID 加序号？
+
+---
+
+## Reference
+
+
+
+---
 
 ### 基因课
 
