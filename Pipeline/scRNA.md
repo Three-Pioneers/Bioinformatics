@@ -6,6 +6,8 @@
 
 [Cell Ranger](https://www.10xgenomics.com/support/software/cell-ranger/latest)：nFeature 代表每个细胞中总基因的数量，nCount 代表每个细胞中总的 UMI 即总转录本的数量，percent.mt 代表每个细胞中线粒体基因 Counts 数占 all Counts 的比例，通过设定不同的阈值以过滤细胞（需研究官方文档查看阈值设定规范）
 
+极低 mRNA 捕获率可能导致基因表达计数为 0，可进行软件补值；同时不同样本间会出现批次效应[^3]，通过 Seurat 软件的 CCA 和 Harmony 可进行消除。CCA 通过找到样本之间相同的“锚点”，Harmony 通过 PCA 的降维结果整合
+
 
 
 **Import**
@@ -64,6 +66,18 @@ cellranger 将下机数据比对到 STAR 索引上，输出 barcode 即列名细
 
 ---
 
+## Step4.Annotation
+
+自动注释需要使用 SingleR 软件
+
+---
+
+## Step_7_monocle.sh
+
+**细胞发育轨迹判断**：单细胞测序捕获了单细胞静态下 RNA 的丰度信息，为了分析细胞特征随时间的动态变化过程，得到细胞发育轨迹，开发了根据基因表达模式相似性对细胞排序的拟时序分析
+
+---
+
 ## Question
 
 1. cellranger 强制减少大量细胞数，警告 Low Fraction Reads in Cells
@@ -100,3 +114,4 @@ cellranger 将下机数据比对到 STAR 索引上，输出 barcode 即列名细
 [^12]:不同组织所含有细胞类型、处理方式、筛选阈值都不同
 [^13]:不同物种参考基因组线粒体 UMI 比例及基因组注释层级和注释质量、参考基因组版本影响不小
 [^14]:测序建库包括：DNA 的提取和质控、片段化 DNA、末端修复加 PolyA 尾巴、加接头、PCR 扩增、磁珠纯化和 qPCR 定量，对于单细胞测序，还包括细胞捕获，所以不同单细胞检测方法产生的数据分布不同
+[^3]:样本、时间、测序平台、实验条件等的差异都可能导致批次效应（batch effect）
