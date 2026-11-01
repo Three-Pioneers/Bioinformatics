@@ -1,5 +1,7 @@
 # Transcriptomics
 
+---
+
 1. 质控：**fastp** 过滤低质量 reads 和测序接头
 2. 比对：**hisat2-build** 建立基因组 Fasta 的索引；**hisat2** 比对质控后序列及索引输出的 **sam** 文件，经过 **samtools** 排序转换输出 **bam**
 3. 量化：**subread** 包的 **featureCounts** 根据 bam 结果的位置信息及 GTF 注释统计不同位置的基因落得的 reads 数
@@ -10,6 +12,16 @@
 
 Fastp 输出 report.html 重要的指标，以及下机数据和质控后的数据如何判断合格
 
+
+
+
+
+
+
+
+
+
+
 ## Step2.Mapping
 
 1. hisat2 尽量跑物理核心，不要多线程多任务运行。即每次只跑一个任务
@@ -19,15 +31,22 @@ Fastp 输出 report.html 重要的指标，以及下机数据和质控后的数�
 
 ## Step3.GenesExpress
 
-~~~bash
-# featureCounts
-~~~
+测序数据定量包括 RPKM（Reads Per Kilobase per Million mapped reads，每百万 reads 每千个碱基中的 reads 数）、FPKM、TPM
+\[
+RPKM=\frac{C_i\times10^9}{N\times L}
+\]
+
+
+
+- 配置文件中要写单端 reads，双端要 fragments
 
 #### 定量结果的质量控制
 
 由于存在批次效应（实验或者数据采集的过程中，由于不同实验批次、测序平台、试剂、实验人员及实验环境等造成的系统性误差，与生物学差异无关）会导致实验误差
 
+```
 
+```
 
 - [ ] 标准化计算方法：FPKM / TPM
 - [ ] 相关性图
@@ -94,11 +113,11 @@ STAR --runThreadN 12 --runMode genomeGenerate --genomeDir /data/users/minmingw/A
 - [ ] 下载 KEGG 通路图必须开 VPN，服务器可以，是默认开 VPN？~~
 - [ ] 富集分析 clusterProfiler 服务器版本 4.6.2，本地 4.18.4；导致输出的富集分析的文件结果列数，新版多了3列
 - [ ] R 脚本排版混乱，命名混乱，注释不足；后期要统一；同时最好使用 python-pandas 处理数据，R-ggplot2 只负责作图
-- [ ] rmats --readLength 服务器是 149，应该为 150~~
+- [x] rmats --readLength 服务器是 149，应该为 150~~
   149 会将 reads 数小于 149 的过滤掉；测试发现会过滤掉绝大部分
-- [ ] rMATS 输入的 reads 是否经过了质控导致长度不一是否会影响 rMATS 的事件判断也就是 inchelevel 的数量会由于 150 149 的不同而不同？
+- [x] rMATS 输入的 reads 是否经过了质控导致长度不一是否会影响 rMATS 的事件判断也就是 inchelevel 的数量会由于 150 149 的不同而不同？
 - [ ] Step9 总文件根本没有 2.mapping/hisat2_sorter.bam 这个文件，本地要报错，服务器不报错；echo，rmatsplot 的参数都要改
-- [ ] rmatsplot 服务器和本地版本一致，但是本地 python3 缺少了某个模块；服务器是 python2
+- [x] rmatsplot 服务器和本地版本一致，但是本地 python3 缺少了某个模块；服务器是 python2
 - [ ] Step 10 rush 改为 parallel，后者用的人很多
 - [ ] 基因组和注释文件选择问题，以及不同软件的匹配度相关性
 - [ ] Functional_annotation.conf 是干嘛的，分类号在 miRNA 第四步 RepeatMasker 使用替代了 species，好像更快
