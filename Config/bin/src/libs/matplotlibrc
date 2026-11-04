@@ -1,0 +1,4 @@
+# Sashimi图的字体保持可编辑，位图按最终尺寸导出600 dpi。
+pdf.fonttype: 42
+ps.fonttype: 42
+savefig.dpi: 600

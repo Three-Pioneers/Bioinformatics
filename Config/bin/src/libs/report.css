@@ -1,0 +1,94 @@
+/* 屏幕和打印共用配色。 */
+:root {
+  --ink:#243346; --muted:#66758a; --line:#dce3eb;
+  --blue:#176b99; --soft:#f4f7fa;
+}
+body {
+  font-family:"Segoe UI","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;
+  color:var(--ink); font-size:16px; line-height:1.75; background:white;
+}
+.main-container {max-width:1380px!important; padding:28px 34px 70px}
+h1,h2,h3 {color:#163b54; font-weight:600; line-height:1.35; scroll-margin-top:24px}
+h1 {font-size:29px; margin-top:44px; border-bottom:2px solid var(--line); padding-bottom:12px}
+h2 {font-size:22px; margin-top:34px}
+h3 {font-size:18px; margin-top:24px}
+p {margin:10px 0 16px}
+a {color:var(--blue)}
+.title {font-size:34px; text-align:left; border-bottom:3px solid var(--blue); padding-bottom:20px}
+.tocify {border:1px solid var(--line); font-size:14px; max-width:250px; background:white}
+.tocify .active {background:var(--blue)}
+
+/* 比较组下拉选择位于所属模块内，沿用原报告方式。 */
+.selector-label {display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin:18px 0}
+.selector-label {font-weight:500}
+select {padding:7px 12px; min-width:190px; max-width:100%; border:1px solid #b9c9d8; border-radius:4px; background:white; font-size:15px}
+.result-panel[hidden] {display:none}
+.curve-panel[hidden] {display:none}
+.comparison-title {font-size:20px; margin:20px 0 12px}
+.column-notes {columns:2; column-gap:32px; padding-left:20px; font-size:14px; color:#526173; margin:12px 0 22px}
+.column-notes li {break-inside:avoid; margin-bottom:3px}
+/* 第二步统计表及简短列说明均左对齐，说明按单列阅读。 */
+#step-2 {text-align:left}
+#step-2 th,#step-2 td,#step-2 caption {text-align:left!important}
+#step-2 .column-notes {columns:1; text-align:left}
+.note {padding:14px 18px; border-left:3px solid var(--blue); background:#f2f7fb; margin:16px 0}
+.note.exploratory {border-color:#bb7a18; background:#fff8ec}
+.unavailable {color:var(--muted); padding:14px; background:var(--soft); border:1px dashed var(--line)}
+
+/* 图片按内容居中显示；不添加外框，分页内容保留在原图与PDF中。 */
+.figure-grid {display:grid; grid-template-columns:1fr; gap:20px; align-items:start}
+.figure-card {margin:18px auto; padding:0; border:none; max-width:760px; background:white; break-inside:avoid}
+.figure-card img {display:block; width:auto; max-width:100%; max-height:680px; height:auto; margin:auto; object-fit:contain}
+.figure-card figcaption {font-size:14px; color:var(--muted); line-height:1.55; padding-top:10px}
+
+/* 沿用旧报告的交互表样式，由DataTables管理横向和纵向滚动。 */
+.table-wrap {margin:18px 0 24px}
+.table-wrap .datatables {width:100%!important}
+.table-wrap .dataTables_wrapper {font-size:14px}
+.table-wrap .dataTables_filter input {margin-left:6px}
+.table-wrap .dataTables_info {font-size:13px}
+.table-wrap table.dataTable th,.table-wrap table.dataTable td {white-space:nowrap}
+/* 项目信息的表头、内容和标题居中。 */
+.table-wrap.table-center th,.table-wrap.table-center td,.table-wrap.table-center caption {text-align:center!important}
+table {font-size:14px; width:100%; border-collapse:collapse}
+table th {background:#edf3f8; border-bottom:1px solid #b9c9d8; padding:8px 10px; text-align:left}
+table td {padding:7px 10px; border-bottom:1px solid #edf0f4; vertical-align:top}
+table tr:last-child td {border-bottom:none}
+table caption {text-align:left; font-size:15px; font-weight:600; padding:9px 0; color:var(--ink)}
+code {font-size:14px; white-space:normal}
+pre {background:var(--soft); border-color:var(--line)}
+.small {font-size:14px; color:var(--muted)}
+details {padding:8px 12px; border:1px solid var(--line); margin:12px 0}
+summary {cursor:pointer; color:var(--blue)}
+
+@media(max-width:800px) {
+  .main-container {padding:18px}
+  .column-notes {columns:1}
+  .title {font-size:28px}
+}
+
+/* A4打印隐藏导航，尽量保留图表字号。 */
+@media print {
+  @page {size:A4; margin:16mm 14mm}
+  body {font-size:11pt}
+  .main-container {max-width:none!important; padding:0}
+  .tocify,.toc-content>.tocify {display:none!important}
+  .toc-content {width:100%!important; float:none!important}
+  h1 {font-size:20pt; break-before:page}
+  h1.title {break-before:auto}
+  h2 {font-size:15pt; break-after:avoid}
+  h3 {font-size:12pt; break-after:avoid}
+  .figure-card {border:none; padding:0; margin:10pt 0; break-inside:avoid}
+  .figure-card img {max-height:255mm; max-width:100%; object-fit:contain}
+  .figure-grid {display:block}
+  .table-wrap {overflow:visible}
+  table {font-size:9.5pt}
+  thead {display:table-header-group}
+  tr,.note {break-inside:avoid}
+  a[href]:after {content:none!important}
+  details {border:none}
+
+  .selector-label {display:none}
+  .result-panel[hidden] {display:block!important}
+  .curve-panel[hidden] {display:block!important}
+}

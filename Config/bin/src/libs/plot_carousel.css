@@ -1,0 +1,34 @@
+/* 图片居中，箭头固定在两侧，保留原图比例。 */
+.plot-carousel { position:relative; box-sizing:border-box; width:100%; max-width:900px;
+  margin:8px auto; padding:0 56px; text-align:center; }
+.plot-carousel .carousel-slide { margin:0; max-width:none; text-align:center; }
+.plot-carousel .carousel-slide[hidden] { display:none!important; }
+.plot-carousel .carousel-slide a { display:flex; align-items:center; justify-content:center;
+  height:auto; min-height:0; }
+.plot-carousel .carousel-slide img { display:block; width:auto; height:auto; max-width:100%;
+  max-height:min(70vh,680px); margin:0 auto; object-fit:contain; }
+.plot-carousel figcaption { margin:6px auto 0; font-size:14px; color:#66758a; line-height:1.5; }
+.carousel-controls { margin:0; text-align:center; }
+.carousel-controls button { position:absolute; top:calc(50% - 14px); transform:translateY(-50%);
+  display:flex; align-items:center; justify-content:center; width:42px; height:52px;
+  padding:0; border:1px solid #b9c9d8; border-radius:6px; background:#fff;
+  color:#176b99; font-size:34px; line-height:1; cursor:pointer; }
+.carousel-controls [data-carousel-prev] { left:0; }
+.carousel-controls [data-carousel-next] { right:0; }
+.carousel-controls button:hover { background:#edf3f8; }
+.carousel-controls button:focus-visible, .plot-carousel:focus-visible { outline:2px solid #176b99; outline-offset:3px; }
+.plot-carousel[data-count="1"] { padding-inline:0; }
+.enrichment-plot-group { text-align:center; margin:18px auto; }
+.enrichment-plot-group h3, .enrichment-plot-group > p { text-align:center; }
+@media(max-width:600px) {
+  .plot-carousel { padding-inline:42px; }
+  .carousel-controls button { width:34px; height:44px; font-size:28px; }
+}
+@media print {
+  .plot-carousel { max-width:none; padding:0; }
+  .plot-carousel .carousel-slide[hidden] { display:block!important; }
+  .plot-carousel .carousel-slide { break-inside:avoid; margin:12pt 0; }
+  .plot-carousel .carousel-slide a { height:auto; min-height:0; }
+  .plot-carousel .carousel-slide img { max-height:240mm; }
+  .carousel-controls { display:none!important; }
+}

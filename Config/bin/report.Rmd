@@ -1,0 +1,685 @@
+---
+title: "转录组分析报告"
+output:
+  html_document:
+    includes:
+      in_header: src/libs/header.html
+    self_contained: true
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+    toc_depth: 1
+    number_sections: false
+    theme: readable
+    highlight: tango
+    mathjax: null
+    df_print: default
+---
+
+```{r setup, include=FALSE}
+suppressMessages(library(knitr))
+suppressMessages(library(DT))
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, results = "asis")
+esc <- function(x) htmltools::htmlEscape(as.character(x))
+
+# 报告只读取已收集的材料，不在渲染过程中重新计算统计分析。
+read_result <- function(path, header = TRUE, n = Inf) {
+  if (!file.exists(path) || file.info(path)$size == 0) {
+    return(NULL)
+  }
+  read.delim(path,
+    header = header, nrows = n, check.names = FALSE, quote = "", comment.char = "",
+    stringsAsFactors = FALSE
+  )
+}
+
+# 表格列名说明集中维护；样本列自动按当前项目识别。
+column_notes <- c(
+  sample_id = "样本名称", Sample_ID = "样本名称", group = "实验分组或比较组", byzh_id = "原始样本编号",
+  id = "基因原始编号，可附加基因名称", ID = "功能项或通路编号", Description = "功能或通路名称",
+  baseMean = "归一化计数在全部样本中的平均值", log2FoldChange = "处理组相对对照组的log2倍数变化",
+  lfcSE = "log2倍数变化的标准误", stat = "Wald检验统计量", pvalue = "未经多重检验校正的P值",
+  padj = "BH校正后的P值", p.adjust = "BH校正后的P值", qvalue = "估计的q值", Direction = "Up为上调，Down为下调",
+  GFOLD_score = "GFOLD保守差异分数；非零值用于筛选候选基因", `E-FDR` = "GFOLD给出的错误发现率估计",
+  input_reads = "比对输入数量，具体单位见input_unit", input_unit = "pairs为读对，reads为单端读段", overall_rate = "HISAT2总体比对率",
+  total_counting_units = "参与计数的 Reads 或 Fragments 总数", assigned = "成功分配到基因的数量",
+  assignment_rate = "已分配数量占总数的百分比",
+  direction = "Up为上调，Down为下调", sum = "对应方向的基因数量",
+  Up = "上调基因数", Down = "下调基因数", No = "未达到筛选条件的基因数", Total = "结果表中的基因总数",
+  GeneRatio = "命中的候选基因数/参与富集的候选基因数", BgRatio = "功能项的背景基因数/参与富集的背景基因数",
+  RichFactor = "命中基因数/该功能项的背景基因数", FoldEnrichment = "GeneRatio与BgRatio之比", zScore = "命中数相对背景期望的标准化偏离",
+  geneID = "命中的基因列表", Count = "命中的基因数量", class = "GO分类：BP生物过程、CC细胞组分、MF分子功能",
+  setSize = "参与检验的基因集大小", enrichmentScore = "原始富集分数ES", NES = "标准化富集分数，正负表示富集方向",
+  rank = "富集峰值在排序列表中的位置", leading_edge = "富集峰附近核心基因的比例摘要", core_enrichment = "推动富集的核心基因列表",
+  module = "共表达模块", trait = "表型或编码后的分组变量", correlation = "模块特征向量与表型的Pearson相关系数",
+  pvalue_asymptotic = "相关系数的t近似P值", pvalue_method = "本次使用的P值计算方法", permutations = "使用的独立标签配置或置换次数",
+  analysis_mode = "小样本探索性或常规分析模式", own_kME = "基因与所属模块特征向量的相关系数", rank_in_module = "按模块成员度排列的模块内名次",
+  event = "剪接事件类型", tested = "具有有效统计量的事件数", significant = "达到FDR与ΔPSI阈值的事件数",
+  increased_inclusion = "处理组包含率升高的显著事件数", decreased_inclusion = "处理组包含率降低的显著事件数",
+  FDR = "多重检验校正后的错误发现率", IncLevelDifference = "处理组减对照组的平均包含率差值ΔPSI",
+  GeneID = "基因编号", geneSymbol = "基因名称", chr = "染色体", strand = "基因所在链方向", PValue = "未经多重检验校正的P值",
+  exonStart_0base = "外显子起点（0-based）", exonEnd = "外显子终点", upstreamES = "上游外显子起点", upstreamEE = "上游外显子终点",
+  downstreamES = "下游外显子起点", downstreamEE = "下游外显子终点", IJC_SAMPLE_1 = "处理组各样本支持包含型的连接计数",
+  SJC_SAMPLE_1 = "处理组各样本支持跳跃型的连接计数", IJC_SAMPLE_2 = "对照组各样本支持包含型的连接计数", SJC_SAMPLE_2 = "对照组各样本支持跳跃型的连接计数",
+  IncFormLen = "包含型有效长度", SkipFormLen = "跳跃型有效长度", IncLevel1 = "处理组各样本包含率", IncLevel2 = "对照组各样本包含率",
+  CHROM = "染色体", POS = "变异位点坐标", REF = "参考等位基因", ALT = "替代等位基因", QUAL = "变异质量分数", FILTER = "变异过滤标记",
+  GT = "该样本的等位基因组合，如A/G", AD = "参考及替代等位基因的支持深度", DP = "该位点测序深度",
+  SNP = "该样本通过过滤的SNP记录数", InDel = "该样本通过过滤的插入/缺失记录数",
+  Uniprot = "UniProt蛋白功能注释", GO = "GO功能注释", KEGG = "KEGG基因、KO及通路注释", Card = "CARD耐药相关同源注释",
+  VFDB = "VFDB毒力相关同源注释", PHI = "PHI宿主互作相关同源注释", COG = "COG同源功能分类", eggNOG = "eggNOG同源功能分类",
+  CAZy = "CAZy碳水化合物活性酶注释", NT = "核酸序列相似性注释", NR = "蛋白序列相似性注释", Pfam = "Pfam蛋白结构域注释"
+)
+
+explain_columns <- function(fields, context, labels = NULL) {
+  notes <- column_notes[intersect(fields, names(column_notes))]
+  for (prefix in c("Raw", "Clean")) {
+    for (field in c(
+      "Total_Reads", "Total_Bases", "Q20_Bases",
+      "Q30_Bases", "Q20_Rate", "Q30_Rate", "GC_Content"
+    )) {
+      key <- paste(prefix, field, sep = "_")
+      if (key %in% fields) {
+        notes[key] <- paste0(
+          if (prefix == "Raw") "过滤前" else "过滤后",
+          c(
+            Total_Reads = "reads数", Total_Bases = "碱基总数", Q20_Bases = "质量≥Q20的碱基数", Q30_Bases = "质量≥Q30的碱基数",
+            Q20_Rate = "质量≥Q20的碱基比例", Q30_Rate = "质量≥Q30的碱基比例", GC_Content = "G/C碱基比例"
+          )[[field]]
+        )
+      }
+    }
+  }
+  extra <- c(
+    Low_Quality_Reads = "因低质量被过滤的reads数", Too_Many_N_Reads = "因N碱基过多被过滤的reads数",
+    Too_Short_Reads = "因长度不足被过滤的reads数"
+  )
+  notes <- c(notes, extra[intersect(fields, names(extra))])
+  sample_fields <- if (!is.null(samples)) intersect(fields, samples$sample_id) else character()
+  if (length(sample_fields)) {
+    unit <- toupper(sub("[.]txt$", "", basename(context), ignore.case = TRUE))
+    if (!unit %in% c("COUNT", "FPKM", "RPKM", "TPM")) unit <- expression_unit
+    notes["各样本列"] <- if (grepl("snps|indels", context)) {
+      "样本基因型（如0/0参考纯合、0/1杂合、1/1变异纯合；二倍体示例）"
+    } else {
+      paste0(
+        "列名为样本名称，数值为该样本的",
+        if (unit == "COUNT") "原始计数（COUNT）" else paste0(unit, "表达量")
+      )
+    }
+  }
+  if (grepl("SE[.]|MATS", context) && "ID" %in% fields) notes["ID"] <- "剪接事件编号"
+  if (length(notes)) {
+    cat('<ul class="column-notes">')
+    for (name in names(notes)) {
+      label <- if (!is.null(labels) && name %in% names(labels)) labels[[name]] else name
+      cat("<li>", esc(label), "：", esc(notes[[name]]), "。</li>", sep = "")
+    }
+    cat("</ul>")
+  }
+}
+
+# 预览多读一行以判断是否截断，网页保留搜索、排序和列控制。
+show_table <- function(
+  path, caption, n = 50, columns = 50, header = TRUE,
+  element_id = NULL, align = "left", column_labels = NULL, percent_columns = character(),
+  drop_columns = character()
+) {
+  data <- read_result(path, header, if (is.finite(n)) n + 1 else n)
+  if (is.null(data)) {
+    cat('<p class="unavailable">未运行或没有可展示结果。</p>')
+    return(invisible(NULL))
+  }
+  if (!nrow(data)) cat('<p class="note">结果表已生成，未检出符合当前筛选条件的项目。</p>')
+  truncated <- nrow(data) > n
+  if (truncated) data <- head(data, n)
+  data <- data[, !names(data) %in% drop_columns, drop = FALSE]
+  column_truncated <- ncol(data) > columns
+  data <- data[, seq_len(min(ncol(data), columns)), drop = FALSE]
+  fields <- names(data)
+  if (!header) names(data) <- c("项目", "内容")
+  if (!is.null(column_labels)) {
+    labelled <- intersect(fields, names(column_labels))
+    names(data)[match(labelled, fields)] <- unname(column_labels[labelled])
+  }
+  display_fields <- setNames(names(data), fields)
+  # 保留搜索、排序、滚动、复制及列控制，不显示文件导出按钮。
+  widget <- DT::datatable(data,
+    rownames = FALSE, escape = TRUE, elementId = element_id,
+    caption = htmltools::tags$caption(caption),
+    extensions = c("FixedColumns", "KeyTable", "Scroller", "Buttons"),
+    options = list(
+      dom = "Bfrtip", keys = TRUE, deferRender = TRUE,
+      scrollX = TRUE, scrollY = if (nrow(data) < 10) FALSE else 300,
+      scroller = nrow(data) >= 10, order = list(),
+      buttons = c("copy", "colvis"),
+      columnDefs = list(list(className = paste0("dt-", align), targets = seq_len(ncol(data)) - 1))
+    )
+  )
+  if (length(percent_columns)) {
+    widget <- DT::formatPercentage(widget, unname(display_fields[percent_columns]), digits = 2)
+  }
+  # 显式注册依赖，确保比较组循环中的每张交互表也能正常显示。
+  rendered <- knitr::knit_print(widget)
+  knitr::knit_meta_add(attr(rendered, "knit_meta"))
+  # 仅项目信息使用居中样式，其余结果表沿用原格式。
+  cat('<div class="table-wrap', if (align == "center") " table-center" else "", '">',
+    as.character(rendered), "</div>",
+    sep = ""
+  )
+  if (header) explain_columns(fields, path, labels = column_labels)
+}
+
+# 页面展示首张 PNG，并提供其余分页图片的入口。
+show_figure <- function(stem, caption, required = FALSE) {
+  path <- paste0(stem, ".png")
+  if (!file.exists(path)) {
+    if (required) cat('<p class="unavailable">', esc(caption), "：未运行或无可展示图形。</p>", sep = "")
+    return(invisible(NULL))
+  }
+  cat('<figure class="figure-card"><a href="', esc(path), '" target="_blank"><img src="', esc(path),
+    '" alt="', esc(caption), '" /></a><figcaption>', esc(caption), "</figcaption>",
+    sep = ""
+  )
+  extras <- Sys.glob(paste0(stem, "_page*.png"))
+  if (length(extras)) {
+    cat('<p class="small">样本或条目较多，图形共 ', length(extras) + 1, " 张；上图为第1张。其他PNG：", sep = "")
+    for (i in seq_along(extras)) {
+      cat('<a href="', esc(extras[i]), '" target="_blank">第', i + 1,
+        "页</a> ",
+        sep = ""
+      )
+    }
+    cat("</p>")
+  }
+  cat("</figure>")
+}
+
+# GO/KEGG 每类只展示一张完整图片，不读取分页副本或添加切换按钮。
+show_plot_gallery <- function(stem, caption, required = FALSE) {
+  title <- gsub("_", " ", basename(stem))
+  path <- paste0(stem, ".png")
+  if (!file.exists(path)) {
+    if (required) cat('<p class="unavailable">', esc(title), "：未运行或无可展示图形。</p>", sep = "")
+    return(invisible(NULL))
+  }
+  cat('<section class="enrichment-plot-group"><h3>', esc(title), '</h3>',
+    '<figure class="figure-card"><a href="', esc(path), '" target="_blank" rel="noopener">',
+    '<img src="', esc(path), '" alt="', esc(title), '" /></a><figcaption>',
+    esc(caption), '</figcaption></figure></section>', sep = "")
+}
+
+parameters <- read_result("../config/parameters.tsv")
+# 参数表由固定配置生成；只按保存的参数名读取。
+parameter <- function(key, default) {
+  if (is.null(parameters)) {
+    return(default)
+  }
+  value <- parameters$value[match(tolower(key), tolower(parameters$parameter))]
+  if (!length(value) || is.na(value)) default else as.character(value)
+}
+
+# 报告中的表达单位与生成脚本时保存的测序模式一致。
+expression_unit <- if (tolower(parameter("PE", "true")) == "true") "FPKM" else "RPKM"
+project <- read_result("../config/project_info.txt", header = FALSE)
+samples <- read_result("src/table/sample_info.txt")
+comparisons <- readLines("../config/comparisons.txt", warn = FALSE)
+
+# 每个分析模块独立切换比较，沿用原报告的下拉选择方式。
+start_module <- function(name) {
+  cat('<div class="result-module"><label class="selector-label">比较组 <select class="comparison-select" aria-label="',
+      esc(name), '比较组">', sep = "")
+  for (i in seq_along(comparisons)) {
+    cat('<option value="', i, '">', esc(comparisons[i]), '</option>', sep = "")
+  }
+  cat('<option value="all">全部比较</option></select></label>')
+}
+start_panel <- function(i) {
+  cat('<div class="result-panel" data-choice="', i,
+      '"><h2 class="comparison-title">', esc(comparisons[i]), '</h2>', sep = "")
+}
+
+# 单通路曲线直接展开，默认显示第一张，可用下拉框切换通路。
+show_gsea_curves <- function(folder, label) {
+  table <- read_result(file.path(folder, paste0(label, "_GSEA_all.txt")))
+  if (is.null(table)) {
+    return(invisible(NULL))
+  }
+  stems <- file.path(folder, label, gsub(":", "_", table$ID))
+  # 仅列出已经生成曲线图片的通路，避免出现空白选项。
+  valid <- file.exists(paste0(stems, ".png"))
+  stems <- stems[valid]
+  table <- table[valid, , drop = FALSE]
+  if (!length(stems)) {
+    return(invisible(NULL))
+  }
+  cat('<section class="gsea-curve-section"><h3>', label,
+    ' 单通路富集曲线</h3><div class="curve-gallery"><label class="selector-label">通路 <select class="curve-select">',
+    sep = ""
+  )
+  for (i in seq_along(stems)) {
+    cat('<option value="', i, '">',
+      esc(paste(table$ID[i], table$Description[i])), "</option>",
+      sep = ""
+    )
+  }
+  cat("</select></label>")
+  for (i in seq_along(stems)) {
+    cat('<div class="curve-panel" data-choice="', i, '"', if (i > 1) ' hidden' else '', '>', sep = "")
+    show_figure(stems[i], paste(table$ID[i], table$Description[i]))
+    cat("</div>")
+  }
+  cat("</div></section>")
+}
+```
+
+# 项目概览
+
+```{r overview}
+# 项目信息直接显示为居中的静态表格。
+if (!is.null(project)) {
+  cat('<div class="table-wrap table-center"><table id="project-table"><caption>项目信息</caption><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody>')
+  for (i in seq_len(nrow(project))) {
+    cat("<tr><td>", esc(project[i, 1]), "</td><td>",
+      esc(project[i, 2]), "</td></tr>",
+      sep = ""
+    )
+  }
+  cat("</tbody></table></div>")
+} else {
+  cat('<p class="unavailable">未提供项目信息。</p>')
+}
+```
+
+# 0. 样本信息 {#step-0}
+
+```{r sample_info}
+# 样本信息恢复为完整静态表格。
+if (!is.null(samples)) {
+  cat('<div class="table-wrap"><table id="sample-table"><thead><tr>')
+  for (field in names(samples)) cat('<th>', esc(field), '</th>', sep = "")
+  cat('</tr></thead><tbody>')
+  for (i in seq_len(nrow(samples))) {
+    cat('<tr>')
+    for (j in seq_len(ncol(samples))) cat('<td>', esc(samples[i, j]), '</td>', sep = "")
+    cat('</tr>')
+  }
+  cat('</tbody></table></div>')
+}
+```
+
+# 1. 数据质控 {#step-1}
+
+数据质控用于去除测序接头和质量较低的序列，为后续分析提供可靠的测序数据。本步骤使用 fastp 进行过滤，并通过 MultiQC 汇总各样本的质量情况。
+
+Q20、Q30 反映测序的准确程度，GC 含量反映序列组成，下表比较过滤前后的数据量、Q20、Q30 和 GC 含量可了解各样本的数据质量和过滤后的保留情况。
+
+```{r qc}
+show_table("src/table/qc_stats.txt", "测序质量汇总", n = Inf, columns = Inf)
+if (file.exists("src/qc/multiqc_report.html")) {
+  cat('<p><a href="src/qc/multiqc_report.html" target="_blank" rel="noopener">Fastp 的 MultiQC 交互质控报告</a>：查看各样本的质量分布、接头及过滤统计。</p>')
+}
+```
+
+# 2. 基因组比对 {#step-2}
+
+基因组比对用于确定测序序列在参考基因组上的位置，为表达定量、可变剪接和变异检测提供依据。本步骤使用 HISAT2 进行比对，并用 samtools 整理比对结果。
+
+# 3. 表达定量 {#step-3}
+
+表达定量统计各样本中每个基因的表达水平。本步骤使用 featureCounts 生成原始计数 COUNT 表及经过测序深度和基因长度归一化校正的表达矩阵。双端测序按 Fragments 数计算 FPKM，单端测序按 Reads 计算 RPKM；`r expression_unit`和 TPM 矩阵用于展示表达丰度，COUNT 矩阵用于差异表达分析。
+
+下表展示所有参与 Reads（单端）或 Fragments（双端）统计的数量、成功分配到到基因上的数量、基因分配率等。
+
+```{r assignment}
+show_table("src/table/assignment_stats.txt", "featureCounts 基因分配率", n = Inf, columns = Inf,
+  element_id = 'featurecounts-assignment-table',
+  column_labels = c(sample_id = 'Sample_id', total_counting_units = 'Total_counting_units',
+                    assigned = 'Assigned', assignment_rate = 'Assignment_rate'),
+  percent_columns = 'assignment_rate')
+```
+
+## 表达分布、相关性和 PCA
+
+从整体表达水平了解样本之间的关系，有助于了解组内重复样本的一致性和不同组之间的变化趋势。PCA 将大量基因的表达变化降维寻找主要变化方向，便于观察样本聚集或分离的情况；相关性图衡量两两样本表达模式的相似程度，表达分布通过小提琴图比较各样本的表达量分布，。
+
+PCA 基于方差稳定转换后的计数矩阵，相关性基于标准化计数计算，表达分布以 TPM 矩阵作输入。
+
+```{r sample_plots}
+show_figure("src/image/COUNT_PCA", "PCA：每个点代表一个样本，颜色区分分组；坐标轴百分比表示该主成分解释的总体变化比例。", TRUE)
+cat('<div class="figure-grid">')
+show_figure("src/image/COUNT_cor", "样本表达相关性：相关系数越接近1，两个样本的整体表达模式越相似。", TRUE)
+show_figure("src/image/TPM_violin", "表达量分布：小提琴的宽度表示对应表达水平的基因密集程度，内部箱线表示中位数和四分位范围；纵轴为 log2(TPM+1)。", TRUE)
+cat("</div>")
+```
+
+# 4. 差异表达 {#step-4}
+
+差异表达分析用于寻找处理组与对照组之间表达水平发生明显变化的基因。其中有生物学重复的分组使用 DESeq2 统计结果，按校正后的P值（FDR）< 0.05 且 |log2FoldChange| ≥ 1 筛选；没有重复样本的分组比较使用 GFOLD 提供探索性分析，不能作为有生物学重复支持的显著差异结论。
+
+```{r diff_overview}
+diff_summary <- read_result("src/table/diffExprGene_stats.txt")
+if (!is.null(diff_summary)) {
+  if (length(comparisons) > 1) {
+    show_table("src/table/diffExprGene_stats.txt", "各比较差异基因数量", n = Inf, columns = Inf)
+  }
+  format_gene_count <- function(value) format(as.integer(value), big.mark = ",", scientific = FALSE, trim = TRUE)
+  for (i in seq_len(nrow(diff_summary))) {
+    counts <- diff_summary[i, ]
+    cat('<p class="diff-summary"><strong>',
+      esc(gsub("_vs_", " vs ", counts$group, fixed = TRUE)),
+      '</strong>：共统计 ', format_gene_count(counts$Total),
+      ' 个基因，筛选得到 ', format_gene_count(counts$Up + counts$Down),
+      ' 个基因（上调 ', format_gene_count(counts$Up),
+      ' 个，下调 ', format_gene_count(counts$Down),
+      ' 个），另有 ', format_gene_count(counts$No),
+      ' 个未达到筛选条件。</p>', sep = "")
+  }
+} else {
+  cat('<p class="unavailable">暂无可展示的差异基因数量总结。</p>')
+}
+if (length(comparisons) > 1) {
+  show_figure("src/image/venn", "不同比较的候选基因交集：重叠部分表示共同出现的基因，可用于寻找共有变化和各比较特有的变化。", TRUE)
+}
+```
+
+```{r diff_comparisons}
+# 每个分析步骤内部按配置顺序展示全部比较。
+start_module("差异表达")
+for (i in seq_along(comparisons)) {
+  comparison <- comparisons[i]
+  folder <- file.path("src/comparisons", comparison)
+  start_panel(i)
+  actual <- read_result(file.path(folder, "analysis_parameters.tsv"))
+  is_gfold <- !is.null(actual) && any(actual$parameter == "method" & actual$value == "GFOLD")
+  if (is.null(actual)) {
+    cat('<p class="small">该比较缺少分析方法记录，筛选条件需结合原始结果核对。</p>')
+  } else {
+    selected <- actual[actual$parameter %in% c(
+      "method", "tested_genes", "p_column", "p_cutoff",
+      "log2fc_cutoff"
+    ), , drop = FALSE]
+    selected$value[selected$parameter == "method" & selected$value == "existing_DESeq2_statistics"] <- "DESeq2"
+    labels <- c(
+      method = "统计方法", tested_genes = "参与检验的基因数", p_column = "显著性指标", p_cutoff = "P值阈值",
+      log2fc_cutoff = "|log2倍数变化|阈值"
+    )
+    cat('<p class="small">',
+      esc(paste(paste(labels[selected$parameter], selected$value, sep = "："),
+        collapse = "；"
+      )), "。</p>",
+      sep = ""
+    )
+    if (any(actual$parameter == "statistics_source" & actual$value == "original_analysis_no_refit")) cat('<p class="note">本比较基于原差异分析的统计结果，按上述条件筛选；原分析的表达预过滤条件未单独记录。</p>')
+  }
+  show_table(file.path(folder, "Sig_genes_exprData.txt"), if (is_gfold) "GFOLD 候选基因" else "差异表达基因",
+             drop_columns = c("baseMean", "lfcSE", "stat", "pvalue"))
+  cat('<div class="figure-grid">')
+  show_figure(
+    file.path(folder, "volcano"),
+    if (is_gfold) "GFOLD候选基因图：展示候选基因的变化方向和表达水平，供无重复比较作探索性参考。" else "火山图：横轴表示表达变化的方向和幅度，纵轴越高表示校正后的P值越小；颜色区分上调、下调和未达筛选条件的基因。", TRUE
+  )
+  show_figure(
+    file.path(folder, "heatmap"),
+    "候选基因表达热图：每行是一个基因，每列是一个样本；颜色表示该基因在不同样本中的相对高低，便于观察表达模式，不能用于比较不同基因的绝对表达量。", TRUE
+  )
+  cat("</div>")
+  cat("</div>")
+}
+cat("</div>")
+```
+
+# 5. 功能注释 {#step-5}
+
+功能注释用于了解基因可能参与的生物学过程和分子功能。本步骤将基因编号与本项目参考注释对应，补充基因名称、功能描述及GO、KEGG等数据库信息，便于解释差异基因并开展后续富集分析。
+
+下表展示参考注释中的对应信息。缺少注释表示当前资料中没有匹配记录，不能据此判断基因没有功能；基于同源序列的注释可作为研究线索，仍需结合实验和文献解读。
+
+```{r annotation}
+show_table("src/table/annotation_stats.txt", "物种功能注释示例")
+```
+
+# 6. GO / KEGG 富集 {#step-6}
+
+本步骤将差异分析得到的候选基因与功能数据库对应，寻找其中较集中的生物学功能和通路，帮助理解基因变化可能涉及哪些过程。GO从生物过程（BP）、细胞组分（CC）和分子功能（MF）三个方面描述基因功能；KEGG侧重基因参与的代谢和信号通路。使用clusterProfiler进行富集检验，背景为本次比较实际接受检验且有相应注释的基因，显著性以BH校正P值（p.adjust）<0.05为准。
+
+点图中，圆点越大表示命中的候选基因越多，颜色由红到绿表示原始P值由小到大；横轴Rich factor表示命中基因占该功能项背景基因的比例。图中优先展示原始P值<0.05的条目，没有此类条目时展示排名靠前的结果，因此图中出现的条目不一定达到校正后的显著性标准。下方显著结果表用于判断哪些功能或通路获得了统计支持；若表格为空，表示当前数据下未检出显著富集，不代表这些功能没有参与生物学过程。
+
+```{r enrichment}
+start_module("GO/KEGG富集")
+for (i in seq_along(comparisons)) {
+  comparison <- comparisons[i]
+  folder <- file.path("src/comparisons", comparison)
+  start_panel(i)
+  inputs <- read_result(file.path(folder, "enrichment_parameters.tsv"))
+  if (!is.null(inputs)) {
+    values <- setNames(inputs$value, inputs$parameter)
+    cat('<p class="small">本比较纳入 ', esc(values["candidate_genes"]), " 个候选基因，接受检验的背景基因共 ",
+      esc(values["tested_background"]), " 个；各数据库仅使用其中有相应注释的基因。</p>",
+      sep = ""
+    )
+  }
+  show_plot_gallery(file.path(folder, "GO_barplot"), "GO 条形图：BP、CC、MF 每类最多展示前 15 项，合并在同一张图中。", TRUE)
+  show_plot_gallery(file.path(folder, "GO_dotplot"), "GO 点图：BP、CC、MF 每类最多展示前 15 项功能条目。", TRUE)
+  show_plot_gallery(file.path(folder, "KEGG_barplot"), "KEGG 条形图：最多展示排名前 20 项通路。", TRUE)
+  show_plot_gallery(file.path(folder, "KEGG_dotplot"), "KEGG 点图：最多展示排名前 20 项通路。", TRUE)
+  show_table(file.path(folder, "Sig_GO_Enrichment.txt"), "显著 GO 功能")
+  show_table(file.path(folder, "Sig_KEGG_Enrichment.txt"), "显著 KEGG 通路")
+  cat('<section class="enrichment-supplement"><h3>补充图：GO 圈图和通路图</h3>')
+  show_figure(file.path(folder, "GO_circlize"), "GO圈图：BP、CC、MF 每类最多展示 6 个显著条目，汇总命中基因数、上下调比例和富集程度；颜色表示−log10(FDR)。")
+  show_figure(file.path(folder, "pathway"), "通路图示例：将基因表达变化标注在通路相应位置，便于查看变化涉及的环节。", TRUE)
+  if (file.exists(file.path(
+    folder,
+    "pathview_skipped.txt"
+  ))) {
+    cat('<p class="small">部分通路缺少可用图形或映射信息，未展示通路图，富集结果仍可查阅。</p>')
+  }
+  cat("</section>")
+  cat("</div>")
+}
+cat("</div>")
+```
+
+# 7. GSEA {#step-7}
+
+GSEA用于判断某一功能或通路中的基因，是否整体倾向于在处理组上调或下调。它将全部具有有效结果的基因按处理组相对对照组的log2倍数变化排序，再使用clusterProfiler分析基因集在排序列表中的分布。因此，即使单个基因的变化较小，也可以观察到一组相关基因是否呈现一致的变化趋势；分析不预先限定为显著差异基因，显著性以BH校正P值<0.05为准。
+
+富集曲线的上图显示富集分数如何随基因排序变化，中图标出该基因集成员的位置，下图显示全部基因的表达变化排序。标准化富集分数NES为正，表示该基因集倾向于集中在处理组上调的一端；NES为负则倾向于下调的一端。概览展示结果表前10项，单项曲线可在下拉框中查看；排名靠前仅表示展示顺序，是否显著需结合校正P值判断。
+
+```{r gsea}
+start_module("GSEA")
+for (i in seq_along(comparisons)) {
+  comparison <- comparisons[i]
+  folder <- file.path("src/comparisons", comparison)
+  start_panel(i)
+  ranking <- read_result(file.path(folder, "GSEA_parameters.tsv"))
+  if (!is.null(ranking)) {
+    valid_genes <- ranking$value[ranking$parameter == "valid_genes"]
+    if (length(valid_genes)) cat('<p class="small">本比较共有 ', esc(valid_genes), " 个有效基因参与排序。</p>", sep = "")
+  }
+  cat('<div class="figure-grid">')
+  show_figure(file.path(folder, "GO_GSEA_top10"), "GO基因集的整体变化趋势：各曲线对应不同功能条目。", TRUE)
+  show_figure(file.path(folder, "KEGG_GSEA_top10"), "KEGG基因集的整体变化趋势：各曲线对应不同通路。", TRUE)
+  cat("</div>")
+  for (label in c("GO", "KEGG")) {
+    table <- read_result(file.path(folder, paste0(label, "_GSEA_all.txt")))
+    if (!is.null(table) && nrow(table)) {
+      cat('<p class="note">', label, "：达到BH校正P值&lt;0.05的基因集共 ",
+        sum(is.finite(table$p.adjust) & table$p.adjust < 0.05), " 个。若为0，表示本比较未检出统计显著的整体富集趋势，图示条目仅供观察。</p>",
+        sep = ""
+      )
+    }
+    show_gsea_curves(folder, label)
+  }
+  show_table(file.path(folder, "GO_GSEA_all.txt"), "GO GSEA 结果")
+  show_table(file.path(folder, "KEGG_GSEA_all.txt"), "KEGG GSEA 结果")
+  cat("</div>")
+}
+cat("</div>")
+```
+
+# 8. 可变剪接 {#step-8}
+
+```{r splicing}
+if (tolower(parameter("RunRMATS", "true")) == "true") {
+  cat("<p>同一个基因可以通过不同的剪接方式形成不同转录本。本步骤使用rMATS比较两组样本对外显子和剪接位点的使用情况，帮助发现基因总表达量之外的转录本结构变化。分析包括SE（外显子跳跃）、A5SS（可变5′剪接位点）、A3SS（可变3′剪接位点）、MXE（互斥外显子）和RI（内含子保留）五类事件。</p><p>依据跨剪接连接的读段进行统计，以FDR&lt;0.05且|ΔPSI|≥0.1筛选显著事件，即两组平均包含率相差至少10个百分点。正ΔPSI表示处理组的包含率较高，负值表示较低。汇总表列出各类事件的检验数量及显著数量，下方展示部分显著SE事件的读段覆盖和剪接连接情况，供结合各样本的一致性进一步判断。</p>")
+  start_module("可变剪接")
+  for (i in seq_along(comparisons)) {
+    comparison <- comparisons[i]
+    folder <- file.path("src/comparisons", comparison)
+    start_panel(i)
+    if (!file.exists(file.path(
+      folder,
+      "splicing_summary.txt"
+    ))) {
+      cat('<p class="unavailable">本比较暂无可用的剪接汇总，尚不能判断是否存在显著剪接变化。</p>')
+    }
+    if (file.exists(file.path(folder, "splicing_summary.txt"))) {
+      show_table(file.path(
+        folder,
+        "splicing_summary.txt"
+      ), "五类剪接事件汇总")
+    }
+    if (file.exists(file.path(folder, "SE.significant.txt"))) {
+      show_table(file.path(
+        folder,
+        "SE.significant.txt"
+      ), "显著 SE 事件")
+    }
+    show_figure(file.path(folder, "sashimi"), "显著SE事件示例：覆盖曲线显示外显子上的读段分布，连接线及其计数显示剪接连接的支持情况。")
+    cat("</div>")
+  }
+  cat("</div>")
+} else {
+  cat('<p class="unavailable">本项目配置已关闭第8步可变剪接分析。</p>')
+}
+```
+
+# 9. 变异检测 {#step-9}
+
+```{r variants}
+if (tolower(parameter("RunVariants", "true")) == "true") {
+  cat("<p>本步骤在有转录读段覆盖的区域，寻找各样本相对参考基因组的单碱基变异（SNP）及短片段插入或缺失（InDel）。使用GATK进行逐样本检测和质量过滤，表格汇总通过过滤的变异数量、所在位置及各样本的基因型，供后续筛选关注位点。</p><p>RNA测序主要反映已表达区域，位点能否检出会受到基因表达量、测序深度和剪接的影响，因此未检出变异不能直接判断为参考基因型。各样本的变异数量可用于了解检测结果，但不能仅据此推断组间变异负荷差异；本步骤未进行组间变异显著性检验，也不能单独区分真实DNA变异、RNA编辑与测序偏差。</p>")
+  show_table("src/table/variant_summary.txt", "各样本变异数量", n = Inf, columns = Inf)
+  show_table("src/table/all_sample_snps_stats.txt", "SNP 结果示例")
+  show_table("src/table/all_sample_indels_stats.txt", "InDel 结果示例")
+} else {
+  cat('<p class="unavailable">本项目配置已关闭第9步变异检测。</p>')
+}
+```
+
+# 10. WGCNA {#step-10}
+
+WGCNA用于寻找在不同样本中呈现相似表达变化的基因，并将它们划分为共表达模块。这些模块可能反映共同参与的生物学过程。分析从经过标准化的表达数据出发，保留表达可靠且具有一定变异的基因，不预先限定为差异基因；随后概括各模块的整体表达模式，分析其与实验分组或已提供表型的关联，并按模块成员度kME筛选候选枢纽基因。kME越高，表示该基因的表达模式越接近所属模块的整体模式，并不直接证明其具有调控作用。
+
+本流程根据可用样本量选择分析方式：6–14个独立样本进行探索性分析，15个及以上进行常规分析；少于6个可用样本或有效基因不足100时跳过建网。模块与表型的关联以Pearson相关系数表示，正负分别代表同向和反向变化，显著性结合BH校正P值判断。灰色（grey）表示未归入有效模块的基因，不参与模块关联检验；模块颜色仅作编号，不代表特定功能。
+
+```{r wgcna}
+status_path <- "src/wgcna/WGCNA_status.txt"
+if (file.exists(status_path)) {
+  status <- paste(readLines(status_path, warn = FALSE), collapse = " ")
+  exploratory <- grepl("EXPLORATORY", status, ignore.case = TRUE)
+  # 将运行记录转为报告说明，保留完成、跳过和失败的真实状态。
+  state <- if (grepl("^COMPLETED", status)) {
+    "分析已完成"
+  } else if (grepl(
+    "^SKIPPED",
+    status
+  )) {
+    "本次未进行建网"
+  } else if (grepl("^FAILED", status)) "分析未成功完成" else if (grepl("^RUNNING", status)) "分析尚未完成" else "请核对分析状态"
+  cat('<div class="note', if (exploratory) " exploratory" else "", '"><strong>',
+    if (exploratory) "小样本探索性分析：" else "WGCNA：", state, "</strong>",
+    if (grepl("^SKIPPED", status)) "<br>可用样本或有效基因数量不足，未生成共表达网络。" else "",
+    if (grepl("all genes are grey", status, fixed = TRUE)) "<br>未识别出有效共表达模块，所有基因均归入grey。" else "",
+    "</div>",
+    sep = ""
+  )
+  if (exploratory) cat("<p>当前样本量较小，模块及候选枢纽基因适合用于提出后续研究假设。关联采用双侧标签置换检验并进行BH校正，有限的样本组合会限制检验分辨率，相关系数较高也不一定达到显著性。留一法通过每次省略一个样本，观察既有模块关联是否明显改变，用于识别对个别样本较敏感的结果；它不能代替独立样本验证。</p>")
+  if (file.exists("src/wgcna/power_selection.txt")) {
+    power_record <- readLines("src/wgcna/power_selection.txt", warn = FALSE)
+    if (any(grepl("selection: sample_size_fallback", power_record,
+      fixed = TRUE
+    ))) {
+      cat('<p class="small">本次网络拟合未达到预设目标，采用按样本量选择的经验软阈值；该选择不表示网络已达到理想拓扑结构，结果需谨慎解读。</p>')
+    } else if (any(grepl("selection: user_supplied", power_record,
+      fixed = TRUE
+    ))) {
+      cat('<p class="small">本次网络采用项目预设的软阈值，拟合情况见下方诊断图。</p>')
+    } else if (any(grepl("selection: scale_free_fit", power_record,
+      fixed = TRUE
+    ))) {
+      cat('<p class="small">本次软阈值依据网络拟合诊断选择，用于在保留基因关联的同时突出较强的共表达关系。</p>')
+    }
+  }
+  cat('<div class="figure-grid">')
+  show_figure("src/wgcna/sample_clustering", "样本聚类：分支越接近，表示整体表达模式越相似，可据此关注偏离其他样本的个体。")
+  show_figure("src/wgcna/soft_threshold", "软阈值诊断：比较不同权重设置下的网络拟合程度和连接强度。")
+  cat("</div>")
+  show_figure("src/wgcna/gene_dendrogram_modules", "基因聚类与模块划分：树形分支反映基因表达模式的相似性，下方色条标出各基因的模块归属。")
+  show_figure("src/wgcna/module_trait_heatmap", "模块与表型关联：格内标注相关系数和BH校正P值，颜色显示关联的方向与强弱。")
+  show_table("src/wgcna/module_trait_association.txt", "模块与表型关联")
+  show_figure("src/wgcna/leave_one_out_association", "留一法检查：比较省略不同样本后的相关系数，变化越大表示模块关联对个别样本越敏感。")
+  show_table("src/wgcna/candidate_hub_genes.txt", "按模块成员度 kME 排序的候选基因")
+} else {
+  cat('<p class="unavailable">WGCNA 尚未运行或本项目已关闭该步骤。</p>')
+}
+```
+
+# 方法参考
+## Fastp
+
+Chen, S. (2025). **fastp 1.0: An ultra-fast all-round tool for FASTQ data quality control and preprocessing.** *iMeta*, **4**(5), e70078.
+DOI：https://doi.org/10.1002/imt2.70078
+
+## Multiqc
+
+MultiQC: Summarize analysis results for multiple tools and samples in a single report.
+*Philip Ewels, Måns Magnusson, Sverker Lundin and Max Käller*
+Bioinformatics (2016)
+doi: [10.1093/bioinformatics/btw354](http://dx.doi.org/10.1093/bioinformatics/btw354)
+PMID: [27312411](http://www.ncbi.nlm.nih.gov/pubmed/27312411)
+
+## Hisat2
+
+Kim, D., Paggi, J.M., Park, C. *et al.* Graph-based genome alignment and genotyping with HISAT2 and HISAT-genotype. *Nat Biotechnol* **37**, 907–915 (2019). https://doi.org/10.1038/s41587-019-0201-4
+
+## Samtools
+
+Twelve years of SAMtools and BCFtools
+Petr Danecek, James K Bonfield, Jennifer Liddle, John Marshall, Valeriu Ohan, Martin O Pollard, Andrew Whitwham, Thomas Keane, Shane A McCarthy, Robert M Davies, Heng Li
+*GigaScience*, Volume 10, Issue 2, February 2021, giab008, https://doi.org/10.1093/gigascience/giab008
+
+## FeatureCounts
+
+Liao, Yang, Gordon K. Smyth, and Wei Shi. 2014. “featureCounts: An Efficient General Purpose Program for Assigning Sequence Reads to Genomic Features.” *Bioinformatics* 30 (7): 923–30. https://doi.org/10.1093/bioinformatics/btt656.
+
+## DESeq2
+
+Love, M.I., Huber, W., Anders, S. (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. *Genome Biology*, **15**:550. [10.1186/s13059-014-0550-8](http://dx.doi.org/10.1186/s13059-014-0550-8)
+
+## Tidyverse
+
+Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to the tidyverse.” *Journal of Open Source Software*, **4**(43), 1686. [doi:10.21105/joss.01686](https://doi.org/10.21105/joss.01686).
+
+## ClusterProfiler
+
+S Xu, E Hu, Y Cai, Z Xie, X Luo, L Zhan, W Tang, Q Wang, B Liu, R Wang, W Xie, T Wu, L Xie, G Yu. Using clusterProfiler to characterize multiomics data. Nature Protocols. 2024, 19(11):3292-3320
+
+## Pathview
+
+Weijun Luo and Cory Brouwer. Pathview: an R/Bioconductor package for pathway-based data integration and visualization. Bioinformatics, 29(14):1830-1831, 2013. doi: 10.1093/bioinformatics/btt285.
+
+## Blast
+
+Altschul, S.F., Gish, W., Miller, W., Myers, E.W., Lipman, D.J. (1990) “Basic local alignment search tool.” J. Mol. Biol. 215:403-410. [PubMed](https://www.ncbi.nlm.nih.gov/pubmed/2231712?dopt=Citation)
+
+Camacho C., Coulouris G., Avagyan V., Ma N., Papadopoulos J., Bealer K., Madden T.L. (2008) “BLAST+: architecture and applications.” BMC Bioinformatics 10:421.
+
+## rMATS
+
+Wang Y, Xie Z, Kutschera E, Adams JI, Kadash-Edmondson KE, Xing Y rMATS-turbo: an efficient and flexible computational tool for alternative splicing analysis of large-scale RNA-seq data *Nature Protocols*, 2024 [doi: 10.1038/s41596-023-00944-2](https://doi.org/10.1038/s41596-023-00944-2)
+
+## GATK
+
+Van der Auwera GA & O'Connor BD. (2020). ***Genomics in the Cloud: Using Docker, GATK, and WDL in Terra (1st Edition).*** O'Reilly Media.
