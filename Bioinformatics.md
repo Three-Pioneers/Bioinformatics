@@ -33,7 +33,10 @@ srapath SRR3624173
 wget https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR3624173/SRR3624173
 
 # 2 下载结果为 SRR3624175.man（和 sra 只是后缀不一样，不用管），转化为 fastq；多个样本并行运行即可
-fastq-dump --gzip --split-3 SRR3624125.man
+fasterq-dump ./DRR1220988 -e 60 -p	# -e：线程数，-p：显示进度
+
+# 3 压缩解析后的 fastq 为 fastq.gz，pigz 压缩后直接删除原始 fastq 文件
+pigz -p 60 DRR1220988*.fastq
 ~~~
 
 ---
